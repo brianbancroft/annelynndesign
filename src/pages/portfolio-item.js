@@ -3,13 +3,17 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 
-const PortfolioItem = () => (
-  <Layout>
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
-)
+const PortfolioItem = props => {
+  const { contentfulPortfolioItem: item } = props.data
+  console.log('test test', item)
+  return (
+    <Layout>
+      <h1>{item.title}</h1>
+      <p>Welcome to page 2</p>
+      <Link to="/">Go back to the homepage</Link>
+    </Layout>
+  )
+}
 
 export default PortfolioItem
 
