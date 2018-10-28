@@ -4,18 +4,26 @@ import styled from 'react-emotion'
 
 const TopSection = styled('section')`
   width: 100vw;
-  height: 110vh;
-  background-color: #cc4851;
+  height: 100vh;
+  color: #cc4851;
+
+  .title {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 4rem;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 5rem;
+  }
 `
 const MiddleSection = styled('section')`
   width: 100vw;
-  height: 110vh;
-  background-color: #f973ff;
+  height: 100vh;
+  color: #f973ff;
 `
 const BottomSection = styled('section')`
   width: 100vw;
-  height: 110vh;
-  background-color: #dfff7f;
+  height: 100vh;
+  color: #dfff7f;
 `
 
 const PortfolioItemContainer = styled('div')`
@@ -42,10 +50,10 @@ const IndexPage = props => {
   return (
     <main>
       <TopSection>
-        <div>welcome</div>
-        <div>to</div>
-        <div>anne-lynn</div>
-        <div>design</div>
+        <div className="title">welcome</div>
+        <div className="title">to</div>
+        <div className="title">anne-lynn</div>
+        <div className="title">design</div>
       </TopSection>
       <MiddleSection>
         <p>This is where the content comes from</p>
