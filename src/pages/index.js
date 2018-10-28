@@ -7,7 +7,7 @@ const IndexPage = props => {
 
   const porfolioItems = props.data.allContentfulPortfolioItem.edges.map(i => (
     <li>
-      <Link to={`/portfolio/${i.node.slug}}`}>{i.node.title}</Link>
+      <Link to={`/portfolio/${i.node.slug}`}>{i.node.title}</Link>
     </li>
   ))
 
