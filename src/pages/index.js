@@ -12,7 +12,7 @@ const IndexPage = props => {
   ))
 
   return (
-    <Layout>
+    <main>
       <section>
         <h1>Welcome To Anne-Lynn Design</h1>
       </section>
@@ -21,7 +21,7 @@ const IndexPage = props => {
         <ol>{porfolioItems}</ol>
       </section>
       <section>This is the about section...</section>
-    </Layout>
+    </main>
   )
 }
 
