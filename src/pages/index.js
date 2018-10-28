@@ -1,26 +1,57 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Layout from '../components/layout'
+import styled from 'react-emotion'
+
+const TopSection = styled('section')`
+  width: 100vw;
+  height: 110vh;
+  background-color: #cc4851;
+`
+const MiddleSection = styled('section')`
+  width: 100vw;
+  height: 110vh;
+  background-color: #f973ff;
+`
+const BottomSection = styled('section')`
+  width: 100vw;
+  height: 110vh;
+  background-color: #dfff7f;
+`
+
+const PortfolioItemContainer = styled('div')`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  div {
+    margin-right: 10px;
+  }
+`
 
 const IndexPage = props => {
   console.log('test test', props)
 
   const porfolioItems = props.data.allContentfulPortfolioItem.edges.map(i => (
-    <li>
-      <Link to={`/portfolio/${i.node.slug}`}>{i.node.title}</Link>
-    </li>
+    <Link to={`/portfolio/${i.node.slug}`}>
+      {i.node.title}
+      <img src="https://loremflickr.com/200/200/brazil,rio,paris,dog,cat" />
+    </Link>
   ))
 
   return (
     <main>
-      <section>
-        <h1>Welcome To Anne-Lynn Design</h1>
-      </section>
-      <section>
+      <TopSection>
+        <div>welcome</div>
+        <div>to</div>
+        <div>anne-lynn</div>
+        <div>design</div>
+      </TopSection>
+      <MiddleSection>
         <p>This is where the content comes from</p>
-        <ol>{porfolioItems}</ol>
-      </section>
-      <section>This is the about section...</section>
+        <PortfolioItemContainer>{porfolioItems}</PortfolioItemContainer>
+      </MiddleSection>
+      <BottomSection>This is the about section...</BottomSection>
     </main>
   )
 }
