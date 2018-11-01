@@ -25,6 +25,39 @@ const HeaderSection = styled('section')`
     font-weight: 100;
     color: #1e9dba;
   }
+
+  .circle {
+    border-radius: 50%;
+    z-index: -11;
+  }
+
+  .circle-one {
+    border: 1px solid #1e9dba;
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    left: 540px;
+    top: 420px;
+  }
+
+  .circle-two {
+    border: 1px solid #006a77;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    left: 750px;
+    right: 300px;
+    top: 50px;
+  }
+
+  .circle-three {
+    border: 1px solid #8ec73f;
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    left: 860px;
+    top: 330px;
+  }
 `
 
 const Header = () => {
@@ -36,9 +69,9 @@ const Header = () => {
         <div className="title">anne-lynn</div>
         <div className="title">design</div>
       </div>
-      <div class="circle circle-one" />
-      <div class="circle circle-two" />
-      <div class="circle circle-three" />
+      <div className="circle circle-one" />
+      <div className="circle circle-two" />
+      <div className="circle circle-three" />
     </HeaderSection>
   )
 }
