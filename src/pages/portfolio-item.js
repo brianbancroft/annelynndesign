@@ -1,15 +1,32 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 
 const PortfolioItem = props => {
   const { contentfulPortfolioItem: item } = props.data
-  console.log('test test', item)
+  const {
+    color,
+    headline,
+    title,
+    colorAndTypographyPane,
+    conceptAndIdeasPane,
+    requirementsAndProductsPane,
+    supportingConceptsPane,
+  } = item
+
+  console.log('page color -> ', color)
+  console.log('title -> ', title)
+  console.log('Headline -> ', headline)
+  console.log('colorAndTypographyPane', '-> ', colorAndTypographyPane)
+  console.log(`conceptsAndIdeasPane -> `, conceptAndIdeasPane)
+  console.log('requirementsAndProductsPane -> ', requirementsAndProductsPane)
+  console.log('Supporting concepts pane -> ', supportingConceptsPane)
+
   return (
     <Layout>
-      <h1>{item.title}</h1>
-      <p>Welcome to page 2</p>
+      <h1>{title}</h1>
+      <p>{headline}</p>
     </Layout>
   )
 }

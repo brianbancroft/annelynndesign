@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import styled, { css } from 'react-emotion'
+import { Header } from '../components/homepage'
 
 const textAreaStyle = css`
   font-size: 14px;
@@ -13,31 +14,6 @@ const textAreaStyle = css`
   resize: none;
 `
 
-const HeaderSection = styled('section')`
-  height: 100vh;
-  padding-bottom: 4vh;
-  width: 99vw;
-  overflow-y: hidden;
-  z-index: -1;
-  top: 0;
-  position: fixed;
-
-  .title {
-    width: 50%;
-    min-width: 623px;
-    padding: 60px;
-    padding-top: 100px;
-    z-index: 10;
-    transform: scale(1, 1.2);
-    text-shadow: white 0.1em 0.1em 0.1em;
-    font-size: 90px;
-    text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 100px;
-    font-weight: 100;
-    color: #1e9dba;
-  }
-`
 const MiddleSection = styled('section')`
   width: 100vw;
   min-height: 100vh;
@@ -74,20 +50,20 @@ const PortfolioItemContainer = styled('div')`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+`
 
-  .portfolio-item {
-    width: 300px;
-    height: 300px;
-    margin-right: 30px;
-    margin-bottom: 30px;
-    border-radius: 20px;
-    background-image: url('https://picsum.photos/200/200/?random');
-    background-repeat: no-repeat;
-    background-size: contain;
+const PortfolioItem = styled('div')`
+  width: 300px;
+  height: 300px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  background-image: url('${props => props.img.file.url}');
+  background-repeat: no-repeat;
+  background-size: contain;
 
-    display: flex;
-    align-items: flex-end;
-  }
+  display: flex;
+  align-items: flex-end;
 
   .copy-container {
     min-height: 50px;
@@ -148,29 +124,24 @@ class IndexPage extends Component {
   }
 
   render() {
-    console.log('test test', this.props)
-
     const porfolioItems = this.props.data.allContentfulPortfolioItem.edges.map(
-      (i, key) => (
-        <Link key={key} to={`/portfolio/${i.node.slug}`}>
-          <div className="portfolio-item">
-            <div className="copy-container">
-              <div className="title">{i.node.title}</div>
-              <div className="date">31 January, 2018</div>
-            </div>
-          </div>
-        </Link>
-      )
+      (i, key) => {
+        return (
+          <Link key={key} to={`/portfolio/${i.node.slug}`}>
+            <PortfolioItem img={i.node.previewImage}>
+              <div className="copy-container">
+                <div className="title">{i.node.title}</div>
+                <div className="date">31 January, 2018</div>
+              </div>
+            </PortfolioItem>
+          </Link>
+        )
+      }
     )
 
     return (
       <main>
-        <HeaderSection id="headerSection">
-          <div className="title">welcome</div>
-          <div className="title">to</div>
-          <div className="title">anne-lynn</div>
-          <div className="title">design</div>
-        </HeaderSection>
+        <Header />
         <MiddleSection>
           <PortfolioItemContainer>{porfolioItems}</PortfolioItemContainer>
         </MiddleSection>
@@ -237,8 +208,15 @@ export const pageQuery = graphql`
           id
           title
           slug
-
           createdAt(formatString: "MMM Do, YYYY")
+          previewImage {
+            id
+            description
+            file {
+              url
+              contentType
+            }
+          }
         }
       }
     }
