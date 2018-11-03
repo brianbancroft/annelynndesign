@@ -7,6 +7,10 @@ const textAreaStyle = css`
   margin-top: 8px;
   color: #1e9dba;
   resize: none;
+
+  @media (max-width: 500px) {
+    width: 80%;
+  }
 `
 
 const ContactSection = styled('section')`
@@ -65,6 +69,9 @@ const ContactSection = styled('section')`
     border: none;
     background-color: rgba(30, 157, 186, 0.1);
     text-transform: uppercase;
+    @media (max-width: 500px) {
+      width: 80%;
+    }
   }
 
   .form-field__submit {
@@ -77,6 +84,9 @@ const ContactSection = styled('section')`
     margin: 8px 0;
     border: none;
     cursor: pointer;
+    @media (max-width: 500px) {
+      width: 80%;
+    }
   }
 
   .form-field__submit:hover {

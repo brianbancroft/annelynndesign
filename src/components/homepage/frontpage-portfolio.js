@@ -129,7 +129,6 @@ const Portfolio = props => {
       >
         <div className="item__details">
           <div className="title">{i.node.title}</div>
-          {/* <div className="date">31 January, 2018</div> */}
         </div>
       </PortfolioItem>
     )
@@ -140,9 +139,9 @@ const Portfolio = props => {
       <MiddleSection>
         <div className="grid">{portfolioItems}</div>
       </MiddleSection>
-      {/* <ContactMobileSection>
+      <ContactMobileSection>
         <Contact />
-      </ContactMobileSection> */}
+      </ContactMobileSection>
     </>
   )
 }
