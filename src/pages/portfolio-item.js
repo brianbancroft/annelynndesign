@@ -26,7 +26,12 @@ const PortfolioItem = props => {
 
   const colorAndTypography = colorAndTypographyPane => {
     if (colorAndTypographyPane)
-      return <ColorAndTypography colorAndTypography={colorAndTypographyPane} />
+      return (
+        <ColorAndTypography
+          colorAndTypography={colorAndTypographyPane}
+          color={color}
+        />
+      )
   }
 
   const conceptAndIdeas = conceptAndIdeasPane => {
