@@ -4,6 +4,7 @@ import styled, { css } from 'react-emotion'
 const textAreaStyle = css`
   width: 450px;
   height: 160px;
+  margin-top: 8px;
   color: #1e9dba;
   resize: none;
 `
