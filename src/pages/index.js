@@ -1,67 +1,51 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import styled from 'react-emotion'
+import React, { Component } from 'react'
+import { graphql } from 'gatsby'
+import { Header, Portfolio, Footer } from '../components/homepage'
 
-const TopSection = styled('section')`
-  width: 100vw;
-  height: 100vh;
-  color: #cc4851;
+class IndexPage extends Component {
+  handleScroll() {
+    const body = document.body
+    const html = document.documentElement
+    const height = Math.max(
+      body.scrollHeight,
+      body.offsetHeight,
+      html.clientHeight,
+      html.scrollHeight,
+      html.offsetHeight
+    )
 
-  .title {
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 4rem;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 5rem;
+    const offset = window.pageYOffset
+    const headerSection = document.getElementById('headerSection')
+    const footerSection = document.getElementById('footerSection')
+    if (headerSection || footerSection) {
+      if (height / offset > 2.9763313609467454) {
+        headerSection.style.display = 'block'
+        footerSection.style.display = 'none'
+      } else {
+        headerSection.style.display = 'none'
+        footerSection.style.display = 'grid'
+      }
+    }
   }
-`
-const MiddleSection = styled('section')`
-  width: 100vw;
-  height: 100vh;
-  color: #f973ff;
-`
-const BottomSection = styled('section')`
-  width: 100vw;
-  height: 100vh;
-  color: #dfff7f;
-`
 
-const PortfolioItemContainer = styled('div')`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  div {
-    margin-right: 10px;
+  componentDidMount() {
+    this.handleScroll()
+    window.addEventListener('scroll', this.handleScroll)
   }
-`
 
-const IndexPage = props => {
-  console.log('test test', props)
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
 
-  const porfolioItems = props.data.allContentfulPortfolioItem.edges.map(i => (
-    <Link to={`/portfolio/${i.node.slug}`}>
-      {i.node.title}
-      <img src="https://loremflickr.com/200/200/brazil,rio,paris,dog,cat" />
-    </Link>
-  ))
-
-  return (
-    <main>
-      <TopSection>
-        <div className="title">welcome</div>
-        <div className="title">to</div>
-        <div className="title">anne-lynn</div>
-        <div className="title">design</div>
-      </TopSection>
-      <MiddleSection>
-        <p>This is where the content comes from</p>
-        <PortfolioItemContainer>{porfolioItems}</PortfolioItemContainer>
-      </MiddleSection>
-      <BottomSection>This is the about section...</BottomSection>
-    </main>
-  )
+  render() {
+    return (
+      <main>
+        <Header />
+        <Portfolio data={this.props.data} />
+        <Footer />
+      </main>
+    )
+  }
 }
 
 export default IndexPage
@@ -74,8 +58,16 @@ export const pageQuery = graphql`
           id
           title
           slug
-
+          gridDisplayType
           createdAt(formatString: "MMM Do, YYYY")
+          previewImage {
+            id
+            description
+            file {
+              url
+              contentType
+            }
+          }
         }
       }
     }
