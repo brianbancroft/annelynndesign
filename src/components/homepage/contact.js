@@ -9,7 +9,7 @@ const textAreaStyle = css`
   resize: none;
 
   @media (max-width: 500px) {
-    width: 80%;
+    width: 80vw;
   }
 `
 
@@ -70,7 +70,7 @@ const ContactSection = styled('section')`
     background-color: rgba(30, 157, 186, 0.1);
     text-transform: uppercase;
     @media (max-width: 500px) {
-      width: 80%;
+      width: 80vw;
     }
   }
 
@@ -85,7 +85,7 @@ const ContactSection = styled('section')`
     border: none;
     cursor: pointer;
     @media (max-width: 500px) {
-      width: 80%;
+      width: 80vw;
     }
   }
 
