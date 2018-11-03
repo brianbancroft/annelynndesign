@@ -9,7 +9,7 @@ const textAreaStyle = css`
   resize: none;
 
   @media (max-width: 500px) {
-    width: 80vw;
+    width: 70vw;
   }
 `
 
