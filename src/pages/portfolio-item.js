@@ -8,6 +8,8 @@ const PortfolioItem = props => {
   const { contentfulPortfolioItem: item } = props.data
   const {
     color,
+    copy,
+    headerSectionTextColor,
     headline,
     title,
     colorAndTypographyPane,
@@ -26,7 +28,12 @@ const PortfolioItem = props => {
 
   return (
     <Layout>
-      <Header headline={headline} backgroundColor={color} />
+      <Header
+        headline={headline}
+        copy={copy}
+        backgroundColor={color}
+        headerSectionTextColor={headerSectionTextColor}
+      />
     </Layout>
   )
 }
@@ -39,8 +46,12 @@ export const pageQuery = graphql`
       title
       slug
       color
+      headerSectionTextColor
       createdAt
       headline
+      copy {
+        copy
+      }
 
       requirementsAndProductPane {
         id

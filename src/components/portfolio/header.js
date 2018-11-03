@@ -2,10 +2,9 @@ import React from 'react'
 import styled from 'react-emotion'
 
 const HeaderSection = styled('section')`
-  background: ${props => props.backgroundColor || 'blue'};
-  /* color: #1e9dba; */
+  background: ${props => props.backgroundColor || '#1402ba'};
+  color: ${props => props.headerSectionTextColor || '#efefef'};
   font-family: AvenirNext-UltraLight;
-  color: white;
   width: 100vw;
   height: 100vh;
 
@@ -37,14 +36,18 @@ const HeaderSection = styled('section')`
   }
 `
 
-const Header = props => (
-  <HeaderSection backgroundColor={props.backgroundColor}>
-    <div className="header--headline">{props.headline}</div>
-    <div className="header--copy">
-      Ea amet laborum mollit aliqua fugiat occaecat ex consequat occaecat. Nulla
-      ad officia nulla ea id Lorem. Irure sint Lorem voluptate aute laborum
-      consequat non Lorem amet laborum officia. Ullamco elit ad ad est.
-    </div>
+const Header = ({
+  backgroundColor,
+  headline,
+  copy,
+  headerSectionTextColor,
+} = {}) => (
+  <HeaderSection
+    backgroundColor={backgroundColor}
+    headerSectionTextColor={headerSectionTextColor}
+  >
+    <div className="header--headline">{headline}</div>
+    <div className="header--copy">{copy.copy}</div>
   </HeaderSection>
 )
 
