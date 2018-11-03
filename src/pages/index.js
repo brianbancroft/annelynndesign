@@ -1,6 +1,16 @@
 import React, { Component } from 'react'
 import { graphql } from 'gatsby'
+import styled from 'react-emotion'
 import { Header, Portfolio, Footer } from '../components/homepage'
+
+const Main = styled('main')`
+  html {
+    overflow-x: hidden;
+  }
+  body {
+    margin: 0 !important;
+  }
+`
 
 class IndexPage extends Component {
   handleScroll() {
@@ -39,11 +49,11 @@ class IndexPage extends Component {
 
   render() {
     return (
-      <main>
+      <Main>
         <Header />
         <Portfolio data={this.props.data} />
         <Footer />
-      </main>
+      </Main>
     )
   }
 }
