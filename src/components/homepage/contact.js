@@ -20,6 +20,10 @@ const ContactSection = styled('section')`
   color: #1e9dba;
   font-family: AvenirNext-UltraLight;
 
+  @media (max-width: 620px) {
+    padding-left: 0 10px;
+  }
+
   label {
     line-height: 2rem;
   }
@@ -47,6 +51,10 @@ const ContactSection = styled('section')`
     text-shadow: 0 0 0.2em #fff;
     z-index: 10;
     margin-left: 20px;
+
+    @media (max-width: 620px) {
+      margin-left: 0;
+    }
   }
 
   .form-field__text-input {

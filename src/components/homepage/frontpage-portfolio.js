@@ -140,9 +140,9 @@ const Portfolio = props => {
       <MiddleSection>
         <div className="grid">{portfolioItems}</div>
       </MiddleSection>
-      <ContactMobileSection>
+      {/* <ContactMobileSection>
         <Contact />
-      </ContactMobileSection>
+      </ContactMobileSection> */}
     </>
   )
 }
