@@ -11,8 +11,6 @@ const HeaderSection = styled('section')`
   position: fixed;
 
   .title {
-    width: 50%;
-    min-width: 623px;
     padding: 0 40px;
     padding-top: 100px;
     z-index: 10;

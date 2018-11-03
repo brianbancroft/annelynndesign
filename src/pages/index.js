@@ -4,8 +4,8 @@ import { Header, Portfolio, Footer } from '../components/homepage'
 
 class IndexPage extends Component {
   handleScroll() {
-    const body = document.body
-    const html = document.documentElement
+    const { body } = document
+    const { documentElement: html } = document
     const height = Math.max(
       body.scrollHeight,
       body.offsetHeight,
