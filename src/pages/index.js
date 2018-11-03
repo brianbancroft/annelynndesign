@@ -13,6 +13,7 @@ class IndexPage extends Component {
       html.scrollHeight,
       html.offsetHeight
     )
+
     const offset = window.pageYOffset
     const headerSection = document.getElementById('headerSection')
     const footerSection = document.getElementById('footerSection')
@@ -22,7 +23,7 @@ class IndexPage extends Component {
         footerSection.style.display = 'none'
       } else {
         headerSection.style.display = 'none'
-        footerSection.style.display = 'flex'
+        footerSection.style.display = 'grid'
       }
     }
   }
@@ -57,6 +58,7 @@ export const pageQuery = graphql`
           id
           title
           slug
+          gridDisplayType
           createdAt(formatString: "MMM Do, YYYY")
           previewImage {
             id
