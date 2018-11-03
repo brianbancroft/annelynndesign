@@ -12,6 +12,11 @@ const ColorTypographySection = styled('section')`
 const imagesLayout = images =>
   images.map(i => <img src={i.file.url} key={i.id} />)
 
+const Copy = ({ copy } = {}) => {
+  const inner = copy ? copy.copy || '' : ''
+  return <div>{inner}</div>
+}
+
 const ColorAndTypography = ({ colorAndTypography } = {}) => {
   // console.log('Colour and typography pane', colorAndTypography)
 
@@ -19,7 +24,7 @@ const ColorAndTypography = ({ colorAndTypography } = {}) => {
     <ColorTypographySection key={i.id}>
       {imagesLayout(i.images)}
       <h1>Colors and Typefaces</h1>
-      <div>{() => (i.copy ? i.copy.copy || '' : '')}</div>
+      <Copy copy={i.copy} />
     </ColorTypographySection>
   ))
 

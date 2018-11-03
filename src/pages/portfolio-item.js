@@ -124,10 +124,16 @@ export const pageQuery = graphql`
       supportingConceptsPane {
         id
         title
+        copy {
+          copy
+        }
 
         images {
           id
           title
+          file {
+            url
+          }
         }
         cssClasses {
           className

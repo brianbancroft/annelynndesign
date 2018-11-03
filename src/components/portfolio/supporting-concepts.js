@@ -9,20 +9,21 @@ const SupportingConceptsSection = styled('section')`
   outline-style: dashed;
 `
 
+const imagesLayout = images =>
+  images.map(i => <img src={i.file.url} key={i.id} />)
+
+const Copy = ({ copy } = {}) => {
+  const inner = copy ? copy.copy || '' : ''
+  return <div>{inner}</div>
+}
+
 const SupportingConcepts = ({ supportingConcepts } = {}) => {
   console.log('Supporting concepts pane -> ', supportingConcepts)
   const sections = supportingConcepts.map(i => (
     <SupportingConceptsSection key={i.id}>
+      {imagesLayout(i.images)}
       <div>{i.title}</div>
-      <div>
-        Aliqua aliquip magna elit elit velit culpa eiusmod. Id non dolore nisi
-        tempor duis quis sit esse occaecat sint excepteur reprehenderit ut.
-        Cillum elit cupidatat occaecat incididunt tempor officia ut ut consequat
-        esse sit. Incididunt aliqua magna nostrud exercitation nostrud elit
-        consequat esse laboris do Lorem pariatur veniam est. Laboris excepteur
-        aliquip pariatur nisi elit ipsum consequat id officia Lorem ullamco
-        laboris consectetur.
-      </div>
+      <Copy copy={i.copy} />
     </SupportingConceptsSection>
   ))
 
