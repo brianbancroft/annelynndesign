@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
+import { Header } from '../components/portfolio'
 
 const PortfolioItem = props => {
   const { contentfulPortfolioItem: item } = props.data
@@ -25,8 +26,7 @@ const PortfolioItem = props => {
 
   return (
     <Layout>
-      <h1>{title}</h1>
-      <p>{headline}</p>
+      <Header headline={headline} backgroundColor={color} />
     </Layout>
   )
 }
