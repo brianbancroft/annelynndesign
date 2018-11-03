@@ -9,7 +9,7 @@ const ColorTypographySection = styled('section')`
   outline-style: dashed;
 `
 const RequirementsAndProducts = ({ requirementsAndProducts } = {}) => {
-  console.log('Requirements and products pane -> ', requirementsAndProducts)
+  // console.log('Requirements and products pane -> ', requirementsAndProducts)
   const { id, cssClasses, image, title, copy } = requirementsAndProducts
   return (
     <ColorTypographySection>

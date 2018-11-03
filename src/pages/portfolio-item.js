@@ -103,10 +103,16 @@ export const pageQuery = graphql`
       conceptAndIdeasPane {
         id
         title
+        copy {
+          copy
+        }
 
         images {
           id
           title
+          file {
+            url
+          }
         }
       }
       colorAndTypographyPane {
