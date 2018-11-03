@@ -2,7 +2,13 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import { Header } from '../components/portfolio'
+import {
+  Header,
+  ColorAndTypography,
+  ConceptsAndIdeas,
+  RequirementsAndProducts,
+  SupportingConcepts,
+} from '../components/portfolio'
 
 const PortfolioItem = props => {
   const { contentfulPortfolioItem: item } = props.data
