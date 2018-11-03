@@ -46,7 +46,7 @@ const PortfolioItem = styled('div')`
   background: url('${props => (props.img ? props.img : '')}');
   background-size: cover;
   background-position: center;
-  box-shadow: -2px 2px 10px 0px rgba(68, 68, 68, 0.4);
+  box-shadow: -0.2px 0.2px 2px 0px rgba(68,68,68,0.4);
   transition: transform 0.3s ease-in-out;
   counter-increment: item-counter;
   grid-row-end: ${props =>
@@ -92,7 +92,8 @@ const PortfolioItem = styled('div')`
     background: #fff;
     text-transform: lowercase;
     letter-spacing: 1px;
-    color: #828282;
+    color: #1e9dba;
+    font-family: AvenirNext-UltraLight;
   }
 
 
