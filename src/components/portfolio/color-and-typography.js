@@ -1,6 +1,7 @@
 import React from 'react'
 
-const ColorAndTypography = () => {
+const ColorAndTypography = ({ colorAndTypography } = {}) => {
+  console.log('Colour and typography pane', colorAndTypography)
   return <div>Hello and typography</div>
 }
 

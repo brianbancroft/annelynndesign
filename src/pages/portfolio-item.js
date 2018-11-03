@@ -20,17 +20,36 @@ const PortfolioItem = props => {
     title,
     colorAndTypographyPane,
     conceptAndIdeasPane,
-    requirementsAndProductsPane,
+    requirementsAndProductPane,
     supportingConceptsPane,
   } = item
 
-  console.log('page color -> ', color)
-  console.log('title -> ', title)
-  console.log('Headline -> ', headline)
-  console.log('colorAndTypographyPane', '-> ', colorAndTypographyPane)
-  console.log(`conceptsAndIdeasPane -> `, conceptAndIdeasPane)
-  console.log('requirementsAndProductsPane -> ', requirementsAndProductsPane)
-  console.log('Supporting concepts pane -> ', supportingConceptsPane)
+  const colorAndTypography = colorAndTypographyPane => {
+    if (colorAndTypographyPane)
+      return <ColorAndTypography colorAndTypography={colorAndTypographyPane} />
+  }
+
+  const conceptAndIdeas = conceptAndIdeasPane => {
+    if (conceptAndIdeasPane) {
+      return <ConceptsAndIdeas conceptAndIdeas={conceptAndIdeasPane} />
+    }
+  }
+
+  const requirementsAndProducts = requirementsAndProductPane => {
+    if (requirementsAndProductPane) {
+      return (
+        <RequirementsAndProducts
+          requirementsAndProducts={requirementsAndProductPane}
+        />
+      )
+    }
+  }
+
+  const supportingConcepts = supportingConceptsPane => {
+    if (supportingConceptsPane) {
+      return <SupportingConcepts supportingConcepts={supportingConceptsPane} />
+    }
+  }
 
   return (
     <Layout>
@@ -40,6 +59,10 @@ const PortfolioItem = props => {
         backgroundColor={color}
         headerSectionTextColor={headerSectionTextColor}
       />
+      {colorAndTypography(colorAndTypographyPane)}
+      {supportingConcepts(supportingConceptsPane)}
+      {requirementsAndProducts(requirementsAndProductPane)}
+      {ConceptsAndIdeas(conceptAndIdeasPane)}
     </Layout>
   )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 
-const SupportingConcepts = () => {
+const SupportingConcepts = ({ supportingConcepts } = {}) => {
+  console.log('Supporting concepts pane -> ', supportingConcepts)
   return <div>Hello supporting concepts</div>
 }
 
