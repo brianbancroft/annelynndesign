@@ -34,7 +34,7 @@ const PortfolioItem = props => {
 export default PortfolioItem
 
 export const pageQuery = graphql`
-  query PortfolioItemBySlug($slug: String!) {
+  query PortfolioItemBySlug($slug: String) {
     contentfulPortfolioItem(slug: { eq: $slug }) {
       title
       slug
