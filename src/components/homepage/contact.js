@@ -2,13 +2,9 @@ import React from 'react'
 import styled, { css } from 'react-emotion'
 
 const textAreaStyle = css`
-  font-size: 18px;
-  width: 90%;
+  width: 450px;
   height: 160px;
-  padding: 10px;
   color: #1e9dba;
-  background-color: #ebfafe;
-  border: none;
   resize: none;
 `
 
@@ -22,6 +18,10 @@ const ContactSection = styled('section')`
   flex-direction: column;
   color: #1e9dba;
   font-family: AvenirNext-UltraLight;
+
+  label {
+    line-height: 2rem;
+  }
 
   .header {
     z-index: 10;
@@ -45,10 +45,11 @@ const ContactSection = styled('section')`
     line-height: 49px;
     text-shadow: 0 0 0.2em #fff;
     z-index: 10;
+    margin-left: 20px;
   }
 
   .form-field__text-input {
-    width: 90%;
+    width: 450px;
     padding: 20px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -58,7 +59,7 @@ const ContactSection = styled('section')`
   }
 
   .form-field__submit {
-    width: 90%;
+    width: 450px;
     color: #1e9dba;
     text-transform: uppercase;
     font-weight: 600;
@@ -112,7 +113,7 @@ const Contact = () => (
           name="email"
           className="form-field form-field__text-input"
         />
-
+        <br />
         <label>MESSAGE</label>
         <br />
         <textarea
