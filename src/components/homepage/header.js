@@ -5,7 +5,7 @@ const HeaderSection = styled('section')`
   height: 100vh;
   padding-bottom: 4vh;
   width: 99vw;
-  overflow-y: hidden;
+  overflow: hidden;
   z-index: -1;
   top: 0;
   position: fixed;

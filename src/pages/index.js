@@ -4,9 +4,6 @@ import styled from 'react-emotion'
 import { Header, Portfolio, Footer } from '../components/homepage'
 
 const Main = styled('main')`
-  html {
-    overflow-x: hidden;
-  }
   body {
     margin: 0 !important;
   }
