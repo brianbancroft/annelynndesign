@@ -17,12 +17,13 @@ const ContactSection = styled('section')`
   height: 100%;
   padding-left: 40px;
   display: grid;
-  grid-template-rows: 10% 90%;
+  grid-template-rows: 80px 80%;
+  grid-row-gap: 40px;
   flex-direction: column;
   color: #1e9dba;
   font-family: AvenirNext-UltraLight;
 
-  h1 {
+  .header {
     z-index: 10;
     text-transform: uppercase;
     font-family: AvenirNext-UltraLight;
@@ -33,7 +34,7 @@ const ContactSection = styled('section')`
     text-shadow: 0 0 0.2em #fff;
     padding-top: 30px;
     padding-left: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 
   .contact-form {
@@ -88,10 +89,8 @@ const ContactSection = styled('section')`
 
 const Contact = () => (
   <ContactSection>
-    <div>
-      <h1>Contact</h1>
-    </div>
-    <div class="form">
+    <div className="header">Contact</div>
+    <div className="form">
       <form
         name="contact"
         action=""
@@ -117,8 +116,7 @@ const Contact = () => (
         <label>MESSAGE</label>
         <br />
         <textarea
-          className="form-field form-field__textarea"
-          className={`${textAreaStyle}`}
+          className={`form-field form-field__textarea ${textAreaStyle}`}
           name="comment"
           form="usrform"
           defaultValue="Hi there, I just saw your site and I'd like to talk more!"

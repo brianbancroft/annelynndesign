@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'react-emotion'
 import { navigate } from 'gatsby'
+import { Contact } from '.'
 
 const MiddleSection = styled('section')`
   width: 100vw;
@@ -50,9 +51,9 @@ const PortfolioItem = styled('div')`
   transition: transform 0.3s ease-in-out;
   counter-increment: item-counter;
   grid-row-end: ${props =>
-    props.gridDisplayType == 'medium'
+    props.gridDisplayType === 'medium'
       ? 'span 2'
-      : props.gridDisplayType == 'large' || props.gridDisplayType == 'full'
+      : props.gridDisplayType === 'large' || props.gridDisplayType === 'full'
         ? 'span 3'
         : 'inherit'};
 
@@ -106,6 +107,17 @@ const PortfolioItem = styled('div')`
   }
 `
 
+const ContactMobileSection = styled('section')`
+  display: none;
+
+  @media (max-width: 620px) {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+  }
+`
+
 const Portfolio = props => {
   const portfolioItems = props.data.allContentfulPortfolioItem.edges.map(
     (i, key) => (
@@ -124,9 +136,14 @@ const Portfolio = props => {
   )
 
   return (
-    <MiddleSection>
-      <div className="grid">{portfolioItems}</div>
-    </MiddleSection>
+    <>
+      <MiddleSection>
+        <div className="grid">{portfolioItems}</div>
+      </MiddleSection>
+      <ContactMobileSection>
+        <Contact />
+      </ContactMobileSection>
+    </>
   )
 }
 
