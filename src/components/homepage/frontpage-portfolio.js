@@ -8,14 +8,14 @@ const MiddleSection = styled('section')`
   min-height: 100vh;
   margin: 105vh 0;
   display: none;
-  padding: 0.2rem;
+  /* padding: 0.2rem; */
   background: #f5f4f4;
 
   border-top: 2px solid #333;
   border-bottom: 2px solid #333;
   background: white;
   @media screen and (min-width: 768px) {
-    padding: 0.2rem;
+    /* padding: 0.2rem; */
   }
 
   @supports (display: grid) {
