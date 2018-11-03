@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 import styled from 'react-emotion'
 import { Header, Portfolio, Footer } from '../components/homepage'
+import indexStyles from './index.module.css'
 
 const Main = styled('main')`
   body {
