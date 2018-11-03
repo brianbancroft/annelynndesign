@@ -85,10 +85,16 @@ export const pageQuery = graphql`
       requirementsAndProductPane {
         id
         title
+        copy {
+          copy
+        }
 
         image {
           id
           title
+          file {
+            url
+          }
         }
         cssClasses {
           className

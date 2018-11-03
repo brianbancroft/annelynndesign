@@ -18,7 +18,7 @@ const Copy = ({ copy } = {}) => {
 }
 
 const SupportingConcepts = ({ supportingConcepts } = {}) => {
-  console.log('Supporting concepts pane -> ', supportingConcepts)
+  // console.log('Supporting concepts pane -> ', supportingConcepts)
   const sections = supportingConcepts.map(i => (
     <SupportingConceptsSection key={i.id}>
       {imagesLayout(i.images)}
