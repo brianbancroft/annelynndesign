@@ -26,6 +26,7 @@ const ContactSection = styled('section')`
 
   @media (max-width: 620px) {
     padding-left: 0 10px;
+    width: 80vw;
   }
 
   label {
