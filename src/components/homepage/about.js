@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'react-emotion'
+import { Flex, Card, Image, Text } from 'rebass'
 
 const AboutSection = styled('section')`
   width: 100%;
@@ -19,6 +20,8 @@ const AboutSection = styled('section')`
     text-shadow: 0 0 0.2em #fff;
     z-index: 10;
     padding-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 83px;
   }
 
   .about__about-copy {
@@ -61,28 +64,30 @@ const About = () => (
   <AboutSection>
     <div className="about__about-header">ABOUT</div>
 
-    <div className="about__image-copy">
-      <div className="about__about-image">
-        <img src="https://placekitten.com/150//150" />
-      </div>
-      <div className="about__about-copy">
-        <p>
-          I am from the Ottawa River Valley, and have been a designer since 2007
-          in in-house, agency and contracting roles for both print and packaging
-          design
-        </p>
-        <p>
-          I have been a designer since 2007, and keep constant through research,
-          and high-tempo production
-        </p>
-        <p>
-          My personal interests in graphic design include "print", "colour". I
-          love seeing my designs, and keep a collection of my favorite products
-          which I've helped bring to life.
-        </p>
-      </div>
-    </div>
-
+    <Flex>
+      <Card width={[256, 520]} mx="auto" p={2} variant="basic">
+        <Image
+          src="https://source.unsplash.com/random/512x384"
+          borderRadius={2}
+        />
+        <Text fontFamily="AvenirNext-UltraLight">
+          <p>
+            I am from the Ottawa River Valley, and have been a designer since
+            2007 in in-house, agency and contracting roles for both print and
+            packaging design
+          </p>
+          <p>
+            I have been a designer since 2007, and keep constant through
+            research, and high-tempo production
+          </p>
+          <p>
+            My personal interests in graphic design include "print", "colour". I
+            love seeing my designs, and keep a collection of my favorite
+            products which I've helped bring to life.
+          </p>
+        </Text>
+      </Card>
+    </Flex>
     <div className="about-circle__circle-one" />
   </AboutSection>
 )

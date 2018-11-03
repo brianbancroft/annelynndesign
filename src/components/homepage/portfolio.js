@@ -6,7 +6,7 @@ import { Contact } from '.'
 const MiddleSection = styled('section')`
   width: 100vw;
   min-height: 100vh;
-  margin: 100vh 0;
+  margin: 105vh 0;
   display: none;
   padding: 2rem;
   background: #f5f4f4;

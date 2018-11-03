@@ -13,7 +13,7 @@ const FooterSection = styled('section')`
   grid-template-rows: 100vh;
 
   @media (max-width: 620px) {
-    grid-template-colums: 100vw;
+    grid-template-columns: 100vw;
   }
 
   .contact-desktop {
