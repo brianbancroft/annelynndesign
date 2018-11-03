@@ -8,7 +8,6 @@
     "emotion": "^9.2.12",
     "emotion-server": "^9.2.12",
     "gatsby": "^2.0.38",
-    "gatsby-image": "^2.0.15",
     "gatsby-plugin-emotion": "^2.0.5",
     "gatsby-plugin-manifest": "^2.0.5",
     "gatsby-plugin-offline": "^2.0.5",
@@ -20,7 +19,9 @@
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-emotion": "^9.2.12",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "rebass": "^2.3.4",
+    "styled-components": "^4.0.3"
   },
   "keywords": [
     "gatsby"

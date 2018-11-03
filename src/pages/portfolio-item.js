@@ -62,7 +62,7 @@ const PortfolioItem = props => {
       {colorAndTypography(colorAndTypographyPane)}
       {supportingConcepts(supportingConceptsPane)}
       {requirementsAndProducts(requirementsAndProductPane)}
-      {ConceptsAndIdeas(conceptAndIdeasPane)}
+      {conceptAndIdeas(conceptAndIdeasPane)}
     </Layout>
   )
 }
@@ -106,10 +106,16 @@ export const pageQuery = graphql`
       colorAndTypographyPane {
         id
         title
+        copy {
+          copy
+        }
 
         images {
           id
           title
+          file {
+            url
+          }
         }
         cssClasses {
           className
