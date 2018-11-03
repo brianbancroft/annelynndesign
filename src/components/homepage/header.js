@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'react-emotion'
+import { ScrollIcon } from '.'
 
 const HeaderSection = styled('section')`
   height: 100vh;
@@ -11,6 +12,7 @@ const HeaderSection = styled('section')`
   position: fixed;
 
   .title {
+    user-select: none;
     padding: 0 40px;
     padding-top: 100px;
     z-index: 10;
@@ -99,20 +101,23 @@ const HeaderSection = styled('section')`
   }
 `
 
-const Header = () => {
-  return (
-    <HeaderSection id="headerSection">
-      <div className="welcome-header">
-        <div className="title">welcome</div>
-        <div className="title">to</div>
-        <div className="title">anne-lynn</div>
-        <div className="title">design</div>
-      </div>
-      <div className="circle circle-one" />
-      <div className="circle circle-two" />
-      <div className="circle circle-three" />
-    </HeaderSection>
-  )
+class Header extends React.Component {
+  render() {
+    return (
+      <HeaderSection id="headerSection">
+        <div className="welcome-header">
+          <div className="title">welcome</div>
+          <div className="title">to</div>
+          <div className="title">anne-lynn</div>
+          <div className="title">design</div>
+        </div>
+        <div className="circle circle-one" />
+        <div className="circle circle-two" />
+        <div className="circle circle-three" />
+        <ScrollIcon />
+      </HeaderSection>
+    )
+  }
 }
 
 export default Header
