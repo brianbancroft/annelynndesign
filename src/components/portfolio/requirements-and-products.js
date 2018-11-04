@@ -1,22 +1,57 @@
 import React from 'react'
 import styled from 'react-emotion'
 
-const ColorTypographySection = styled('section')`
+const RequirementsProductSection = styled('section')`
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   background: white;
-  outline-color: green;
-  outline-style: dashed;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10vw 0;
+  color: ${props => (props.color ? props.color : 'inherit')};
+  font-family: AvenirNext-UltraLight;
+
+  .images-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .copy-container {
+    display: grid;
+    grid-template-rows: 80px;
+    grid-template-columns: 250px 600px;
+    grid-column-gap: 30px;
+  }
+
+  .copy-container__title {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
 `
-const RequirementsAndProducts = ({ requirementsAndProducts } = {}) => {
+
+const Copy = ({ copy } = {}) => {
+  const inner = copy ? copy.copy || '' : ''
+  return <div>{inner}</div>
+}
+
+const RequirementsAndProducts = ({ requirementsAndProducts, color } = {}) => {
   // console.log('Requirements and products pane -> ', requirementsAndProducts)
   const { id, cssClasses, image, title, copy } = requirementsAndProducts
   return (
-    <ColorTypographySection>
-      <img src={image.file.url} />
-      <h2>{title}</h2>
-      <div>{copy.copy || ''}</div>
-    </ColorTypographySection>
+    <RequirementsProductSection color={color}>
+      <div className="images-container">
+        <img src={image.file.url} />
+      </div>
+      <div className="copy-container">
+        <div className="copy-container__title">{title}</div>
+        <Copy copy={copy} />
+      </div>
+    </RequirementsProductSection>
   )
 }
 

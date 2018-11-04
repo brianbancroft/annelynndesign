@@ -36,7 +36,9 @@ const PortfolioItem = props => {
 
   const conceptAndIdeas = conceptAndIdeasPane => {
     if (conceptAndIdeasPane) {
-      return <ConceptsAndIdeas conceptAndIdeas={conceptAndIdeasPane} />
+      return (
+        <ConceptsAndIdeas color={color} conceptAndIdeas={conceptAndIdeasPane} />
+      )
     }
   }
 
@@ -44,6 +46,7 @@ const PortfolioItem = props => {
     if (requirementsAndProductPane) {
       return (
         <RequirementsAndProducts
+          color={color}
           requirementsAndProducts={requirementsAndProductPane}
         />
       )
@@ -52,7 +55,12 @@ const PortfolioItem = props => {
 
   const supportingConcepts = supportingConceptsPane => {
     if (supportingConceptsPane) {
-      return <SupportingConcepts supportingConcepts={supportingConceptsPane} />
+      return (
+        <SupportingConcepts
+          color={color}
+          supportingConcepts={supportingConceptsPane}
+        />
+      )
     }
   }
 
@@ -64,10 +72,10 @@ const PortfolioItem = props => {
         backgroundColor={color}
         headerSectionTextColor={headerSectionTextColor}
       />
+      {conceptAndIdeas(conceptAndIdeasPane)}
       {colorAndTypography(colorAndTypographyPane)}
       {supportingConcepts(supportingConceptsPane)}
       {requirementsAndProducts(requirementsAndProductPane)}
-      {conceptAndIdeas(conceptAndIdeasPane)}
     </Layout>
   )
 }
