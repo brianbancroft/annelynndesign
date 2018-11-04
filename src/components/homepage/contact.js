@@ -2,14 +2,15 @@ import React from 'react'
 import styled, { css } from 'react-emotion'
 
 const textAreaStyle = css`
-  font-size: 18px;
-  width: 90%;
+  width: 450px;
   height: 160px;
-  padding: 10px;
+  margin-top: 8px;
   color: #1e9dba;
-  background-color: #ebfafe;
-  border: none;
   resize: none;
+
+  @media (max-width: 500px) {
+    width: 70vw;
+  }
 `
 
 const ContactSection = styled('section')`
@@ -17,12 +18,22 @@ const ContactSection = styled('section')`
   height: 100%;
   padding-left: 40px;
   display: grid;
-  grid-template-rows: 10% 90%;
+  grid-template-rows: 80px 80%;
+  grid-row-gap: 40px;
   flex-direction: column;
   color: #1e9dba;
   font-family: AvenirNext-UltraLight;
 
-  h1 {
+  @media (max-width: 620px) {
+    padding-left: 0 10px;
+    width: 80vw;
+  }
+
+  label {
+    line-height: 2rem;
+  }
+
+  .header {
     z-index: 10;
     text-transform: uppercase;
     font-family: AvenirNext-UltraLight;
@@ -33,7 +44,7 @@ const ContactSection = styled('section')`
     text-shadow: 0 0 0.2em #fff;
     padding-top: 30px;
     padding-left: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 
   .contact-form {
@@ -44,20 +55,28 @@ const ContactSection = styled('section')`
     line-height: 49px;
     text-shadow: 0 0 0.2em #fff;
     z-index: 10;
+    margin-left: 20px;
+
+    @media (max-width: 620px) {
+      margin-left: 0;
+    }
   }
 
   .form-field__text-input {
-    width: 90%;
+    width: 450px;
     padding: 20px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
     background-color: rgba(30, 157, 186, 0.1);
     text-transform: uppercase;
+    @media (max-width: 500px) {
+      width: 80vw;
+    }
   }
 
   .form-field__submit {
-    width: 90%;
+    width: 450px;
     color: #1e9dba;
     text-transform: uppercase;
     font-weight: 600;
@@ -66,6 +85,9 @@ const ContactSection = styled('section')`
     margin: 8px 0;
     border: none;
     cursor: pointer;
+    @media (max-width: 500px) {
+      width: 80vw;
+    }
   }
 
   .form-field__submit:hover {
@@ -88,10 +110,8 @@ const ContactSection = styled('section')`
 
 const Contact = () => (
   <ContactSection>
-    <div>
-      <h1>Contact</h1>
-    </div>
-    <div class="form">
+    <div className="header">Contact</div>
+    <div className="form">
       <form
         name="contact"
         action=""
@@ -113,12 +133,11 @@ const Contact = () => (
           name="email"
           className="form-field form-field__text-input"
         />
-
+        <br />
         <label>MESSAGE</label>
         <br />
         <textarea
-          className="form-field form-field__textarea"
-          className={`${textAreaStyle}`}
+          className={`form-field form-field__textarea ${textAreaStyle}`}
           name="comment"
           form="usrform"
           defaultValue="Hi there, I just saw your site and I'd like to talk more!"

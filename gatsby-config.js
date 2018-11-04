@@ -13,6 +13,7 @@ module.exports = {
       options: {
         spaceId: process.env.SPACE_ID,
         accessToken: process.env.DELIVERY_TOKEN,
+        host: `preview.contentful.com`,
       },
     },
     {

@@ -1,11 +1,19 @@
 import React, { Component } from 'react'
 import { graphql } from 'gatsby'
+import styled from 'react-emotion'
 import { Header, Portfolio, Footer } from '../components/homepage'
+import indexStyles from './index.module.css'
+
+const Main = styled('main')`
+  body {
+    margin: 0 !important;
+  }
+`
 
 class IndexPage extends Component {
   handleScroll() {
-    const body = document.body
-    const html = document.documentElement
+    const { body } = document
+    const { documentElement: html } = document
     const height = Math.max(
       body.scrollHeight,
       body.offsetHeight,
@@ -39,11 +47,11 @@ class IndexPage extends Component {
 
   render() {
     return (
-      <main>
+      <Main>
         <Header />
         <Portfolio data={this.props.data} />
         <Footer />
-      </main>
+      </Main>
     )
   }
 }

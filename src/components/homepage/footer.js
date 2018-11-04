@@ -8,14 +8,30 @@ const FooterSection = styled('section')`
   z-index: -1;
   top: 0;
   position: fixed;
+  display: none;
 
   grid-template-columns: 50vw 50vw;
   grid-template-rows: 100vh;
+
+  @media (max-width: 620px) {
+    grid-template-columns: 100vw;
+  }
+
+  .contact-desktop {
+    display: block;
+
+    @media (max-width: 620px) {
+      display: none;
+    }
+  }
 `
 
 const Footer = () => (
   <FooterSection id="footerSection">
-    <Contact />
+    <div className="contact-desktop">
+      <Contact className="contact-desktop" />
+    </div>
+
     <About />
   </FooterSection>
 )
