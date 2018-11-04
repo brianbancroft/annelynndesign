@@ -2,20 +2,19 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-module.exports = {
+const exports = {
   siteMetadata: {
     title: 'Anne-Lynn Design',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.SPACE_ID,
         accessToken: process.env.DELIVERY_TOKEN,
-        host: `preview.contentful.com`,
       },
     },
+    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-emotion`,
       options: {
@@ -46,3 +45,9 @@ module.exports = {
     'gatsby-plugin-offline',
   ],
 }
+
+if (process.env.PREVIEW_MODE === 'true') {
+  exports.plugins[1].options['host'] = 'preview.contentful.com'
+}
+
+module.exports = exports
