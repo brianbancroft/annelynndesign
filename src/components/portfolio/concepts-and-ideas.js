@@ -3,10 +3,35 @@ import styled from 'react-emotion'
 
 const ConceptAndIdeasSection = styled('section')`
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   background: white;
-  outline-color: red;
-  outline-style: dashed;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10vw 0;
+  color: ${props => (props.color ? props.color : 'inherit')};
+  font-family: AvenirNext-UltraLight;
+
+  .images-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .copy-container {
+    display: grid;
+    grid-template-rows: 80px;
+    grid-template-columns: 250px 600px;
+    grid-column-gap: 30px;
+  }
+
+  .copy-container__title {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
 `
 
 const imagesLayout = images =>
@@ -17,13 +42,15 @@ const Copy = ({ copy } = {}) => {
   return <div>{inner}</div>
 }
 
-const ConceptsAndIdeas = ({ conceptAndIdeas } = {}) => {
+const ConceptsAndIdeas = ({ conceptAndIdeas, color } = {}) => {
   // console.log('Concpets and ideas pane -> ', conceptAndIdeas)
   const sections = conceptAndIdeas.map(i => (
-    <ConceptAndIdeasSection key={i.id}>
-      {imagesLayout(i.images)}
-      <h2>{i.title}</h2>
-      <Copy copy={i.copy} />
+    <ConceptAndIdeasSection key={i.id} color={color}>
+      <div className="images-container">{imagesLayout(i.images)}</div>
+      <div className="copy-container">
+        <div className="copy-container__title">{i.title}</div>
+        <Copy copy={i.copy} />
+      </div>
     </ConceptAndIdeasSection>
   ))
 
