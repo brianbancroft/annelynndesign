@@ -2,7 +2,7 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-const exports = {
+const moduleExports = {
   siteMetadata: {
     title: 'Anne-Lynn Design',
   },
@@ -47,7 +47,7 @@ const exports = {
 }
 
 if (process.env.PREVIEW_MODE === 'true') {
-  exports.plugins[1].options['host'] = 'preview.contentful.com'
+  moduleExports.plugins[0].options['host'] = 'preview.contentful.com'
 }
 
-module.exports = exports
+module.exports = moduleExports
