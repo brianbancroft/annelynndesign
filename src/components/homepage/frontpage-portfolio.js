@@ -120,18 +120,22 @@ const ContactMobileSection = styled('section')`
 
 const Portfolio = props => {
   const portfolioItems = props.data.allContentfulPortfolioItem.edges.map(
-    (i, key) => (
-      <PortfolioItem
-        img={i.node.previewImage.file.url}
-        gridDisplayType={i.node.gridDisplayType}
-        onClick={() => navigate(`/portfolio/${i.node.slug}`)}
-        key={key}
-      >
-        <div className="item__details">
-          <div className="title">{i.node.title}</div>
-        </div>
-      </PortfolioItem>
-    )
+    (i, key) => {
+      const img = i.node.previewImage ? i.node.previewImage.file.url : ''
+
+      return (
+        <PortfolioItem
+          img={img}
+          gridDisplayType={i.node.gridDisplayType}
+          onClick={() => navigate(`/portfolio/${i.node.slug}`)}
+          key={key}
+        >
+          <div className="item__details">
+            <div className="title">{i.node.title}</div>
+          </div>
+        </PortfolioItem>
+      )
+    }
   )
 
   return (
