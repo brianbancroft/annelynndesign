@@ -26,11 +26,13 @@ const SupportingConceptsSection = styled('section')`
     grid-template-rows: 80px;
     grid-template-columns: 250px 600px;
     grid-column-gap: 30px;
+    color: #222;
   }
 
   .copy-container__title {
     font-size: 1.2rem;
     font-weight: 600;
+    color: ${props => (props.color ? props.color : 'inherit')};
   }
 `
 

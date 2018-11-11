@@ -31,6 +31,7 @@ const ConceptAndIdeasSection = styled('section')`
   .copy-container__title {
     font-size: 1.2rem;
     font-weight: 600;
+    color: ${props => (props.color ? props.color : 'inherit')};
   }
 `
 
