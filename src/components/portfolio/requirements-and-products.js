@@ -7,7 +7,12 @@ const RequirementsProductSection = styled('section')`
   background: white;
 
   display: flex;
-  flex-direction: column;
+  flex-direction: ${props =>
+    props && props.imagePosition
+      ? props.imagePosition === 'image-left'
+        ? 'row'
+        : 'row-reverse'
+      : 'column'};
   justify-content: space-around;
   align-items: center;
   margin: 10vw 0;
@@ -19,6 +24,10 @@ const RequirementsProductSection = styled('section')`
     margin: 0 auto;
     display: flex;
     justify-content: center;
+  }
+
+  .images-container img {
+    margin-right: 5px;
   }
 
   .copy-container {
@@ -44,8 +53,11 @@ const Copy = ({ copy } = {}) => {
 const RequirementsAndProducts = ({ requirementsAndProducts, color } = {}) => {
   // console.log('Requirements and products pane -> ', requirementsAndProducts)
   const { id, cssClasses, image, title, copy } = requirementsAndProducts
+
+  const imagePosition = cssClasses ? cssClasses[0].className : null
+
   return (
-    <RequirementsProductSection color={color}>
+    <RequirementsProductSection color={color} imagePosition={imagePosition}>
       <div className="images-container">
         <img src={image.file.url} />
       </div>

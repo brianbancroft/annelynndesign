@@ -21,6 +21,10 @@ const ConceptAndIdeasSection = styled('section')`
     justify-content: center;
   }
 
+  .images-container img {
+    margin-right: 5px;
+  }
+
   .copy-container {
     display: grid;
     grid-template-rows: 80px;
@@ -36,7 +40,7 @@ const ConceptAndIdeasSection = styled('section')`
 `
 
 const imagesLayout = images =>
-  images.map(i => <img src={i.file.url} key={i.id} />)
+  images.map(i => <img src={i.file.url} key={i.id} width="400" height="400" />)
 
 const Copy = ({ copy } = {}) => {
   const inner = copy ? copy.copy || '' : ''
@@ -47,7 +51,13 @@ const ConceptsAndIdeas = ({ conceptAndIdeas, color } = {}) => {
   // console.log('Concpets and ideas pane -> ', conceptAndIdeas)
   const sections = conceptAndIdeas.map(i => (
     <ConceptAndIdeasSection key={i.id} color={color}>
-      <div className="images-container">{imagesLayout(i.images)}</div>
+      <div
+        className={`images-container ${
+          i.cssClasses ? i.cssClases.join(' ') : ''
+        }`}
+      >
+        {imagesLayout(i.images)}
+      </div>
       <div className="copy-container">
         <div className="copy-container__title">{i.title}</div>
         <Copy copy={i.copy} />

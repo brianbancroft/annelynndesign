@@ -12,6 +12,7 @@ import {
 
 const PortfolioItem = props => {
   const { contentfulPortfolioItem: item } = props.data
+  console.log('portfolio item -> ', item)
   const {
     color,
     copy,
@@ -72,10 +73,10 @@ const PortfolioItem = props => {
         backgroundColor={color}
         headerSectionTextColor={headerSectionTextColor}
       />
-      {conceptAndIdeas(conceptAndIdeasPane)}
-      {colorAndTypography(colorAndTypographyPane)}
-      {supportingConcepts(supportingConceptsPane)}
       {requirementsAndProducts(requirementsAndProductPane)}
+      {colorAndTypography(colorAndTypographyPane)}
+      {conceptAndIdeas(conceptAndIdeasPane)}
+      {supportingConcepts(supportingConceptsPane)}
     </Layout>
   )
 }

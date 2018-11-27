@@ -7,6 +7,7 @@ const moduleExports = {
     title: 'Anne-Lynn Design',
   },
   plugins: [
+    'gatsby-plugin-offline',
     {
       resolve: `gatsby-source-contentful`,
       options: {

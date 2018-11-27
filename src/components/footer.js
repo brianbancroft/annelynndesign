@@ -4,8 +4,7 @@ import { Link } from 'gatsby'
 const Footer = () => (
   <div
     style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
+      background: '#aaf',
     }}
   >
     <div

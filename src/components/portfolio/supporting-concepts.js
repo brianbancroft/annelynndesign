@@ -21,6 +21,10 @@ const SupportingConceptsSection = styled('section')`
     justify-content: center;
   }
 
+  .images-container img {
+    margin-right: 5px;
+  }
+
   .copy-container {
     display: grid;
     grid-template-rows: 80px;
