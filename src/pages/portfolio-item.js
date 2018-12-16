@@ -12,7 +12,6 @@ import {
 
 const PortfolioItem = props => {
   const { contentfulPortfolioItem: item } = props.data
-  console.log('portfolio item -> ', item)
   const {
     color,
     copy,
