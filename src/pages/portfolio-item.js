@@ -73,8 +73,8 @@ const PortfolioItem = props => {
         headerSectionTextColor={headerSectionTextColor}
       />
       {requirementsAndProducts(requirementsAndProductPane)}
-      {colorAndTypography(colorAndTypographyPane)}
       {conceptAndIdeas(conceptAndIdeasPane)}
+      {colorAndTypography(colorAndTypographyPane)}
       {supportingConcepts(supportingConceptsPane)}
     </Layout>
   )
