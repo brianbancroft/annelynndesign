@@ -40,7 +40,7 @@ const ConceptAndIdeasSection = styled('section')`
 `
 
 const imagesLayout = images =>
-  images.map(i => <img src={i.file.url} key={i.id} width="400" height="400" />)
+  images.map(i => <img src={i.file.url} key={i.id} width="400" />)
 
 const Copy = ({ copy } = {}) => {
   const inner = copy ? copy.copy || '' : ''

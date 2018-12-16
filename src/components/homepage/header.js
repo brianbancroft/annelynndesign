@@ -14,7 +14,7 @@ const HeaderSection = styled('section')`
   .title {
     user-select: none;
     padding: 0 40px;
-    padding-top: 100px;
+    padding-top: calc(100vh / 9);
     z-index: 10;
     transform: scale(1, 1.2);
     text-shadow: white 0.1em 0.1em 0.1em;
@@ -64,7 +64,7 @@ const HeaderSection = styled('section')`
       font-family: AvenirNext-UltraLight;
       font-size: 14vw;
       color: #1e9dba;
-      padding-top: 20px;
+      padding-top: 15px;
       padding-left: 10px;
       letter-spacing: -0.39px;
       line-height: 70px;
