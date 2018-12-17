@@ -17,6 +17,7 @@ const AboutSection = styled('section')`
     padding-top: 30px;
     margin-bottom: 30px;
     padding-left: 83px;
+    margin-left: 5vw;
   }
 
   .about__about-copy {
@@ -49,6 +50,11 @@ const AboutSection = styled('section')`
     position: absolute;
   }
 
+  .about__copy-container {
+    position: relative;
+    right: 5vw;
+  }
+
   p {
     line-height: 117%;
     margin-bottom: 5px;
@@ -56,7 +62,7 @@ const AboutSection = styled('section')`
 `
 
 const BigCircle = styled.div`
-  border: 1px solid #1e9dba;
+  border: 2px solid #006a77;
   height: 120vh;
   width: 120vh;
   position: fixed;
@@ -66,13 +72,24 @@ const BigCircle = styled.div`
   z-index: -11;
 `
 
+const BottomCircle = styled.div`
+  border: 2px solid #1e9dba;
+  border-radius: 100vw;
+  width: 70vw;
+  height: 70vw;
+  top: 82vh;
+  position: fixed;
+  left: 22vw;
+`
+
 const About = () => (
   <AboutSection>
     <BigCircle />
+    <BottomCircle />
     <div className="container">
       <div className="about__about-header">ABOUT</div>
 
-      <div>
+      <div className="about__copy-container">
         {/* <img
             className="about__about-image"
             src="https://source.unsplash.com/random/512x384"
