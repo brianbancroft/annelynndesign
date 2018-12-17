@@ -25,9 +25,9 @@ const FooterSection = styled('section')`
     }
   }
   .container {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
-    @media (min-width: 900px) {
+    @media (min-width: 1400px) {
       width: 700px;
     }
   }

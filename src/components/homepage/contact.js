@@ -55,7 +55,7 @@ const ContactSection = styled('section')`
     letter-spacing: -0.39px;
     line-height: 49px;
     text-shadow: 0 0 0.2em #fff;
-    z-index: 10;
+    z-index: 100;
     margin: 0 auto !important;
 
     @media (max-width: 620px) {

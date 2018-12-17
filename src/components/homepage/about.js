@@ -63,7 +63,7 @@ const BigCircle = styled.div`
   left: 48vw;
   bottom: -2vw;
   border-radius: 120vh;
-  z-index: -1;
+  z-index: -11;
 `
 
 const About = () => (
