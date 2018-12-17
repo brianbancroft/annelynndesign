@@ -14,7 +14,7 @@ const HeaderSection = styled('section')`
   .title {
     user-select: none;
     padding: 0 40px;
-    padding-top: calc(100vh / 9);
+    padding-top: calc(100vh / 14);
     z-index: 10;
     transform: scale(1, 1.2);
     text-shadow: white 0.1em 0.1em 0.1em;

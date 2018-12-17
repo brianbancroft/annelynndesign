@@ -24,15 +24,23 @@ const FooterSection = styled('section')`
       display: none;
     }
   }
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    @media (min-width: 900px) {
+      width: 700px;
+    }
+  }
 `
 
 const Footer = () => (
   <FooterSection id="footerSection">
-    <div className="contact-desktop">
+    <div className="container contact-desktop">
       <Contact className="contact-desktop" />
     </div>
-
-    <About />
+    <div className="container">
+      <About />
+    </div>
   </FooterSection>
 )
 

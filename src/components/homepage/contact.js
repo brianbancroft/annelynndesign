@@ -37,13 +37,14 @@ const ContactSection = styled('section')`
     z-index: 10;
     text-transform: uppercase;
     font-family: AvenirNext-UltraLight;
-    font-size: 40px;
+    font-size: 50px;
     font-weight: 500;
     letter-spacing: -0.39px;
     line-height: 49px;
     text-shadow: 0 0 0.2em #fff;
     padding-top: 30px;
     padding-left: 20px;
+    margin-left: 50px;
     margin-bottom: 20px;
   }
 
@@ -55,7 +56,7 @@ const ContactSection = styled('section')`
     line-height: 49px;
     text-shadow: 0 0 0.2em #fff;
     z-index: 10;
-    margin-left: 20px;
+    margin: 0 auto !important;
 
     @media (max-width: 620px) {
       margin-left: 0;
@@ -95,6 +96,11 @@ const ContactSection = styled('section')`
     transition: 0.6s ease-out;
   }
 
+  .form-container {
+    width: 500px;
+    margin: 0 auto;
+  }
+
   .form-field {
     font-family: AvenirNext-UltraLight;
     font-size: 15px;
@@ -111,9 +117,9 @@ const ContactSection = styled('section')`
 const Contact = () => (
   <ContactSection>
     <div className="header">Contact</div>
-    <div className="form">
+    <div className="form-container">
       <form
-        name="contact"
+        name="contact-form"
         action=""
         data-netlify="true"
         data-netlify-honeypot="bot-field"

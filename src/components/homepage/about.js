@@ -8,7 +8,7 @@ const AboutSection = styled('section')`
 
   .about__about-header {
     font-family: AvenirNext-UltraLight;
-    font-size: 40px;
+    font-size: 50px;
     color: #1e9dba;
     letter-spacing: -0.39px;
     line-height: 49px;
@@ -31,14 +31,17 @@ const AboutSection = styled('section')`
 
   .about__about-image {
     border: 1px solid #8ec73f;
-    height: 150px;
-    width: 150px;
+    height: 14vw;
+    min-height: 200px;
+    width: 14vw;
+    min-width: 200px;
     border-radius: 600px;
     overflow: hidden;
     float: left;
     z-index: 1;
     shape-outside: inset(1% round 50%);
     margin: 9px;
+    background-color: white;
   }
 
   .about-circle {
@@ -46,32 +49,35 @@ const AboutSection = styled('section')`
     position: absolute;
   }
 
-  .about-circle__circle-one {
-    border: 1px solid #1e9dba;
-    height: 700px;
-    width: 700px;
-    position: absolute;
-    left: 600px;
-    top: 1350px;
-    border-radius: 50%;
-    z-index: -1;
-  }
-
   p {
     line-height: 117%;
+    margin-bottom: 5px;
   }
+`
+
+const BigCircle = styled.div`
+  border: 1px solid #1e9dba;
+  height: 120vh;
+  width: 120vh;
+  position: fixed;
+  left: 48vw;
+  bottom: -2vw;
+  border-radius: 120vh;
+  z-index: -1;
 `
 
 const About = () => (
   <AboutSection>
-    <div className="about__about-header">ABOUT</div>
+    <BigCircle />
+    <div className="container">
+      <div className="about__about-header">ABOUT</div>
 
-    <Flex>
-      <Card width={[256, 520]} mx="auto" p={2} variant="basic">
-        <img
-          className="about__about-image"
-          src="https://source.unsplash.com/random/512x384"
-        />
+      <div>
+        {/* <img
+            className="about__about-image"
+            src="https://source.unsplash.com/random/512x384"
+          /> */}
+        <div className="about__about-image" />
         <Text fontFamily="AvenirNext-UltraLight" className="about__about-copy">
           <p>
             I am from the Ottawa River Valley, and have been a designer since
@@ -88,9 +94,8 @@ const About = () => (
             products which I've helped bring to life.
           </p>
         </Text>
-      </Card>
-    </Flex>
-    <div className="about-circle__circle-one" />
+      </div>
+    </div>
   </AboutSection>
 )
 
