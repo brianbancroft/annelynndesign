@@ -5,9 +5,9 @@ import { Header, Portfolio, Footer } from '../components/homepage'
 import './index.module.css'
 
 const Main = styled('main')`
-  body {
+  /* body {
     margin: 0 !important;
-  }
+  } */
 `
 
 class IndexPage extends Component {
