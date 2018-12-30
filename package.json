@@ -24,7 +24,8 @@
     "react-typography": "^0.16.18",
     "rebass": "^2.3.4",
     "styled-components": "^4.0.3",
-    "typography": "^0.16.18"
+    "typography": "^0.16.18",
+    "typography-theme-stern-grove": "^0.16.18"
   },
   "keywords": [
     "gatsby",

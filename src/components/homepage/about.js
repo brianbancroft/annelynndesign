@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'react-emotion'
-import { Flex, Card, Image, Text } from 'rebass'
+import { Text } from 'rebass'
 
 const AboutSection = styled('section')`
   width: 100%;
