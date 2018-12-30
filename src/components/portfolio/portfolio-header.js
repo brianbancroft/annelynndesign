@@ -10,7 +10,7 @@ const HeaderSection = styled('section')`
 
   display: grid;
   grid-template-columns: 30vw 40vw 30vw;
-  grid-template-rows: 30vh 15vh 25vh 30vh;
+  grid-template-rows: 1fr 15vh 1fr;
 
   @media (max-width: 620px) {
     grid-template-columns: 10vw 80vw 10vw;
@@ -36,7 +36,7 @@ const HeaderSection = styled('section')`
   }
 `
 
-const Header = ({
+const PortfolioHeader = ({
   backgroundColor,
   headline,
   copy,
@@ -51,4 +51,4 @@ const Header = ({
   </HeaderSection>
 )
 
-export default Header
+export default PortfolioHeader

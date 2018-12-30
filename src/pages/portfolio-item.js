@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import {
-  Header,
+  PortfolioHeader,
   ColorAndTypography,
   ConceptsAndIdeas,
   RequirementsAndProducts,
@@ -66,7 +66,7 @@ const PortfolioItem = props => {
 
   return (
     <Layout>
-      <Header
+      <PortfolioHeader
         headline={headline}
         copy={copy}
         backgroundColor={color}
