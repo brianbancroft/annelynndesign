@@ -20,6 +20,7 @@ nav,
 section,
 summary {
   display: block;
+  font-family: 'Raleway', sans-serif;
 }
 audio,
 canvas,
