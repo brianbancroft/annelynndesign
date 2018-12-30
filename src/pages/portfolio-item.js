@@ -106,9 +106,30 @@ export const pageQuery = graphql`
           id
           title
           file {
+            details {
+              size
+            }
             url
           }
+
+          resize100: resize(width: 100) {
+            src
+            width
+            height
+          }
+          resize300: resize(width: 300) {
+            src
+            width
+            height
+          }
+
+          resize400: resize(width: 400) {
+            src
+            width
+            height
+          }
         }
+
         cssClasses {
           className
         }
@@ -126,6 +147,23 @@ export const pageQuery = graphql`
           file {
             url
           }
+
+          resize100: resize(width: 100) {
+            src
+            width
+            height
+          }
+          resize300: resize(width: 300) {
+            src
+            width
+            height
+          }
+
+          resize400: resize(width: 400) {
+            src
+            width
+            height
+          }
         }
       }
       colorAndTypographyPane {
@@ -140,6 +178,23 @@ export const pageQuery = graphql`
           title
           file {
             url
+          }
+
+          resize100: resize(width: 100) {
+            src
+            width
+            height
+          }
+          resize300: resize(width: 300) {
+            src
+            width
+            height
+          }
+
+          resize400: resize(width: 400) {
+            src
+            width
+            height
           }
         }
         cssClasses {
@@ -158,6 +213,23 @@ export const pageQuery = graphql`
           title
           file {
             url
+          }
+
+          resize100: resize(width: 100) {
+            src
+            width
+            height
+          }
+          resize300: resize(width: 300) {
+            src
+            width
+            height
+          }
+
+          resize400: resize(width: 400) {
+            src
+            width
+            height
           }
         }
         cssClasses {
