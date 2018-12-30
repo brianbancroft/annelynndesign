@@ -48,7 +48,7 @@ const moduleExports = {
 }
 
 if (process.env.PREVIEW_MODE === 'true') {
-  moduleExports.plugins[0].options['host'] = 'preview.contentful.com'
+  moduleExports.plugins[1].options['host'] = 'preview.contentful.com'
 }
 
 module.exports = moduleExports
