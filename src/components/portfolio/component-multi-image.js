@@ -44,9 +44,18 @@ const MultiImageSection = styled('section')`
     color: ${props => (props.color ? props.color : 'inherit')};
   }
 `
+const ImageContainer = styled('div')`
+  background: ${props => (props.src ? `url("${props.src}")` : 'red')};
+  width: 500px;
+  height: 500px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-right: 5px;
+`
 
 const imagesLayout = images =>
-  images.map(i => <img src={i.fluid.src} key={i.id} />)
+  images.map(i => <ImageContainer src={i.fluid.src} key={i.id} />)
 
 const Copy = ({ copy } = {}) => {
   const inner = copy ? copy.copy || '' : ''

@@ -192,11 +192,24 @@ export const pageQuery = graphql`
           file {
             url
           }
-          fluid: fluid(maxWidth: 400) {
+          resolutions(width: 1600) {
+            width
+            height
             src
+            srcSet
+            aspectRatio
           }
-          fixed: fixed(width: 400) {
+          fluid(maxWidth: 500) {
             src
+            srcSet
+            sizes
+            aspectRatio
+          }
+          fixed(height: 500) {
+            src
+            width
+            height
+            aspectRatio
           }
         }
         cssClasses {
