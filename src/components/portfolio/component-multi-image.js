@@ -46,18 +46,24 @@ const MultiImageSection = styled('section')`
 `
 
 const imagesLayout = images =>
-  images.map(i => <img src={i.file.url} key={i.id} />)
+  images.map(i => <img src={i.resize400.src} key={i.id} />)
 
 const Copy = ({ copy } = {}) => {
   const inner = copy ? copy.copy || '' : ''
   return <div>{inner}</div>
 }
 
-const ComponentMultiImage = ({ color, images, copy, cssClasses } = {}) => (
+const ComponentMultiImage = ({
+  color,
+  images,
+  copy,
+  cssClasses,
+  title,
+} = {}) => (
   <MultiImageSection color={color}>
     <div className="images-container">{imagesLayout(images)}</div>
     <div className="copy-container">
-      <div className="copy-container__title">Colors and Typefaces</div>
+      <div className="copy-container__title">{title}</div>
       <Copy copy={copy} />
     </div>
   </MultiImageSection>

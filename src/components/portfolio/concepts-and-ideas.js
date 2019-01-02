@@ -7,6 +7,7 @@ const ConceptsAndIdeas = ({ conceptAndIdeas, color } = {}) => (
       <ComponentMultiImage
         key={i.id}
         color={color}
+        title={i.title}
         images={i.images}
         cssClasses={i.cssClasses}
         copy={i.copy}
