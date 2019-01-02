@@ -1,6 +1,5 @@
 import React from 'react'
 import { ComponentMultiImage } from '.'
-import { isUndefined } from 'util'
 
 const ColorAndTypography = ({ colorAndTypography, color } = {}) => (
   <>

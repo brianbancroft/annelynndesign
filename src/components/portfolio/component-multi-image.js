@@ -46,7 +46,7 @@ const MultiImageSection = styled('section')`
 `
 
 const imagesLayout = images =>
-  images.map(i => <img src={i.resize400.src} key={i.id} />)
+  images.map(i => <img src={i.fluid.src} key={i.id} />)
 
 const Copy = ({ copy } = {}) => {
   const inner = copy ? copy.copy || '' : ''

@@ -11,7 +11,6 @@ const RequirementsAndProducts = ({ requirementsAndProducts, color } = {}) => {
       copy={copy}
       image={image}
       title={title}
-      copy={title}
       color={color}
       cssClasses={cssClasses}
       imagePosition={imagePosition}

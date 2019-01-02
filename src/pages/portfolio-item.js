@@ -17,7 +17,7 @@ const PortfolioItem = props => {
     copy,
     headerSectionTextColor,
     headline,
-    title,
+    // title,
     colorAndTypographyPane,
     conceptAndIdeasPane,
     requirementsAndProductPane,
@@ -94,16 +94,19 @@ export const pageQuery = graphql`
       copy {
         copy
       }
-
       requirementsAndProductPane {
         id
         title
         copy {
           copy
         }
-
         image {
           id
+          sizes {
+            src
+            srcSet
+            sizes
+          }
           title
           file {
             details {
@@ -111,22 +114,24 @@ export const pageQuery = graphql`
             }
             url
           }
-
-          resize100: resize(width: 100) {
-            src
+          resolutions(width: 1600) {
             width
             height
+            src
+            srcSet
+            aspectRatio
           }
-          resize300: resize(width: 300) {
+          fluid(maxWidth: 500) {
             src
-            width
-            height
+            srcSet
+            sizes
+            aspectRatio
           }
-
-          resize400: resize(width: 400) {
+          fixed(height: 500) {
             src
             width
             height
+            aspectRatio
           }
         }
 
@@ -147,22 +152,8 @@ export const pageQuery = graphql`
           file {
             url
           }
-
-          resize100: resize(width: 100) {
+          fluid: fluid(maxWidth: 400) {
             src
-            width
-            height
-          }
-          resize300: resize(width: 300) {
-            src
-            width
-            height
-          }
-
-          resize400: resize(width: 400) {
-            src
-            width
-            height
           }
         }
       }
@@ -180,21 +171,8 @@ export const pageQuery = graphql`
             url
           }
 
-          resize100: resize(width: 100) {
+          fluid: fluid(maxWidth: 400) {
             src
-            width
-            height
-          }
-          resize300: resize(width: 300) {
-            src
-            width
-            height
-          }
-
-          resize400: resize(width: 400) {
-            src
-            width
-            height
           }
         }
         cssClasses {
@@ -214,22 +192,11 @@ export const pageQuery = graphql`
           file {
             url
           }
-
-          resize100: resize(width: 100) {
+          fluid: fluid(maxWidth: 400) {
             src
-            width
-            height
           }
-          resize300: resize(width: 300) {
+          fixed: fixed(width: 400) {
             src
-            width
-            height
-          }
-
-          resize400: resize(width: 400) {
-            src
-            width
-            height
           }
         }
         cssClasses {
