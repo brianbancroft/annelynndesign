@@ -66,7 +66,6 @@ const ComponentSingleImage = ({
   color,
   imagePosition,
 } = {}) => {
-  console.log('image -> ', image)
   return (
     <SingleImage color={color} imagePosition={imagePosition}>
       <ImageContainer src={image.fluid.src} />
