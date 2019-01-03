@@ -5,7 +5,9 @@ const MultiImageSection = styled('section')`
   width: 100vw;
   height: 80vh;
   background: white;
-
+  outline-style: double;
+  outline-color: red;
+/*
   display: flex;
   flex-direction: ${props =>
     props && props.imagePosition
@@ -13,7 +15,14 @@ const MultiImageSection = styled('section')`
         ? 'row'
         : 'row-reverse'
       : 'column'};
-  justify-content: space-around;
+  justify-content: space-around; */
+
+  display: grid;
+  grid-template-rows: 1fr 100px;
+  grid-template-columns: 50px 250px 600px 50px;
+  grid-row-gap: 10px;
+  grid-column-gap: 30px;
+
   align-items: center;
   margin: 10vw 0;
   color: ${props => (props.color ? props.color : 'inherit')};
@@ -24,30 +33,30 @@ const MultiImageSection = styled('section')`
     margin: 0 auto;
     display: flex;
     justify-content: center;
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
   }
 
-  .images-container img {
-    margin-right: 5px;
-  }
+  .title {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
 
-  .copy-container {
-    display: grid;
-    grid-template-rows: 80px;
-    grid-template-columns: 250px 600px;
-    grid-column-gap: 30px;
-    color: #222;
-  }
-
-  .copy-container__title {
     font-size: 1.2rem;
     font-weight: 600;
     color: ${props => (props.color ? props.color : 'inherit')};
   }
+
+  .copy {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+    color: #222;
+  }
 `
 const ImageContainer = styled('div')`
   background: ${props => (props.src ? `url("${props.src}")` : 'red')};
-  width: 500px;
-  height: 500px;
+  width: 800px;
+  height: 400px;
+  max-height: 500px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
@@ -71,8 +80,8 @@ const ComponentMultiImage = ({
 } = {}) => (
   <MultiImageSection color={color}>
     <div className="images-container">{imagesLayout(images)}</div>
-    <div className="copy-container">
-      <div className="copy-container__title">{title}</div>
+    <div className="title">{title}</div>
+    <div className="copy">
       <Copy copy={copy} />
     </div>
   </MultiImageSection>
