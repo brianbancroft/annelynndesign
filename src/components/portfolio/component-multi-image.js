@@ -53,6 +53,7 @@ const ImageContainer = styled('div')`
   background-repeat: no-repeat;
   background-position: center center;
   margin-right: 5px;
+  cursor: pointer;
 `
 
 const Modal = styled('div')`
