@@ -121,7 +121,6 @@ class ComponentMultiImage extends Component {
     const handleClose = () => this.setState({ showModal: false })
 
     const imagesLayout = images => {
-      console.log('Images in images layout -> ', images)
       return images.map(i => (
         <ImageContainer
           src={i.fluid.src}
