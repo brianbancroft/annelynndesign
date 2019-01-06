@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import styled from 'react-emotion'
 import { Header, Portfolio, Footer } from '../components/homepage'
 import './index.module.css'
+import Helmet from 'react-helmet'
 
 const Main = styled('main')`
   /* body {
@@ -47,11 +48,28 @@ class IndexPage extends Component {
 
   render() {
     return (
-      <Main>
-        <Header />
-        <Portfolio data={this.props.data} />
-        <Footer />
-      </Main>
+      <>
+        <Helmet
+          title={`Anne-Lynn Design`}
+          meta={[
+            {
+              name: 'description',
+              content: `The Portfolio and Contact Information Anne-Lynn Bancroft, a Graphic Designer specializing in packaging and print`,
+            },
+            {
+              name: 'keywords',
+              content: `Anne-Lynn Bancroft, annelynn design, anne-lynn design, print, packaging, design`,
+            },
+          ]}
+        >
+          <html lang="en" />
+        </Helmet>
+        <Main>
+          <Header />
+          <Portfolio data={this.props.data} />
+          <Footer />
+        </Main>
+      </>
     )
   }
 }

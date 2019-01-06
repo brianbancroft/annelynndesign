@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Helmet from 'react-helmet'
 
 import Layout from '../components/layout'
 import {
@@ -17,7 +18,7 @@ const PortfolioItem = props => {
     copy,
     headerSectionTextColor,
     headline,
-    // title,
+    title,
     colorAndTypographyPane,
     conceptAndIdeasPane,
     requirementsAndProductPane,
@@ -65,18 +66,35 @@ const PortfolioItem = props => {
   }
 
   return (
-    <Layout>
-      <PortfolioHeader
-        headline={headline}
-        copy={copy}
-        backgroundColor={color}
-        headerSectionTextColor={headerSectionTextColor}
-      />
-      {requirementsAndProducts(requirementsAndProductPane)}
-      {conceptAndIdeas(conceptAndIdeasPane)}
-      {colorAndTypography(colorAndTypographyPane)}
-      {supportingConcepts(supportingConceptsPane)}
-    </Layout>
+    <>
+      <Helmet
+        title={`${title} - Anne-Lynn Design`}
+        meta={[
+          {
+            name: 'description',
+            content: copy.copy,
+          },
+          {
+            name: 'keywords',
+            content: `anne-lynn hanna, annelynn design, anne-lynn design, ${title}`,
+          },
+        ]}
+      >
+        <html lang="en" />
+      </Helmet>
+      <Layout>
+        <PortfolioHeader
+          headline={headline}
+          copy={copy}
+          backgroundColor={color}
+          headerSectionTextColor={headerSectionTextColor}
+        />
+        {requirementsAndProducts(requirementsAndProductPane)}
+        {conceptAndIdeas(conceptAndIdeasPane)}
+        {colorAndTypography(colorAndTypographyPane)}
+        {supportingConcepts(supportingConceptsPane)}
+      </Layout>
+    </>
   )
 }
 
