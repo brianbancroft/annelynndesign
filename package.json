@@ -21,6 +21,8 @@
     "react-emotion": "^9.2.12",
     "react-helmet": "^5.2.0",
     "rebass": "^2.3.4",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.84.0",
     "styled-components": "^4.0.3"
   },
   "keywords": [
