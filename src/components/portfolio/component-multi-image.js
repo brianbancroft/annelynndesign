@@ -5,12 +5,10 @@ const MultiImageSection = styled('section')`
   width: 100vw;
   height: 80vh;
   background: white;
-  outline-style: double;
-  outline-color: red;
 
   display: grid;
   grid-template-rows: 1fr 100px;
-  grid-template-columns: 50px 250px 600px 50px;
+  grid-template-columns: 50px 250px 600px 1fr 50px;
   grid-row-gap: 10px;
   grid-column-gap: 30px;
 
@@ -24,7 +22,7 @@ const MultiImageSection = styled('section')`
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    grid-column: 2 / 4;
+    grid-column: 2 / 5;
     grid-row: 1 / 2;
     background: white;
   }
