@@ -22,7 +22,6 @@ const ContactSection = styled('section')`
   grid-row-gap: 40px;
   flex-direction: column;
   color: #1e9dba;
-  font-family: AvenirNext-UltraLight;
 
   @media (max-width: 620px) {
     padding-left: 0 10px;
@@ -36,7 +35,6 @@ const ContactSection = styled('section')`
   .header {
     z-index: 10;
     text-transform: uppercase;
-    font-family: AvenirNext-UltraLight;
     font-size: 50px;
     font-weight: 500;
     letter-spacing: -0.39px;
@@ -50,7 +48,6 @@ const ContactSection = styled('section')`
 
   .contact-form {
     text-transform: uppercase;
-    font-family: AvenirNext-UltraLight;
     font-size: 20px;
     letter-spacing: -0.39px;
     line-height: 49px;
@@ -102,7 +99,6 @@ const ContactSection = styled('section')`
   }
 
   .form-field {
-    font-family: AvenirNext-UltraLight;
     font-size: 15px;
     padding: 10px 20px;
     background-color: rgba(30, 157, 186, 0.1);

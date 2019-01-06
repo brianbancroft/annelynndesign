@@ -94,7 +94,6 @@ const PortfolioItem = styled('div')`
     text-transform: lowercase;
     letter-spacing: 1px;
     color: #1e9dba;
-    font-family: AvenirNext-UltraLight;
   }
 
 

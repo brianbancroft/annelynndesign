@@ -17,7 +17,6 @@ const SingleImage = styled('section')`
   align-items: center;
   margin: 10vw 0;
   color: ${props => (props.color ? props.color : 'inherit')};
-  font-family: AvenirNext-UltraLight;
 
   .copy-container {
     display: grid;
@@ -30,7 +29,9 @@ const SingleImage = styled('section')`
 
   .copy-container__title {
     font-size: 1.2rem;
-    font-weight: 600;
+    font-family: 'Raleway Semi-Bold', sans-serif;
+    text-transform: capitalize;
+    font-weight: 500;
     color: ${props => (props.color ? props.color : 'inherit')};
     grid-column: 2 / 3;
   }

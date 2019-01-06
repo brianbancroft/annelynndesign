@@ -15,7 +15,6 @@ const MultiImageSection = styled('section')`
   align-items: center;
   margin: 10vw 0;
   color: ${props => (props.color ? props.color : 'inherit')};
-  font-family: AvenirNext-UltraLight;
 
   .images-container {
     width: 80%;
@@ -32,7 +31,9 @@ const MultiImageSection = styled('section')`
     grid-column: 2 / 3;
 
     font-size: 1.2rem;
-    font-weight: 600;
+    font-family: 'Raleway Semi-Bold', sans-serif;
+    text-transform: capitalize;
+    font-weight: 500;
     color: ${props => (props.color ? props.color : 'inherit')};
   }
 

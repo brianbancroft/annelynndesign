@@ -1,13 +1,11 @@
 import React from 'react'
 import styled from 'react-emotion'
-import { Text } from 'rebass'
 
 const AboutSection = styled('section')`
   width: 100%;
   height: 100%;
 
   .about__about-header {
-    font-family: AvenirNext-UltraLight;
     font-size: 50px;
     color: #1e9dba;
     letter-spacing: -0.39px;
@@ -21,9 +19,7 @@ const AboutSection = styled('section')`
   }
 
   .about__about-copy {
-    text-transform: lowercase;
     text-align: justify;
-    font-family: AvenirNext-UltraLight;
     font-size: 18px;
     color: #1e9dba;
     line-height: 17px;
@@ -95,7 +91,7 @@ const About = () => (
             src="https://source.unsplash.com/random/512x384"
           /> */}
         <div className="about__about-image" />
-        <Text fontFamily="AvenirNext-UltraLight" className="about__about-copy">
+        <div className="about__about-copy">
           <p>
             I am from the Ottawa River Valley, and have been a designer since
             2007 in in-house, agency and contracting roles for both print and
@@ -110,7 +106,7 @@ const About = () => (
             love seeing my designs, and keep a collection of my favorite
             products which I've helped bring to life.
           </p>
-        </Text>
+        </div>
       </div>
     </div>
   </AboutSection>

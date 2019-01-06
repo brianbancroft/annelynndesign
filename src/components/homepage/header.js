@@ -61,7 +61,6 @@ const HeaderSection = styled('section')`
   @media (max-width: 620px) {
     .title {
       text-transform: uppercase;
-      font-family: AvenirNext-UltraLight;
       font-size: 14vw;
       color: #1e9dba;
       padding-top: 15px;

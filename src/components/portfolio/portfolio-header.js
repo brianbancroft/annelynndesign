@@ -4,7 +4,6 @@ import styled from 'react-emotion'
 const HeaderSection = styled('section')`
   background: ${props => props.backgroundColor || '#1402ba'};
   color: ${props => props.headerSectionTextColor || '#efefef'};
-  font-family: AvenirNext-UltraLight;
   width: 100vw;
   height: 100vh;
 
@@ -17,6 +16,7 @@ const HeaderSection = styled('section')`
   }
 
   .header--headline {
+    font-family: 'Raleway Semi-Bold', sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 30px;
