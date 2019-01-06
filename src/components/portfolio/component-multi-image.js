@@ -7,15 +7,6 @@ const MultiImageSection = styled('section')`
   background: white;
   outline-style: double;
   outline-color: red;
-/*
-  display: flex;
-  flex-direction: ${props =>
-    props && props.imagePosition
-      ? props.imagePosition === 'image-left'
-        ? 'row'
-        : 'row-reverse'
-      : 'column'};
-  justify-content: space-around; */
 
   display: grid;
   grid-template-rows: 1fr 100px;
@@ -35,6 +26,7 @@ const MultiImageSection = styled('section')`
     justify-content: center;
     grid-column: 2 / 4;
     grid-row: 1 / 2;
+    background: white;
   }
 
   .title {
@@ -67,29 +59,46 @@ const Modal = styled('div')`
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 123;
   top: 0;
-
   color: white;
-
-  display: grid;
-  flex: 1; /* fg:1, fs:1, fb:0 */
-
-  grid-template-rows: 25px 50px 1fr 50px;
-  grid-template-columns: 20px 70px 1fr 70px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  animation: fadein 1s;
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
   h1.title {
     text-align: center;
-    grid-row: 2 / 3;
-    grid-column: 1 / 6;
+    height: 20vh;
+    width: 100vw;
+    margin-top: 15px;
   }
-  .images-container {
-    grid-row: 3 / 4;
-    grid-column: 3 / 4;
-    background: white;
+
+  .image-container {
+    height: 80vh;
+    width: 100vw;
     min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: ease-out 2s;
+
+    img {
+      max-width: 80vw;
+      max-height: 80vh;
+    }
   }
 `
 
@@ -98,36 +107,46 @@ class ComponentMultiImage extends Component {
     super(props)
     this.state = {
       showModal: false,
+      modalImage: undefined,
+      title: undefined,
     }
   }
 
   render() {
     const { color, images, copy, cssClasses, title } = this.props
 
-    const handleOpen = () => this.setState({ showModal: true })
+    const handleOpen = ({ modalImage, title } = {}) => () =>
+      this.setState({ showModal: true, modalImage, title })
     const handleClose = () => this.setState({ showModal: false })
 
-    const imagesLayout = images =>
-      images.map(i => (
-        <ImageContainer src={i.fluid.src} key={i.id} onClick={handleOpen} />
+    const imagesLayout = images => {
+      console.log('Images in images layout -> ', images)
+      return images.map(i => (
+        <ImageContainer
+          src={i.fluid.src}
+          key={i.id}
+          onClick={handleOpen({ modalImage: i.file.url, title })}
+        />
       ))
+    }
 
     const Copy = ({ copy } = {}) => {
       const inner = copy ? copy.copy || '' : ''
       return <div>{inner}</div>
     }
 
-    const ImageModal = ({ title, images } = {}) =>
-      this.state.showModal ? (
+    const ImageModal = () => {
+      return this.state.showModal ? (
         <Modal onClick={handleClose}>
-          <h1 className="title">This is a modal title</h1>
-          {/* <div className="previous-select">Left</div> */}
-          <div className="images-container" />
-          {/* <div className="right-select">Right</div> */}
+          <h1 className="title">{this.state.title}</h1>
+          <div className="image-container">
+            <img src={this.state.modalImage} />
+          </div>
         </Modal>
       ) : (
         <></>
       )
+    }
 
     return (
       <>
