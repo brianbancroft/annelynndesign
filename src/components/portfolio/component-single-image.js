@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'react-emotion'
 
 const SingleImage = styled('section')`
+  z-index: 10;
   width: 100vw;
   height: 80vh;
   background: white;

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from 'react-emotion'
 
 const MultiImageSection = styled('section')`
+  z-index: 10;
   width: 100vw;
   height: 80vh;
   background: white;

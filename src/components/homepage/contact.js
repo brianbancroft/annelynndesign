@@ -35,8 +35,9 @@ const ContactSection = styled('section')`
   .header {
     z-index: 10;
     text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
     font-size: 50px;
-    font-weight: 500;
     letter-spacing: -0.39px;
     line-height: 49px;
     text-shadow: 0 0 0.2em #fff;

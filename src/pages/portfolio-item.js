@@ -2,14 +2,15 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
-import Layout from '../components/layout'
 import {
   PortfolioHeader,
   ColorAndTypography,
   ConceptsAndIdeas,
   RequirementsAndProducts,
   SupportingConcepts,
+  Footer,
 } from '../components/portfolio'
+import './portfolio-item.module.css'
 
 const PortfolioItem = props => {
   const { contentfulPortfolioItem: item } = props.data
@@ -82,18 +83,21 @@ const PortfolioItem = props => {
       >
         <html lang="en" />
       </Helmet>
-      <Layout>
-        <PortfolioHeader
-          headline={headline}
-          copy={copy}
-          backgroundColor={color}
-          headerSectionTextColor={headerSectionTextColor}
-        />
-        {requirementsAndProducts(requirementsAndProductPane)}
-        {conceptAndIdeas(conceptAndIdeasPane)}
-        {colorAndTypography(colorAndTypographyPane)}
-        {supportingConcepts(supportingConceptsPane)}
-      </Layout>
+      <PortfolioHeader
+        headline={headline}
+        copy={copy}
+        backgroundColor={color}
+        headerSectionTextColor={headerSectionTextColor}
+      />
+      {requirementsAndProducts(requirementsAndProductPane)}
+      {conceptAndIdeas(conceptAndIdeasPane)}
+      {colorAndTypography(colorAndTypographyPane)}
+      {supportingConcepts(supportingConceptsPane)}
+      <div
+        className="spacer"
+        style={{ height: '30px', width: '100vw', zIndex: 10 }}
+      />
+      <Footer color={color} />
     </>
   )
 }

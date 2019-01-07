@@ -8,6 +8,7 @@ const ScrollIconLink = styled('a')`
   padding-top: 70px;
   z-index: 2;
   display: inline-block;
+  cursor: pointer;
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
   color: #1e9dba;
@@ -63,6 +64,38 @@ const ScrollIconLink = styled('a')`
     }
   }
 `
+
+// document.getElementsByTagName('button')[0].onclick = function() {
+//   scrollTo(document.body, 0, 1250)
+// }
+
+function scrollTo(element, to, duration) {
+  var start = element.scrollTop,
+    change = to - start,
+    currentTime = 0,
+    increment = 20
+
+  var animateScroll = function() {
+    currentTime += increment
+    var val = Math.easeInOutQuad(currentTime, start, change, duration)
+    element.scrollTop = val
+    if (currentTime < duration) {
+      setTimeout(animateScroll, increment)
+    }
+  }
+  animateScroll()
+}
+
+//t = current time
+//b = start value
+//c = change in value
+//d = duration
+Math.easeInOutQuad = function(time, initialTime, deltaTime, elapsedTime) {
+  time /= deltaTime / 2
+  if (time < 1) return (elapsedTime / 2) * time * time + initialTime
+  time--
+  return (-elapsedTime / 2) * (time * (time - 2) - 1) + initialTime
+}
 
 const ScrollIcon = () => {
   return (
