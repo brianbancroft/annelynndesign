@@ -79,6 +79,10 @@ const PortfolioItem = props => {
             name: 'keywords',
             content: `anne-lynn hanna, annelynn design, anne-lynn design, ${title}`,
           },
+          {
+            name: 'theme-color',
+            content: color,
+          },
         ]}
       >
         <html lang="en" />
