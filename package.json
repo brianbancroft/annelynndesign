@@ -20,6 +20,7 @@
     "react-dom": "^16.5.1",
     "react-emotion": "^9.2.12",
     "react-helmet": "^5.2.0",
+    "react-slick": "^0.23.2",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.84.0",
     "styled-components": "^4.0.3"
