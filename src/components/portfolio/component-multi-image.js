@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'react-emotion'
+import { ImageModal } from '.'
 
 const MultiImageSection = styled('section')`
   z-index: 10;
@@ -56,53 +57,6 @@ const ImageContainer = styled('div')`
   cursor: pointer;
 `
 
-const Modal = styled('div')`
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 123;
-  top: 0;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  animation: fadein 1s;
-
-  @keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  h1.title {
-    text-align: center;
-    height: 20vh;
-    width: 100vw;
-    margin-top: 15px;
-  }
-
-  .image-container {
-    height: 80vh;
-    width: 100vw;
-    min-height: 700px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    animation: ease-out 2s;
-
-    img {
-      max-width: 80vw;
-      max-height: 80vh;
-    }
-  }
-`
-
 class ComponentMultiImage extends Component {
   constructor(props) {
     super(props)
@@ -135,22 +89,15 @@ class ComponentMultiImage extends Component {
       return <div>{inner}</div>
     }
 
-    const ImageModal = () => {
-      return this.state.showModal ? (
-        <Modal onClick={handleClose}>
-          <h1 className="title">{this.state.title}</h1>
-          <div className="image-container">
-            <img src={this.state.modalImage} />
-          </div>
-        </Modal>
-      ) : (
-        <></>
-      )
-    }
-
     return (
       <>
-        <ImageModal id="imageModal" />
+        <ImageModal
+          id="imageModal"
+          display={this.state.showModal}
+          title={this.state.title}
+          modalImage={this.state.modalImage}
+          handleClose={handleClose}
+        />
         <MultiImageSection color={color}>
           <div className="images-container">{imagesLayout(images)}</div>
           <div className="title">{title}</div>
