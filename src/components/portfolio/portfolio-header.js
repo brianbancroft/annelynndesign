@@ -2,6 +2,15 @@ import React from 'react'
 import styled from 'react-emotion'
 
 const HeaderSection = styled('section')`
+  @media (max-width: 620px) {
+    grid-template-columns: 10vw 80vw 10vw;
+    grid-template-rows: 20vh 28vh 1fr;
+
+    .header--headline {
+      font-size: 1.5rem !important;
+    }
+  }
+
   background: ${props => props.backgroundColor || '#1402ba'};
   color: ${props => props.headerSectionTextColor || '#efefef'};
   width: 100vw;
@@ -10,10 +19,6 @@ const HeaderSection = styled('section')`
   display: grid;
   grid-template-columns: 30vw 40vw 30vw;
   grid-template-rows: 1fr 15vh 1fr;
-
-  @media (max-width: 620px) {
-    grid-template-columns: 10vw 80vw 10vw;
-  }
 
   .header--headline {
     font-family: 'Raleway Semi-Bold', sans-serif;
