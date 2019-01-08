@@ -26,7 +26,7 @@ const Modal = styled('div')`
 
   h1.title {
     text-align: center;
-    height: 20vh;
+    height: 5vh;
     width: 100vw;
     margin-top: 15px;
   }
@@ -34,7 +34,6 @@ const Modal = styled('div')`
   .image-container {
     height: 80vh;
     width: 100vw;
-    min-height: 700px;
     display: flex;
     align-items: center;
     justify-content: center;
