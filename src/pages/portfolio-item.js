@@ -87,20 +87,18 @@ const PortfolioItem = props => {
       >
         <html lang="en" />
       </Helmet>
-      <PortfolioHeader
-        headline={headline}
-        copy={copy}
-        backgroundColor={color}
-        headerSectionTextColor={headerSectionTextColor}
-      />
-      {requirementsAndProducts(requirementsAndProductPane)}
-      {conceptAndIdeas(conceptAndIdeasPane)}
-      {colorAndTypography(colorAndTypographyPane)}
-      {supportingConcepts(supportingConceptsPane)}
-      <div
-        className="spacer"
-        style={{ height: '30px', width: '100vw', zIndex: 10 }}
-      />
+      <div style={{ zIndex: 5, background: 'white', marginBottom: '65px' }}>
+        <PortfolioHeader
+          headline={headline}
+          copy={copy}
+          backgroundColor={color}
+          headerSectionTextColor={headerSectionTextColor}
+        />
+        {requirementsAndProducts(requirementsAndProductPane)}
+        {conceptAndIdeas(conceptAndIdeasPane)}
+        {colorAndTypography(colorAndTypographyPane)}
+        {supportingConcepts(supportingConceptsPane)}
+      </div>
       <Footer color={color} />
     </>
   )

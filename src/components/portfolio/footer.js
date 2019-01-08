@@ -9,7 +9,6 @@ const FooterSection = styled('section')`
   height: 65px;
   width: 100vw;
   background: ${props => (props && props.color ? props.color : '#aaf')};
-  z-index: 1;
 `
 
 const Footer = ({ color } = {}) => (

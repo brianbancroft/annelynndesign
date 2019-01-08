@@ -58,6 +58,12 @@ const ScrollIconLink = styled('div')`
       opacity: 0;
     }
   }
+
+  @media (max-width: 650px) {
+    span {
+      left: 40vw;
+    }
+  }
 `
 
 const ScrollIcon = () => {
