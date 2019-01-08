@@ -27,12 +27,12 @@ const ScrollIconLink = styled('div')`
     border-bottom: 3px solid white;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
-    -webkit-animation: sdb05 4s infinite;
-    animation: sdb05 4s infinite;
+    -webkit-animation: goleft 4s infinite;
+    animation: goleft 4s infinite;
     box-sizing: border-box;
   }
 
-  @-webkit-keyframes sdb05 {
+  @-webkit-keyframes goleft {
     0% {
       -webkit-transform: rotate(45deg) translate(0, 0);
       opacity: 0;
@@ -45,7 +45,7 @@ const ScrollIconLink = styled('div')`
       opacity: 0;
     }
   }
-  @keyframes sdb05 {
+  @keyframes goleft {
     0% {
       transform: rotate(45deg) translate(0, 0);
       opacity: 0;
