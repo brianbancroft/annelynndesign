@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'react-emotion'
-import { ImageModal } from '.'
+import { ImageModal, ImageSlider } from '.'
 
 const MultiImageSection = styled('section')`
   z-index: 10;
@@ -9,8 +9,8 @@ const MultiImageSection = styled('section')`
   background: white;
 
   display: grid;
-  grid-template-rows: 1fr 100px;
-  grid-template-columns: 50px 250px 600px 1fr 50px;
+  grid-template-rows: 1fr 100px 400px 100px;
+  grid-template-columns: 50px 20vw 20vw 1fr 50px;
   grid-row-gap: 10px;
   grid-column-gap: 30px;
 
@@ -18,19 +18,36 @@ const MultiImageSection = styled('section')`
   margin: 10vw 0;
   color: ${props => (props.color ? props.color : 'inherit')};
 
+  @media (max-width: 600px) {
+    display: flex;
+    width: 90vw;
+    height: 90vw;
+    margin: 5vh 5vw;
+
+    .images-container {
+      height: 50vw;
+    }
+    .title {
+      height: 100px;
+    }
+
+    .copy {
+    }
+  }
+
   .images-container {
     width: 80%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     grid-column: 2 / 5;
-    grid-row: 1 / 2;
+    grid-row: 1 / 3;
     background: white;
   }
 
   .title {
-    grid-row: 2 / 3;
-    grid-column: 2 / 3;
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
 
     font-size: 1.2rem;
     font-family: 'Raleway Semi-Bold', sans-serif;
@@ -40,8 +57,8 @@ const MultiImageSection = styled('section')`
   }
 
   .copy {
-    grid-row: 2 / 3;
-    grid-column: 3 / 4;
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
     color: #222;
   }
 `
@@ -55,6 +72,20 @@ const ImageContainer = styled('div')`
   background-position: center center;
   margin-right: 5px;
   cursor: pointer;
+`
+
+const MobileLayout = styled('div')`
+  display: none;
+  @media (max-width: 600px) {
+    display: block;
+  }
+`
+
+const DesktopLayout = styled('div')`
+  display: block;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `
 
 class ComponentMultiImage extends Component {
@@ -89,17 +120,30 @@ class ComponentMultiImage extends Component {
       return <div>{inner}</div>
     }
 
+    var settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    }
+
     return (
       <>
-        <ImageModal
+        {/* <ImageModal
           id="imageModal"
           display={this.state.showModal}
           title={this.state.title}
           modalImage={this.state.modalImage}
           handleClose={handleClose}
-        />
+        /> */}
         <MultiImageSection color={color}>
-          <div className="images-container">{imagesLayout(images)}</div>
+          <div />
+          <div />
+          <div className="images-container">
+            <MobileLayout>Mobile, Baby!</MobileLayout>
+            <DesktopLayout>{imagesLayout(images)}</DesktopLayout>
+          </div>
           <div className="title">{title}</div>
           <div className="copy">
             <Copy copy={copy} />

@@ -9,8 +9,11 @@ import {
   RequirementsAndProducts,
   SupportingConcepts,
   Footer,
+  ImageSlider,
 } from '../components/portfolio'
 import './portfolio-item.module.css'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 const PortfolioItem = props => {
   const { contentfulPortfolioItem: item } = props.data
@@ -94,10 +97,11 @@ const PortfolioItem = props => {
           backgroundColor={color}
           headerSectionTextColor={headerSectionTextColor}
         />
-        {requirementsAndProducts(requirementsAndProductPane)}
-        {conceptAndIdeas(conceptAndIdeasPane)}
-        {colorAndTypography(colorAndTypographyPane)}
-        {supportingConcepts(supportingConceptsPane)}
+        {/* {requirementsAndProducts(requirementsAndProductPane)} */}
+        {/* {conceptAndIdeas(conceptAndIdeasPane)} */}
+        {/* {colorAndTypography(colorAndTypographyPane)} */}
+        {/* {supportingConcepts(supportingConceptsPane)} */}
+        <ImageSlider />
       </div>
       <Footer color={color} />
     </>
