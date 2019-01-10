@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'react-emotion'
-import { ImageModal, ImageSlider } from '.'
+import { ImageModal, MobileImageSlider } from '.'
 
 const MultiImageSection = styled('section')`
   z-index: 10;
@@ -20,6 +20,7 @@ const MultiImageSection = styled('section')`
 
   @media (max-width: 600px) {
     display: flex;
+    flex-direction: column;
     width: 90vw;
     height: 90vw;
     margin: 5vh 5vw;
@@ -75,10 +76,10 @@ const ImageContainer = styled('div')`
 `
 
 const MobileLayout = styled('div')`
-  display: none;
-  @media (max-width: 600px) {
-    display: block;
-  }
+  /* display: none; */
+  /* @media (/max-width: 600px) { */
+  display: block;
+  /* } */
 `
 
 const DesktopLayout = styled('div')`
@@ -130,19 +131,23 @@ class ComponentMultiImage extends Component {
 
     return (
       <>
-        {/* <ImageModal
+        <ImageModal
           id="imageModal"
           display={this.state.showModal}
           title={this.state.title}
           modalImage={this.state.modalImage}
           handleClose={handleClose}
-        /> */}
+        />
         <MultiImageSection color={color}>
-          <div />
-          <div />
           <div className="images-container">
-            <MobileLayout>Mobile, Baby!</MobileLayout>
-            <DesktopLayout>{imagesLayout(images)}</DesktopLayout>
+            <MobileLayout>
+              <MobileImageSlider
+                className="mobile-image-slider"
+                handleOpen={handleOpen}
+                images={images}
+              />
+            </MobileLayout>
+            {/* <DesktopLayout>{imagesLayout(images)}</DesktopLayout> */}
           </div>
           <div className="title">{title}</div>
           <div className="copy">

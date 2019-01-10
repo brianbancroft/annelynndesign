@@ -98,10 +98,9 @@ const PortfolioItem = props => {
           headerSectionTextColor={headerSectionTextColor}
         />
         {/* {requirementsAndProducts(requirementsAndProductPane)} */}
-        {/* {conceptAndIdeas(conceptAndIdeasPane)} */}
+        {conceptAndIdeas(conceptAndIdeasPane)}
         {/* {colorAndTypography(colorAndTypographyPane)} */}
         {/* {supportingConcepts(supportingConceptsPane)} */}
-        <ImageSlider />
       </div>
       <Footer color={color} />
     </>
@@ -202,9 +201,6 @@ export const pageQuery = graphql`
           fluid: fluid(maxWidth: 400) {
             src
           }
-        }
-        cssClasses {
-          className
         }
       }
       supportingConceptsPane {

@@ -23,7 +23,7 @@ const ImageSliderContainer = styled('div')`
 
 var settings = {
   dots: false,
-  infinite: true,
+  infinite: false,
   speed: 400,
   slidesToShow: 1,
   slidesToScroll: 1,
