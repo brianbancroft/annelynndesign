@@ -108,13 +108,9 @@ const PortfolioItem = props => {
           backgroundColor={color}
           headerSectionTextColor={headerSectionTextColor}
         />
-        {/* <FullSizeSection> */}
-        {/* <ImageSlider />
-        </FullSizeSection> */}
-
-        {/* {requirementsAndProducts(requirementsAndProductPane)} */}
-        {/* {conceptAndIdeas(conceptAndIdeasPane)} */}
-        {/* {colorAndTypography(colorAndTypographyPane)} */}
+        {requirementsAndProducts(requirementsAndProductPane)}
+        {conceptAndIdeas(conceptAndIdeasPane)}
+        {colorAndTypography(colorAndTypographyPane)}
         {supportingConcepts(supportingConceptsPane)}
       </div>
       <Footer color={color} />

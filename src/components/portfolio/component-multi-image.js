@@ -73,13 +73,12 @@ const ImageContainer = styled('div')`
 `
 
 const MobileLayout = styled('div')`
-  /* display: none; */
-  /* @media (/max-width: 600px) { */
-  width: 100%;
-  height: 100%;
-  display: block;
-  /* margin-left: 136vw; */
-  /* } */
+  display: none;
+  @media (max-width: 600px) {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
 `
 
 const DesktopLayout = styled('div')`
@@ -140,7 +139,7 @@ class ComponentMultiImage extends Component {
                 images={images}
               />
             </MobileLayout>
-            {/* <DesktopLayout>{imagesLayout(images)}</DesktopLayout> */}
+            <DesktopLayout>{imagesLayout(images)}</DesktopLayout>
           </div>
           <div className="title">{title}</div>
           <div className="copy">
