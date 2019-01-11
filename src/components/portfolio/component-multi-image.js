@@ -37,7 +37,7 @@ const MultiImageSection = styled('section')`
   }
 
   .images-container {
-    width: 80%;
+    /* width: 80%; */
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -78,6 +78,8 @@ const ImageContainer = styled('div')`
 const MobileLayout = styled('div')`
   /* display: none; */
   /* @media (/max-width: 600px) { */
+  width: 100%;
+  height: 100%;
   display: block;
   /* } */
 `
@@ -121,14 +123,6 @@ class ComponentMultiImage extends Component {
       return <div>{inner}</div>
     }
 
-    var settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-    }
-
     return (
       <>
         <ImageModal
@@ -143,6 +137,7 @@ class ComponentMultiImage extends Component {
             <MobileLayout>
               <MobileImageSlider
                 className="mobile-image-slider"
+                title={title}
                 handleOpen={handleOpen}
                 images={images}
               />

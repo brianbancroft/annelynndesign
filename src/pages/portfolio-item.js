@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
+import styled from 'react-emotion'
 
 import {
   PortfolioHeader,
@@ -14,6 +15,11 @@ import {
 import './portfolio-item.module.css'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+
+const FullSizeSection = styled('section')`
+  width: 100vw;
+  height: 100vh;
+`
 
 const PortfolioItem = props => {
   const { contentfulPortfolioItem: item } = props.data
@@ -88,6 +94,10 @@ const PortfolioItem = props => {
           },
         ]}
       >
+        <link
+          rel="stylesheet"
+          href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.1/dist/semantic.min.css"
+        />
         <html lang="en" />
       </Helmet>
       <div style={{ zIndex: 5, background: 'white', marginBottom: '65px' }}>
@@ -97,10 +107,14 @@ const PortfolioItem = props => {
           backgroundColor={color}
           headerSectionTextColor={headerSectionTextColor}
         />
+        {/* <FullSizeSection> */}
+        {/* <ImageSlider />
+        </FullSizeSection> */}
+
         {/* {requirementsAndProducts(requirementsAndProductPane)} */}
-        {conceptAndIdeas(conceptAndIdeasPane)}
+        {/* {conceptAndIdeas(conceptAndIdeasPane)} */}
         {/* {colorAndTypography(colorAndTypographyPane)} */}
-        {/* {supportingConcepts(supportingConceptsPane)} */}
+        {supportingConcepts(supportingConceptsPane)}
       </div>
       <Footer color={color} />
     </>

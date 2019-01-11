@@ -1,10 +1,16 @@
 import React from 'react'
 import Slider from 'react-slick'
 import styled from 'react-emotion'
+import { Card } from 'semantic-ui-react'
+import './image-slider.module.css'
 
 const ImageSliderContainer = styled('div')`
+  position: relative;
+  left: -75vw;
   max-height: 400px;
+  width: 250vw;
   overflow: hidden;
+  margin: 10px auto;
 
   div img {
     margin: 0 auto;
@@ -23,24 +29,50 @@ const ImageSliderContainer = styled('div')`
 
 var settings = {
   dots: false,
-  infinite: false,
+  infinite: true,
   speed: 400,
-  slidesToShow: 1,
-  slidesToScroll: 1,
+  slidesToShow: 3,
+  slidesToScroll: 2,
 }
 
 const ImageSlider = () => (
   <ImageSliderContainer>
     <Slider {...settings}>
-      <div>
-        <div className="image-container" />
-      </div>
-      <div>
-        <div className="image-container" />
-      </div>
-      <div>
-        <div className="image-container" />
-      </div>
+      <Card style={{ padding: '0 10px' }}>
+        <Card.Content>
+          <Card.Description>
+            <img src="https://placehold.it/400/400" />
+          </Card.Description>
+        </Card.Content>
+      </Card>
+      <Card style={{ padding: '0 10px' }}>
+        <Card.Content>
+          <Card.Description>
+            <img src="https://placehold.it/400/400" />
+          </Card.Description>
+        </Card.Content>
+      </Card>
+      <Card style={{ padding: '0 10px' }}>
+        <Card.Content>
+          <Card.Description>
+            <img src="https://placehold.it/400/400" />
+          </Card.Description>
+        </Card.Content>
+      </Card>
+      <Card style={{ padding: '0 10px' }}>
+        <Card.Content>
+          <Card.Description>
+            <img src="https://placehold.it/400/400" />
+          </Card.Description>
+        </Card.Content>
+      </Card>
+      <Card style={{ padding: '0 10px' }}>
+        <Card.Content>
+          <Card.Description>
+            <img src="https://placehold.it/400/400" />
+          </Card.Description>
+        </Card.Content>
+      </Card>
     </Slider>
   </ImageSliderContainer>
 )
