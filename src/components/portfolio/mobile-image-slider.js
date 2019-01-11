@@ -1,87 +1,47 @@
 import React from 'react'
-import Slider from 'react-slick'
 import styled from 'react-emotion'
-import { Card } from 'semantic-ui-react'
-import './image-slider.module.css'
 
-const ImageSliderContainer = styled('div')`
-  /* positio/n: relative; */
-  margin-left: -75vw;
-  max-height: 400px;
-  width: 250vw;
-  overflow: hidden;
-  margin: 10px auto;
+import { Container, Button, Divider } from 'semantic-ui-react'
+import 'pure-react-carousel/dist/react-carousel.es.css'
+import {
+  CarouselProvider,
+  Image,
+  Slide,
+  Slider,
+  Dot,
+} from 'pure-react-carousel'
 
-  div img {
-    margin: 0 auto;
-  }
-
-  div .image-container {
-    max-height: 400px;
-    min-height: 300px;
-    background: url('http://placehold.it/500/500/');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
-`
-
-var settings = {
-  dots: false,
-  infinite: true,
-  speed: 400,
-  slidesToShow: 3,
-  slidesToScroll: 1,
+const CustomDotGroup = ({ slides, size }) => {
+  return (
+    <Container textAlign="center">
+      <Button.Group size={size}>
+        {slides.map(slide => (
+          <Button as={Dot} key={slide.id} icon="circle" slide={slide.index} />
+        ))}
+      </Button.Group>
+    </Container>
+  )
 }
 
-const imageSlides = ({ images, handleOpen, title } = {}) =>
-  images.map(i => (
-    <Card style={{ padding: '0 10px' }} id={i.id}>
-      <Card.Content>
-        <img src={i.fluid.src} height="285" />
-      </Card.Content>
-    </Card>
-  ))
-
-const ImageSlider = ({ images, title, handleOpen } = {}) => (
-  <ImageSliderContainer>
-    {/* {imageSlides({ images, handleOpen, title })} */}
-    <Slider {...settings}>
-      <Card style={{ padding: '0 10px' }}>
-        <Card.Content>
-          <img src="https://placehold.it/400/400" height="285" />
-        </Card.Content>
-      </Card>
-      <Card style={{ padding: '0 10px' }}>
-        <Card.Content>
-          <Card.Description>
-            <img src="https://placehold.it/400/400" />
-          </Card.Description>
-        </Card.Content>
-      </Card>
-      <Card style={{ padding: '0 10px' }}>
-        <Card.Content>
-          <Card.Description>
-            <img src="https://placehold.it/400/400" />
-          </Card.Description>
-        </Card.Content>
-      </Card>
-      <Card style={{ padding: '0 10px' }}>
-        <Card.Content>
-          <Card.Description>
-            <img src="https://placehold.it/400/400" />
-          </Card.Description>
-        </Card.Content>
-      </Card>
-      <Card style={{ padding: '0 10px' }}>
-        <Card.Content>
-          <Card.Description>
-            <img src="https://placehold.it/400/400" />
-          </Card.Description>
-        </Card.Content>
-      </Card>
+const ImageSlider = ({ title, handleOpen, images } = {}) => (
+  <CarouselProvider
+    naturalSlideWidth={1}
+    naturalSlideHeight={1}
+    totalSlides={images.length}
+  >
+    <Slider>
+      {images.map((item, index) => (
+        <Slide tag="a" index={item.index} key={item.id}>
+          <Image src={item.fluid.src} />
+        </Slide>
+      ))}
     </Slider>
-  </ImageSliderContainer>
+
+    <Divider />
+    <CustomDotGroup
+      slides={images.map((item, index) => ({ id: item.id, index }))}
+    />
+  </CarouselProvider>
 )
 
 export default ImageSlider

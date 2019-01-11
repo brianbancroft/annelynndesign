@@ -21,9 +21,6 @@ const MultiImageSection = styled('section')`
   @media (max-width: 600px) {
     display: flex;
     flex-direction: column;
-    width: 90vw;
-    height: 90vw;
-    margin: 5vh 5vw;
 
     .images-container {
       height: 50vw;
@@ -37,13 +34,13 @@ const MultiImageSection = styled('section')`
   }
 
   .images-container {
-    /* width: 80%; */
-    margin: 0 auto;
+    width: 70vw;
     display: flex;
     justify-content: center;
     grid-column: 2 / 5;
     grid-row: 1 / 3;
     background: white;
+    min-height: 350px;
   }
 
   .title {
@@ -81,6 +78,7 @@ const MobileLayout = styled('div')`
   width: 100%;
   height: 100%;
   display: block;
+  /* margin-left: 136vw; */
   /* } */
 `
 

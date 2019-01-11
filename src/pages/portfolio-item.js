@@ -13,8 +13,6 @@ import {
   ImageSlider,
 } from '../components/portfolio'
 import './portfolio-item.module.css'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
 
 const FullSizeSection = styled('section')`
   width: 100vw;
@@ -100,7 +98,10 @@ const PortfolioItem = props => {
         />
         <html lang="en" />
       </Helmet>
-      <div style={{ zIndex: 5, background: 'white', marginBottom: '65px' }}>
+      <div
+        className="porfolio-item__content"
+        style={{ zIndex: 5, background: 'white', marginBottom: '105px' }}
+      >
         <PortfolioHeader
           headline={headline}
           copy={copy}

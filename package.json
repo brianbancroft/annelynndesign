@@ -16,15 +16,13 @@
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-contentful": "^2.0.6",
     "gatsby-source-filesystem": "^2.0.4",
+    "pure-react-carousel": "^1.17.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-emotion": "^9.2.12",
     "react-helmet": "^5.2.0",
-    "react-slick": "^0.23.2",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.84.0",
-    "slick-carousel": "^1.8.1",
-    "styled-components": "^4.0.3"
+    "semantic-ui-react": "^0.84.0"
   },
   "keywords": [
     "gatsby",
