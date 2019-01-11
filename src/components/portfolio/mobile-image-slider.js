@@ -17,7 +17,6 @@ const ImageSliderContainer = styled('div')`
   }
 
   div .image-container {
-    margin: 0 auto;
     max-height: 400px;
     min-height: 300px;
     background: url('http://placehold.it/500/500/');
@@ -32,7 +31,7 @@ var settings = {
   infinite: true,
   speed: 400,
   slidesToShow: 3,
-  slidesToScroll: 2,
+  slidesToScroll: 1,
 }
 
 const imageSlides = ({ images, handleOpen, title } = {}) =>
