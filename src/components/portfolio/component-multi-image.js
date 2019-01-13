@@ -9,7 +9,7 @@ const MultiImageSection = styled('section')`
   background: white;
 
   display: grid;
-  grid-template-rows: 1fr 100px 400px 100px;
+  grid-template-rows: 1fr 400px 100px;
   grid-template-columns: 50px 20vw 20vw 1fr 50px;
   grid-row-gap: 10px;
   grid-column-gap: 30px;
@@ -22,9 +22,6 @@ const MultiImageSection = styled('section')`
     display: flex;
     flex-direction: column;
 
-    .images-container {
-      height: 50vw;
-    }
     .title {
       height: 100px;
     }
@@ -34,13 +31,6 @@ const MultiImageSection = styled('section')`
   }
 
   .images-container {
-    width: 70vw;
-    display: flex;
-    justify-content: center;
-    grid-column: 2 / 5;
-    grid-row: 1 / 3;
-    background: white;
-    min-height: 350px;
   }
 
   .title {
@@ -60,19 +50,14 @@ const MultiImageSection = styled('section')`
     color: #222;
   }
 `
-const ImageContainer = styled('div')`
-  background: ${props => (props.src ? `url("${props.src}")` : 'red')};
-  width: 800px;
-  height: 400px;
-  max-height: 500px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  margin-right: 5px;
-  cursor: pointer;
-`
 
 const MobileLayout = styled('div')`
+  width: 70vw;
+  justify-content: center;
+  grid-column: 2 / 6;
+  grid-row: 1 / 3;
+  background: white;
+  min-height: 350px;
   display: none;
   @media (max-width: 600px) {
     width: 100%;
@@ -82,9 +67,23 @@ const MobileLayout = styled('div')`
 `
 
 const DesktopLayout = styled('div')`
-  display: block;
+  grid-column: 2 / 5;
+  grid-row: 1 / 3;
+  background: white;
+  min-height: 350px;
+  display: flex;
+  justify-content: center;
+
   @media (max-width: 600px) {
     display: none;
+  }
+
+  img {
+    max-width: ${props =>
+      props.numImages ? 80 / props.numImages + 'vw' : '80vw'};
+    max-height: ${props =>
+      props.numImages ? 80 / props.numImages + 'vw' : '80vw'};
+    margin-right: 5px;
   }
 `
 
@@ -105,20 +104,22 @@ class ComponentMultiImage extends Component {
       this.setState({ showModal: true, modalImage, title })
     const handleClose = () => this.setState({ showModal: false })
 
-    const imagesLayout = images => {
-      return images.map(i => (
-        <ImageContainer
-          src={i.fluid.src}
-          key={i.id}
-          onClick={handleOpen({ modalImage: i.file.url, title })}
-        />
-      ))
-    }
-
     const Copy = ({ copy } = {}) => {
       const inner = copy ? copy.copy || '' : ''
       return <div>{inner}</div>
     }
+
+    const imagesLayout = ({ images, title } = {}) =>
+      images.map(i => (
+        <img
+          src={i.fluid.src}
+          key={i.id}
+          onClick={handleOpen({
+            modalImage: i.fluid.src,
+            title: title,
+          })}
+        />
+      ))
 
     return (
       <>
@@ -130,17 +131,16 @@ class ComponentMultiImage extends Component {
           handleClose={handleClose}
         />
         <MultiImageSection color={color}>
-          <div className="images-container">
-            <MobileLayout>
-              <MobileImageSlider
-                className="mobile-image-slider"
-                title={title}
-                handleOpen={handleOpen}
-                images={images}
-              />
-            </MobileLayout>
-            <DesktopLayout>{imagesLayout(images)}</DesktopLayout>
-          </div>
+          <MobileLayout className="images-container">
+            <MobileImageSlider
+              title={title}
+              handleOpen={handleOpen}
+              images={images}
+            />
+          </MobileLayout>
+          <DesktopLayout numImages={images.length}>
+            {imagesLayout({ images, title })}
+          </DesktopLayout>
           <div className="title">{title}</div>
           <div className="copy">
             <Copy copy={copy} />
