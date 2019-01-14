@@ -4,41 +4,59 @@ import styled from 'react-emotion'
 const SingleImage = styled('section')`
   z-index: 10;
   width: 100vw;
-  height: 80vh;
-  background: white;
-
-  display: flex;
-  flex-direction: ${props =>
-    props && props.imagePosition
-      ? props.imagePosition === 'image-left'
-        ? 'row'
-        : 'row-reverse'
-      : 'column'};
-  justify-content: space-around;
-  align-items: center;
-  margin: 10vw 0;
+  height: 100vh;
   color: ${props => (props.color ? props.color : 'inherit')};
 
-  .copy-container {
-    display: grid;
-    width: 100%;
-    grid-template-rows: 80px;
-    grid-template-columns: 10px 250px 1fr 10px;
-    grid-column-gap: 30px;
+  outline-color: rebeccapurple;
+  outline-style: double;
+  background: white;
+
+  display: grid;
+  grid-template-rows: 1fr 100px 200px 100px;
+  grid-template-columns: 50px 20vw 20vw 1fr 50px;
+
+  .copy {
     color: #222;
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
   }
 
-  .copy-container__title {
+  .title {
     font-size: 1.2rem;
     font-family: 'Raleway Semi-Bold', sans-serif;
     text-transform: capitalize;
     font-weight: 500;
     color: ${props => (props.color ? props.color : 'inherit')};
-    grid-column: 2 / 3;
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
   }
 
-  .images-container__image {
-    max-width: 500px;
+  .image {
+    grid-column: 2 / 5;
+    grid-row: 1 / 3;
+    background: ${props => (props.src ? `url("${props.src}")` : 'red')};
+    width: 500px;
+    height: 500px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .title.image-left {
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+  }
+
+  .copy.image-left {
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+  }
+
+  .image.image-left {
+    grid-column: 2 / 4;
+    grid-row: 1 / 4;
   }
 
   @media (max-width: 700px) {
@@ -46,18 +64,9 @@ const SingleImage = styled('section')`
   }
 `
 
-const ImageContainer = styled('div')`
-  background: ${props => (props.src ? `url("${props.src}")` : 'red')};
-  width: 500px;
-  height: 500px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-`
-
-const Copy = ({ copy } = {}) => {
+const Copy = ({ copy, classes } = {}) => {
   const inner = copy ? copy.copy || '' : ''
-  return <div>{inner}</div>
+  return <div className={classes}>{inner}</div>
 }
 
 const ComponentSingleImage = ({
@@ -69,12 +78,10 @@ const ComponentSingleImage = ({
   imagePosition,
 } = {}) => {
   return (
-    <SingleImage color={color} imagePosition={imagePosition}>
-      <ImageContainer src={image.fluid.src} />
-      <div className="copy-container">
-        <div className="copy-container__title">{title}</div>
-        <Copy copy={copy} />
-      </div>
+    <SingleImage color={color} src={image.fluid.src}>
+      <div className={`image ${imagePosition}`} />
+      <div className={`title ${imagePosition}`}>{title}</div>
+      <Copy copy={copy} classes={`copy ${imagePosition}`} />
     </SingleImage>
   )
 }
