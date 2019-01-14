@@ -5,18 +5,21 @@ import { ImageModal, MobileImageSlider } from '.'
 const MultiImageSection = styled('section')`
   z-index: 10;
   width: 100vw;
-  height: 80vh;
+  height: 100vh;
   background: white;
 
   display: grid;
-  grid-template-rows: 1fr 400px 100px;
-  grid-template-columns: 50px 20vw 20vw 1fr 50px;
-  grid-row-gap: 10px;
+  grid-template-rows: 1fr 400px 100px 10vw;
+  grid-template-columns: 5vw 20vw 20vw 1fr 5vw;
+  grid-row-gap: 20px;
+
   grid-column-gap: 30px;
 
   align-items: center;
-  margin: 10vw 0;
   color: ${props => (props.color ? props.color : 'inherit')};
+
+  outline-color: red;
+  outline-style: double;
 
   @media (max-width: 600px) {
     display: flex;
@@ -48,6 +51,7 @@ const MultiImageSection = styled('section')`
     grid-column: 4 / 5;
     grid-row: 3 / 4;
     color: #222;
+    max-width: 500px;
   }
 `
 
@@ -87,6 +91,38 @@ const DesktopLayout = styled('div')`
   }
 `
 
+const Copy = ({ copy, classes } = {}) => {
+  const inner = copy ? copy.copy || '' : ''
+  return <div className={classes}>{inner}</div>
+}
+
+const imagesLayout = ({ images, title, handleOpen } = {}) =>
+  images.map(i => (
+    <img
+      src={i.fluid.src}
+      key={i.id}
+      onClick={handleOpen({
+        modalImage: i.fluid.src,
+        title: title,
+      })}
+    />
+  ))
+
+const Images = ({ title, handleOpen, images, cssClasses } = {}) => (
+  <>
+    <MobileLayout className="images-container">
+      <MobileImageSlider
+        title={title}
+        handleOpen={handleOpen}
+        images={images}
+      />
+    </MobileLayout>
+    <DesktopLayout numImages={images.length} classes={cssClasses}>
+      {imagesLayout({ images, title, handleOpen })}
+    </DesktopLayout>
+  </>
+)
+
 class ComponentMultiImage extends Component {
   constructor(props) {
     super(props)
@@ -104,23 +140,6 @@ class ComponentMultiImage extends Component {
       this.setState({ showModal: true, modalImage, title })
     const handleClose = () => this.setState({ showModal: false })
 
-    const Copy = ({ copy } = {}) => {
-      const inner = copy ? copy.copy || '' : ''
-      return <div>{inner}</div>
-    }
-
-    const imagesLayout = ({ images, title } = {}) =>
-      images.map(i => (
-        <img
-          src={i.fluid.src}
-          key={i.id}
-          onClick={handleOpen({
-            modalImage: i.fluid.src,
-            title: title,
-          })}
-        />
-      ))
-
     return (
       <>
         <ImageModal
@@ -131,20 +150,14 @@ class ComponentMultiImage extends Component {
           handleClose={handleClose}
         />
         <MultiImageSection color={color}>
-          <MobileLayout className="images-container">
-            <MobileImageSlider
-              title={title}
-              handleOpen={handleOpen}
-              images={images}
-            />
-          </MobileLayout>
-          <DesktopLayout numImages={images.length}>
-            {imagesLayout({ images, title })}
-          </DesktopLayout>
-          <div className="title">{title}</div>
-          <div className="copy">
-            <Copy copy={copy} />
-          </div>
+          <Images
+            title={title}
+            handleOpen={handleOpen}
+            images={images}
+            cssClasses={cssClasses}
+          />
+          <div className={`title ${cssClasses}`}>{title}</div>
+          <Copy copy={copy} classes={`copy ${cssClasses}`} />
         </MultiImageSection>
       </>
     )
