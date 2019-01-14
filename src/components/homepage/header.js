@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'react-emotion'
-import { ScrollIcon } from '.'
+import { ScrollIcon } from '..'
 
 const HeaderSection = styled('section')`
   height: 100vh;

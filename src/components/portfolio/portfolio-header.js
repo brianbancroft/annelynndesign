@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'react-emotion'
+import { ScrollIcon } from '..'
 
 const HeaderSection = styled('section')`
   @media (max-width: 620px) {
@@ -47,13 +48,16 @@ const PortfolioHeader = ({
   copy,
   headerSectionTextColor,
 } = {}) => (
-  <HeaderSection
-    backgroundColor={backgroundColor}
-    headerSectionTextColor={headerSectionTextColor}
-  >
-    <div className="header--headline">{headline}</div>
-    <div className="header--copy">{copy.copy}</div>
-  </HeaderSection>
+  <>
+    <HeaderSection
+      backgroundColor={backgroundColor}
+      headerSectionTextColor={headerSectionTextColor}
+    >
+      <div className="header--headline">{headline}</div>
+      <div className="header--copy">{copy.copy}</div>
+    </HeaderSection>
+    {/* <ScrollIcon /> */}
+  </>
 )
 
 export default PortfolioHeader
