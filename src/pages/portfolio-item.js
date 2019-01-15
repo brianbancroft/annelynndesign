@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-import styled from 'react-emotion'
 
 import {
   PortfolioHeader,
@@ -10,112 +9,111 @@ import {
   RequirementsAndProducts,
   SupportingConcepts,
   Footer,
-  ImageSlider,
 } from '../components/portfolio'
 import './portfolio-item.module.css'
 
-const FullSizeSection = styled('section')`
-  width: 100vw;
-  height: 100vh;
-`
+class PortfolioItem extends Component {
+  render() {
+    const { contentfulPortfolioItem: item } = this.props.data
+    const {
+      color,
+      copy,
+      headerSectionTextColor,
+      headline,
+      title,
+      colorAndTypographyPane,
+      conceptAndIdeasPane,
+      requirementsAndProductPane,
+      supportingConceptsPane,
+    } = item
 
-const PortfolioItem = props => {
-  const { contentfulPortfolioItem: item } = props.data
-  const {
-    color,
-    copy,
-    headerSectionTextColor,
-    headline,
-    title,
-    colorAndTypographyPane,
-    conceptAndIdeasPane,
-    requirementsAndProductPane,
-    supportingConceptsPane,
-  } = item
-
-  const colorAndTypography = colorAndTypographyPane => {
-    if (colorAndTypographyPane)
-      return (
-        <ColorAndTypography
-          colorAndTypography={colorAndTypographyPane}
-          color={color}
-        />
-      )
-  }
-
-  const conceptAndIdeas = conceptAndIdeasPane => {
-    if (conceptAndIdeasPane) {
-      return (
-        <ConceptsAndIdeas color={color} conceptAndIdeas={conceptAndIdeasPane} />
-      )
+    const colorAndTypography = colorAndTypographyPane => {
+      if (colorAndTypographyPane)
+        return (
+          <ColorAndTypography
+            colorAndTypography={colorAndTypographyPane}
+            color={color}
+          />
+        )
     }
-  }
 
-  const requirementsAndProducts = requirementsAndProductPane => {
-    if (requirementsAndProductPane) {
-      return (
-        <RequirementsAndProducts
-          color={color}
-          requirementsAndProducts={requirementsAndProductPane}
-        />
-      )
+    const conceptAndIdeas = conceptAndIdeasPane => {
+      if (conceptAndIdeasPane) {
+        return (
+          <ConceptsAndIdeas
+            color={color}
+            conceptAndIdeas={conceptAndIdeasPane}
+          />
+        )
+      }
     }
-  }
 
-  const supportingConcepts = supportingConceptsPane => {
-    if (supportingConceptsPane) {
-      return (
-        <SupportingConcepts
-          color={color}
-          supportingConcepts={supportingConceptsPane}
-        />
-      )
+    const requirementsAndProducts = requirementsAndProductPane => {
+      if (requirementsAndProductPane) {
+        return (
+          <RequirementsAndProducts
+            color={color}
+            requirementsAndProducts={requirementsAndProductPane}
+          />
+        )
+      }
     }
-  }
 
-  return (
-    <>
-      <Helmet
-        title={`${title} - Anne-Lynn Design`}
-        meta={[
-          {
-            name: 'description',
-            content: copy.copy,
-          },
-          {
-            name: 'keywords',
-            content: `anne-lynn hanna, annelynn design, anne-lynn design, ${title}`,
-          },
-          {
-            name: 'theme-color',
-            content: color,
-          },
-        ]}
-      >
-        <link
-          rel="stylesheet"
-          href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.1/dist/semantic.min.css"
-        />
-        <html lang="en" />
-      </Helmet>
-      <div
-        className="porfolio-item__content"
-        style={{ zIndex: 5, background: 'white', marginBottom: '105px' }}
-      >
-        <PortfolioHeader
-          headline={headline}
-          copy={copy}
-          backgroundColor={color}
-          headerSectionTextColor={headerSectionTextColor}
-        />
-        {requirementsAndProducts(requirementsAndProductPane)}
-        {conceptAndIdeas(conceptAndIdeasPane)}
-        {colorAndTypography(colorAndTypographyPane)}
-        {supportingConcepts(supportingConceptsPane)}
-      </div>
-      <Footer color={color} />
-    </>
-  )
+    const supportingConcepts = supportingConceptsPane => {
+      if (supportingConceptsPane) {
+        return (
+          <SupportingConcepts
+            color={color}
+            supportingConcepts={supportingConceptsPane}
+          />
+        )
+      }
+    }
+
+    return (
+      <>
+        <Helmet
+          title={`${title} - Anne-Lynn Design`}
+          meta={[
+            {
+              name: 'description',
+              content: copy.copy,
+            },
+            {
+              name: 'keywords',
+              content: `anne-lynn hanna, annelynn design, anne-lynn design, ${title}`,
+            },
+            {
+              name: 'theme-color',
+              content: color,
+            },
+          ]}
+        >
+          <link
+            rel="stylesheet"
+            href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.1/dist/semantic.min.css"
+          />
+          <html lang="en" />
+        </Helmet>
+        <div
+          className="porfolio-item__content"
+          style={{ zIndex: 5, background: 'white', marginBottom: '105px' }}
+        >
+          <PortfolioHeader
+            headline={headline}
+            copy={copy}
+            backgroundColor={color}
+            headerSectionTextColor={headerSectionTextColor}
+          />
+          {requirementsAndProducts(requirementsAndProductPane)}
+          {conceptAndIdeas(conceptAndIdeasPane)}
+          {colorAndTypography(colorAndTypographyPane)}
+          {supportingConcepts(supportingConceptsPane)}
+        </div>
+        <Footer color={color} />
+      </>
+    )
+  }
 }
 
 export default PortfolioItem
