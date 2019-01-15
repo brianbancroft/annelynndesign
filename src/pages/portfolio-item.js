@@ -4,11 +4,9 @@ import Helmet from 'react-helmet'
 
 import {
   PortfolioHeader,
-  ColorAndTypography,
-  ConceptsAndIdeas,
-  RequirementsAndProducts,
-  SupportingConcepts,
   Footer,
+  sectionSingleImage,
+  sectionMultiImage,
 } from '../components/portfolio'
 import './portfolio-item.module.css'
 
@@ -27,48 +25,16 @@ class PortfolioItem extends Component {
       supportingConceptsPane,
     } = item
 
-    const colorAndTypography = colorAndTypographyPane => {
-      if (colorAndTypographyPane)
-        return (
-          <ColorAndTypography
-            colorAndTypography={colorAndTypographyPane}
-            color={color}
-          />
-        )
-    }
+    const multiImageSections = [
+      colorAndTypographyPane,
+      conceptAndIdeasPane,
+      supportingConceptsPane,
+    ].map(section => sectionMultiImage({ section, color }))
 
-    const conceptAndIdeas = conceptAndIdeasPane => {
-      if (conceptAndIdeasPane) {
-        return (
-          <ConceptsAndIdeas
-            color={color}
-            conceptAndIdeas={conceptAndIdeasPane}
-          />
-        )
-      }
-    }
-
-    const requirementsAndProducts = requirementsAndProductPane => {
-      if (requirementsAndProductPane) {
-        return (
-          <RequirementsAndProducts
-            color={color}
-            requirementsAndProducts={requirementsAndProductPane}
-          />
-        )
-      }
-    }
-
-    const supportingConcepts = supportingConceptsPane => {
-      if (supportingConceptsPane) {
-        return (
-          <SupportingConcepts
-            color={color}
-            supportingConcepts={supportingConceptsPane}
-          />
-        )
-      }
-    }
+    const singleImageSections = sectionSingleImage({
+      section: requirementsAndProductPane,
+      color,
+    })
 
     return (
       <>
@@ -105,10 +71,8 @@ class PortfolioItem extends Component {
             backgroundColor={color}
             headerSectionTextColor={headerSectionTextColor}
           />
-          {requirementsAndProducts(requirementsAndProductPane)}
-          {conceptAndIdeas(conceptAndIdeasPane)}
-          {colorAndTypography(colorAndTypographyPane)}
-          {supportingConcepts(supportingConceptsPane)}
+          {singleImageSections}
+          {multiImageSections}
         </div>
         <Footer color={color} />
       </>
