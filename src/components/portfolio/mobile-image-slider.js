@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'react-emotion'
 
 import { Container, Button, Divider } from 'semantic-ui-react'
 import 'pure-react-carousel/dist/react-carousel.es.css'
