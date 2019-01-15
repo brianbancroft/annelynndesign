@@ -23,7 +23,7 @@ const AboutSection = styled('section')`
     font-size: 18px;
     color: #1e9dba;
     line-height: 17px;
-    padding: 20px;
+    padding: 20px 0 0 90px;
   }
 
   .about__about-image {
@@ -37,7 +37,7 @@ const AboutSection = styled('section')`
     float: left;
     z-index: 1;
     shape-outside: inset(1% round 50%);
-    margin: 9px;
+    margin: 15px;
     background-color: white;
   }
 
@@ -53,7 +53,10 @@ const AboutSection = styled('section')`
 
   p {
     line-height: 117%;
-    margin-bottom: 5px;
+    margin-bottom: 12px;
+  }
+
+  @media (max-width: 500px) {
   }
 `
 

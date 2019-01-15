@@ -18,8 +18,8 @@ const MultiImageSection = styled('section')`
   align-items: center;
   color: ${props => (props.color ? props.color : 'inherit')};
 
-  outline-color: red;
-  outline-style: double;
+  /* outline-color: red;
+  outline-style: double; */
 
   @media (max-width: 600px) {
     display: flex;
@@ -45,10 +45,43 @@ const MultiImageSection = styled('section')`
     text-transform: capitalize;
     font-weight: 500;
     color: ${props => (props.color ? props.color : 'inherit')};
+    padding-right: 20px;
+    text-align: right;
+    height: 100%;
   }
+
+  .title.image-left {
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+    text-align: left;
+    height: initial;
+  }
+
+  /* .title.image-right {
+    grid-row: 2 / 3;
+  } */
+
+  .copy.image-left {
+    grid-column: 4 / 5;
+    grid-row: 4 / 5;
+  }
+
+  /* .copy.image-right {
+    grid-row: 3 / 4;
+  } */
+
+  .image.image-left {
+    grid-column: 2 / 4;
+    grid-row: 2 / 5;
+  }
+
+  /* .image.image-right {
+    grid-row: 1 / 4;
+  } */
 
   .copy {
     grid-column: 4 / 5;
+    height: 100%;
     grid-row: 3 / 4;
     color: #222;
     max-width: 500px;

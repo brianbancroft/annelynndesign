@@ -11,6 +11,9 @@ const textAreaStyle = css`
   @media (max-width: 500px) {
     width: 70vw;
   }
+  @media (min-width: 501px) {
+    max-width: 38vw;
+  }
 `
 
 const ContactSection = styled('section')`
@@ -72,6 +75,9 @@ const ContactSection = styled('section')`
     @media (max-width: 500px) {
       width: 80vw;
     }
+    @media (min-width: 501px) {
+      max-width: 38vw;
+    }
   }
 
   .form-field__submit {
@@ -86,6 +92,9 @@ const ContactSection = styled('section')`
     cursor: pointer;
     @media (max-width: 500px) {
       width: 80vw;
+    }
+    @media (min-width: 501px) {
+      max-width: 38vw;
     }
   }
 

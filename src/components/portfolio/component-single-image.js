@@ -18,6 +18,7 @@ const SingleImage = styled('section')`
     grid-column: 4 / 5;
     grid-row: 4 / 5;
     max-width: 500px;
+    height: 100%;
   }
 
   .title {
@@ -28,6 +29,9 @@ const SingleImage = styled('section')`
     color: ${props => (props.color ? props.color : 'inherit')};
     grid-column: 3 / 4;
     grid-row: 4 / 5;
+    padding-right: 20px;
+    text-align: right;
+    height: 100%;
   }
 
   .image {
@@ -46,6 +50,8 @@ const SingleImage = styled('section')`
   .title.image-left {
     grid-column: 4 / 5;
     grid-row: 3 / 4;
+    text-align: left;
+    padding-top: 90px;
   }
 
   /* .title.image-right {
