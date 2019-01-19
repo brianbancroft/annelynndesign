@@ -141,60 +141,44 @@ const imagesLayout = ({ images, title, handleOpen } = {}) =>
     />
   ))
 
-const Images = ({ title, handleOpen, images, cssClasses } = {}) => (
+const Images = ({ title, handleOpen, images, cssClasses } = {}) => {
+  console.log('Handleopen -> ', handleOpen)
+  return (
+    <>
+      <MobileLayout className="images-container">
+        <MobileImageSlider
+          title={title}
+          handleOpen={handleOpen}
+          images={images}
+        />
+      </MobileLayout>
+      <DesktopLayout numImages={images.length} classes={cssClasses}>
+        {imagesLayout({ images, title, handleOpen })}
+      </DesktopLayout>
+    </>
+  )
+}
+
+const ComponentMultiImage = ({
+  color,
+  images,
+  copy,
+  cssClasses,
+  title,
+  handleOpen,
+} = {}) => (
   <>
-    <MobileLayout className="images-container">
-      <MobileImageSlider
+    <MultiImageSection color={color}>
+      <Images
         title={title}
-        handleOpen={handleOpen}
         images={images}
+        cssClasses={cssClasses}
+        handleOpen={handleOpen}
       />
-    </MobileLayout>
-    <DesktopLayout numImages={images.length} classes={cssClasses}>
-      {imagesLayout({ images, title, handleOpen })}
-    </DesktopLayout>
+      <div className={`title ${cssClasses}`}>{title}</div>
+      <Copy copy={copy} classes={`copy ${cssClasses}`} />
+    </MultiImageSection>
   </>
 )
-
-class ComponentMultiImage extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      showModal: false,
-      modalImage: undefined,
-      title: undefined,
-    }
-  }
-
-  render() {
-    const { color, images, copy, cssClasses, title } = this.props
-
-    const handleOpen = ({ modalImage, title } = {}) => () =>
-      this.setState({ showModal: true, modalImage, title })
-    const handleClose = () => this.setState({ showModal: false })
-
-    return (
-      <>
-        <ImageModal
-          id="imageModal"
-          display={this.state.showModal}
-          title={this.state.title}
-          modalImage={this.state.modalImage}
-          handleClose={handleClose}
-        />
-        <MultiImageSection color={color}>
-          <Images
-            title={title}
-            handleOpen={handleOpen}
-            images={images}
-            cssClasses={cssClasses}
-          />
-          <div className={`title ${cssClasses}`}>{title}</div>
-          <Copy copy={copy} classes={`copy ${cssClasses}`} />
-        </MultiImageSection>
-      </>
-    )
-  }
-}
 
 export default ComponentMultiImage

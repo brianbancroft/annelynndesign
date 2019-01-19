@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentMultiImage } from '.'
 
-const sectionMultiImage = ({ section, color } = {}) =>
+const sectionMultiImage = ({ section, color, handleClose, handleOpen } = {}) =>
   section
     ? section.map(i => (
         <ComponentMultiImage
@@ -12,6 +12,8 @@ const sectionMultiImage = ({ section, color } = {}) =>
           images={i.images}
           copy={i.copy}
           cssClasses={i.cssClasses}
+          handleClose={handleClose}
+          handleOpen={handleOpen}
         />
       ))
     : null

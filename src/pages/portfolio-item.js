@@ -7,11 +7,25 @@ import {
   Footer,
   sectionSingleImage,
   sectionMultiImage,
+  ImageModal,
 } from '../components/portfolio'
 import './portfolio-item.module.css'
 
 class PortfolioItem extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      showModal: false,
+      modalImage: undefined,
+      modalTitle: undefined,
+    }
+  }
+
   render() {
+    const handleOpen = ({ modalImage, title } = {}) => () =>
+      this.setState({ showModal: true, modalImage, title })
+    const handleClose = () => this.setState({ showModal: false })
+
     const { contentfulPortfolioItem: item } = this.props.data
     const {
       color,
@@ -29,7 +43,9 @@ class PortfolioItem extends Component {
       colorAndTypographyPane,
       conceptAndIdeasPane,
       supportingConceptsPane,
-    ].map(section => sectionMultiImage({ section, color }))
+    ].map(section =>
+      sectionMultiImage({ section, color, handleClose, handleOpen })
+    )
 
     const singleImageSections = sectionSingleImage({
       section: requirementsAndProductPane,
@@ -61,6 +77,13 @@ class PortfolioItem extends Component {
           />
           <html lang="en" />
         </Helmet>
+        <ImageModal
+          id="imageModal"
+          display={this.state.showModal}
+          modalTitle={this.state.title}
+          modalImage={this.state.modalImage}
+          handleClose={handleClose}
+        />
         <div
           className="porfolio-item__content"
           style={{ zIndex: 5, background: 'white', marginBottom: '105px' }}
