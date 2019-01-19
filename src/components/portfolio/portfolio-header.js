@@ -35,7 +35,7 @@ const HeaderSection = styled('section')`
   }
 
   .header--copy {
-    text-align: center;
+    text-align: justify;
     padding: 0 20px;
     grid-column: 2 / 3;
     grid-row: 3 / 4;
