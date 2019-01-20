@@ -47,34 +47,34 @@ const SingleImage = styled('section')`
     align-self: center;
   }
 
-  .title.image-left {
+  .title.single-image-left {
     grid-column: 4 / 5;
     grid-row: 3 / 4;
     text-align: left;
     padding-top: 90px;
   }
 
-  /* .title.image-right {
+  .title.single-image-right {
     grid-row: 2 / 3;
-  } */
+  }
 
-  .copy.image-left {
+  .copy.single-image-left {
     grid-column: 4 / 5;
     grid-row: 4 / 5;
   }
 
-  /* .copy.image-right {
+  .copy.single-image-right {
     grid-row: 3 / 4;
-  } */
+  }
 
-  .image.image-left {
+  .image.single-image-left {
     grid-column: 2 / 4;
     grid-row: 2 / 5;
   }
 
-  /* .image.image-right {
+  .image.single-image-right {
     grid-row: 1 / 4;
-  } */
+  }
 
   @media (max-width: 700px) {
     height: 100vh;

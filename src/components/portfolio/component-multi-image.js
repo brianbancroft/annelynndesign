@@ -33,9 +33,6 @@ const MultiImageSection = styled('section')`
     }
   }
 
-  .images-container {
-  }
-
   .title {
     grid-column: 3 / 4;
     grid-row: 3 / 4;
@@ -48,6 +45,11 @@ const MultiImageSection = styled('section')`
     padding-right: 20px;
     text-align: right;
     height: 100%;
+  }
+
+  .title.no-copy,
+  .copy.no-copy {
+    display: none;
   }
 
   .title.image-left {
@@ -86,41 +88,49 @@ const MultiImageSection = styled('section')`
     color: #222;
     max-width: 500px;
   }
-`
 
-const MobileLayout = styled('div')`
-  width: 70vw;
-  justify-content: center;
-  grid-column: 2 / 6;
-  grid-row: 1 / 3;
-  background: white;
-  min-height: 350px;
-  display: none;
-  @media (max-width: 600px) {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-`
-
-const DesktopLayout = styled('div')`
-  grid-column: 2 / 5;
-  grid-row: 1 / 3;
-  background: white;
-  min-height: 350px;
-  display: flex;
-  justify-content: center;
-
-  @media (max-width: 600px) {
+  .mobile-images-container {
+    width: 70vw;
+    justify-content: center;
+    grid-column: 2 / 6;
+    grid-row: 1 / 3;
+    background: white;
+    min-height: 350px;
     display: none;
+    @media (max-width: 600px) {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
   }
 
-  img {
-    max-width: ${props =>
-      props.numImages ? 80 / props.numImages + 'vw' : '80vw'};
-    max-height: ${props =>
-      props.numImages ? 80 / props.numImages + 'vw' : '80vw'};
-    margin-right: 5px;
+  .mobile-images-container.no-copy {
+    grid-row: 1 / 5;
+  }
+
+  .desktop-images-container {
+    grid-column: 2 / 5;
+    grid-row: 1 / 3;
+    background: white;
+    min-height: 350px;
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: 600px) {
+      display: none;
+    }
+
+    img {
+      max-width: ${props =>
+        props.numImages ? 80 / props.numImages + 'vw' : '80vw'};
+      max-height: ${props =>
+        props.numImages ? 80 / props.numImages + 'vw' : '80vw'};
+      margin-right: 5px;
+    }
+  }
+
+  .desktop-images-container.no-copy {
+    grid-row: 1 / 5;
   }
 `
 
@@ -129,30 +139,45 @@ const Copy = ({ copy, classes } = {}) => {
   return <div className={classes}>{inner}</div>
 }
 
-const imagesLayout = ({ images, title, handleOpen } = {}) =>
-  images.map(i => (
+const imagesLayout = ({ images, title, handleOpen, imagePosition } = {}) =>
+  imagePosition === 'images-center' ? (
+    images.map(i => (
+      <img
+        src={i.fluid.src}
+        key={i.id}
+        onClick={handleOpen({
+          modalImage: i.fluid.src,
+          title: title,
+        })}
+      />
+    ))
+  ) : (
     <img
-      src={i.fluid.src}
-      key={i.id}
+      src={images[0].fluid.src}
+      key={images[0].id}
       onClick={handleOpen({
-        modalImage: i.fluid.src,
+        modalImage: images[0].fluid.src,
         title: title,
       })}
     />
-  ))
+  )
 
 const Images = ({ title, handleOpen, images, imagePosition } = {}) => (
   <>
-    <MobileLayout className="images-container">
+    <div className={`mobile-images-container ${imagePosition}`}>
       <MobileImageSlider
         title={title}
         handleOpen={handleOpen}
         images={images}
       />
-    </MobileLayout>
-    <DesktopLayout numImages={images.length} imagePosition={imagePosition}>
-      {imagesLayout({ images, title, handleOpen })}
-    </DesktopLayout>
+    </div>
+    <div
+      numImages={images.length}
+      imagePosition={imagePosition}
+      className={`desktop-images-container ${imagePosition}`}
+    >
+      {imagesLayout({ images, title, handleOpen, imagePosition })}
+    </div>
   </>
 )
 
@@ -163,19 +188,24 @@ const ComponentMultiImage = ({
   imagePosition,
   title,
   handleOpen,
-} = {}) => (
-  <>
-    <MultiImageSection color={color}>
-      <Images
-        title={title}
-        images={images}
-        imagePosition={imagePosition}
-        handleOpen={handleOpen}
-      />
-      <div className={`title ${imagePosition}`}>{title}</div>
-      <Copy copy={copy} classes={`copy ${imagePosition}`} />
-    </MultiImageSection>
-  </>
-)
+} = {}) => {
+  imagePosition = !(title || copy) ? `${imagePosition} no-copy` : imagePosition
+
+  return (
+    <>
+      <MultiImageSection color={color}>
+        <Images
+          title={title}
+          images={images}
+          imagePosition={imagePosition}
+          handleOpen={handleOpen}
+          className={`images-container ${imagePosition}`}
+        />
+        <div className={`title ${imagePosition}`}>{title}</div>
+        <Copy copy={copy} classes={`copy ${imagePosition}`} />
+      </MultiImageSection>
+    </>
+  )
+}
 
 export default ComponentMultiImage
