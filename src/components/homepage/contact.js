@@ -9,7 +9,7 @@ const textAreaStyle = css`
   resize: none;
 
   @media (max-width: 500px) {
-    width: 70vw;
+    width: 325px;
   }
   @media (min-width: 501px) {
     max-width: 38vw;
@@ -55,7 +55,7 @@ const ContactSection = styled('section')`
     margin: 0 auto;
 
     @media (max-width: 600px) {
-      width: 80vw;
+      width: 325px;
     }
   }
 
@@ -72,6 +72,9 @@ const ContactSection = styled('section')`
     @media (max-width: 620px) {
       margin-left: 0;
     }
+    @media (min-width: 501px) {
+      max-width: 38vw;
+    }
   }
 
   .form-field__text-input {
@@ -83,7 +86,7 @@ const ContactSection = styled('section')`
     background-color: rgba(30, 157, 186, 0.1);
     text-transform: uppercase;
     @media (max-width: 500px) {
-      width: 80vw;
+      width: 325px;
     }
     @media (min-width: 501px) {
       max-width: 38vw;
@@ -101,10 +104,7 @@ const ContactSection = styled('section')`
     border: none;
     cursor: pointer;
     @media (max-width: 500px) {
-      width: 80vw;
-    }
-    @media (min-width: 501px) {
-      max-width: 38vw;
+      width: 325px;
     }
   }
 
