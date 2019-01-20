@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'react-emotion'
 
 const AboutSection = styled('section')`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 95vw;
 
   .about__about-header {
     font-size: 50px;
@@ -16,6 +16,12 @@ const AboutSection = styled('section')`
     margin-bottom: 30px;
     padding-left: 83px;
     margin-left: 5vw;
+
+    @media (max-width: 600px) {
+      margin-left: 0;
+      padding-left: 0;
+      text-align: center;
+    }
   }
 
   .about__about-copy {
@@ -23,7 +29,6 @@ const AboutSection = styled('section')`
     font-size: 18px;
     color: #1e9dba;
     line-height: 17px;
-    padding: 20px 0 0 90px;
   }
 
   .about__about-image {
@@ -55,6 +60,11 @@ const AboutSection = styled('section')`
   .about__copy-container {
     position: relative;
     right: 5vw;
+    @media (max-width: 600px) {
+      right: 0;
+      width: 90%;
+      margin: 0 auto;
+    }
   }
 
   p {
