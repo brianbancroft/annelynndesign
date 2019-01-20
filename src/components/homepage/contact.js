@@ -106,6 +106,9 @@ const ContactSection = styled('section')`
     @media (max-width: 500px) {
       width: 325px;
     }
+    @media (min-width: 501px) {
+      max-width: 38vw;
+    }
   }
 
   .form-field__submit:hover {
