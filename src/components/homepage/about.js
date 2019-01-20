@@ -39,11 +39,17 @@ const AboutSection = styled('section')`
     shape-outside: inset(1% round 50%);
     margin: 15px;
     background-color: white;
+    @media (max-width: 600px) {
+      display: none;
+    }
   }
 
   .about-circle {
     border: 1px solid #006a77;
     position: absolute;
+    @media (max-width: 600px) {
+      display: none;
+    }
   }
 
   .about__copy-container {
@@ -69,6 +75,10 @@ const BigCircle = styled.div`
   bottom: -2vw;
   border-radius: 120vh;
   z-index: -11;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 `
 
 const BottomCircle = styled.div`
@@ -79,6 +89,15 @@ const BottomCircle = styled.div`
   top: 82vh;
   position: fixed;
   left: 22vw;
+
+  @media (max-width: 600px) {
+    display: block;
+    height: 1000px;
+    width: 1000px;
+    position: fixed;
+    border-radius: 1000px;
+    left: -265px;
+  }
 `
 
 const About = () => (
