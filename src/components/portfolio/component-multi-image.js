@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'react-emotion'
-import { ImageModal, MobileImageSlider } from '.'
+import { MobileImageSlider } from '.'
 
 const MultiImageSection = styled('section')`
   z-index: 10;
@@ -141,29 +141,26 @@ const imagesLayout = ({ images, title, handleOpen } = {}) =>
     />
   ))
 
-const Images = ({ title, handleOpen, images, cssClasses } = {}) => {
-  console.log('Handleopen -> ', handleOpen)
-  return (
-    <>
-      <MobileLayout className="images-container">
-        <MobileImageSlider
-          title={title}
-          handleOpen={handleOpen}
-          images={images}
-        />
-      </MobileLayout>
-      <DesktopLayout numImages={images.length} classes={cssClasses}>
-        {imagesLayout({ images, title, handleOpen })}
-      </DesktopLayout>
-    </>
-  )
-}
+const Images = ({ title, handleOpen, images, imagePosition } = {}) => (
+  <>
+    <MobileLayout className="images-container">
+      <MobileImageSlider
+        title={title}
+        handleOpen={handleOpen}
+        images={images}
+      />
+    </MobileLayout>
+    <DesktopLayout numImages={images.length} imagePosition={imagePosition}>
+      {imagesLayout({ images, title, handleOpen })}
+    </DesktopLayout>
+  </>
+)
 
 const ComponentMultiImage = ({
   color,
   images,
   copy,
-  cssClasses,
+  imagePosition,
   title,
   handleOpen,
 } = {}) => (
@@ -172,11 +169,11 @@ const ComponentMultiImage = ({
       <Images
         title={title}
         images={images}
-        cssClasses={cssClasses}
+        imagePosition={imagePosition}
         handleOpen={handleOpen}
       />
-      <div className={`title ${cssClasses}`}>{title}</div>
-      <Copy copy={copy} classes={`copy ${cssClasses}`} />
+      <div className={`title ${imagePosition}`}>{title}</div>
+      <Copy copy={copy} classes={`copy ${imagePosition}`} />
     </MultiImageSection>
   </>
 )

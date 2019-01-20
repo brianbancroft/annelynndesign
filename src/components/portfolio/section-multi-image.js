@@ -11,8 +11,7 @@ const sectionMultiImage = ({ section, color, handleClose, handleOpen } = {}) =>
           title={i.title}
           images={i.images}
           copy={i.copy}
-          cssClasses={i.cssClasses}
-          handleClose={handleClose}
+          imagePosition={i.imagePosition}
           handleOpen={handleOpen}
         />
       ))

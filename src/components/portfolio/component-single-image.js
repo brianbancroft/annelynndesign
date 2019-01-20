@@ -87,20 +87,17 @@ const Copy = ({ copy, classes } = {}) => {
 }
 
 const ComponentSingleImage = ({
-  cssClasses,
+  imagePosition,
   image,
   title,
   copy,
   color,
-  imagePosition,
-} = {}) => {
-  return (
-    <SingleImage color={color} src={image.fluid.src}>
-      <div className={`image ${imagePosition}`} />
-      <div className={`title ${imagePosition}`}>{title}</div>
-      <Copy copy={copy} classes={`copy ${imagePosition}`} />
-    </SingleImage>
-  )
-}
+} = {}) => (
+  <SingleImage color={color} src={image.fluid.src}>
+    <div className={`image ${imagePosition}`} />
+    <div className={`title ${imagePosition}`}>{title}</div>
+    <Copy copy={copy} classes={`copy ${imagePosition}`} />
+  </SingleImage>
+)
 
 export default ComponentSingleImage

@@ -43,9 +43,7 @@ class PortfolioItem extends Component {
       colorAndTypographyPane,
       conceptAndIdeasPane,
       supportingConceptsPane,
-    ].map(section =>
-      sectionMultiImage({ section, color, handleClose, handleOpen })
-    )
+    ].map(section => sectionMultiImage({ section, color, handleOpen }))
 
     const singleImageSections = sectionSingleImage({
       section: requirementsAndProductPane,
@@ -158,13 +156,12 @@ export const pageQuery = graphql`
           }
         }
 
-        cssClasses {
-          className
-        }
+        imagePosition
       }
       conceptAndIdeasPane {
         id
         title
+        imagePosition
         copy {
           copy
         }
@@ -183,6 +180,7 @@ export const pageQuery = graphql`
       colorAndTypographyPane {
         id
         title
+        imagePosition
         copy {
           copy
         }
@@ -232,9 +230,7 @@ export const pageQuery = graphql`
             aspectRatio
           }
         }
-        cssClasses {
-          className
-        }
+        imagePosition
       }
     }
   }

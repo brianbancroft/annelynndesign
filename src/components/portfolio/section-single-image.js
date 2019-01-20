@@ -7,12 +7,7 @@ const sectionSingleImage = ({ section, color }) => (
     image={section.image}
     title={section.title}
     color={color}
-    cssClasses={() =>
-      section.cssClasses ? section.cssClasses[0].className : null
-    }
-    imagePosition={() =>
-      section.cssClasses ? section.cssClasses[0].className : null
-    }
+    imagePosition={section.imagePosition}
   />
 )
 
