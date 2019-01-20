@@ -17,19 +17,11 @@ const textAreaStyle = css`
 `
 
 const ContactSection = styled('section')`
-  width: 100%;
-  height: 100%;
-  padding-left: 40px;
-  display: grid;
-  grid-template-rows: 80px 80%;
-  grid-row-gap: 40px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
   flex-direction: column;
   color: #1e9dba;
-
-  @media (max-width: 620px) {
-    padding-left: 0 10px;
-    width: 80vw;
-  }
 
   label {
     line-height: 2rem;
@@ -45,13 +37,18 @@ const ContactSection = styled('section')`
     line-height: 49px;
     text-shadow: 0 0 0.2em #fff;
     padding-top: 30px;
-    padding-left: 20px;
-    margin-left: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  .form-container {
+    width: 80vw;
+    margin: 0 auto;
   }
 
   .contact-form {
     text-transform: uppercase;
+    width: 80%;
     font-size: 20px;
     letter-spacing: -0.39px;
     line-height: 49px;
@@ -103,20 +100,11 @@ const ContactSection = styled('section')`
     transition: 0.6s ease-out;
   }
 
-  .form-container {
-    width: 500px;
-    margin: 0 auto;
-  }
-
   .form-field {
     font-size: 15px;
     padding: 10px 20px;
     background-color: rgba(30, 157, 186, 0.1);
     border: none;
-  }
-
-  .contact {
-    width: 60%;
   }
 `
 
