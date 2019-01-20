@@ -17,11 +17,17 @@ const textAreaStyle = css`
 `
 
 const ContactSection = styled('section')`
-  width: 100vw;
+  width: 80%;
   height: 100vh;
+  margin-left: 30px;
   display: flex;
   flex-direction: column;
   color: #1e9dba;
+
+  @media (max-width: 600px) {
+    margin-left: 0;
+    width: 100%;
+  }
 
   label {
     line-height: 2rem;
@@ -39,11 +45,18 @@ const ContactSection = styled('section')`
     padding-top: 30px;
     margin-bottom: 60px;
     text-align: center;
+
+    @media (max-width: 600px) {
+      width: 100%;
+    }
   }
 
   .form-container {
-    width: 80vw;
     margin: 0 auto;
+
+    @media (max-width: 600px) {
+      width: 80vw;
+    }
   }
 
   .contact-form {
