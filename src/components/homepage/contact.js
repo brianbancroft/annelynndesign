@@ -12,7 +12,7 @@ const textAreaStyle = css`
     width: 325px;
   }
   @media (min-width: 501px) {
-    max-width: 38vw;
+    max-width: 350px;
   }
 `
 
@@ -73,7 +73,7 @@ const ContactSection = styled('section')`
       margin-left: 0;
     }
     @media (min-width: 501px) {
-      max-width: 38vw;
+      max-width: 350px;
     }
   }
 
@@ -89,7 +89,7 @@ const ContactSection = styled('section')`
       width: 325px;
     }
     @media (min-width: 501px) {
-      max-width: 38vw;
+      max-width: 350px;
     }
   }
 
@@ -107,7 +107,7 @@ const ContactSection = styled('section')`
       width: 325px;
     }
     @media (min-width: 501px) {
-      max-width: 38vw;
+      max-width: 350px;
     }
   }
 
