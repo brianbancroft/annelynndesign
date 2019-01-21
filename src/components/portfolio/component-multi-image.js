@@ -121,10 +121,8 @@ const MultiImageSection = styled('section')`
     }
 
     img {
-      max-width: ${props => {
-        console.log('Image props -> ', props)
-        return props.numImages ? 80 / props.numImages + 'vw' : '80vw'
-      }};
+      max-width: ${props =>
+        props.numImages ? 80 / props.numImages + 'vw' : '80vw'};
       max-height: ${props =>
         props.numImages ? 80 / props.numImages + 'vw' : '80vw'};
       margin-right: 15px;
@@ -173,10 +171,7 @@ const Images = ({ title, handleOpen, images, imagePosition } = {}) => (
         images={images}
       />
     </div>
-    <div
-      imagePosition={imagePosition}
-      className={`desktop-images-container ${imagePosition}`}
-    >
+    <div className={`desktop-images-container ${imagePosition}`}>
       {imagesLayout({ images, title, handleOpen, imagePosition })}
     </div>
   </>
