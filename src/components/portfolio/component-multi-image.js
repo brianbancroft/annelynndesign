@@ -18,8 +18,8 @@ const MultiImageSection = styled('section')`
   align-items: center;
   color: ${props => (props.color ? props.color : 'inherit')};
 
-  /* outline-color: red;
-  outline-style: double; */
+  outline-color: red;
+  outline-style: double;
 
   @media (max-width: 600px) {
     display: flex;
@@ -121,11 +121,13 @@ const MultiImageSection = styled('section')`
     }
 
     img {
-      max-width: ${props =>
-        props.numImages ? 80 / props.numImages + 'vw' : '80vw'};
+      max-width: ${props => {
+        console.log('Image props -> ', props)
+        return props.numImages ? 80 / props.numImages + 'vw' : '80vw'
+      }};
       max-height: ${props =>
         props.numImages ? 80 / props.numImages + 'vw' : '80vw'};
-      margin-right: 5px;
+      margin-right: 15px;
     }
   }
 
@@ -172,7 +174,6 @@ const Images = ({ title, handleOpen, images, imagePosition } = {}) => (
       />
     </div>
     <div
-      numImages={images.length}
       imagePosition={imagePosition}
       className={`desktop-images-container ${imagePosition}`}
     >
@@ -193,7 +194,7 @@ const ComponentMultiImage = ({
 
   return (
     <>
-      <MultiImageSection color={color}>
+      <MultiImageSection color={color} numImages={images.length}>
         <Images
           title={title}
           images={images}

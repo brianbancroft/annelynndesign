@@ -13,7 +13,11 @@ const SingleImage = styled('section')`
   grid-row-gap: 20px;
   grid-template-columns: 10vw 20vw 20vw 1fr 10vw;
 
+  outline-color: orange;
+  outline-style: double;
+
   .copy {
+    padding-top: 30px;
     color: #222;
     grid-column: 4 / 5;
     grid-row: 4 / 5;
@@ -22,6 +26,7 @@ const SingleImage = styled('section')`
   }
 
   .title {
+    padding-top: 30px;
     font-size: 1.2rem;
     font-family: 'Raleway Semi-Bold', sans-serif;
     text-transform: capitalize;
