@@ -17,9 +17,9 @@ const MultiImageSection = styled('section')`
 
   align-items: center;
   color: ${props => (props.color ? props.color : 'inherit')};
-
+  /*
   outline-color: red;
-  outline-style: double;
+  outline-style: double; */
 
   @media (max-width: 600px) {
     display: flex;

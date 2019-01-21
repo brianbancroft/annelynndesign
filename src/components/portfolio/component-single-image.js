@@ -13,8 +13,8 @@ const SingleImage = styled('section')`
   grid-row-gap: 20px;
   grid-template-columns: 10vw 20vw 20vw 1fr 10vw;
 
-  outline-color: orange;
-  outline-style: double;
+  /* outline-color: orange;
+  outline-style: double; */
 
   .copy {
     padding-top: 30px;
