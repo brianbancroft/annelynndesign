@@ -26,18 +26,19 @@ class PortfolioItem extends Component {
       this.setState({ showModal: true, modalImage, title })
     const handleClose = () => this.setState({ showModal: false })
 
-    const { contentfulPortfolioItem: item } = this.props.data
     const {
-      color,
-      copy,
-      headerSectionTextColor,
-      headline,
-      title,
-      colorAndTypographyPane,
-      conceptAndIdeasPane,
-      requirementsAndProductPane,
-      supportingConceptsPane,
-    } = item
+      contentfulPortfolioItem: {
+        color,
+        copy,
+        headerSectionTextColor,
+        headline,
+        title,
+        colorAndTypographyPane,
+        conceptAndIdeasPane,
+        requirementsAndProductPane,
+        supportingConceptsPane,
+      },
+    } = this.props.data
 
     const multiImageSections = [
       colorAndTypographyPane,
