@@ -69,22 +69,22 @@ const ScrollIconLink = styled('a')`
 //   scrollTo(document.body, 0, 1250)
 // }
 
-function scrollTo(element, to, duration) {
-  var start = element.scrollTop,
-    change = to - start,
-    currentTime = 0,
-    increment = 20
+// function scrollTo(element, to, duration) {
+//   var start = element.scrollTop,
+//     change = to - start,
+//     currentTime = 0,
+//     increment = 20
 
-  var animateScroll = function() {
-    currentTime += increment
-    var val = Math.easeInOutQuad(currentTime, start, change, duration)
-    element.scrollTop = val
-    if (currentTime < duration) {
-      setTimeout(animateScroll, increment)
-    }
-  }
-  animateScroll()
-}
+//   var animateScroll = function() {
+//     currentTime += increment
+//     var val = Math.easeInOutQuad(currentTime, start, change, duration)
+//     element.scrollTop = val
+//     if (currentTime < duration) {
+//       setTimeout(animateScroll, increment)
+//     }
+//   }
+//   animateScroll()
+// }
 
 //t = current time
 //b = start value

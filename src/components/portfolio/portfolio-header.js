@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'react-emotion'
-import { ScrollIcon } from '..'
 
 const HeaderSection = styled('section')`
   @media (max-width: 620px) {
