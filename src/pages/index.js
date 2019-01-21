@@ -17,8 +17,10 @@ class IndexPage extends Component {
     )
 
     const offset = window.pageYOffset
+
     const headerSection = document.getElementById('headerSection')
     const footerSection = document.getElementById('footerSection')
+
     if (headerSection || footerSection) {
       if (height / offset > 2.9763313609467454) {
         headerSection.style.display = 'block'
@@ -52,6 +54,11 @@ class IndexPage extends Component {
             {
               name: 'keywords',
               content: `Anne-Lynn Bancroft, annelynn design, anne-lynn design, print, packaging, design`,
+            },
+
+            {
+              name: 'theme-color',
+              content: '#fff',
             },
           ]}
         >
