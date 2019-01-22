@@ -45,6 +45,7 @@ const ContactSection = styled('section')`
     padding-top: 30px;
     margin-bottom: 60px;
     text-align: center;
+    width: 80%;
 
     @media (max-width: 600px) {
       width: 100%;

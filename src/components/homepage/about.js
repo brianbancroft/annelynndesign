@@ -15,7 +15,7 @@ const AboutSection = styled('section')`
     padding-top: 30px;
     margin-bottom: 30px;
     padding-left: 83px;
-    margin-left: 5vw;
+    margin-left: 80px;
 
     @media (max-width: 600px) {
       margin-left: 0;
@@ -29,6 +29,11 @@ const AboutSection = styled('section')`
     font-size: 18px;
     color: #1e9dba;
     line-height: 17px;
+    margin-left: 120px;
+
+    @media (max-width: 600px) {
+      margin-left: 0;
+    }
   }
 
   .about__about-image {
