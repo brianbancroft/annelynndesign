@@ -122,9 +122,9 @@ const MultiImageSection = styled('section')`
 
     img {
       max-width: ${props =>
-        props.numImages ? 80 / props.numImages + 'vw' : '80vw'};
+        props.numImages ? 70 / props.numImages + 'vw' : '70vw'};
       max-height: ${props =>
-        props.numImages ? 80 / props.numImages + 'vw' : '80vw'};
+        props.numImages ? 70 / props.numImages + 'vw' : '70vw'};
       margin-right: 15px;
     }
   }
