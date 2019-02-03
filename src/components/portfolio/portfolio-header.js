@@ -3,11 +3,11 @@ import styled from 'react-emotion'
 
 const HeaderSection = styled('section')`
   @media (max-width: 620px) {
-    grid-template-columns: 10vw 80vw 10vw;
-    grid-template-rows: 20vh 28vh 1fr;
+    grid-template-columns: 5vw 90vw 5vw;
+    grid-template-rows: 20vh 80px 1fr;
 
     .header--headline {
-      font-size: 1.5rem !important;
+      font-size: 1.2rem !important;
     }
   }
 
@@ -17,8 +17,8 @@ const HeaderSection = styled('section')`
   height: 100vh;
 
   display: grid;
-  grid-template-columns: 30vw 40vw 30vw;
-  grid-template-rows: 1fr 15vh 1fr;
+  grid-template-columns: 1fr 500px 1fr;
+  grid-template-rows: 1fr 80px 1fr;
 
   .header--headline {
     font-family: 'Raleway Semi-Bold', sans-serif;
@@ -34,8 +34,8 @@ const HeaderSection = styled('section')`
   }
 
   .header--copy {
-    text-align: justify;
-    padding: 0 20px;
+    text-align: center;
+    padding: 0 40px;
     grid-column: 2 / 3;
     grid-row: 3 / 4;
   }
