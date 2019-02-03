@@ -10,7 +10,7 @@ const moduleExports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages`,
+        path: `${ __dirname }/src/pages`,
         name: 'pages',
       },
     },
@@ -26,14 +26,18 @@ const moduleExports = {
     {
       resolve: `gatsby-plugin-emotion`,
       options: {
-        // Accepts all options defined by `babel-plugin-emotion` plugin.
+        // sourceMap is on by default but source maps are dead code eliminated in production
+        sourceMap: true,
+        autoLabel: process.env.NODE_ENV !== 'production',
+        labelFormat: '[local]',
+        cssPropOptimization: true,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${ __dirname }/src/images`,
       },
     },
     {
