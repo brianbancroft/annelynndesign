@@ -16,6 +16,7 @@ const AboutSection = styled('section')`
     margin-bottom: 30px;
     padding-left: 83px;
     margin-left: 80px;
+    font-weight: 100;
 
     @media (max-width: 600px) {
       margin-left: 0;

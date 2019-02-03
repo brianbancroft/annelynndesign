@@ -20,7 +20,6 @@ const HeaderSection = styled('section')`
     text-shadow: white 0.1em 0.1em 0.1em;
     font-size: 90px;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
     line-height: 90px;
     font-weight: 100;
     color: #1e9dba;
