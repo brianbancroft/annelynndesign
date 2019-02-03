@@ -7,6 +7,13 @@ const moduleExports = {
     title: 'Anne-Lynn Design',
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: 'pages',
+      },
+    },
     'gatsby-plugin-offline',
     {
       resolve: `gatsby-source-contentful`,

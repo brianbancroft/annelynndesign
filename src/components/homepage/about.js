@@ -17,6 +17,7 @@ const AboutSection = styled('section')`
     padding-left: 83px;
     margin-left: 80px;
     font-weight: 100;
+    font-family: 'Raleway', sans-serif;
 
     @media (max-width: 600px) {
       margin-left: 0;

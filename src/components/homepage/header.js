@@ -10,6 +10,7 @@ const HeaderSection = styled('section')`
   z-index: -1;
   top: 0;
   position: fixed;
+  font-family: 'Raleway', sans-serif;
 
   .title {
     user-select: none;
