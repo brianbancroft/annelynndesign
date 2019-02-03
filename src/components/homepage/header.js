@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import { ScrollIcon } from '..'
 
 const HeaderSection = styled('section')`
@@ -101,7 +101,7 @@ const HeaderSection = styled('section')`
 `
 
 class Header extends React.Component {
-  render() {
+  render () {
     return (
       <HeaderSection id="headerSection">
         <div className="welcome-header">

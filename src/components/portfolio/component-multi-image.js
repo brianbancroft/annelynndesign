@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import { MobileImageSlider } from '.'
 
 const MultiImageSection = styled('section')`
@@ -16,7 +16,7 @@ const MultiImageSection = styled('section')`
   grid-column-gap: 30px;
 
   align-items: center;
-  color: ${props => (props.color ? props.color : 'inherit')};
+  color: ${ props => (props.color ? props.color : 'inherit') };
   /*
   outline-color: red;
   outline-style: double; */
@@ -41,7 +41,7 @@ const MultiImageSection = styled('section')`
     font-family: 'Raleway Semi-Bold', sans-serif;
     text-transform: capitalize;
     font-weight: 500;
-    color: ${props => (props.color ? props.color : 'inherit')};
+    color: ${ props => (props.color ? props.color : 'inherit') };
     padding-right: 20px;
     text-align: right;
     height: 100%;
@@ -121,10 +121,10 @@ const MultiImageSection = styled('section')`
     }
 
     img {
-      max-width: ${props =>
-        props.numImages ? 70 / props.numImages + 'vw' : '70vw'};
-      max-height: ${props =>
-        props.numImages ? 70 / props.numImages + 'vw' : '70vw'};
+      max-width: ${ props =>
+    props.numImages ? 70 / props.numImages + 'vw' : '70vw' };
+      max-height: ${ props =>
+    props.numImages ? 70 / props.numImages + 'vw' : '70vw' };
       margin-right: 15px;
     }
   }
@@ -164,14 +164,14 @@ const imagesLayout = ({ images, title, handleOpen, imagePosition } = {}) =>
 
 const Images = ({ title, handleOpen, images, imagePosition } = {}) => (
   <>
-    <div className={`mobile-images-container ${imagePosition}`}>
+    <div className={`mobile-images-container ${ imagePosition }`}>
       <MobileImageSlider
         title={title}
         handleOpen={handleOpen}
         images={images}
       />
     </div>
-    <div className={`desktop-images-container ${imagePosition}`}>
+    <div className={`desktop-images-container ${ imagePosition }`}>
       {imagesLayout({ images, title, handleOpen, imagePosition })}
     </div>
   </>
@@ -185,7 +185,7 @@ const ComponentMultiImage = ({
   title,
   handleOpen,
 } = {}) => {
-  imagePosition = !(title || copy) ? `${imagePosition} no-copy` : imagePosition
+  imagePosition = !(title || copy) ? `${ imagePosition } no-copy` : imagePosition
 
   return (
     <>
@@ -195,10 +195,10 @@ const ComponentMultiImage = ({
           images={images}
           imagePosition={imagePosition}
           handleOpen={handleOpen}
-          className={`images-container ${imagePosition}`}
+          className={`images-container ${ imagePosition }`}
         />
-        <div className={`title ${imagePosition}`}>{title}</div>
-        <Copy copy={copy} classes={`copy ${imagePosition}`} />
+        <div className={`title ${ imagePosition }`}>{title}</div>
+        <Copy copy={copy} classes={`copy ${ imagePosition }`} />
       </MultiImageSection>
     </>
   )

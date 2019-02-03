@@ -7,8 +7,8 @@
     "@emotion/core": "^10.0.6",
     "@emotion/styled": "^10.0.6",
     "dotenv": "^6.1.0",
-    "emotion": "^9.2.12",
-    "emotion-server": "^9.2.12",
+    "emotion": "^10.0.6",
+    "emotion-server": "^10.0.6",
     "gatsby": "^2.0.38",
     "gatsby-plugin-emotion": "^2.0.7",
     "gatsby-plugin-manifest": "^2.0.5",
@@ -21,7 +21,6 @@
     "pure-react-carousel": "^1.17.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
-    "react-emotion": "^9.2.12",
     "react-helmet": "^5.2.0",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.84.0"
@@ -35,12 +34,20 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "dev": "gatsby develop",
+    "start": "gatsby develop",
     "format": "prettier --write \"src/**/*.js\"",
     "serve": "serve -l 9000 ./public",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src --ext .js"
   },
   "devDependencies": {
     "eslint": "^5.8.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-emotion": "^10.0.6",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-standard": "^4.0.0",
     "prettier": "^1.14.2",
     "serve": "^10.1.1"
   },

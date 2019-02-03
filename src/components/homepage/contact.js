@@ -1,5 +1,8 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import React from 'react'
-import styled, { css } from 'react-emotion'
+import styled from '@emotion/styled'
+import { css, cx } from '@emotion/core'
 
 const textAreaStyle = css`
   width: 450px;
@@ -154,7 +157,8 @@ const Contact = () => (
         <label>MESSAGE</label>
         <br />
         <textarea
-          className={`form-field form-field__textarea ${textAreaStyle}`}
+          className={`form-field form-field__textarea`}
+          css={[textAreaStyle]}
           name="comment"
           form="usrform"
           defaultValue="Hi there, I just saw your site and I'd like to talk more!"

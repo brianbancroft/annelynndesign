@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import { BackIcon } from '.'
 
 const FooterSection = styled('section')`
@@ -8,7 +8,7 @@ const FooterSection = styled('section')`
   bottom: 0;
   height: 65px;
   width: 100vw;
-  background: ${props => (props && props.color ? props.color : '#aaf')};
+  background: ${ props => (props && props.color ? props.color : '#aaf') };
 `
 
 const Footer = ({ color } = {}) => (

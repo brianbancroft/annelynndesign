@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 
 const HeaderSection = styled('section')`
   @media (max-width: 620px) {
@@ -11,8 +11,8 @@ const HeaderSection = styled('section')`
     }
   }
 
-  background: ${props => props.backgroundColor || '#1402ba'};
-  color: ${props => props.headerSectionTextColor || '#efefef'};
+  background: ${ props => props.backgroundColor || '#1402ba' };
+  color: ${ props => props.headerSectionTextColor || '#efefef' };
   width: 100vw;
   height: 100vh;
 

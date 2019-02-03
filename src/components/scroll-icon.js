@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 
 const ScrollIconLink = styled('a')`
   position: absolute;
@@ -86,11 +86,11 @@ const ScrollIconLink = styled('a')`
 //   animateScroll()
 // }
 
-//t = current time
-//b = start value
-//c = change in value
-//d = duration
-Math.easeInOutQuad = function(time, initialTime, deltaTime, elapsedTime) {
+// t = current time
+// b = start value
+// c = change in value
+// d = duration
+Math.easeInOutQuad = function (time, initialTime, deltaTime, elapsedTime) {
   time /= deltaTime / 2
   if (time < 1) return (elapsedTime / 2) * time * time + initialTime
   time--
