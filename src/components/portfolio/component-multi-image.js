@@ -121,9 +121,8 @@ const MultiImageSection = styled('section')`
       display: none;
     }
 
-    img,
-    .image-holder {
-      max-width: ${ props =>
+    .gatsby-image-wrapper {
+      width: ${ props =>
   // props.numImages ? 70 / props.numImages + 'vw' : '70vw' };
   //   max-height: ${ props =>
     props.numImages ? 70 / props.numImages + 'vw' : '70vw' };
@@ -145,7 +144,7 @@ const imagesLayout = ({ images, title, handleOpen, imagePosition } = {}) =>
   imagePosition === 'images-center' ? (
     images.map(i => (
       <Img
-        fixed={i.thumbnail}
+        fluid={i.fluid}
         key={i.id}
         onClick={handleOpen({
           modalImage: i.original.src,
@@ -155,7 +154,7 @@ const imagesLayout = ({ images, title, handleOpen, imagePosition } = {}) =>
     ))
   ) : (
     <Img
-      fixed={images[0].thumbnail}
+      fluid={images[0].fluid}
       key={images[0].id}
       onClick={handleOpen({
         modalImage: images[0].original.src,

@@ -149,7 +149,7 @@ export const pageQuery = graphql`
             aspectRatio
           }
 
-          thumbnail: fixed(width: 650) {
+          fixed(width: 650) {
             src
             srcSet
             width
@@ -174,10 +174,13 @@ export const pageQuery = graphql`
           original: file {
             src: url
           }
-          fluid: fluid(maxWidth: 400) {
+          fluid(maxWidth: 600) {
             src
+            srcSet
+            sizes
+            aspectRatio
           }
-          thumbnail: fixed(width: 650) {
+          fixed(width: 650) {
             src
             srcSet
             width
@@ -201,10 +204,13 @@ export const pageQuery = graphql`
             src: url
           }
 
-          fluid: fluid(maxWidth: 400) {
+          fluid(maxWidth: 600) {
             src
+            srcSet
+            sizes
+            aspectRatio
           }
-          thumbnail: fixed(width: 650) {
+          fixed(width: 650) {
             src
             srcSet
             width
@@ -233,13 +239,13 @@ export const pageQuery = graphql`
             srcSet
             aspectRatio
           }
-          fluid(maxWidth: 500) {
+          fluid(maxWidth: 600) {
             src
             srcSet
             sizes
             aspectRatio
           }
-          thumbnail: fixed(width: 650) {
+          fixed(width: 650) {
             src
             srcSet
             width
