@@ -143,14 +143,15 @@ const Copy = ({ copy, classes } = {}) => {
 const imagesLayout = ({ images, title, handleOpen, imagePosition } = {}) =>
   imagePosition === 'images-center' ? (
     images.map(i => (
-      <Img
-        fluid={i.fluid}
+      <div
         key={i.id}
         onClick={handleOpen({
           modalImage: i.original.src,
           title: title,
         })}
-      />
+      >
+        <Img fluid={i.fluid} />
+      </div>
     ))
   ) : (
     <Img
