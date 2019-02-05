@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import Img from 'gatsby-image'
 import { MobileImageSlider } from '.'
 
 const MultiImageSection = styled('section')`
@@ -115,15 +116,16 @@ const MultiImageSection = styled('section')`
     min-height: 350px;
     display: flex;
     justify-content: center;
-
+    align-items: baseline;
     @media (max-width: 600px) {
       display: none;
     }
 
-    img {
+    img,
+    .image-holder {
       max-width: ${ props =>
-    props.numImages ? 70 / props.numImages + 'vw' : '70vw' };
-      max-height: ${ props =>
+  // props.numImages ? 70 / props.numImages + 'vw' : '70vw' };
+  //   max-height: ${ props =>
     props.numImages ? 70 / props.numImages + 'vw' : '70vw' };
       margin-right: 15px;
     }
@@ -142,21 +144,21 @@ const Copy = ({ copy, classes } = {}) => {
 const imagesLayout = ({ images, title, handleOpen, imagePosition } = {}) =>
   imagePosition === 'images-center' ? (
     images.map(i => (
-      <img
-        src={i.fluid.src}
+      <Img
+        fixed={i.thumbnail}
         key={i.id}
         onClick={handleOpen({
-          modalImage: i.fluid.src,
+          modalImage: i.original.src,
           title: title,
         })}
       />
     ))
   ) : (
-    <img
-      src={images[0].fluid.src}
+    <Img
+      fixed={images[0].thumbnail}
       key={images[0].id}
       onClick={handleOpen({
-        modalImage: images[0].fluid.src,
+        modalImage: images[0].original.src,
         title: title,
       })}
     />

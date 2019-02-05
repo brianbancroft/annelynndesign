@@ -7,6 +7,8 @@ const moduleExports = {
     title: 'Anne-Lynn Design',
   },
   plugins: [
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

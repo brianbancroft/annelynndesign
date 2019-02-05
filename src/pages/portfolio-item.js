@@ -7,12 +7,12 @@ import {
   Footer,
   sectionSingleImage,
   sectionMultiImage,
-  ImageModal,
+  ImageModal
 } from '../components/portfolio'
 import './portfolio-item.module.css'
 
 class PortfolioItem extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       showModal: false,
@@ -21,9 +21,11 @@ class PortfolioItem extends Component {
     }
   }
 
-  render() {
-    const handleOpen = ({ modalImage, title } = {}) => () =>
+  render () {
+    const handleOpen = ({ modalImage, title } = {}) => () => {
+      console.log('Handle open triggered')
       this.setState({ showModal: true, modalImage, title })
+    }
     const handleClose = () => this.setState({ showModal: false })
 
     const {
@@ -54,7 +56,7 @@ class PortfolioItem extends Component {
     return (
       <>
         <Helmet
-          title={`${title} - Anne-Lynn Design`}
+          title={`${ title } - Anne-Lynn Design`}
           meta={[
             {
               name: 'description',
@@ -62,7 +64,7 @@ class PortfolioItem extends Component {
             },
             {
               name: 'keywords',
-              content: `anne-lynn hanna, annelynn design, anne-lynn design, ${title}`,
+              content: `anne-lynn hanna, annelynn design, anne-lynn design, ${ title }`,
             },
             {
               name: 'theme-color',
@@ -130,11 +132,8 @@ export const pageQuery = graphql`
             sizes
           }
           title
-          file {
-            details {
-              size
-            }
-            url
+          original: file {
+            src: url
           }
           resolutions(width: 1600) {
             width
@@ -149,8 +148,10 @@ export const pageQuery = graphql`
             sizes
             aspectRatio
           }
-          fixed(height: 500) {
+
+          thumbnail: fixed(width: 650) {
             src
+            srcSet
             width
             height
             aspectRatio
@@ -170,11 +171,18 @@ export const pageQuery = graphql`
         images {
           id
           title
-          file {
-            url
+          original: file {
+            src: url
           }
           fluid: fluid(maxWidth: 400) {
             src
+          }
+          thumbnail: fixed(width: 650) {
+            src
+            srcSet
+            width
+            height
+            aspectRatio
           }
         }
       }
@@ -189,12 +197,19 @@ export const pageQuery = graphql`
         images {
           id
           title
-          file {
-            url
+          original: file {
+            src: url
           }
 
           fluid: fluid(maxWidth: 400) {
             src
+          }
+          thumbnail: fixed(width: 650) {
+            src
+            srcSet
+            width
+            height
+            aspectRatio
           }
         }
       }
@@ -208,8 +223,8 @@ export const pageQuery = graphql`
         images {
           id
           title
-          file {
-            url
+          original: file {
+            src: url
           }
           resolutions(width: 1600) {
             width
@@ -224,8 +239,9 @@ export const pageQuery = graphql`
             sizes
             aspectRatio
           }
-          fixed(height: 500) {
+          thumbnail: fixed(width: 650) {
             src
+            srcSet
             width
             height
             aspectRatio
