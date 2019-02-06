@@ -4,9 +4,10 @@ require('dotenv').config({
 
 const moduleExports = {
   siteMetadata: {
-    title: 'Anne-Lynn Design',
-    description: 'Portfolio site for graphic design. Uses gatsby, netlify and contentful',
     author: 'Brian Bancroft (hello@brianbancroft.ca)',
+    title: 'Anne-Lynn Design',
+    description:
+      'Portfolio site for graphic design. Uses gatsby, netlify and contentful',
   },
   plugins: [
     `gatsby-plugin-sharp`,
@@ -14,7 +15,7 @@ const moduleExports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${ __dirname }/src/pages`,
+        path: `${__dirname}/src/pages`,
         name: 'pages',
       },
     },
@@ -41,7 +42,7 @@ const moduleExports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${ __dirname }/src/images`,
+        path: `${__dirname}/src/images`,
       },
     },
     {
