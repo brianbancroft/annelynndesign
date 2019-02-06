@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 import { Header, Portfolio, Footer } from '../components/homepage'
-import './index.module.css'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 

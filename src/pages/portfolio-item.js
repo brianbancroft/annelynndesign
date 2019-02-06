@@ -10,7 +10,6 @@ import {
   sectionMultiImage,
   ImageModal,
 } from '../components/portfolio'
-import './portfolio-item.module.css'
 
 class PortfolioItem extends Component {
   constructor(props) {
