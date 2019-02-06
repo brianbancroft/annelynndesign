@@ -55,7 +55,6 @@ const PortfolioHeader = ({
       <div className="header--headline">{headline}</div>
       <div className="header--copy">{copy.copy}</div>
     </HeaderSection>
-    {/* <ScrollIcon /> */}
   </>
 )
 
