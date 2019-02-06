@@ -5,6 +5,8 @@ require('dotenv').config({
 const moduleExports = {
   siteMetadata: {
     title: 'Anne-Lynn Design',
+    description: 'Portfolio site for graphic design. Uses gatsby, netlify and contentful',
+    author: 'Brian Bancroft (hello@brianbancroft.ca)',
   },
   plugins: [
     `gatsby-plugin-sharp`,

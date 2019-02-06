@@ -1,18 +1,19 @@
 import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
+import Layout from '../components/layout'
 
 import {
   PortfolioHeader,
   Footer,
   sectionSingleImage,
   sectionMultiImage,
-  ImageModal
+  ImageModal,
 } from '../components/portfolio'
 import './portfolio-item.module.css'
 
 class PortfolioItem extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       showModal: false,
@@ -21,9 +22,8 @@ class PortfolioItem extends Component {
     }
   }
 
-  render () {
+  render() {
     const handleOpen = ({ modalImage, title } = {}) => () => {
-      console.log('Handle open triggered')
       this.setState({ showModal: true, modalImage, title })
     }
     const handleClose = () => this.setState({ showModal: false })
@@ -54,9 +54,9 @@ class PortfolioItem extends Component {
     })
 
     return (
-      <>
+      <Layout>
         <Helmet
-          title={`${ title } - Anne-Lynn Design`}
+          title={`${title} - Anne-Lynn Design`}
           meta={[
             {
               name: 'description',
@@ -64,7 +64,7 @@ class PortfolioItem extends Component {
             },
             {
               name: 'keywords',
-              content: `anne-lynn hanna, annelynn design, anne-lynn design, ${ title }`,
+              content: `anne-lynn hanna, annelynn design, anne-lynn design, ${title}`,
             },
             {
               name: 'theme-color',
@@ -99,7 +99,7 @@ class PortfolioItem extends Component {
           {multiImageSections}
         </div>
         <Footer color={color} />
-      </>
+      </Layout>
     )
   }
 }

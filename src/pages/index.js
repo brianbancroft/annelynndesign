@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import { Header, Portfolio, Footer } from '../components/homepage'
 import './index.module.css'
 import Helmet from 'react-helmet'
+import Layout from '../components/layout'
 
 class IndexPage extends Component {
   handleScroll() {
@@ -43,7 +44,7 @@ class IndexPage extends Component {
 
   render() {
     return (
-      <>
+      <Layout>
         <Helmet
           title={`Anne-Lynn Design`}
           meta={[
@@ -64,12 +65,12 @@ class IndexPage extends Component {
         >
           <html lang="en" />
         </Helmet>
-        <main>
+        <>
           <Header />
           <Portfolio data={this.props.data} />
           <Footer />
-        </main>
-      </>
+        </>
+      </Layout>
     )
   }
 }
