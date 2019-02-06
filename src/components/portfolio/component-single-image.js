@@ -4,14 +4,14 @@ import styled from '@emotion/styled'
 const SingleImage = styled('section')`
   z-index: 10;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 65px);
   color: ${ props => (props.color ? props.color : 'inherit') };
   background: white;
 
   display: grid;
+  grid-template-columns: 5vw 20vw 20vw 50vw 5vw;
   grid-template-rows: 30px 1fr 100px 200px 100px;
   grid-row-gap: 20px;
-  grid-template-columns: 10vw 20vw 20vw 1fr 10vw;
 
   /* outline-color: orange;
   outline-style: double; */
