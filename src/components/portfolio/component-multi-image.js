@@ -22,13 +22,6 @@ const MultiImageSection = styled('section')`
   @media (max-width: 600px) {
     display: flex;
     flex-direction: column;
-
-    .title {
-      height: 100px;
-    }
-
-    .copy {
-    }
   }
 
   .title {
@@ -43,6 +36,10 @@ const MultiImageSection = styled('section')`
     padding-right: 20px;
     text-align: right;
     height: 100%;
+
+    @media (max-width: 600px) {
+      height: 100px;
+    }
   }
 
   .title.no-copy,
