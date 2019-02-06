@@ -17,7 +17,7 @@ const HeaderSection = styled('section')`
   height: 100vh;
 
   display: grid;
-  grid-template-columns: 1fr 500px 1fr;
+  grid-template-columns: 1fr 800px 1fr;
   grid-template-rows: 1fr 80px 1fr;
 
   .header--headline {
@@ -35,7 +35,7 @@ const HeaderSection = styled('section')`
 
   .header--copy {
     text-align: center;
-    padding: 0 40px;
+    padding: 0 160px;
     grid-column: 2 / 3;
     grid-row: 3 / 4;
   }
