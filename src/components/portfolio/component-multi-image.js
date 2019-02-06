@@ -59,6 +59,7 @@ const MultiImageSection = styled('section')`
     text-align: left;
     padding-top: 90px;
     height: initial;
+    align-self: end;
   }
 
   .title.single-image-right {
@@ -67,7 +68,7 @@ const MultiImageSection = styled('section')`
 
   .copy.single-image-left {
     grid-column: 4 / 5;
-    grid-row: 2 / 4;
+    grid-row: 3 / 4;
   }
 
   .copy.single-image-right {
@@ -76,7 +77,8 @@ const MultiImageSection = styled('section')`
 
   .desktop-images-container.single-image-left {
     grid-column: 2 / 4;
-    grid-row: 2 / 5;
+    grid-row: 2 / 4;
+    align-self: end;
   }
 
   .image.single-image-right {
