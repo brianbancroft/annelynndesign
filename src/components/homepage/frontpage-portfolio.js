@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { navigate } from 'gatsby'
+import { navigate, Link } from 'gatsby'
 import { Contact } from '.'
 
 const MiddleSection = styled('section')`
@@ -44,18 +44,18 @@ const PortfolioItem = styled('div')`
   cursor: pointer;
   grid-column-start: auto;
   grid-row-start: auto;
-  background: url('${ props => (props.img ? props.img : '') }');
+  background: url('${props => (props.img ? props.img : '')}');
   background-size: cover;
   background-position: center;
   box-shadow: -0.2px 0.2px 2px 0px rgba(68,68,68,0.4);
   transition: transform 0.3s ease-in-out;
   counter-increment: item-counter;
-  grid-row-end: ${ props =>
+  grid-row-end: ${props =>
     props.gridDisplayType === 'medium'
       ? 'span 2'
       : props.gridDisplayType === 'large' || props.gridDisplayType === 'full'
-        ? 'span 3'
-        : 'inherit' };
+      ? 'span 3'
+      : 'inherit'};
 
 
   &:after {
@@ -123,16 +123,13 @@ const Portfolio = props => {
       const img = i.node.previewImage ? i.node.previewImage.file.url : ''
 
       return (
-        <PortfolioItem
-          img={img}
-          gridDisplayType={i.node.gridDisplayType}
-          onClick={() => navigate(`/portfolio/${ i.node.slug }`)}
-          key={key}
-        >
-          <div className="item__details">
-            <div className="title">{i.node.title}</div>
-          </div>
-        </PortfolioItem>
+        <Link to={`/portfolio/${i.node.slug}`} key={key}>
+          <PortfolioItem img={img} gridDisplayType={i.node.gridDisplayType}>
+            <div className="item__details">
+              <div className="title">{i.node.title}</div>
+            </div>
+          </PortfolioItem>
+        </Link>
       )
     }
   )

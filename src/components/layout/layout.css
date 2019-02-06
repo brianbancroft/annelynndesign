@@ -9,6 +9,22 @@ body {
   overflow-x: hidden;
 }
 
+body,
+.title {
+  animation-duration: 4s;
+  animation-name: fadein;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 article,
 aside,
 details,
@@ -44,6 +60,7 @@ template {
 }
 a {
   background-color: transparent;
+  text-decoration: none;
   -webkit-text-decoration-skip: objects;
 }
 a:active,
