@@ -2,15 +2,6 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 const HeaderSection = styled('section')`
-  @media (max-width: 620px) {
-    grid-template-columns: 5vw 90vw 5vw;
-    grid-template-rows: 20vh 80px 1fr;
-
-    .header--headline {
-      font-size: 1.2rem !important;
-    }
-  }
-
   background: ${ props => props.backgroundColor || '#1402ba' };
   color: ${ props => props.headerSectionTextColor || '#efefef' };
   width: 100vw;
@@ -19,6 +10,11 @@ const HeaderSection = styled('section')`
   display: grid;
   grid-template-columns: 1fr 800px 1fr;
   grid-template-rows: 1fr 80px 1fr;
+
+  @media (max-width: 620px) {
+    grid-template-columns: 5vw 90vw 5vw;
+    grid-template-rows: 33vh 80px 1fr;
+  }
 
   .header--headline {
     font-family: 'Raleway Semi-Bold', sans-serif;
@@ -31,6 +27,10 @@ const HeaderSection = styled('section')`
     grid-column: 2 / 3;
     vertical-align: center;
     line-height: 45px;
+
+    @media (max-width: 620px) {
+      font-size: 1.2rem !important;
+    }
   }
 
   .header--copy {
@@ -38,6 +38,10 @@ const HeaderSection = styled('section')`
     padding: 0 160px;
     grid-column: 2 / 3;
     grid-row: 3 / 4;
+
+    @media (max-width: 620px) {
+      padding: 0 10px;
+    }
   }
 `
 
