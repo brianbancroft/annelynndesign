@@ -4,8 +4,8 @@ import styled from '@emotion/styled'
 const SingleImage = styled('section')`
   z-index: 10;
   width: 100vw;
-  height: calc(100vh - 65px);
-  color: ${ props => (props.color ? props.color : 'inherit') };
+  height: calc(100vh - 30px);
+  color: ${props => (props.color ? props.color : 'inherit')};
   background: white;
 
   display: grid;
@@ -28,7 +28,7 @@ const SingleImage = styled('section')`
     font-family: 'Raleway Semi-Bold', sans-serif;
     text-transform: capitalize;
     font-weight: 500;
-    color: ${ props => (props.color ? props.color : 'inherit') };
+    color: ${props => (props.color ? props.color : 'inherit')};
     grid-column: 3 / 4;
     grid-row: 4 / 5;
     padding-right: 20px;
@@ -39,7 +39,7 @@ const SingleImage = styled('section')`
   .image {
     grid-column: 2 / 5;
     grid-row: 2 / 4;
-    background: ${ props => (props.src ? `url("${ props.src }")` : 'red') };
+    background: ${props => (props.src ? `url("${props.src}")` : 'red')};
     width: 500px;
     height: 500px;
     background-size: contain;
@@ -96,9 +96,9 @@ const ComponentSingleImage = ({
   color,
 } = {}) => (
   <SingleImage color={color} src={image.fluid.src}>
-    <div className={`image ${ imagePosition }`} />
-    <div className={`title ${ imagePosition }`}>{title}</div>
-    <Copy copy={copy} classes={`copy ${ imagePosition }`} />
+    <div className={`image ${imagePosition}`} />
+    <div className={`title ${imagePosition}`}>{title}</div>
+    <Copy copy={copy} classes={`copy ${imagePosition}`} />
   </SingleImage>
 )
 

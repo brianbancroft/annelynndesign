@@ -5,7 +5,7 @@ const HeaderSection = styled('section')`
   background: ${props => props.backgroundColor || '#1402ba'};
   color: ${props => props.headerSectionTextColor || '#efefef'};
   width: 100vw;
-  height: calc(100vh - 65px);
+  height: calc(100vh - 30px);
 
   display: grid;
   grid-template-columns: 1fr 800px 1fr;

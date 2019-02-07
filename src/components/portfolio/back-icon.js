@@ -18,10 +18,10 @@ const ScrollIconLink = styled('div')`
 
   span {
     position: absolute;
-    top: 55px;
+    top: 44px;
     left: 80px;
-    width: 24px;
-    height: 24px;
+    width: 12px;
+    height: 12px;
     margin-left: -12px;
     border-left: 3px solid white;
     border-bottom: 3px solid white;

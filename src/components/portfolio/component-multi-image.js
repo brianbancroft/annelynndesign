@@ -6,7 +6,7 @@ import { MobileImageSlider } from '.'
 const MultiImageSection = styled('section')`
   z-index: 10;
   width: 100vw;
-  height: calc(100vh - 65px);
+  height: calc(100vh - 30px);
   background: white;
 
   display: grid;

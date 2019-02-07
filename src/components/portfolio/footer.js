@@ -6,9 +6,9 @@ import { BackIcon } from '.'
 const FooterSection = styled('section')`
   position: fixed;
   bottom: 0;
-  height: 65px;
+  height: 30px;
   width: 100vw;
-  background: ${ props => (props && props.color ? props.color : '#aaf') };
+  background: ${props => (props && props.color ? props.color : '#aaf')};
 `
 
 const Footer = ({ color } = {}) => (
