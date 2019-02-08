@@ -84,7 +84,6 @@ export const pageQuery = graphql`
           id
           title
           slug
-          gridDisplayType
           createdAt(formatString: "MMM Do, YYYY")
           previewImage {
             id
