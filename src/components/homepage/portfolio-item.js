@@ -47,6 +47,7 @@ const ItemLabel = styled('div')`
   padding: 8px;
   align-self: end;
   height: 40px;
+  width: 100%;
   background: rgba(12, 12, 12, 0.4);
 
   text-transform: uppercase;

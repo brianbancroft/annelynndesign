@@ -20,7 +20,7 @@ const HeaderSection = styled('section')`
 const Header = styled('div')`
   font-family: 'Raleway Semi-Bold', sans-serif;
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 200;
   margin-bottom: 30px;
   text-align: center;
   padding: 0 10px;
