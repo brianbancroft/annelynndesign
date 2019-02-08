@@ -30,7 +30,6 @@ const MultiImageSection = styled('section')`
 
     font-size: 1.2rem;
     font-family: 'Raleway Semi-Bold', sans-serif;
-    text-transform: capitalize;
     font-weight: 500;
     color: ${props => (props.color ? props.color : 'inherit')};
     padding-right: 20px;
