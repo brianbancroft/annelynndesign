@@ -1,8 +1,6 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
 import React from 'react'
 import styled from '@emotion/styled'
-import { css, cx } from '@emotion/core'
+import { css } from '@emotion/core'
 
 const textAreaStyle = css`
   width: 450px;
