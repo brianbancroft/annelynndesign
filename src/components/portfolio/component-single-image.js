@@ -40,7 +40,7 @@ const ImageContainer = styled('div')`
   }
 `
 
-const CopyDiv = styled('div')`
+const CopyElem = styled('div')`
   padding-top: 30px;
   color: #222;
   grid-column: 4 / 5;
@@ -85,7 +85,7 @@ const Title = styled('div')`
 
 const Copy = ({ copy, cssClass } = {}) => {
   const inner = copy ? copy.copy || '' : ''
-  return <CopyDiv className={cssClass}>{inner}</CopyDiv>
+  return <CopyElem className={cssClass}>{inner}</CopyElem>
 }
 
 const ComponentSingleImage = ({

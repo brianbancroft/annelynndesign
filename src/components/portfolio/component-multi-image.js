@@ -7,16 +7,15 @@ const MultiImageSection = styled('section')`
   z-index: 10;
   width: 100vw;
   height: calc(100vh - 30px);
-  background: white;
 
   display: grid;
   grid-template-rows: 5vh 1fr 100px 10vh;
   grid-template-columns: 5vw 20vw 20vw 1fr 5vw;
   grid-row-gap: 20px;
-
   grid-column-gap: 30px;
-
   align-items: center;
+
+  background: white;
   color: ${props => (props.color ? props.color : 'inherit')};
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
@@ -24,33 +23,8 @@ const MultiImageSection = styled('section')`
     flex-direction: column;
   }
 
-  .desktop-images-container.single-image-left {
-    grid-column: 2 / 4;
-    grid-row: 2 / 4;
-    align-self: end;
-  }
-
   .image.single-image-right {
     grid-row: 1 / 4;
-  }
-
-  .mobile-images-container {
-    width: 70vw;
-    justify-content: center;
-    grid-column: 2 / 6;
-    grid-row: 1 / 3;
-    background: white;
-    min-height: 350px;
-    display: none;
-    @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-  }
-
-  .mobile-images-container.no-copy {
-    grid-row: 1 / 5;
   }
 
   .desktop-images-container {
@@ -80,9 +54,33 @@ const MultiImageSection = styled('section')`
   }
 
   .desktop-images-container.single-image-left {
+    grid-column: 2 / 4;
+    grid-row: 2 / 4;
+    align-self: end;
+
     .gatsby-image-wrapper {
       width: 38vw;
     }
+  }
+`
+
+const MobileImagesContainer = styled('div')`
+  width: 70vw;
+  justify-content: center;
+  grid-column: 2 / 6;
+  grid-row: 1 / 3;
+  background: white;
+  min-height: 350px;
+  display: none;
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .mobile-images-container.no-copy {
+    grid-row: 1 / 5;
   }
 `
 
@@ -172,13 +170,13 @@ const imagesLayout = ({ images, title, handleOpen, imagePosition } = {}) =>
 
 const Images = ({ title, handleOpen, images, imagePosition } = {}) => (
   <>
-    <div className={`mobile-images-container ${imagePosition}`}>
+    <MobileImagesContainer className={imagePosition}>
       <MobileImageSlider
         title={title}
         handleOpen={handleOpen}
         images={images}
       />
-    </div>
+    </MobileImagesContainer>
     <div className={`desktop-images-container ${imagePosition}`}>
       {imagesLayout({ images, title, handleOpen, imagePosition })}
     </div>
