@@ -31,6 +31,8 @@ const Header = styled('div')`
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     font-size: 1.2rem !important;
+    font-weight: 500;
+    font-size: 2rem;
   }
 `
 
@@ -43,6 +45,7 @@ const Copy = styled('div')`
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     padding: 0 10px;
+    font-size: 18px;
   }
 `
 
