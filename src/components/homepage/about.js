@@ -107,18 +107,26 @@ const About = () => (
         <AboutImage />
         <Copy>
           <p>
-            I am from the Ottawa River Valley, and have been a designer since
-            2007 in in-house, agency and contracting roles for both print and
-            packaging design
+            I am from the Ottawa River Valley and have been a designer since
+            2008. I have experience with in-house teams, agencies, and
+            contracting roles for both print and packaging design. I also work
+            as an independent contractor for all types of clients.
           </p>
+
           <p>
-            I have been a designer since 2007, and keep constant through
-            research, and high-tempo production
+            I keep constant through research, and high-tempo production, and my
+            works stands out especially because my interest and knowledge in the
+            printing process, plus my need to maintain strong relationships with
+            the printers which I work with. Not only can I build new concepts,
+            but my experience in production art helps me move fast. I keep
+            current by branching out: As this site shows, I also design for the
+            modern web in an agile environment.
           </p>
+
           <p>
-            My personal interests in graphic design include "print", "colour". I
-            love seeing my designs, and keep a collection of my favorite
-            products which I've helped bring to life.
+            Outside of design, I also enjoy gardening, floral design, as well as
+            arts and crafts. And while I'm a long ways away from Regina, I will
+            always be a Roughriders fan
           </p>
         </Copy>
       </CopyContainer>
