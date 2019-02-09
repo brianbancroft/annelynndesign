@@ -24,50 +24,6 @@ const MultiImageSection = styled('section')`
     flex-direction: column;
   }
 
-  .title {
-    grid-column: 3 / 4;
-    grid-row: 3 / 4;
-
-    font-size: 1.2rem;
-    font-family: 'Raleway Semi-Bold', sans-serif;
-    font-weight: 500;
-    padding-right: 20px;
-    text-align: right;
-    height: 100%;
-    color: ${props => (props.color ? props.color : 'inherit')};
-
-    @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-      height: 100px;
-    }
-  }
-
-  .title.no-copy,
-  .copy.no-copy {
-    display: none;
-  }
-
-  .title.single-image-left {
-    grid-column: 4 / 5;
-    grid-row: 2 / 3;
-    text-align: left;
-    padding-top: 90px;
-    height: initial;
-    align-self: end;
-  }
-
-  .title.single-image-right {
-    grid-row: 2 / 4;
-  }
-
-  .copy.single-image-left {
-    grid-column: 4 / 5;
-    grid-row: 3 / 4;
-  }
-
-  .copy.single-image-right {
-    grid-row: 2 / 3;
-  }
-
   .desktop-images-container.single-image-left {
     grid-column: 2 / 4;
     grid-row: 2 / 4;
@@ -76,14 +32,6 @@ const MultiImageSection = styled('section')`
 
   .image.single-image-right {
     grid-row: 1 / 4;
-  }
-
-  .copy {
-    grid-column: 4 / 5;
-    height: 100%;
-    grid-row: 3 / 4;
-    color: #222;
-    max-width: 500px;
   }
 
   .mobile-images-container {
@@ -138,9 +86,64 @@ const MultiImageSection = styled('section')`
   }
 `
 
+const TitleElem = styled('div')`
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+
+  font-size: 1.2rem;
+  font-family: 'Raleway Semi-Bold', sans-serif;
+  font-weight: 500;
+  padding-right: 20px;
+  text-align: right;
+  height: 100%;
+  color: ${props => (props.color ? props.color : 'inherit')};
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    height: 100px;
+  }
+
+  .no-copy {
+    display: none;
+  }
+
+  .single-image-left {
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+    text-align: left;
+    padding-top: 90px;
+    height: initial;
+    align-self: end;
+  }
+
+  .single-image-right {
+    grid-row: 2 / 4;
+  }
+`
+
+const CopyElem = styled('div')`
+  grid-column: 4 / 5;
+  height: 100%;
+  grid-row: 3 / 4;
+  color: #222;
+  max-width: 500px;
+
+  .single-image-left {
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+  }
+
+  .single-image-right {
+    grid-row: 2 / 3;
+  }
+
+  .no-copy {
+    display: none;
+  }
+`
+
 const Copy = ({ copy, classes } = {}) => {
   const inner = copy ? copy.copy || '' : ''
-  return <div className={classes}>{inner}</div>
+  return <CopyElem className={classes}>{inner}</CopyElem>
 }
 
 const imagesLayout = ({ images, title, handleOpen, imagePosition } = {}) =>
@@ -202,7 +205,7 @@ const ComponentMultiImage = ({
           handleOpen={handleOpen}
           className={`images-container ${imagePosition}`}
         />
-        <div className={`title ${imagePosition}`}>{title}</div>
+        <TitleElem className={imagePosition}>{title}</TitleElem>
         <Copy copy={copy} classes={`copy ${imagePosition}`} />
       </MultiImageSection>
     </>
