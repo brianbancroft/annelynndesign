@@ -11,7 +11,6 @@ const Header = styled(LowerHeader)`
   z-index: 10;
   padding-top: 30px;
   margin-bottom: 30px;
-  padding-left: 83px;
   margin-left: 80px;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
@@ -32,19 +31,20 @@ const CopyContainer = styled('div')`
 `
 
 const Copy = styled('div')`
-  font-size: 18px;
-  color: ${props => props.theme.color.circles.primary};
+  font-size: 17px;
+  color: ${props => props.theme.color.primary};
   line-height: 22px;
-  margin-left: 120px;
+  margin-left: 130px;
   font-weight: 200;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     margin-left: 0;
+    font-size: 15px;
   }
 `
 
 const AboutImage = styled('div')`
-  border: 1px solid ${props => props.theme.color.circles.tertiary};
+  border: 1px solid ${props => props.theme.color.tertiary};
   height: 14vw;
   min-height: 200px;
   width: 14vw;
@@ -69,7 +69,7 @@ const Circle = styled('div')`
 `
 
 const BigCircle = styled(Circle)`
-  border: 2px solid ${props => props.theme.color.circles.secondary};
+  border: 2px solid ${props => props.theme.color.secondary};
   height: 120vh;
   width: 120vh;
   left: 48vw;
@@ -81,17 +81,17 @@ const BigCircle = styled(Circle)`
 `
 
 const BottomCircle = styled(Circle)`
-  border: 2px solid ${props => props.theme.color.circles.primary};
+  border: 2px solid ${props => props.theme.color.primary};
   width: 70vw;
   height: 70vw;
   top: 82vh;
   left: 22vw;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    display: block;
+    border: 1px solid ${props => props.theme.color.primary};
     height: 1000px;
     width: 1000px;
-    position: fixed;
+    position: absolute;
     border-radius: 1000px;
     left: -283px;
     top: 88vh;

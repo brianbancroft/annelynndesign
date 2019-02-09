@@ -10,11 +10,6 @@ const theme = {
     secondary: '#006a77',
     tertiary: '#8ec73f',
     copy: '#222',
-    circles: {
-      primary: '#1e9dba',
-      secondary: '#006a77',
-      tertiary: '#8ec73f',
-    },
     formBackground: 'rgba(30, 157, 186, 0.1)',
     formSubmitBackground: 'rgba(30, 157, 186, 0.25)',
   },

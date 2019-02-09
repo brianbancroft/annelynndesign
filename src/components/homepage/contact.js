@@ -97,7 +97,7 @@ const ContactSection = styled('section')`
 
   .form-field__submit:hover {
     transition: 0.6s ease-out;
-    background-color: ${props => props.theme.color.circles.tertiary};
+    background-color: ${props => props.theme.color.tertiary};
   }
 
   .form-field {
