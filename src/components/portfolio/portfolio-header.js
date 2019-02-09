@@ -12,7 +12,7 @@ const HeaderSection = styled('section')`
   grid-template-rows: 1fr 50px 1fr;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    height: 100vh;
+    height: 105vh;
     grid-template-columns: 5vw 90vw 5vw;
     grid-template-rows: 33vh 80px 1fr;
   }
@@ -30,9 +30,9 @@ const Header = styled('div')`
   line-height: 45px;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    font-size: 1.2rem !important;
-    font-weight: 500;
-    font-size: 2rem;
+    font-size: 1.6rem !important;
+    line-height: 2rem;
+    font-weight: 300;
   }
 `
 
