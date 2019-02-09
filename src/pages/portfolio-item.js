@@ -42,8 +42,8 @@ class PortfolioItem extends Component {
     } = this.props.data
 
     const multiImageSections = [
-      colorAndTypographyPane,
       conceptAndIdeasPane,
+      colorAndTypographyPane,
       supportingConceptsPane,
     ].map(section => sectionMultiImage({ section, color, handleOpen }))
 
