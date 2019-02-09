@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import Img from 'gatsby-image'
-import { MobileImageSlider } from '.'
+import { MobileImageSlider, ComponentSingleImage } from '.'
 
 const MultiImageSection = styled('section')`
   z-index: 10;
@@ -192,7 +192,7 @@ const ComponentMultiImage = ({
 } = {}) => {
   imagePosition = !(title || copy) ? `no-copy` : imagePosition
 
-  return (
+  return images.length > 1 ? (
     <>
       <MultiImageSection color={color} numImages={images.length}>
         <Images
@@ -206,6 +206,14 @@ const ComponentMultiImage = ({
         <Copy copy={copy} classes={`copy ${imagePosition}`} />
       </MultiImageSection>
     </>
+  ) : (
+    <ComponentSingleImage
+      imagePosition={imagePosition}
+      image={images[0]}
+      title={title}
+      copy={copy}
+      color={color}
+    />
   )
 }
 
