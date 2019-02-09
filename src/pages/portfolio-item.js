@@ -86,7 +86,7 @@ class PortfolioItem extends Component {
         />
         <div
           className="porfolio-item__content"
-          style={{ zIndex: 5, background: 'white', marginBottom: '105px' }}
+          style={{ zIndex: 5, background: 'white', marginBottom: '35px' }}
         >
           <PortfolioHeader
             headline={headline}

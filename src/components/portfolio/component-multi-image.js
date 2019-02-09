@@ -9,18 +9,18 @@ const MultiImageSection = styled('section')`
   height: calc(100vh - 30px);
 
   display: grid;
-  grid-template-rows: 5vh 1fr 100px 10vh;
+  grid-template-rows: 20px 1fr 100px 10vh 20px;
   grid-template-columns: 5vw 20vw 20vw 1fr 5vw;
-  grid-row-gap: 20px;
-  grid-column-gap: 30px;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
   align-items: center;
 
   background: white;
   color: ${props => (props.color ? props.color : 'inherit')};
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    display: flex;
     flex-direction: column;
+    grid-template-rows: 20px 1fr 20px 80px 20px;
   }
 
   .image.single-image-right {
@@ -72,11 +72,16 @@ const MobileImagesContainer = styled('div')`
   background: white;
   min-height: 350px;
   display: none;
+  margin-bottom: 20px;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     width: 100%;
     height: 100%;
     display: block;
+
+    grid-column: 2 / 5;
+    grid-row: 1 / 3;
+    padding-top: 70px;
   }
 
   .mobile-images-container.no-copy {
@@ -106,8 +111,11 @@ const TitleElem = styled('div')`
   font-size: ${props => props.theme.h4.fontSize};
   font-family: ${props => props.theme.h4.fontFamily};
   color: ${props => (props.color ? props.color : 'inherit')};
+
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    height: 100px;
+    grid-column: 2 / 5;
+    grid-row: 3 / 4;
+    text-align: center;
   }
 
   .no-copy {
@@ -148,6 +156,11 @@ const CopyElem = styled('div')`
 
   .no-copy {
     display: none;
+  }
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    grid-column: 2 / 5;
+    grid-row: 4 / 5;
   }
 `
 
