@@ -38,6 +38,7 @@ const Copy = styled('div')`
   padding: 0 160px;
   grid-column: 2 / 3;
   grid-row: 3 / 4;
+  font-size: 16px;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     padding: 0 10px;
