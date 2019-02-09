@@ -1,24 +1,20 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { LowerHeader } from '../styled'
 
 const AboutSection = styled('section')`
   width: 100%;
   height: 95vw;
 `
 
-const Header = styled('div')`
-  font-size: 50px;
-  color: ${props => props.theme.color.primary};
-  line-height: 49px;
-  text-shadow: 0 0 0.2em #fff;
+const Header = styled(LowerHeader)`
   z-index: 10;
   padding-top: 30px;
   margin-bottom: 30px;
   padding-left: 83px;
   margin-left: 80px;
-  font-weight: 100;
 
-  @media (max-width: 600px) {
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     margin-left: 0;
     padding-left: 0;
     text-align: center;
@@ -28,7 +24,7 @@ const Header = styled('div')`
 const CopyContainer = styled('div')`
   position: relative;
   right: 5vw;
-  @media (max-width: 600px) {
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     right: 0;
     width: 90%;
     margin: 0 auto;
@@ -38,17 +34,17 @@ const CopyContainer = styled('div')`
 const Copy = styled('div')`
   text-align: justify;
   font-size: 18px;
-  color: ${props => props.theme.color.primary};
+  color: ${props => props.theme.color.circles.primary};
   line-height: 17px;
   margin-left: 120px;
 
-  @media (max-width: 600px) {
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     margin-left: 0;
   }
 `
 
 const AboutImage = styled('div')`
-  border: 1px solid #8ec73f;
+  border: 1px solid ${props => props.theme.color.circles.tertiary};
   height: 14vw;
   min-height: 200px;
   width: 14vw;
@@ -61,7 +57,7 @@ const AboutImage = styled('div')`
   margin: 15px;
   background-color: white;
 
-  @media (max-width: 600px) {
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     display: none;
   }
 `
@@ -73,25 +69,25 @@ const Circle = styled('div')`
 `
 
 const BigCircle = styled(Circle)`
-  border: 2px solid #006a77;
+  border: 2px solid ${props => props.theme.color.circles.secondary};
   height: 120vh;
   width: 120vh;
   left: 48vw;
   bottom: -2vw;
 
-  @media (max-width: 600px) {
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     display: none;
   }
 `
 
 const BottomCircle = styled(Circle)`
-  border: 2px solid ${props => props.theme.color.primary};
+  border: 2px solid ${props => props.theme.color.circles.primary};
   width: 70vw;
   height: 70vw;
   top: 82vh;
   left: 22vw;
 
-  @media (max-width: 600px) {
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     display: block;
     height: 1000px;
     width: 1000px;

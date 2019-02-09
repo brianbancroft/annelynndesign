@@ -13,14 +13,14 @@ const FooterSection = styled('section')`
   grid-template-columns: 50vw 50vw;
   grid-template-rows: 100vh;
 
-  @media (max-width: 620px) {
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     grid-template-columns: 100vw;
   }
 
   .contact-desktop {
     display: block;
 
-    @media (max-width: 620px) {
+    @media (max-width: ${props => props.theme.mobileBreakpoint}) {
       display: none;
     }
   }

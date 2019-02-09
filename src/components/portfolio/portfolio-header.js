@@ -11,7 +11,7 @@ const HeaderSection = styled('section')`
   grid-template-columns: 1fr 800px 1fr;
   grid-template-rows: 1fr 80px 1fr;
 
-  @media (max-width: 620px) {
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     grid-template-columns: 5vw 90vw 5vw;
     grid-template-rows: 33vh 80px 1fr;
   }
@@ -28,7 +28,7 @@ const Header = styled('div')`
   grid-column: 2 / 3;
   line-height: 45px;
 
-  @media (max-width: 620px) {
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     font-size: 1.2rem !important;
   }
 `
@@ -39,7 +39,7 @@ const Copy = styled('div')`
   grid-column: 2 / 3;
   grid-row: 3 / 4;
 
-  @media (max-width: 620px) {
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     padding: 0 10px;
   }
 `

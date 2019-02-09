@@ -18,24 +18,22 @@ const TitleElement = styled('div')`
   padding: 0 40px;
   padding-top: calc(100vh / 14);
   z-index: 10;
-  transform: scale(1, 1.2);
-  text-shadow: white 0.1em 0.1em 0.1em;
-  font-size: 90px;
-  text-transform: uppercase;
-  line-height: 90px;
-  font-weight: 100;
+  transform: ${props => props.theme.h1.transform};
+  text-shadow: ${props => props.theme.h1.textShadow};
+  font-size: ${props => props.theme.h1.fontSize};
+  text-transform: ${props => props.theme.h1.textTransform};
+  line-height: ${props => props.theme.h1.lineHeight};
+  font-weight: ${props => props.theme.h1.fontWeight};
   color: ${props => props.theme.color.primary};
 
-  @media (max-width: 620px) {
-    text-transform: uppercase;
-    font-size: 14vw;
-    color: ${props => props.theme.color.primary};
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     padding-top: 15px;
     padding-left: 10px;
-    letter-spacing: -0.39px;
     line-height: 70px;
-    text-shadow: 0 0 0.2em #fff;
     z-index: 10;
+    letter-spacing: ${props => props.theme.h1.mobile.letterSpacing};
+    text-shadow: ${props => props.theme.h1.mobile.textShadow};
+    font-size: ${props => props.theme.h1.mobile.fontSize};
   }
 `
 
@@ -46,14 +44,14 @@ const Circle = styled('div')`
 `
 
 const CircleOne = styled(Circle)`
-  border: 1px solid ${props => props.theme.color.primary};
+  border: 1px solid ${props => props.theme.color.circles.primary};
   height: 650px;
   width: 650px;
   right: 30px;
   top: 420px;
 
-  @media (max-width: 620px) {
-    border: 1px solid ${props => props.theme.color.primary};
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    border: 1px solid ${props => props.theme.color.circles.primary};
     height: 70vw;
     width: 70vw;
     left: -40px;
@@ -68,8 +66,7 @@ const CircleTwo = styled(Circle)`
   right: 40px;
   top: 50px;
 
-  @media (max-width: 620px) {
-    border: 1px solid #006a77;
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     height: 40vw;
     width: 40vw;
     left: 220px;
@@ -78,14 +75,14 @@ const CircleTwo = styled(Circle)`
 `
 
 const CircleThree = styled(Circle)`
-  border: 1px solid #8ec73f;
+  border: 1px solid ${props => props.theme.color.circles.tertiary};
   height: 200px;
   width: 200px;
   right: 40px;
   top: 330px;
 
-  @media (max-width: 620px) {
-    border: 1px solid #8ec73f;
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    border: 1px solid ${props => props.theme.color.circles.tertiary};
     height: 65vw;
     width: 55vw;
     left: 220px;

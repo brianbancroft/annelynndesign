@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
+import { LowerHeader } from '../styled'
 
 const textAreaStyle = css`
   width: 450px;
@@ -25,7 +26,7 @@ const ContactSection = styled('section')`
   flex-direction: column;
   color: ${props => props.theme.color.primary};
 
-  @media (max-width: 600px) {
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     margin-left: 0;
     width: 100%;
   }
@@ -34,29 +35,10 @@ const ContactSection = styled('section')`
     line-height: 2rem;
   }
 
-  .header {
-    z-index: 10;
-    text-transform: uppercase;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 100;
-    font-size: 50px;
-    letter-spacing: -0.39px;
-    line-height: 49px;
-    text-shadow: 0 0 0.2em #fff;
-    padding-top: 30px;
-    margin-bottom: 60px;
-    text-align: center;
-    width: 80%;
-
-    @media (max-width: 600px) {
-      width: 100%;
-    }
-  }
-
   .form-container {
     margin: 0 auto;
 
-    @media (max-width: 600px) {
+    @media (max-width: ${props => props.theme.mobileBreakpoint}) {
       width: 325px;
     }
   }
@@ -71,7 +53,7 @@ const ContactSection = styled('section')`
     z-index: 100;
     margin: 0 auto !important;
 
-    @media (max-width: 620px) {
+    @media (max-width: ${props => props.theme.mobileBreakpoint}) {
       margin-left: 0;
     }
     @media (min-width: 501px) {
@@ -85,8 +67,8 @@ const ContactSection = styled('section')`
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
-    background-color: rgba(30, 157, 186, 0.1);
     text-transform: uppercase;
+    background-color: ${props => props.theme.color.formBackground};
     @media (max-width: 500px) {
       width: 325px;
     }
@@ -100,7 +82,7 @@ const ContactSection = styled('section')`
     color: ${props => props.theme.color.primary};
     text-transform: uppercase;
     font-weight: 600;
-    background-color: rgba(30, 157, 186, 0.25);
+    background-color: ${props => props.theme.color.formSubmitBackground};
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -114,21 +96,32 @@ const ContactSection = styled('section')`
   }
 
   .form-field__submit:hover {
-    background-color: #8ec73f;
     transition: 0.6s ease-out;
+    background-color: ${props => props.theme.color.circles.tertiary};
   }
 
   .form-field {
     font-size: 15px;
     padding: 10px 20px;
-    background-color: rgba(30, 157, 186, 0.1);
     border: none;
+    background-color: ${props => props.theme.color.formBackground};
+  }
+`
+
+const Header = styled(LowerHeader)`
+  z-index: 10;
+  padding-top: 30px;
+  margin-bottom: 60px;
+  width: 80%;
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    width: 100%;
   }
 `
 
 const Contact = () => (
   <ContactSection>
-    <div className="header">Contact</div>
+    <Header>Contact</Header>
     <div className="form-container">
       <form
         name="contact-form"

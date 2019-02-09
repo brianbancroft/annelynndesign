@@ -19,7 +19,7 @@ const MultiImageSection = styled('section')`
   align-items: center;
   color: ${props => (props.color ? props.color : 'inherit')};
 
-  @media (max-width: 600px) {
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     display: flex;
     flex-direction: column;
   }
@@ -31,12 +31,12 @@ const MultiImageSection = styled('section')`
     font-size: 1.2rem;
     font-family: 'Raleway Semi-Bold', sans-serif;
     font-weight: 500;
-    color: ${props => (props.color ? props.color : 'inherit')};
     padding-right: 20px;
     text-align: right;
     height: 100%;
+    color: ${props => (props.color ? props.color : 'inherit')};
 
-    @media (max-width: 600px) {
+    @media (max-width: ${props => props.theme.mobileBreakpoint}) {
       height: 100px;
     }
   }
@@ -94,7 +94,7 @@ const MultiImageSection = styled('section')`
     background: white;
     min-height: 350px;
     display: none;
-    @media (max-width: 600px) {
+    @media (max-width: ${props => props.theme.mobileBreakpoint}) {
       width: 100%;
       height: 100%;
       display: block;
@@ -113,7 +113,7 @@ const MultiImageSection = styled('section')`
     display: flex;
     justify-content: center;
     align-items: baseline;
-    @media (max-width: 600px) {
+    @media (max-width: ${props => props.theme.mobileBreakpoint}) {
       display: none;
     }
 

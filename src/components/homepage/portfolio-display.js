@@ -11,9 +11,6 @@ const MiddleSection = styled('section')`
   border-top: 2px solid #0c9a9a;
   border-bottom: 2px solid #0c9a9a;
   background: white;
-  @media screen and (min-width: 768px) {
-    /* padding: 0.2rem; */
-  }
 
   @supports (display: grid) {
     display: block;
@@ -31,7 +28,7 @@ const Grid = styled('div')`
 const ContactMobileSection = styled('section')`
   display: none;
 
-  @media (max-width: 620px) {
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     display: block;
     width: 100vw;
     height: 100vh;

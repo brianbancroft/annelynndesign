@@ -59,7 +59,7 @@ const ScrollIconLink = styled('div')`
     }
   }
 
-  @media (max-width: 650px) {
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     span {
       left: 40vw;
     }

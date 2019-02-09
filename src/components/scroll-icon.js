@@ -11,7 +11,7 @@ const ScrollIconLink = styled('a')`
   cursor: pointer;
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
-  color: ${props => props.theme.color.primary};
+  color: ${props => props.theme.color.circles.primary};
   font: normal 400 20px/1 'Josefin Sans', sans-serif;
   letter-spacing: 0.1em;
   text-decoration: none;
@@ -28,8 +28,8 @@ const ScrollIconLink = styled('a')`
     width: 24px;
     height: 24px;
     margin-left: -12px;
-    border-left: 1px solid ${props => props.theme.color.primary};
-    border-bottom: 1px solid ${props => props.theme.color.primary};
+    border-left: 1px solid ${props => props.theme.color.circles.primary};
+    border-bottom: 1px solid ${props => props.theme.color.circles.primary};
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
     -webkit-animation: sdb05 1.5s infinite;

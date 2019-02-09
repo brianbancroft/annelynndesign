@@ -77,7 +77,7 @@ const SingleImage = styled('section')`
     grid-row: 1 / 4;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     height: 100vh;
   }
 `
