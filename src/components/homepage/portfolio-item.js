@@ -54,8 +54,6 @@ const Item = styled('div')`
     ${ItemLabel} {
       transition: opacity 0.3s ease-in-out;
     }
-
-
   }
 
   &:hover {

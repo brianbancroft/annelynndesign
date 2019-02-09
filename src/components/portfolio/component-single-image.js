@@ -41,13 +41,14 @@ const ImageContainer = styled('div')`
 `
 
 const CopyElem = styled('div')`
-  padding-top: 30px;
-  color: #222;
   grid-column: 4 / 5;
   grid-row: 4 / 5;
   max-width: 500px;
+  padding-top: 30px;
   height: 100%;
 
+  color: ${props => props.theme.color.copy};
+  font-weight: ${props => props.theme.copy.fontWeight};
   .single-image-left {
     grid-column: 4 / 5;
     grid-row: 4 / 5;

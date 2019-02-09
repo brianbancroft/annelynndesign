@@ -98,14 +98,14 @@ const TitleElem = styled('div')`
   grid-column: 3 / 4;
   grid-row: 3 / 4;
 
-  font-size: 1.2rem;
-  font-family: 'Raleway Semi-Bold', sans-serif;
-  font-weight: 500;
   padding-right: 20px;
   text-align: right;
   height: 100%;
-  color: ${props => (props.color ? props.color : 'inherit')};
 
+  font-weight: ${props => props.theme.h4.fontWeight};
+  font-size: ${props => props.theme.h4.fontSize};
+  font-family: ${props => props.theme.h4.fontFamily};
+  color: ${props => (props.color ? props.color : 'inherit')};
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     height: 100px;
   }
@@ -132,8 +132,10 @@ const CopyElem = styled('div')`
   grid-column: 4 / 5;
   height: 100%;
   grid-row: 3 / 4;
-  color: #222;
   max-width: 500px;
+
+  color: ${props => props.theme.color.copy};
+  font-weight: ${props => props.theme.copy.fontWeight};
 
   .single-image-left {
     grid-column: 4 / 5;

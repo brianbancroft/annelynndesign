@@ -9,6 +9,7 @@ const theme = {
     primary: '#1e9dba',
     secondary: '#006a77',
     teritary: '#8ec73f',
+    copy: '#222',
     circles: {
       primary: '#1e9dba',
       secondary: '#006a77',
@@ -44,8 +45,12 @@ const theme = {
   h3: {},
   h4: {
     fontFamily: `'Raleway', sans-serif`,
-    fontWeight: '500',
+    fontWeight: '600',
     fontSize: '1.2rem',
+  },
+  copy: {
+    fontWeight: '500',
+    fontSize: '1rem',
   },
   label: {},
 }
