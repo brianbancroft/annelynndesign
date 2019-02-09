@@ -60,7 +60,7 @@ const CircleOne = styled(Circle)`
 `
 
 const CircleTwo = styled(Circle)`
-  border: 1px solid #006a77;
+  border: 1px solid ${props => props.theme.color.circles.secondary};
   height: 300px;
   width: 300px;
   right: 40px;
