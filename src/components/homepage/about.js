@@ -8,7 +8,7 @@ const AboutSection = styled('section')`
 
 const Header = styled('div')`
   font-size: 50px;
-  color: #1e9dba;
+  color: ${props => props.theme.color.primary};
   line-height: 49px;
   text-shadow: 0 0 0.2em #fff;
   z-index: 10;
@@ -38,7 +38,7 @@ const CopyContainer = styled('div')`
 const Copy = styled('div')`
   text-align: justify;
   font-size: 18px;
-  color: #1e9dba;
+  color: ${props => props.theme.color.primary};
   line-height: 17px;
   margin-left: 120px;
 
@@ -85,7 +85,7 @@ const BigCircle = styled(Circle)`
 `
 
 const BottomCircle = styled(Circle)`
-  border: 2px solid #1e9dba;
+  border: 2px solid ${props => props.theme.color.primary};
   width: 70vw;
   height: 70vw;
   top: 82vh;

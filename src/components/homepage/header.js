@@ -24,12 +24,12 @@ const TitleElement = styled('div')`
   text-transform: uppercase;
   line-height: 90px;
   font-weight: 100;
-  color: #1e9dba;
+  color: ${props => props.theme.color.primary};
 
   @media (max-width: 620px) {
     text-transform: uppercase;
     font-size: 14vw;
-    color: #1e9dba;
+    color: ${props => props.theme.color.primary};
     padding-top: 15px;
     padding-left: 10px;
     letter-spacing: -0.39px;
@@ -46,14 +46,14 @@ const Circle = styled('div')`
 `
 
 const CircleOne = styled(Circle)`
-  border: 1px solid #1e9dba;
+  border: 1px solid ${props => props.theme.color.primary};
   height: 650px;
   width: 650px;
   right: 30px;
   top: 420px;
 
   @media (max-width: 620px) {
-    border: 1px solid #1e9dba;
+    border: 1px solid ${props => props.theme.color.primary};
     height: 70vw;
     width: 70vw;
     left: -40px;

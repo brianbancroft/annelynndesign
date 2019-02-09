@@ -23,7 +23,7 @@ const ContactSection = styled('section')`
   margin-left: 30px;
   display: flex;
   flex-direction: column;
-  color: #1e9dba;
+  color: ${props => props.theme.color.primary};
 
   @media (max-width: 600px) {
     margin-left: 0;
@@ -97,7 +97,7 @@ const ContactSection = styled('section')`
 
   .form-field__submit {
     width: 450px;
-    color: #1e9dba;
+    color: ${props => props.theme.color.primary};
     text-transform: uppercase;
     font-weight: 600;
     background-color: rgba(30, 157, 186, 0.25);

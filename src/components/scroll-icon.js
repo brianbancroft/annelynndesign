@@ -11,7 +11,7 @@ const ScrollIconLink = styled('a')`
   cursor: pointer;
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
-  color: #1e9dba;
+  color: ${props => props.theme.color.primary};
   font: normal 400 20px/1 'Josefin Sans', sans-serif;
   letter-spacing: 0.1em;
   text-decoration: none;
@@ -28,8 +28,8 @@ const ScrollIconLink = styled('a')`
     width: 24px;
     height: 24px;
     margin-left: -12px;
-    border-left: 1px solid #1e9dba;
-    border-bottom: 1px solid #1e9dba;
+    border-left: 1px solid ${props => props.theme.color.primary};
+    border-bottom: 1px solid ${props => props.theme.color.primary};
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
     -webkit-animation: sdb05 1.5s infinite;
@@ -90,7 +90,7 @@ const ScrollIconLink = styled('a')`
 // b = start value
 // c = change in value
 // d = duration
-Math.easeInOutQuad = function (time, initialTime, deltaTime, elapsedTime) {
+Math.easeInOutQuad = function(time, initialTime, deltaTime, elapsedTime) {
   time /= deltaTime / 2
   if (time < 1) return (elapsedTime / 2) * time * time + initialTime
   time--
