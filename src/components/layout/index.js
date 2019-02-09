@@ -42,6 +42,11 @@ const theme = {
     textAlign: 'center',
   },
   h3: {},
+  h4: {
+    fontFamily: `'Raleway', sans-serif`,
+    fontWeight: '500',
+    fontSize: '1.2rem',
+  },
   label: {},
 }
 
