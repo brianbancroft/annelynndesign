@@ -67,21 +67,16 @@ const MultiImageSection = styled('section')`
 const MobileImagesContainer = styled('div')`
   width: 70vw;
   justify-content: center;
-  grid-column: 2 / 6;
-  grid-row: 1 / 3;
+  grid-column: 2 / 5;
+  grid-row: 2 / 3;
   background: white;
   min-height: 350px;
   display: none;
-  margin-bottom: 20px;
-
+  width: 100%;
+  height: 100%;
+  padding-top: 40px;
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    width: 100%;
-    height: 100%;
     display: block;
-
-    grid-column: 2 / 5;
-    grid-row: 1 / 3;
-    padding-top: 70px;
   }
 
   .mobile-images-container.no-copy {
