@@ -35,7 +35,7 @@ const Copy = styled('div')`
   text-align: justify;
   font-size: 18px;
   color: ${props => props.theme.color.circles.primary};
-  line-height: 17px;
+  line-height: 22px;
   margin-left: 120px;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
@@ -93,7 +93,8 @@ const BottomCircle = styled(Circle)`
     width: 1000px;
     position: fixed;
     border-radius: 1000px;
-    left: -265px;
+    left: -283px;
+    top: 88vh;
   }
 `
 
