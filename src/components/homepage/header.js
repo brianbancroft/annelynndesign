@@ -44,14 +44,14 @@ const Circle = styled('div')`
 `
 
 const CircleOne = styled(Circle)`
-  border: 1px solid ${props => props.theme.color.circles.primary};
+  border: 1px solid ${props => props.theme.color.primary};
   height: 650px;
   width: 650px;
   right: 30px;
   top: 420px;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    border: 1px solid ${props => props.theme.color.circles.primary};
+    border: 1px solid ${props => props.theme.color.primary};
     height: 70vw;
     width: 70vw;
     left: -40px;
@@ -60,7 +60,7 @@ const CircleOne = styled(Circle)`
 `
 
 const CircleTwo = styled(Circle)`
-  border: 1px solid ${props => props.theme.color.circles.secondary};
+  border: 1px solid ${props => props.theme.color.secondary};
   height: 300px;
   width: 300px;
   right: 40px;
@@ -75,14 +75,14 @@ const CircleTwo = styled(Circle)`
 `
 
 const CircleThree = styled(Circle)`
-  border: 1px solid ${props => props.theme.color.circles.tertiary};
+  border: 1px solid ${props => props.theme.color.tertiary};
   height: 200px;
   width: 200px;
   right: 40px;
   top: 330px;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    border: 1px solid ${props => props.theme.color.circles.tertiary};
+    border: 1px solid ${props => props.theme.color.tertiary};
     height: 65vw;
     width: 55vw;
     left: 220px;
