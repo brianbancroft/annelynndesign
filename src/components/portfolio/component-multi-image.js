@@ -82,6 +82,16 @@ const MobileImagesContainer = styled('div')`
   .mobile-images-container.no-copy {
     grid-row: 1 / 5;
   }
+
+  .ui.button {
+    color: #bbb;
+    background: white;
+  }
+  .carousel__dot.carousel__dot--selected.ui.icon.button {
+    color: ${props => (props.color ? props.color : 'inherit')};
+    background: white;
+    opacity: 1;
+  }
 `
 
 const TitleElem = styled('div')`
@@ -168,9 +178,9 @@ const imagesLayout = ({ images, title, handleOpen, imagePosition } = {}) =>
     />
   )
 
-const Images = ({ title, handleOpen, images, imagePosition } = {}) => (
+const Images = ({ title, handleOpen, images, imagePosition, color } = {}) => (
   <>
-    <MobileImagesContainer className={imagePosition}>
+    <MobileImagesContainer className={imagePosition} color={color}>
       <MobileImageSlider
         title={title}
         handleOpen={handleOpen}
@@ -199,6 +209,7 @@ const ComponentMultiImage = ({
         <Images
           title={title}
           images={images}
+          color={color}
           imagePosition={imagePosition}
           handleOpen={handleOpen}
           className={`images-container ${imagePosition}`}
