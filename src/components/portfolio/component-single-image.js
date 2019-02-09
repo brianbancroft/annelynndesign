@@ -15,12 +15,18 @@ const SingleImageSection = styled('section')`
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     height: 100vh;
+    grid-template-rows: 30px 1fr 30px 80px 25px;
   }
 `
 
 const ImageContainer = styled('div')`
-  grid-column: 2 / 5;
-  grid-row: 2 / 4;
+  grid-column: ${props =>
+    props.className === 'single-image-left' ? '2 / 4' : '2 / 5'};
+  grid-row: ${props =>
+    props.className === 'single-image-left' ||
+    props.className === 'single-image-right'
+      ? '2 / 5'
+      : '2 / 4'};
   background: ${props => (props.src ? `url("${props.src}")` : 'red')};
   width: 500px;
   height: 500px;
@@ -36,7 +42,12 @@ const ImageContainer = styled('div')`
   }
 
   .single-image-right {
-    grid-row: 1 / 4;
+    grid-row: 2 / 5;
+  }
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    grid-column: 2 / 5;
+    grid-row: 2 / 3;
   }
 `
 
@@ -57,14 +68,27 @@ const CopyElem = styled('div')`
   .single-image-right {
     grid-row: 3 / 4;
   }
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    grid-column: 2 / 5;
+    grid-row: 4 / 5;
+    padding-top: 0;
+  }
 `
 
 const Title = styled('div')`
-  grid-column: 3 / 4;
-  grid-row: 4 / 5;
+  grid-column: ${props =>
+    props.className === 'single-image-left' ? '4 / 5' : '3 / 4'};
+  grid-row: ${props =>
+    props.className === 'single-image-left' ||
+    props.className === 'single-image-right'
+      ? '3 / 4'
+      : '4 / 5'};
   padding-right: 20px;
-  padding-top: 30px;
-  text-align: right;
+  padding-top: ${props =>
+    props.className === 'single-image-left' ? '90px' : '30px'};
+  text-align: ${props =>
+    props.className === 'single-image-left' ? 'left' : 'right'};
   height: 100%;
 
   font-weight: ${props => props.theme.h4.fontWeight};
@@ -72,15 +96,15 @@ const Title = styled('div')`
   font-family: ${props => props.theme.h4.fontFamily};
   color: ${props => (props.color ? props.color : 'inherit')};
 
-  .single-image-left {
-    grid-column: 4 / 5;
+  .single-image-right {
     grid-row: 3 / 4;
-    text-align: left;
-    padding-top: 90px;
   }
 
-  .single-image-right {
-    grid-row: 2 / 3;
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    grid-column: 2 / 5;
+    grid-row: 3 / 4;
+    text-align: center;
+    padding-top: 0;
   }
 `
 
