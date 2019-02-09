@@ -2,6 +2,22 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
+const ItemLabel = styled('div')`
+  position: relative;
+  z-index: 1;
+  padding: 8px;
+  align-self: end;
+  height: 40px;
+  width: 100%;
+  background: rgba(12, 12, 12, 0.4);
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  font-weight: 500;
+  color: #eee;
+`
+
 const Item = styled('div')`
   position: relative;
   display: flex;
@@ -27,34 +43,43 @@ const Item = styled('div')`
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: black;
+    background-image: radial-gradient( #fff 40%, #999 60%);
     opacity: 0.3;
     transition: opacity 0.3s ease-in-out;
+
+    @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+      background-image: none;
+    }
+
+    ${ItemLabel} {
+      transition: opacity 0.3s ease-in-out;
+    }
+
+
   }
 
   &:hover {
-    /* transform: scale(1.05); */
-
     &:after {
       opacity: 0;
+
+      ${ItemLabel} {
+        transition: opacity 0.3s ease-in-out;
+      }
+    }
+
+    ${ItemLabel} {
+      opacity: 1;
     }
   }
-`
 
-const ItemLabel = styled('div')`
-  position: relative;
-  z-index: 1;
-  padding: 8px;
-  align-self: end;
-  height: 40px;
-  width: 100%;
-  background: rgba(12, 12, 12, 0.4);
+  ${ItemLabel} {
+    opacity: 0;
 
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-align: center;
-  font-weight: 500;
-  color: #eee;
+    @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+    }
+  }
 `
 
 const PortfolioItem = ({
