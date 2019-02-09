@@ -32,11 +32,11 @@ const CopyContainer = styled('div')`
 `
 
 const Copy = styled('div')`
-  text-align: justify;
   font-size: 18px;
   color: ${props => props.theme.color.circles.primary};
   line-height: 22px;
   margin-left: 120px;
+  font-weight: 200;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     margin-left: 0;
