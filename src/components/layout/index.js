@@ -3,7 +3,10 @@ import Transition from './transition'
 import { ThemeProvider } from 'emotion-theming'
 import Helmet from 'react-helmet'
 import './layout.css'
-import favicon from '../../images/favicon.png'
+import favicon from '../../images/favicon.ico'
+import appleTouchIcon from '../../images/apple-touch-icon.png'
+import favicon16 from '../../images/favicon-16x16.png'
+import favicon32 from '../../images/favicon-32x32.png'
 
 const theme = {
   mobileBreakpoint: '620px',
@@ -59,7 +62,27 @@ const Layout = ({ children, location } = {}) => {
   return (
     <ThemeProvider theme={theme}>
       <Helmet
-        link={[{ rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }]}
+        link={[
+          { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` },
+          {
+            rel: 'icon',
+            type: 'image/png',
+            sizes: '32x32',
+            href: `${favicon32}`,
+          },
+          {
+            rel: 'icon',
+            type: 'image/png',
+            sizes: '16x16',
+            href: `${favicon16}`,
+          },
+          {
+            rel: 'apple-touch-icon',
+            type: 'image/png',
+            sizes: '32x32',
+            href: `${appleTouchIcon}`,
+          },
+        ]}
         meta={[
           {
             name: 'author',
