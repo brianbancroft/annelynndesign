@@ -73,7 +73,7 @@ class IndexPage extends Component {
               property: 'og:description',
               name: 'og:description',
               content:
-                'The Portfolio and Contact Information Anne-Lynn Bancroft, a Graphic Designer specializing in packaging and print',
+                'The Portfolio of Anne-Lynn Bancroft, a Graphic Designer specializing in packaging and print',
             },
             {
               property: 'og:type',
