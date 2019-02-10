@@ -108,6 +108,10 @@ class PortfolioItem extends Component {
               name: 'og:image',
               content: `${previewImage}`,
             },
+            {
+              property: 'twitter:image',
+              content: `${previewImage}`,
+            },
           ]}
         >
           <link
