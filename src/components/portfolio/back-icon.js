@@ -30,6 +30,10 @@ const ScrollIconLink = styled('div')`
     -webkit-animation: goleft 4s infinite;
     animation: goleft 4s infinite;
     box-sizing: border-box;
+
+    @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+      top: 60px;
+    }
   }
 
   @-webkit-keyframes goleft {

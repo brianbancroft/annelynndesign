@@ -6,9 +6,12 @@ import { BackIcon } from '.'
 const FooterSection = styled('section')`
   position: fixed;
   bottom: 0;
-  height: 30px;
   width: 100vw;
   background: ${props => (props && props.color ? props.color : '#aaf')};
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    height: 60px;
+  }
 `
 
 const Footer = ({ color } = {}) => (
