@@ -102,7 +102,14 @@ class PortfolioItem extends Component {
             },
 
             {
+              property: 'og:image:secure_url',
+              name: 'og:image:secure_url',
+              content: `${previewImage}`,
+            },
+
+            {
               property: 'og:image',
+              name: 'og:image:secure_url',
               content: `${previewImage}`,
             },
             {

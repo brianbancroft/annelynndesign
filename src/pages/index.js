@@ -87,6 +87,11 @@ class IndexPage extends Component {
               content: `${logo}`,
             },
             {
+              property: 'og:image:secure_url',
+              name: 'og:image:secure_url',
+              content: `${logo}`,
+            },
+            {
               property: 'og:url',
               name: 'og:url',
               content: `https://annelynn.com`,
