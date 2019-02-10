@@ -39,9 +39,8 @@ class PortfolioItem extends Component {
         conceptAndIdeasPane,
         requirementsAndProductPane,
         supportingConceptsPane,
-        previewImage: {
-          file: { url: previewImage },
-        },
+        previewImage,
+        ogPreviewImage,
       },
     } = this.props.data
 
@@ -55,6 +54,12 @@ class PortfolioItem extends Component {
       section: requirementsAndProductPane,
       color,
     })
+
+    debugger
+
+    const socialMediaPreview = ogPreviewImage
+      ? ogPreviewImage.file.url
+      : previewImage.file.url
 
     return (
       <Layout>
@@ -104,18 +109,18 @@ class PortfolioItem extends Component {
             {
               property: 'og:image:secure_url',
               name: 'og:image:secure_url',
-              content: `https:${previewImage}`,
+              content: `https:${socialMediaPreview}`,
             },
 
             {
               property: 'og:image',
               name: 'og:image:secure_url',
-              content: `http:${previewImage}`,
+              content: `http:${socialMediaPreview}`,
             },
             {
               name: 'twitter:image:src',
               property: 'twitter:image:src',
-              content: `https:${previewImage}`,
+              content: `https:${socialMediaPreview}`,
             },
             {
               name: 'twitter:card',
@@ -131,7 +136,7 @@ class PortfolioItem extends Component {
             },
             {
               name: 'twitter:image',
-              content: `https:${previewImage}`,
+              content: `https:${socialMediaPreview}`,
             },
           ]}
         >
@@ -181,6 +186,11 @@ export const pageQuery = graphql`
       copy {
         copy
       }
+      ogPreviewImage {
+        file {
+          url
+        }
+      }
       previewImage {
         file {
           url
@@ -194,21 +204,9 @@ export const pageQuery = graphql`
         }
         image {
           id
-          sizes {
-            src
-            srcSet
-            sizes
-          }
           title
           original: file {
             src: url
-          }
-          resolutions(width: 1600) {
-            width
-            height
-            src
-            srcSet
-            aspectRatio
           }
           fluid(maxWidth: 700) {
             src
@@ -216,16 +214,7 @@ export const pageQuery = graphql`
             sizes
             aspectRatio
           }
-
-          fixed(width: 650) {
-            src
-            srcSet
-            width
-            height
-            aspectRatio
-          }
         }
-
         imagePosition
       }
       conceptAndIdeasPane {
@@ -235,7 +224,6 @@ export const pageQuery = graphql`
         copy {
           copy
         }
-
         images {
           id
           title
@@ -246,13 +234,6 @@ export const pageQuery = graphql`
             src
             srcSet
             sizes
-            aspectRatio
-          }
-          fixed(width: 650) {
-            src
-            srcSet
-            width
-            height
             aspectRatio
           }
         }
@@ -264,25 +245,16 @@ export const pageQuery = graphql`
         copy {
           copy
         }
-
         images {
           id
           title
           original: file {
             src: url
           }
-
           fluid(maxWidth: 600) {
             src
             srcSet
             sizes
-            aspectRatio
-          }
-          fixed(width: 650) {
-            src
-            srcSet
-            width
-            height
             aspectRatio
           }
         }
@@ -300,24 +272,10 @@ export const pageQuery = graphql`
           original: file {
             src: url
           }
-          resolutions(width: 1600) {
-            width
-            height
-            src
-            srcSet
-            aspectRatio
-          }
           fluid(maxWidth: 600) {
             src
             srcSet
             sizes
-            aspectRatio
-          }
-          fixed(width: 650) {
-            src
-            srcSet
-            width
-            height
             aspectRatio
           }
         }
