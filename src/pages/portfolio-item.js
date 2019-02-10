@@ -106,7 +106,8 @@ class PortfolioItem extends Component {
               content: `${previewImage}`,
             },
             {
-              property: 'twitter:image',
+              name: 'twitter:image:src',
+              property: 'twitter:image:src',
               content: `${previewImage}`,
             },
           ]}

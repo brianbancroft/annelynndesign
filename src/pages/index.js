@@ -98,7 +98,8 @@ class IndexPage extends Component {
               content: 'https://annelynn.com',
             },
             {
-              property: 'twitter:image',
+              name: 'twitter:image:src',
+              property: 'twitter:image:src',
               content: `${logo}`,
             },
           ]}

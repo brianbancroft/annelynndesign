@@ -86,7 +86,7 @@ const Layout = ({ children, location } = {}) => {
         meta={[
           {
             name: 'author',
-            content: 'Anne-Lynn Bancroft',
+            content: 'Anne-Lynn',
           },
           {
             name: 'robots',
