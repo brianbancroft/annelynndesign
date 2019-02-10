@@ -30,6 +30,7 @@ class PortfolioItem extends Component {
     const {
       contentfulPortfolioItem: {
         color,
+        slug,
         copy,
         headerSectionTextColor,
         headline,
@@ -38,6 +39,9 @@ class PortfolioItem extends Component {
         conceptAndIdeasPane,
         requirementsAndProductPane,
         supportingConceptsPane,
+        previewImage: {
+          file: { url: previewImage },
+        },
       },
     } = this.props.data
 
@@ -59,15 +63,50 @@ class PortfolioItem extends Component {
           meta={[
             {
               name: 'description',
+              property: 'description',
               content: copy.copy,
             },
             {
               name: 'keywords',
+              property: 'keywords',
               content: `anne-lynn hanna, annelynn design, anne-lynn design, ${title}`,
             },
             {
               name: 'theme-color',
+              property: 'theme-color',
               content: color,
+            },
+            {
+              property: 'og:title',
+              name: 'og:title',
+              content: title,
+            },
+            {
+              property: 'og:description',
+              name: 'og:description',
+              content: headline,
+            },
+
+            {
+              property: 'og:url',
+              name: 'og:url',
+              content: `https://annelynn.com/portfolio/${slug}`,
+            },
+            {
+              property: 'twitter:url',
+              name: 'twitter:url',
+              content: `https://annelynn.com/portfolio/${slug}`,
+            },
+            {
+              property: 'og:type',
+              name: 'og:type',
+              content: 'portfolio',
+            },
+
+            {
+              property: 'og:image',
+              name: 'og:image',
+              content: `${previewImage}`,
             },
           ]}
         >
@@ -116,6 +155,11 @@ export const pageQuery = graphql`
       headline
       copy {
         copy
+      }
+      previewImage {
+        file {
+          url
+        }
       }
       requirementsAndProductPane {
         id

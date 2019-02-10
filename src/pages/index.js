@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import { Header, Portfolio, Footer } from '../components/homepage'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
+import logo from '../images/logo.png'
 
 class IndexPage extends Component {
   handleScroll() {
@@ -48,17 +49,58 @@ class IndexPage extends Component {
           title={`Anne-Lynn Design`}
           meta={[
             {
+              property: 'description',
               name: 'description',
               content: `The Portfolio and Contact Information Anne-Lynn Bancroft, a Graphic Designer specializing in packaging and print`,
             },
             {
+              property: 'keywords',
               name: 'keywords',
               content: `Anne-Lynn Bancroft, annelynn design, anne-lynn design, print, packaging, design`,
             },
 
             {
+              property: 'theme-color',
               name: 'theme-color',
               content: '#fff',
+            },
+            {
+              property: 'og:title',
+              name: 'og:title',
+              content: 'Anne-Lynn Design',
+            },
+            {
+              property: 'og:description',
+              name: 'og:description',
+              content:
+                'The Portfolio and Contact Information Anne-Lynn Bancroft, a Graphic Designer specializing in packaging and print',
+            },
+            {
+              property: 'og:type',
+              name: 'og:type',
+              content: 'website',
+            },
+
+            {
+              property: 'og:image',
+              name: 'og:image',
+              content: `${logo}`,
+            },
+            {
+              property: 'og:url',
+              name: 'og:url',
+              content: `https://annelynn.com`,
+            },
+
+            {
+              property: 'twitter:url',
+              name: 'twitter:url',
+              content: 'https://annelynn.com',
+            },
+            {
+              property: 'twitter:image',
+              name: 'twitter:image',
+              content: `${logo}`,
             },
           ]}
         >

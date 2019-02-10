@@ -65,6 +65,38 @@ const Layout = ({ children, location } = {}) => {
             name: 'author',
             content: 'Anne-Lynn Bancroft',
           },
+          {
+            name: 'robots',
+            content: 'follow',
+          },
+          {
+            name: 'generator',
+            content: 'gatsby',
+          },
+          {
+            name: 'og:site_name',
+            property: 'theme-color',
+            content: 'Anne-Lynn Design',
+          },
+          {
+            property: 'og:locale',
+            content: 'en_US',
+          },
+          {
+            property: 'twitter:creator',
+            name: 'twitter:creator',
+            content: '@al_bancroft',
+          },
+          {
+            property: 'twitter:site',
+            name: 'twitter:site',
+            content: '@al_bancroft',
+          },
+          {
+            property: 'twitter:card',
+            name: 'twitter:card',
+            content: 'summary',
+          },
         ]}
       />
       <Transition location={location}>{children}</Transition>
