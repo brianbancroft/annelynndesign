@@ -8,7 +8,10 @@ const SingleImageSection = styled('section')`
 
   display: grid;
   grid-template-columns: 5vw 20vw 20vw 50vw 5vw;
-  grid-template-rows: 30px 1fr 100px 170px 25px;
+  grid-template-rows: ${props =>
+    props.className === 'single-image-left'
+      ? '30px 1fr 60px 170px 25px'
+      : '30px 1fr 100px 170px 25px'};
   grid-row-gap: 10px;
 
   color: ${props => (props.color ? props.color : 'inherit')};
@@ -40,6 +43,7 @@ const ImageContainer = styled('div')`
   .single-image-left {
     grid-column: 2 / 4;
     grid-row: 2 / 5;
+    align-self: end;
   }
 
   .single-image-right {
@@ -57,7 +61,7 @@ const CopyElem = styled('div')`
   grid-row: 4 / 5;
   max-width: 500px;
   padding-top: 30px;
-  height: 100%;
+  align-self: flex-end;
 
   color: ${props => props.theme.color.copy};
   font-weight: ${props => props.theme.copy.fontWeight};
@@ -121,7 +125,7 @@ const ComponentSingleImage = ({
   copy,
   color,
 } = {}) => (
-  <SingleImageSection color={color}>
+  <SingleImageSection color={color} className={imagePosition}>
     <ImageContainer className={imagePosition} src={image.fluid.src} />
     <Title className={imagePosition}>{title}</Title>
     <Copy copy={copy} cssClass={imagePosition} />
