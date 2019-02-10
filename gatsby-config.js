@@ -10,6 +10,7 @@ const moduleExports = {
       'Portfolio site for graphic design. Uses gatsby, netlify and contentful',
   },
   plugins: [
+    `gatsby-plugin-favicon`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
