@@ -213,30 +213,42 @@ const ComponentMultiImage = ({
 } = {}) => {
   imagePosition = !(title || copy) ? `no-copy` : imagePosition
 
-  return images.length > 1 ? (
-    <>
-      <MultiImageSection color={color} numImages={images.length}>
-        <Images
-          title={title}
-          images={images}
-          color={color}
-          imagePosition={imagePosition}
-          handleOpen={handleOpen}
-          className={`images-container ${imagePosition}`}
-        />
-        <TitleElem className={imagePosition}>{title}</TitleElem>
-        <Copy copy={copy} classes={`copy ${imagePosition}`} />
-      </MultiImageSection>
-    </>
-  ) : (
-    <ComponentSingleImage
-      imagePosition={imagePosition}
-      image={images[0]}
-      title={title}
-      copy={copy}
-      color={color}
-    />
-  )
+  if (images) {
+    return images.length > 1 ? (
+      <>
+        <MultiImageSection color={color} numImages={images.length}>
+          <Images
+            title={title}
+            images={images}
+            color={color}
+            imagePosition={imagePosition}
+            handleOpen={handleOpen}
+            className={`images-container ${imagePosition}`}
+          />
+          <TitleElem className={imagePosition}>{title}</TitleElem>
+          <Copy copy={copy} classes={`copy ${imagePosition}`} />
+        </MultiImageSection>
+      </>
+    ) : (
+      <ComponentSingleImage
+        imagePosition={imagePosition}
+        image={images[0]}
+        title={title}
+        copy={copy}
+        color={color}
+      />
+    )
+  } else {
+    return (
+      <ComponentSingleImage
+        imagePosition={imagePosition}
+        image={images}
+        title={title}
+        copy={copy}
+        color={color}
+      />
+    )
+  }
 }
 
 export default ComponentMultiImage
