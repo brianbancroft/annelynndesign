@@ -115,7 +115,23 @@ class PortfolioItem extends Component {
             {
               name: 'twitter:image:src',
               property: 'twitter:image:src',
-              content: `https://${previewImage}`,
+              content: `https:${previewImage}`,
+            },
+            {
+              name: 'twitter:card',
+              content: 'summary',
+            },
+            {
+              name: 'twitter:title',
+              content: headline,
+            },
+            {
+              name: 'twitter:description',
+              content: copy,
+            },
+            {
+              name: 'twitter:image',
+              content: `https:${previewImage}`,
             },
           ]}
         >
