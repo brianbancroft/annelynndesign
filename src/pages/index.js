@@ -107,6 +107,23 @@ class IndexPage extends Component {
               property: 'twitter:image:src',
               content: `https://staging.annelynn.com/${logo}`,
             },
+            {
+              name: 'twitter:card',
+              content: 'summary_large_image',
+            },
+            {
+              name: 'twitter:title',
+              content: 'Anne-Lynn Design',
+            },
+            {
+              name: 'twitter:description',
+              content:
+                'The Portfolio of Anne-Lynn Bancroft, a Graphic Designer specializing in packaging and print',
+            },
+            {
+              name: 'twitter:image',
+              content: `https://staging.annelynn.com/${logo}`,
+            },
           ]}
         >
           <html lang="en" />

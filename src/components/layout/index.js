@@ -106,19 +106,12 @@ const Layout = ({ children, location } = {}) => {
             content: 'en_US',
           },
           {
-            property: 'twitter:creator',
             name: 'twitter:creator',
             content: '@al_bancroft',
           },
           {
-            property: 'twitter:site',
             name: 'twitter:site',
             content: '@al_bancroft',
-          },
-          {
-            property: 'twitter:card',
-            name: 'twitter:card',
-            content: 'summary',
           },
         ]}
       />
