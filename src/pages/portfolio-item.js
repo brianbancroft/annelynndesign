@@ -88,12 +88,12 @@ class PortfolioItem extends Component {
             {
               property: 'og:url',
               name: 'og:url',
-              content: `https://staging.annelynn.com/portfolio/${slug}`,
+              content: `${slug}`,
             },
             {
               property: 'twitter:url',
               name: 'twitter:url',
-              content: `https://staging.annelynn.com/portfolio/${slug}`,
+              content: `${slug}`,
             },
             {
               property: 'og:type',
@@ -104,18 +104,18 @@ class PortfolioItem extends Component {
             {
               property: 'og:image:secure_url',
               name: 'og:image:secure_url',
-              content: `${previewImage}`,
+              content: `http:s${previewImage}`,
             },
 
             {
               property: 'og:image',
               name: 'og:image:secure_url',
-              content: `${previewImage}`,
+              content: `http${previewImage}`,
             },
             {
               name: 'twitter:image:src',
               property: 'twitter:image:src',
-              content: `${previewImage}`,
+              content: `https://${previewImage}`,
             },
           ]}
         >

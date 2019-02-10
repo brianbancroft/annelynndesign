@@ -84,12 +84,12 @@ class IndexPage extends Component {
             {
               property: 'og:image',
               name: 'og:image',
-              content: `${logo}`,
+              content: `https://staging.annelynn.com/static/${logo}`,
             },
             {
               property: 'og:image:secure_url',
               name: 'og:image:secure_url',
-              content: `${logo}`,
+              content: `https://staging.annelynn.com/static/${logo}`,
             },
             {
               property: 'og:url',
@@ -105,7 +105,7 @@ class IndexPage extends Component {
             {
               name: 'twitter:image:src',
               property: 'twitter:image:src',
-              content: `${logo}`,
+              content: `https://staging.annelynn.com/static/${logo}`,
             },
           ]}
         >
