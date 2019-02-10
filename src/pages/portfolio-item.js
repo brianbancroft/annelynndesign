@@ -88,12 +88,12 @@ class PortfolioItem extends Component {
             {
               property: 'og:url',
               name: 'og:url',
-              content: `https://annelynn.com/portfolio/${slug}`,
+              content: `https://staging.annelynn.com/portfolio/${slug}`,
             },
             {
               property: 'twitter:url',
               name: 'twitter:url',
-              content: `https://annelynn.com/portfolio/${slug}`,
+              content: `https://staging.annelynn.com/portfolio/${slug}`,
             },
             {
               property: 'og:type',

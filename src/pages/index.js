@@ -94,13 +94,13 @@ class IndexPage extends Component {
             {
               property: 'og:url',
               name: 'og:url',
-              content: `https://annelynn.com`,
+              content: `https://staging.annelynn.com`,
             },
 
             {
               property: 'twitter:url',
               name: 'twitter:url',
-              content: 'https://annelynn.com',
+              content: 'https://staging.annelynn.com',
             },
             {
               name: 'twitter:image:src',
