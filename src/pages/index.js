@@ -99,7 +99,6 @@ class IndexPage extends Component {
             },
             {
               property: 'twitter:image',
-              name: 'twitter:image',
               content: `${logo}`,
             },
           ]}

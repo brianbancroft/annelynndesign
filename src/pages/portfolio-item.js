@@ -31,7 +31,7 @@ class PortfolioItem extends Component {
       contentfulPortfolioItem: {
         color,
         slug,
-        copy,
+        copy: { copy },
         headerSectionTextColor,
         headline,
         title,
@@ -64,7 +64,7 @@ class PortfolioItem extends Component {
             {
               name: 'description',
               property: 'description',
-              content: copy.copy,
+              content: copy,
             },
             {
               name: 'keywords',
@@ -78,13 +78,11 @@ class PortfolioItem extends Component {
             },
             {
               property: 'og:title',
-              name: 'og:title',
-              content: title,
+              content: headline,
             },
             {
               property: 'og:description',
-              name: 'og:description',
-              content: headline,
+              content: copy,
             },
 
             {
@@ -105,7 +103,6 @@ class PortfolioItem extends Component {
 
             {
               property: 'og:image',
-              name: 'og:image',
               content: `${previewImage}`,
             },
             {

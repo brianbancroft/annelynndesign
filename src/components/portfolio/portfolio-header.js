@@ -61,7 +61,7 @@ const PortfolioHeader = ({
       headerSectionTextColor={headerSectionTextColor}
     >
       <Header>{headline}</Header>
-      <Copy>{copy.copy}</Copy>
+      <Copy>{copy}</Copy>
     </HeaderSection>
   </>
 )
