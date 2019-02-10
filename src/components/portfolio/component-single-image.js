@@ -38,17 +38,8 @@ const ImageContainer = styled('div')`
   background-repeat: no-repeat;
   background-position: center center;
   justify-self: center;
-  align-self: center;
-
-  .single-image-left {
-    grid-column: 2 / 4;
-    grid-row: 2 / 5;
-    align-self: end;
-  }
-
-  .single-image-right {
-    grid-row: 2 / 5;
-  }
+  align-self: ${props =>
+    props.className === 'single-image-left' ? 'end' : 'center'};
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     grid-column: 2 / 5;
