@@ -86,7 +86,7 @@ const Layout = ({ children, location } = {}) => {
         meta={[
           {
             name: 'author',
-            content: 'Anne-Lynn',
+            content: 'Anne Lynn',
           },
           {
             name: 'robots',
@@ -99,7 +99,7 @@ const Layout = ({ children, location } = {}) => {
           {
             name: 'og:site_name',
             property: 'theme-color',
-            content: 'Anne-Lynn Design',
+            content: 'Anne Lynn Design',
           },
           {
             property: 'og:locale',

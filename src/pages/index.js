@@ -51,7 +51,7 @@ class IndexPage extends Component {
             {
               property: 'description',
               name: 'description',
-              content: `The Portfolio and Contact Information Anne-Lynn Bancroft, a Graphic Designer specializing in packaging and print`,
+              content: `The Portfolio and Contact Information Anne Lynn Bancroft, a Graphic Designer specializing in packaging and print`,
             },
             {
               property: 'keywords',
