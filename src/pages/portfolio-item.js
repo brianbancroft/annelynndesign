@@ -104,13 +104,13 @@ class PortfolioItem extends Component {
             {
               property: 'og:image:secure_url',
               name: 'og:image:secure_url',
-              content: `http:s${previewImage}`,
+              content: `https:${previewImage}`,
             },
 
             {
               property: 'og:image',
               name: 'og:image:secure_url',
-              content: `http${previewImage}`,
+              content: `http:${previewImage}`,
             },
             {
               name: 'twitter:image:src',
