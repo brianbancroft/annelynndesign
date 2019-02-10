@@ -1,7 +1,9 @@
 import React from 'react'
 import Transition from './transition'
 import { ThemeProvider } from 'emotion-theming'
+import Helmet from 'react-helmet'
 import './layout.css'
+import favicon from '../../images/favicon.png'
 
 const theme = {
   mobileBreakpoint: '620px',
@@ -56,6 +58,15 @@ const Layout = ({ children, location } = {}) => {
   }
   return (
     <ThemeProvider theme={theme}>
+      <Helmet
+        link={[{ rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }]}
+        meta={[
+          {
+            name: 'author',
+            content: 'Anne-Lynn Bancroft',
+          },
+        ]}
+      />
       <Transition location={location}>{children}</Transition>
     </ThemeProvider>
   )
