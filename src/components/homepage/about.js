@@ -44,7 +44,7 @@ const Copy = styled('div')`
 `
 
 const AboutImage = styled('div')`
-  border: 1px solid ${props => props.theme.color.tertiary};
+  border: 2px solid ${props => props.theme.color.tertiary};
   height: 14vw;
   min-height: 200px;
   width: 14vw;
