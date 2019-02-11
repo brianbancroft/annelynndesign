@@ -31,7 +31,12 @@ const ImageSlider = ({ title, handleOpen, images } = {}) => (
     <Slider>
       {images.map((item, index) => (
         <Slide tag="a" index={item.index} key={item.id}>
-          <Image src={item.fluid.src} />
+          <Image
+            src={item.fluid.src}
+            onClick={handleOpen({
+              modalImage: item.original.src,
+            })}
+          />
         </Slide>
       ))}
     </Slider>
