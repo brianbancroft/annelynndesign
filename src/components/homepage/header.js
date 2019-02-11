@@ -50,6 +50,23 @@ const CircleOne = styled(Circle)`
   right: 30px;
   top: 420px;
 
+  /* keep the lower circle to the right of the title  */
+  @media (max-width: 1200px) {
+    right: -50px;
+  }
+
+  @media (max-width: 1070px) {
+    right: -150px;
+  }
+
+  @media (max-width: 980px) {
+    right: -250px;
+  }
+
+  @media (max-width: 860px) {
+    right: -300px;
+  }
+
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     border: 1px solid ${props => props.theme.color.primary};
     height: 70vw;
@@ -66,6 +83,12 @@ const CircleTwo = styled(Circle)`
   right: 40px;
   top: 50px;
 
+  @media (max-width: 980px) {
+    right: -55px;
+  }
+  @media (max-width: 860px) {
+    right: -125px;
+  }
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     height: 40vw;
     width: 40vw;
@@ -80,6 +103,13 @@ const CircleThree = styled(Circle)`
   width: 200px;
   right: 40px;
   top: 330px;
+
+  @media (max-width: 980px) {
+    right: -65px;
+  }
+  @media (max-width: 860px) {
+    right: -125px;
+  }
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     border: 1px solid ${props => props.theme.color.tertiary};
