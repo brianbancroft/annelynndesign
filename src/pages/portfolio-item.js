@@ -173,6 +173,94 @@ class PortfolioItem extends Component {
 export default PortfolioItem
 
 export const pageQuery = graphql`
+  fragment requirementsAndProducts on ContentfulARequirementsAndProductPane {
+    id
+    title
+    copy {
+      copy
+    }
+    image {
+      id
+      title
+      original: file {
+        src: url
+      }
+      fluid(maxWidth: 700) {
+        src
+        srcSet
+        sizes
+        aspectRatio
+      }
+    }
+    imagePosition
+  }
+
+  fragment conceptAndIdeas on ContentfulBConceptsAndIdeasPane {
+    id
+    title
+    imagePosition
+    copy {
+      copy
+    }
+    images {
+      id
+      title
+      original: file {
+        src: url
+      }
+      fluid(maxWidth: 600) {
+        src
+        srcSet
+        sizes
+        aspectRatio
+      }
+    }
+  }
+
+  fragment colorAndTypography on ContentfulCColorAndTypographyPane {
+    id
+    title
+    imagePosition
+    copy {
+      copy
+    }
+    images {
+      id
+      title
+      original: file {
+        src: url
+      }
+      fluid(maxWidth: 600) {
+        src
+        srcSet
+        sizes
+        aspectRatio
+      }
+    }
+  }
+
+  fragment supportingConcepts on ContentfulDSupportingContentPane {
+    id
+    title
+    copy {
+      copy
+    }
+    images {
+      id
+      title
+      original: file {
+        src: url
+      }
+      fluid(maxWidth: 600) {
+        src
+        srcSet
+        sizes
+        aspectRatio
+      }
+    }
+    imagePosition
+  }
+
   query PortfolioItemBySlug($slug: String) {
     contentfulPortfolioItem(slug: { eq: $slug }) {
       title
@@ -195,89 +283,16 @@ export const pageQuery = graphql`
         }
       }
       requirementsAndProductPane {
-        id
-        title
-        copy {
-          copy
-        }
-        image {
-          id
-          title
-          original: file {
-            src: url
-          }
-          fluid(maxWidth: 700) {
-            src
-            srcSet
-            sizes
-            aspectRatio
-          }
-        }
-        imagePosition
+        ...requirementsAndProducts
       }
       conceptAndIdeasPane {
-        id
-        title
-        imagePosition
-        copy {
-          copy
-        }
-        images {
-          id
-          title
-          original: file {
-            src: url
-          }
-          fluid(maxWidth: 600) {
-            src
-            srcSet
-            sizes
-            aspectRatio
-          }
-        }
+        ...conceptAndIdeas
       }
       colorAndTypographyPane {
-        id
-        title
-        imagePosition
-        copy {
-          copy
-        }
-        images {
-          id
-          title
-          original: file {
-            src: url
-          }
-          fluid(maxWidth: 600) {
-            src
-            srcSet
-            sizes
-            aspectRatio
-          }
-        }
+        ...colorAndTypography
       }
       supportingConceptsPane {
-        id
-        title
-        copy {
-          copy
-        }
-
-        images {
-          id
-          title
-          original: file {
-            src: url
-          }
-          fluid(maxWidth: 600) {
-            src
-            srcSet
-            sizes
-            aspectRatio
-          }
-        }
-        imagePosition
+        ...supportingConcepts
       }
     }
   }
