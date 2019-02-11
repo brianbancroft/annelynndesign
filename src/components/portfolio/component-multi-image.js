@@ -9,7 +9,7 @@ const MultiImageSection = styled('section')`
   height: calc(100vh - 30px);
 
   display: grid;
-  grid-template-rows: 20px 1fr 100px 10vh 20px;
+  grid-template-rows: 20px 1fr 100px 0.3fr 20px;
   grid-template-columns: 5vw 20vw 20vw 1fr 5vw;
   grid-row-gap: 10px;
   grid-column-gap: 10px;
@@ -36,6 +36,7 @@ const MultiImageSection = styled('section')`
     display: flex;
     justify-content: center;
     align-items: baseline;
+    align-self: flex-end;
     @media (max-width: ${props => props.theme.mobileBreakpoint}) {
       display: none;
     }
