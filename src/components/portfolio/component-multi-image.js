@@ -9,9 +9,9 @@ const MultiImageSection = styled('section')`
   height: calc(100vh - 30px);
 
   display: grid;
-  grid-template-rows: 20px 1fr 100px 0.3fr 20px;
+  grid-template-rows: 20px 1fr 100px 0.4fr 20px;
   grid-template-columns: 5vw 20vw 20vw 1fr 5vw;
-  grid-row-gap: 10px;
+  grid-row-gap: 25px;
   grid-column-gap: 10px;
   align-items: center;
 
@@ -20,8 +20,9 @@ const MultiImageSection = styled('section')`
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     flex-direction: column;
-    grid-template-rows: 20px 1fr 20px 80px 20px;
+    grid-template-rows: 20px 1fr 20px 100px 20px;
     margin-bottom: 120px;
+    height: 90vh;
   }
 
   .image.single-image-right {
@@ -158,6 +159,7 @@ const CopyElem = styled('div')`
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     grid-column: 2 / 5;
     grid-row: 4 / 5;
+    align-self: flex-start;
   }
 `
 

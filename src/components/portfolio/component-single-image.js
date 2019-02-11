@@ -19,7 +19,7 @@ const SingleImageSection = styled('section')`
   color: ${props => (props.color ? props.color : 'inherit')};
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    height: 100vh;
+    height: 90vh;
     grid-template-rows: 30px 1fr 30px 150px 25px;
     margin-bottom: 120px;
   }
@@ -69,6 +69,7 @@ const CopyElem = styled('div')`
     grid-column: 2 / 5;
     grid-row: 4 / 5;
     padding-top: 0;
+    align-self: flex-start;
   }
 `
 
