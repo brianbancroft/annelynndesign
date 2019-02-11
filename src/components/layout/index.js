@@ -13,7 +13,7 @@ const theme = {
   color: {
     primary: '#1e9dba',
     secondary: '#006a77',
-    tertiary: '#8ec73f',
+    tertiary: '#19D2C5',
     copy: '#222',
     formBackground: 'rgba(30, 157, 186, 0.1)',
     formSubmitBackground: 'rgba(30, 157, 186, 0.25)',
