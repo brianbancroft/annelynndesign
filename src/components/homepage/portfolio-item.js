@@ -43,30 +43,25 @@ const Item = styled('div')`
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient( #fff 40%, #999 60%);
     opacity: 0.3;
     transition: opacity 0.3s ease-in-out;
 
     @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-      background-image: none;
-    }
-
-    ${ItemLabel} {
-      transition: opacity 0.3s ease-in-out;
+      background: none;
     }
   }
 
   &:hover {
-    &:after {
-      opacity: 0;
 
-      ${ItemLabel} {
-        transition: opacity 0.3s ease-in-out;
-      }
+    &:after {
+      background: rgba(12, 154, 154, 0.9);
+      transition: background 0.5s ease-in-out;
+
     }
 
     ${ItemLabel} {
       opacity: 1;
+      transition: opacity 0.3s ease-in-out;
     }
   }
 
