@@ -238,6 +238,7 @@ const ComponentMultiImage = ({
         title={title}
         copy={copy}
         color={color}
+        handleOpen={handleOpen}
       />
     )
   } else {
@@ -248,6 +249,7 @@ const ComponentMultiImage = ({
         title={title}
         copy={copy}
         color={color}
+        handleOpen={handleOpen}
       />
     )
   }

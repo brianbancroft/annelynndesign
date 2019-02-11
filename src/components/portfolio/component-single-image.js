@@ -116,9 +116,17 @@ const ComponentSingleImage = ({
   title,
   copy,
   color,
+  handleOpen,
 } = {}) => (
   <SingleImageSection color={color} className={imagePosition}>
-    <ImageContainer className={imagePosition} src={image.fluid.src} />
+    <ImageContainer
+      className={imagePosition}
+      src={image.fluid.src}
+      onClick={handleOpen({
+        modalImage: image.original.src,
+        title: title,
+      })}
+    />
     <Title className={imagePosition}>{title}</Title>
     <Copy copy={copy} cssClass={imagePosition} />
   </SingleImageSection>

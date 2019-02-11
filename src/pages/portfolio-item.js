@@ -53,6 +53,7 @@ class PortfolioItem extends Component {
     const singleImageSections = sectionSingleImage({
       section: requirementsAndProductPane,
       color,
+      handleOpen,
     })
 
     const socialMediaPreview = ogPreviewImage
