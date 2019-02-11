@@ -55,8 +55,6 @@ class PortfolioItem extends Component {
       color,
     })
 
-    debugger
-
     const socialMediaPreview = ogPreviewImage
       ? ogPreviewImage.file.url
       : previewImage.file.url
