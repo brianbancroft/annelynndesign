@@ -101,7 +101,7 @@ const Title = styled('div')`
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     grid-column: 2 / 5;
     grid-row: 3 / 4;
-    text-align: center;
+    text-align: left;
   }
 `
 
