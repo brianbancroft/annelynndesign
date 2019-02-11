@@ -45,6 +45,9 @@ const ImageContainer = styled('div')`
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     grid-column: 2 / 5;
     grid-row: 2 / 3;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 100%;
   }
 `
 
