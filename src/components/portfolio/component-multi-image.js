@@ -21,8 +21,7 @@ const MultiImageSection = styled('section')`
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     flex-direction: column;
     grid-template-rows: 20px 1fr 20px 100px 20px;
-    margin-bottom: 120px;
-    height: 90vh;
+    height: 110vh;
   }
 
   .image.single-image-right {

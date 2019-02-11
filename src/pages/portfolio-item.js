@@ -154,7 +154,7 @@ class PortfolioItem extends Component {
         />
         <div
           className="porfolio-item__content"
-          style={{ zIndex: 5, background: 'white', marginBottom: '265px' }}
+          style={{ zIndex: 5, background: 'white', marginBottom: '85px' }}
         >
           <PortfolioHeader
             headline={headline}
@@ -209,6 +209,9 @@ export const pageQuery = graphql`
       original: file {
         src: url
       }
+      slider: fixed(width: 300, height: 380, resizingBehavior: PAD) {
+        src
+      }
       fluid(maxWidth: 600) {
         src
         srcSet
@@ -228,6 +231,9 @@ export const pageQuery = graphql`
     images {
       id
       title
+      slider: fixed(width: 300, height: 340, resizingBehavior: PAD) {
+        src
+      }
       original: file {
         src: url
       }
@@ -249,6 +255,9 @@ export const pageQuery = graphql`
     images {
       id
       title
+      slider: fixed(width: 300, height: 380, resizingBehavior: PAD) {
+        src
+      }
       original: file {
         src: url
       }

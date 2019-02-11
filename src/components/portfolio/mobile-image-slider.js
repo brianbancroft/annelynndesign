@@ -24,15 +24,15 @@ const CustomDotGroup = ({ slides, size }) => {
 
 const ImageSlider = ({ title, handleOpen, images } = {}) => (
   <CarouselProvider
-    naturalSlideWidth={1}
-    naturalSlideHeight={1}
+    naturalSlideWidth={300}
+    naturalSlideHeight={340}
     totalSlides={images.length}
   >
     <Slider>
       {images.map((item, index) => (
         <Slide tag="a" index={item.index} key={item.id}>
           <Image
-            src={item.fluid.src}
+            src={item.slider.src}
             onClick={handleOpen({
               modalImage: item.original.src,
             })}
