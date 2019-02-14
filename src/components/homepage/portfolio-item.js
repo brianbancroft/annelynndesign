@@ -80,7 +80,7 @@ const PortfolioItem = ({
     node: { previewImage, slug, title },
   },
 } = {}) => {
-  const img = previewImage ? previewImage.file.url : ''
+  const img = previewImage ? previewImage.fixed.url : ''
 
   return (
     <Link to={`/portfolio/${slug}`}>

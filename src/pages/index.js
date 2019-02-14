@@ -148,6 +148,9 @@ export const pageQuery = graphql`
           slug
           createdAt(formatString: "MMM Do, YYYY")
           previewImage {
+            fixed(width: 700, height: 600, resizingBehavior: THUMB) {
+              url: src
+            }
             id
             description
             file {
