@@ -31,7 +31,7 @@ const CopyContainer = styled('div')`
 `
 
 const Copy = styled('div')`
-  font-size: 17px;
+  font-size: 18px;
   color: ${props => props.theme.color.primary};
   line-height: 22px;
   margin-left: 130px;

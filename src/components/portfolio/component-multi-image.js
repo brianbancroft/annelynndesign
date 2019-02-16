@@ -22,6 +22,7 @@ const MultiImageSection = styled('section')`
     flex-direction: column;
     grid-template-rows: 20px 1fr 20px 100px 20px;
     height: 110vh;
+    margin-bottom: ${props => props.theme.mobile.sectionDividerMargin};
   }
 
   .image.single-image-right {
@@ -139,6 +140,7 @@ const CopyElem = styled('div')`
   grid-row: 3 / 4;
   max-width: 500px;
 
+  font-size: ${props => props.theme.copy.fontSize};
   color: ${props => props.theme.color.copy};
   font-weight: ${props => props.theme.copy.fontWeight};
 

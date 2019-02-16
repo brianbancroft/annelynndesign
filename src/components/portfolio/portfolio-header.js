@@ -41,11 +41,11 @@ const Copy = styled('div')`
   padding: 0 160px;
   grid-column: 2 / 3;
   grid-row: 3 / 4;
-  font-size: 16px;
-
+  font-size: ${props => props.theme.copy.fontSize};
+  line-height: ${props => props.theme.copy.lineHeight};
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     padding: 0 10px;
-    font-size: 18px;
+    font-size: ${props => props.theme.copy.mobile.fontSize};
   }
 `
 

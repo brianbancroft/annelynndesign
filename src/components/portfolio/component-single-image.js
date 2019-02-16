@@ -21,6 +21,7 @@ const SingleImageSection = styled('section')`
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     height: 90vh;
     grid-template-rows: 30px 1fr 30px 150px 25px;
+    margin-bottom: ${props => props.theme.mobile.sectionDividerMargin};
   }
 `
 
@@ -63,6 +64,7 @@ const CopyElem = styled('div')`
 
   color: ${props => props.theme.color.copy};
   font-weight: ${props => props.theme.copy.fontWeight};
+  font-size: ${props => props.theme.copy.fontSize};
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     grid-column: 2 / 5;
