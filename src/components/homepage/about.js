@@ -1,10 +1,25 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { LowerHeader } from '../styled'
+import { AboutCopy } from '.'
 
 const AboutSection = styled('section')`
   width: 100%;
   height: 95vw;
+`
+
+const DesktopContaner = styled('div')`
+  display: block;
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    display: none;
+  }
+`
+
+const MobileContainer = styled('div')`
+  display: none;
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    display: block;
+  }
 `
 
 const Header = styled(LowerHeader)`
@@ -12,35 +27,11 @@ const Header = styled(LowerHeader)`
   padding-top: 30px;
   margin-bottom: 30px;
   margin-left: 80px;
-
-  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    margin-left: 0;
-    padding-left: 0;
-    text-align: center;
-  }
 `
 
 const CopyContainer = styled('div')`
   position: relative;
   right: 5vw;
-  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    right: 0;
-    width: 90%;
-    margin: 0 auto;
-  }
-`
-
-const Copy = styled('div')`
-  font-size: 18px;
-  color: ${props => props.theme.color.primary};
-  line-height: 22px;
-  margin-left: 130px;
-  font-weight: 200;
-
-  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    margin-left: 0;
-    font-size: 15px;
-  }
 `
 
 const AboutImage = styled('div')`
@@ -56,10 +47,6 @@ const AboutImage = styled('div')`
   shape-outside: inset(1% round 50%);
   margin: 15px;
   background-color: white;
-
-  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    display: none;
-  }
 `
 
 const Circle = styled('div')`
@@ -74,10 +61,6 @@ const BigCircle = styled(Circle)`
   width: 120vh;
   left: 48vw;
   bottom: -2vw;
-
-  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    display: none;
-  }
 `
 
 const BottomCircle = styled(Circle)`
@@ -100,38 +83,19 @@ const BottomCircle = styled(Circle)`
 
 const About = () => (
   <AboutSection>
-    <BigCircle />
-    <BottomCircle />
-    <div className="container">
+    <DesktopContaner>
+      <BigCircle />
+      <BottomCircle />
+
       <Header>ABOUT</Header>
       <CopyContainer>
         <AboutImage />
-        <Copy>
-          <p>
-            I am from the Ottawa River Valley and have been a designer since
-            2008. I have experience with in-house teams, agencies, and
-            contracting roles for both print and packaging design. I also work
-            as an independent contractor for all types of clients.
-          </p>
-
-          <p>
-            I keep constant through research, and high-tempo production, and my
-            works stands out especially because my interest and knowledge in the
-            printing process, plus my need to maintain strong relationships with
-            the printers which I work with. Not only can I build new concepts,
-            but my experience in production art helps me move fast. I keep
-            current by branching out: As this site shows, I also design for the
-            modern web in an agile environment.
-          </p>
-
-          <p>
-            Outside of design, I also enjoy gardening, floral design, as well as
-            arts and crafts. And while I'm a long ways away from Regina, I will
-            always be a Roughriders fan
-          </p>
-        </Copy>
+        <AboutCopy />
       </CopyContainer>
-    </div>
+    </DesktopContaner>
+    <MobileContainer>
+      <Header>ABOUT</Header>
+    </MobileContainer>
   </AboutSection>
 )
 

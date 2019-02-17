@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { Contact, PortfolioItem } from '.'
+import { Contact, PortfolioItem, AboutCopy } from '.'
 
 const MiddleSection = styled('section')`
   width: 100vw;
@@ -25,7 +25,7 @@ const Grid = styled('div')`
   grid-auto-flow: row dense;
 `
 
-const ContactMobileSection = styled('section')`
+const MobileOnlySection = styled('section')`
   display: none;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
@@ -34,6 +34,13 @@ const ContactMobileSection = styled('section')`
     height: 100vh;
     background: white;
   }
+`
+
+const ContactMobileSection = styled(MobileOnlySection)``
+
+const AboutMobileSection = styled(MobileOnlySection)`
+  border-top: 2px solid ${props => props.theme.color.primary};
+  padding: 40px 20px 0 20px;
 `
 
 const Portfolio = props => {
@@ -46,6 +53,9 @@ const Portfolio = props => {
       <MiddleSection>
         <Grid>{portfolioItems}</Grid>
       </MiddleSection>
+      <AboutMobileSection>
+        <AboutCopy />
+      </AboutMobileSection>
       <ContactMobileSection>
         <Contact />
       </ContactMobileSection>
