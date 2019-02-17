@@ -9,7 +9,7 @@ const MultiImageSection = styled('section')`
   height: calc(100vh - 30px);
 
   display: grid;
-  grid-template-rows: 20px 1fr 100px 0.4fr 20px;
+  grid-template-rows: 80px 1fr 100px 0.4fr 20px;
   grid-template-columns: 5vw 20vw 20vw 1fr 5vw;
   grid-row-gap: 25px;
   grid-column-gap: 10px;
@@ -53,7 +53,7 @@ const MultiImageSection = styled('section')`
   }
 
   .desktop-images-container.no-copy {
-    grid-row: 1 / 5;
+    grid-row: 1 / 4;
   }
 
   .desktop-images-container.single-image-left {

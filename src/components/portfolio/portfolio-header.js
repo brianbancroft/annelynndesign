@@ -10,6 +10,7 @@ const HeaderSection = styled('section')`
   display: grid;
   grid-template-columns: 1fr 800px 1fr;
   grid-template-rows: 1fr 50px 1fr;
+  grid-row-gap: 20px;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     height: 105vh;
@@ -19,9 +20,10 @@ const HeaderSection = styled('section')`
 `
 
 const Header = styled('div')`
-  font-family: 'Raleway Semi-Bold', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 200;
+  font-family: ${props => props.theme.h3.fontFamily};
+  font-size: ${props => props.theme.h3.fontSize};
+  font-weight: ${props => props.theme.h3.fontWeight};
+  line-height: ${props => props.theme.h3.lineHeight};
   margin-bottom: 30px;
   text-align: center;
   padding: 0 10px;
@@ -30,9 +32,9 @@ const Header = styled('div')`
   line-height: 45px;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    font-size: 1.6rem !important;
-    line-height: 2rem;
-    font-weight: 300;
+    font-size: ${props => props.theme.h3.mobile.fontSize} !important;
+    line-height: ${props => props.theme.h3.mobile.lineHeight};
+    font-weight: ${props => props.theme.h3.mobile.fontWeight};
   }
 `
 

@@ -11,8 +11,8 @@ const SingleImageSection = styled('section')`
   grid-template-rows: ${props =>
     props.className === 'single-image-left' ||
     props.className === 'single-image-right'
-      ? '30px 0.2fr 1fr 100px 225px'
-      : '30px 1fr 170px 50px 25px'};
+      ? '100px 0.2fr 1fr 100px 155px'
+      : '80px 1fr 170px 50px 25px'};
   grid-row-gap: 25px;
   grid-column-gap: 20px;
 

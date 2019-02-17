@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
 const Copy = styled('div')`
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 400;
   color: ${props => props.theme.color.primary};
   line-height: 22px;
   margin-left: 130px;
