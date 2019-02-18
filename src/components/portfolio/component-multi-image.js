@@ -9,7 +9,7 @@ const MultiImageSection = styled('section')`
   height: calc(100vh - 30px);
 
   display: grid;
-  grid-template-rows: 80px 1fr 100px 0.2fr 20px;
+  grid-template-rows: 80px 1fr 100px 20px;
   grid-template-columns: 5vw 20vw 20vw 1fr 5vw;
   grid-row-gap: 25px;
   grid-column-gap: 10px;
@@ -36,7 +36,7 @@ const MultiImageSection = styled('section')`
     min-height: 350px;
     display: flex;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
     align-self: flex-end;
     @media (max-width: ${props => props.theme.mobileBreakpoint}) {
       display: none;
@@ -49,6 +49,10 @@ const MultiImageSection = styled('section')`
         //   max-height: ${ props =>
         props.numImages ? 70 / props.numImages + 'vw' : '70vw'};
       margin-right: 15px;
+    }
+
+    img {
+      max-height: 100%;
     }
   }
 
