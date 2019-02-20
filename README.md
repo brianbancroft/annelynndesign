@@ -4,25 +4,11 @@ A portfolio project. Uses Gatsby V2.
 
 ## Setup
 
-1.  **Install the Gatsby CLI.**
+1.  **Install.**
 
-    The Gatsby CLI helps you create new sites using Gatsby starters (like this one!)
+    This is a local node project that uses LTS Carbon. No containers. To start up, just install via `npm i`!
 
-    ```sh
-    # install the Gatsby CLI globally
-    npm install -g gatsby-cli
-    ```
-
-2.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
-
-    ```sh
-    cd my-default-starter/
-    gatsby develop
-    ```
-
-3.  Enviornment Variables
+2.  **Enviornment Variables**
     I've got two in a sample .env file which are used to plug directly into contentful.
 
 ## Branches
