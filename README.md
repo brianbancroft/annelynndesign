@@ -13,4 +13,4 @@ A portfolio project. Uses Gatsby V2.
 
 ## Branches
 
-There are two main branches in this repo: `master` and `preview`. Both these branches contain the same content except that the preview branch is set up in `gatsby-config` to observe both the content that's published as well as the stuff that's in draft status.
+There are three main branches in this repo: `master`, `develop` and `preview`. Both `master` and `preview` contain the same content except that the preview branch is set up in `gatsby-config` to observe both the content that's published as well as the stuff that's in draft status. The other branch, `develop`, is just used for a staging server. 
