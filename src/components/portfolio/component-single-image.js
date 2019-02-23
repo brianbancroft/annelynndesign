@@ -8,15 +8,16 @@ const SingleImageSection = styled('section')`
 
   display: grid;
   grid-template-columns: 10px 200px 20vw 1fr 10px;
-  grid-template-rows: ${props =>
-    props.className === 'single-image-left' ||
-    props.className === 'single-image-right'
-      ? '100px 0.2fr 1fr 100px 155px'
-      : '80px 1fr 170px 50px 25px'};
+  grid-template-rows: 80px 1fr 170px 50px 25px;
   grid-row-gap: 25px;
   grid-column-gap: 20px;
 
   color: ${props => (props.color ? props.color : 'inherit')};
+
+  &.single-image-left,
+  &.single-image-right {
+    grid-template-rows: 100px 0.2fr 1fr auto 155px;
+  }
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     height: 90vh;
@@ -26,13 +27,8 @@ const SingleImageSection = styled('section')`
 `
 
 const ImageContainer = styled('div')`
-  grid-column: ${props =>
-    props.className === 'single-image-left' ? '2 / 4' : '2 / 5'};
-  grid-row: ${props =>
-    props.className === 'single-image-left' ||
-    props.className === 'single-image-right'
-      ? '2 / 5'
-      : '2 / 3'};
+  grid-column: 2 / 5;
+  grid-row: 2 / 3;
   background: ${props => (props.src ? `url("${props.src}")` : 'red')};
   width: 500px;
   height: 500px;
@@ -41,6 +37,15 @@ const ImageContainer = styled('div')`
   background-position: center center;
   justify-self: center;
   align-self: end;
+
+  &.single-image-left {
+    grid-column: 2 / 4;
+  }
+
+  &.single-image-left,
+  &.single-image-right {
+    grid-row: 2 / 5;
+  }
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     grid-column: 2 / 5;
@@ -53,18 +58,22 @@ const ImageContainer = styled('div')`
 
 const CopyElem = styled('div')`
   grid-column: 4 / 5;
-  grid-row: ${props =>
-    props.className === 'single-image-left' ||
-    props.className === 'single-image-right'
-      ? '4 / 5'
-      : '3 / 4'};
+  grid-row: 3 / 4;
   max-width: 500px;
-  align-self: ${props =>
-    props.className === 'single-image-left' ? 'flex-end' : 'flex-start'};
+  align-self: flex-start;
 
   color: ${props => props.theme.color.copy};
   font-weight: ${props => props.theme.copy.fontWeight};
   font-size: ${props => props.theme.copy.fontSize};
+
+  &.single-image-left {
+    align-self: flex-end;
+  }
+
+  &.single-image-left,
+  &.single-image-right {
+    grid-row: 4 / 5;
+  }
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     grid-column: 2 / 5;
@@ -75,32 +84,30 @@ const CopyElem = styled('div')`
 `
 
 const Title = styled('div')`
-  grid-column: ${props =>
-    props.className === 'single-image-left' ? '4 / 5' : '3 / 4'};
+  grid-column: 3 / 4;
   grid-row: 3 / 4;
-  padding-top: ${props =>
-    props.className === 'single-image-left' ||
-    props.className === 'single-image-right'
-      ? '90px'
-      : '0'};
-  text-align: ${props =>
-    props.className === 'single-image-left' ||
-    props.className === 'single-image-right'
-      ? 'left'
-      : 'right'};
+  padding-top: 0;
+  text-align: right;
+  align-self: inherit;
 
   font-weight: ${props => props.theme.h4.fontWeight};
   font-size: ${props => props.theme.h4.fontSize};
   font-family: ${props => props.theme.h4.fontFamily};
   color: ${props => (props.color ? props.color : 'inherit')};
-  align-self: ${props =>
-    props.className === 'single-image-left' ||
-    props.className === 'single-image-right'
-      ? 'flex-end'
-      : 'inherit'};
 
-  .single-image-right {
+  &.single-image-left,
+  &.single-image-right {
+    padding-top: 90px;
+    text-align: left;
+    align-self: flex-end;
+  }
+
+  &.single-image-right {
     grid-row: 3 / 4;
+  }
+
+  &.single-image-left {
+    grid-column: 4 / 5;
   }
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
