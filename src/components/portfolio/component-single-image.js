@@ -84,11 +84,13 @@ const CopyElem = styled('div')`
 `
 
 const Title = styled('div')`
-  grid-column: 3 / 4;
+  grid-column: 2 / 4;
   grid-row: 3 / 4;
   padding-top: 0;
+  justify-self: end;
   text-align: right;
   align-self: inherit;
+  max-width: 80%;
 
   font-weight: ${props => props.theme.h4.fontWeight};
   font-size: ${props => props.theme.h4.fontSize};

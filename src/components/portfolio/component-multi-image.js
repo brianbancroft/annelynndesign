@@ -92,11 +92,13 @@ const MobileImagesContainer = styled('div')`
 `
 
 const TitleElem = styled('div')`
-  grid-column: 3 / 4;
+  grid-column: 2 / 4;
   grid-row: 3 / 4;
 
   padding-right: 20px;
   text-align: right;
+  justify-self: end;
+  max-width: 80%;
   height: 100%;
 
   font-weight: ${props => props.theme.h4.fontWeight};
