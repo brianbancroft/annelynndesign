@@ -100,6 +100,7 @@ const Title = styled('div')`
   &.single-image-left,
   &.single-image-right {
     padding-top: 90px;
+    justify-self: baseline;
     text-align: left;
     align-self: flex-end;
   }
