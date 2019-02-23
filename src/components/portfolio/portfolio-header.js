@@ -19,7 +19,7 @@ const HeaderSection = styled('section')`
   }
 `
 
-const Header = styled('div')`
+const Title = styled('div')`
   font-family: ${props => props.theme.h3.fontFamily};
   font-size: ${props => props.theme.h3.fontSize};
   font-weight: ${props => props.theme.h3.fontWeight};
@@ -35,6 +35,8 @@ const Header = styled('div')`
     font-size: ${props => props.theme.h3.mobile.fontSize} !important;
     line-height: ${props => props.theme.h3.mobile.lineHeight};
     font-weight: ${props => props.theme.h3.mobile.fontWeight};
+    align-self: end;
+    margin-bottom: 0;
   }
 `
 
@@ -62,7 +64,7 @@ const PortfolioHeader = ({
       backgroundColor={backgroundColor}
       headerSectionTextColor={headerSectionTextColor}
     >
-      <Header>{headline}</Header>
+      <Title>{headline}</Title>
       <Copy>{copy}</Copy>
     </HeaderSection>
   </>
