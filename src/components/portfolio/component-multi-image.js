@@ -9,7 +9,7 @@ const MultiImageSection = styled('section')`
   height: calc(100vh - 30px);
 
   display: grid;
-  grid-template-rows: 80px 1fr 100px 20px;
+  grid-template-rows: 80px 1fr auto 20px;
   grid-template-columns: 5vw 20vw 20vw 1fr 5vw;
   grid-row-gap: 25px;
   grid-column-gap: 10px;
@@ -37,7 +37,7 @@ const MultiImageSection = styled('section')`
     display: flex;
     justify-content: center;
     align-items: center;
-    align-self: flex-end;
+    align-self: center;
     @media (max-width: ${props => props.theme.mobileBreakpoint}) {
       display: none;
     }
@@ -110,6 +110,7 @@ const TitleElem = styled('div')`
     grid-column: 2 / 5;
     grid-row: 3 / 4;
     text-align: left;
+    justify-self: start;
   }
 
   .no-copy {

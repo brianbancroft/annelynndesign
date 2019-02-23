@@ -11,6 +11,7 @@ const SingleImageSection = styled('section')`
   grid-template-rows: 80px 1fr 170px 50px 25px;
   grid-row-gap: 25px;
   grid-column-gap: 20px;
+  margin-bottom: 135px;
 
   color: ${props => (props.color ? props.color : 'inherit')};
 
@@ -116,7 +117,7 @@ const Title = styled('div')`
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     grid-column: 2 / 5;
     grid-row: 3 / 4;
-    text-align: left;
+    justify-self: start;
   }
 `
 

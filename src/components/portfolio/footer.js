@@ -11,7 +11,7 @@ const FooterSection = styled('section')`
   height: 35px;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    height: 60px;
+    display: none;
   }
 `
 
