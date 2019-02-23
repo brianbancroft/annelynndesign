@@ -36,7 +36,7 @@ const ContactSection = styled('section')`
   }
 
   .form-container {
-    margin: 0 auto;
+    margin-left: 30px;
 
     @media (max-width: ${props => props.theme.mobileBreakpoint}) {
       width: 325px;

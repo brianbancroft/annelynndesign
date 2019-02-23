@@ -43,7 +43,7 @@ export default {
     fontWeight: '600',
     mobile: {
       fontSize: '1.6rem',
-      fontWeight: '300',
+      fontWeight: '600',
       lineHeight: '2rem',
     },
   },
