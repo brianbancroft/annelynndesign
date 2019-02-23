@@ -40,6 +40,7 @@ const ContactSection = styled('section')`
 
     @media (max-width: ${props => props.theme.mobileBreakpoint}) {
       width: 325px;
+      margin: 0 auto;
     }
   }
 
