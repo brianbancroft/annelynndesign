@@ -20,7 +20,7 @@ const MultiImageSection = styled('section')`
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     flex-direction: column;
-    grid-template-rows: 20px 1fr 20px 100px 20px;
+    grid-template-rows: 20px 1fr auto 100px 20px;
     height: 110vh;
     margin-bottom: ${props => props.theme.mobile.sectionDividerMargin};
   }
@@ -45,8 +45,6 @@ const MultiImageSection = styled('section')`
     .gatsby-image-wrapper {
       cursor: pointer;
       width: ${props =>
-        // props.numImages ? 70 / props.numImages + 'vw' : '70vw' };
-        //   max-height: ${ props =>
         props.numImages ? 70 / props.numImages + 'vw' : '70vw'};
       margin-right: 15px;
     }
@@ -91,7 +89,7 @@ const MobileImagesContainer = styled('div')`
   }
 `
 
-const TitleElem = styled('div')`
+const Title = styled('div')`
   grid-column: 2 / 4;
   grid-row: 3 / 4;
 
@@ -205,7 +203,7 @@ const ComponentMultiImage = ({
             handleOpen={handleOpen}
             className={`images-container ${imagePosition}`}
           />
-          <TitleElem className={imagePosition}>{title}</TitleElem>
+          <Title className={imagePosition}>{title}</Title>
           <Copy copy={copy} classes={`copy ${imagePosition}`} />
         </MultiImageSection>
       </>

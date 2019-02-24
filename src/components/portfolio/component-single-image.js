@@ -19,15 +19,15 @@ const SingleImageSection = styled('section')`
   &.single-image-right {
     grid-template-rows: 100px 0.2fr 1fr auto 155px;
     @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-      height: 90vh;
-      grid-template-rows: 30px 1fr 30px 150px 25px !important;
-      margin-bottom: ${props => props.theme.mobile.sectionDividerMargin};
+      grid-template-rows: 30px 1fr auto 150px 25px !important;
     }
   }
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     height: 90vh;
-    grid-template-rows: 30px 1fr 30px 150px 25px;
+    grid-template-rows: 30px 1fr auto 150px 25px;
+    grid-row-gap: 10px;
+
     margin-bottom: ${props => props.theme.mobile.sectionDividerMargin};
   }
 `
@@ -125,6 +125,7 @@ const Title = styled('div')`
     align-self: flex-end;
 
     @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+      padding-top: 0;
       grid-column: 2 / 5 !important;
       grid-row: 3 / 4 !important;
       justify-self: start;
