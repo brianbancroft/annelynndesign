@@ -110,6 +110,7 @@ const Title = styled('div')`
     grid-row: 3 / 4;
     text-align: left;
     justify-self: start;
+    max-width: 95%;
 
     line-height: ${props => props.theme.h4.mobile.lineHeight};
   }
