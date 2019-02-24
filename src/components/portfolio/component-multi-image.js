@@ -147,7 +147,17 @@ const Copy = ({ copy, classes } = {}) => {
 }
 
 const imagesLayout = ({ images, title, handleOpen, imagePosition } = {}) =>
-  imagePosition === 'images-center' ? (
+  imagePosition === 'single-image-left' ||
+  imagePosition === 'single-image-right' ? (
+    <Img
+      fluid={images[0].fluid}
+      key={images[0].id}
+      onClick={handleOpen({
+        modalImage: images[0].original.src,
+        title: title,
+      })}
+    />
+  ) : (
     images.map(i => (
       <div
         key={i.id}
@@ -159,31 +169,25 @@ const imagesLayout = ({ images, title, handleOpen, imagePosition } = {}) =>
         <Img fluid={i.fluid} />
       </div>
     ))
-  ) : (
-    <Img
-      fluid={images[0].fluid}
-      key={images[0].id}
-      onClick={handleOpen({
-        modalImage: images[0].original.src,
-        title: title,
-      })}
-    />
   )
 
-const Images = ({ title, handleOpen, images, imagePosition, color } = {}) => (
-  <>
-    <MobileImagesContainer className={imagePosition} color={color}>
-      <MobileImageSlider
-        title={title}
-        handleOpen={handleOpen}
-        images={images}
-      />
-    </MobileImagesContainer>
-    <div className={`desktop-images-container ${imagePosition}`}>
-      {imagesLayout({ images, title, handleOpen, imagePosition })}
-    </div>
-  </>
-)
+const Images = ({ title, handleOpen, images, imagePosition, color } = {}) => {
+  console.log('images - ', images)
+  return (
+    <>
+      <MobileImagesContainer className={imagePosition} color={color}>
+        <MobileImageSlider
+          title={title}
+          handleOpen={handleOpen}
+          images={images}
+        />
+      </MobileImagesContainer>
+      <div className={`desktop-images-container ${imagePosition}`}>
+        {imagesLayout({ images, title, handleOpen, imagePosition })}
+      </div>
+    </>
+  )
+}
 
 const ComponentMultiImage = ({
   color,
