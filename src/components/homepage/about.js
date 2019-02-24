@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { LowerHeader } from '../styled'
-import { AboutCopy } from '.'
+import { AboutCopy, MobileAbout } from '.'
 
 const AboutSection = styled('section')`
   width: 100%;
@@ -94,7 +94,7 @@ const About = () => (
       </CopyContainer>
     </DesktopContaner>
     <MobileContainer>
-      <Header>ABOUT</Header>
+      <MobileAbout />
     </MobileContainer>
   </AboutSection>
 )

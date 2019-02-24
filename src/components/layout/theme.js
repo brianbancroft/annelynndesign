@@ -5,6 +5,7 @@ export default {
     primary: '#1e9dba',
     secondary: '#006a77',
     tertiary: '#19D2C5',
+    green: '#8EC73F',
     copy: '#222',
     formBackground: 'rgba(30, 157, 186, 0.1)',
     formSubmitBackground: 'rgba(30, 157, 186, 0.25)',
