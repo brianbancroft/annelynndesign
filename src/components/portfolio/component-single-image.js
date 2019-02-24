@@ -129,6 +129,7 @@ const Title = styled('div')`
       grid-column: 2 / 5 !important;
       grid-row: 3 / 4 !important;
       justify-self: start;
+      text-align: left;
     }
   }
 
@@ -144,6 +145,7 @@ const Title = styled('div')`
     grid-column: 2 / 5;
     grid-row: 3 / 4;
     justify-self: start;
+    text-align: left;
   }
 `
 
