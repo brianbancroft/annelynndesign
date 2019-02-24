@@ -52,6 +52,9 @@ export default {
     fontSize: '20px',
     lineHeight: '25px',
     fontWeight: '600',
+    mobile: {
+      lineHeight: '22px',
+    },
   },
   copy: {
     fontWeight: '200',

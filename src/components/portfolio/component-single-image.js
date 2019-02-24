@@ -115,6 +115,7 @@ const Title = styled('div')`
   font-weight: ${props => props.theme.h4.fontWeight};
   font-size: ${props => props.theme.h4.fontSize};
   font-family: ${props => props.theme.h4.fontFamily};
+  line-height: ${props => props.theme.h4.lineHeight};
   color: ${props => (props.color ? props.color : 'inherit')};
 
   &.single-image-left,
@@ -146,6 +147,7 @@ const Title = styled('div')`
     grid-row: 3 / 4;
     justify-self: start;
     text-align: left;
+    line-height: ${props => props.theme.h4.mobile.lineHeight};
   }
 `
 
