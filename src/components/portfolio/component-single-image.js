@@ -18,6 +18,11 @@ const SingleImageSection = styled('section')`
   &.single-image-left,
   &.single-image-right {
     grid-template-rows: 100px 0.2fr 1fr auto 155px;
+    @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+      height: 90vh;
+      grid-template-rows: 30px 1fr 30px 150px 25px !important;
+      margin-bottom: ${props => props.theme.mobile.sectionDividerMargin};
+    }
   }
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
@@ -46,6 +51,13 @@ const ImageContainer = styled('div')`
   &.single-image-left,
   &.single-image-right {
     grid-row: 2 / 5;
+    @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+      grid-column: 2 / 5 !important;
+      grid-row: 2 / 3 !important;
+      margin-bottom: 5px !important;
+      width: 100% !important;
+      height: 100% !important;
+    }
   }
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
@@ -74,6 +86,13 @@ const CopyElem = styled('div')`
   &.single-image-left,
   &.single-image-right {
     grid-row: 4 / 5;
+
+    @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+      grid-column: 2 / 5 !important;
+      grid-row: 4 / 5 !important;
+      padding-top: 0 !important;
+      align-self: flex-start !important;
+    }
   }
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
@@ -104,6 +123,12 @@ const Title = styled('div')`
     justify-self: baseline;
     text-align: left;
     align-self: flex-end;
+
+    @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+      grid-column: 2 / 5 !important;
+      grid-row: 3 / 4 !important;
+      justify-self: start;
+    }
   }
 
   &.single-image-right {
