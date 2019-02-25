@@ -29,6 +29,7 @@ const Header = styled(LowerHeader)`
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     width: 100%;
+    margin-bottom: 30px;
   }
 `
 

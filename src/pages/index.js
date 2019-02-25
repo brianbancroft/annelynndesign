@@ -1,6 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
-import { Header, Portfolio, Footer } from '../components/homepage'
+import {
+  Header,
+  PortfolioMosaic,
+  AboutContact,
+  ServicesSummary,
+} from '../components/homepage'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import logo from '../images/logo.png'
@@ -83,58 +88,19 @@ const meta = [
     content: `https://staging.annelynn.com/${logo}`,
   },
 ]
-class IndexPage extends Component {
-  handleScroll() {
-    const { body } = document
-    const { documentElement: html } = document
-    const height = Math.max(
-      body.scrollHeight,
-      body.offsetHeight,
-      html.clientHeight,
-      html.scrollHeight,
-      html.offsetHeight
-    )
 
-    const offset = window.pageYOffset
-
-    const headerSection = document.getElementById('headerSection')
-    const footerSection = document.getElementById('footerSection')
-
-    if (headerSection || footerSection) {
-      if (height / offset > 2.9763313609467454) {
-        headerSection.style.display = 'block'
-        footerSection.style.display = 'none'
-      } else {
-        headerSection.style.display = 'none'
-        footerSection.style.display = 'grid'
-      }
-    }
-  }
-
-  componentDidMount() {
-    this.handleScroll()
-    window.addEventListener('scroll', this.handleScroll)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll)
-  }
-
-  render() {
-    return (
-      <Layout>
-        <Helmet title={`Anne-Lynn Design`} meta={meta}>
-          <html lang="en" />
-        </Helmet>
-        <>
-          <Header />
-          <Portfolio data={this.props.data} />
-          <Footer />
-        </>
-      </Layout>
-    )
-  }
-}
+const IndexPage = ({ data } = {}) => (
+  <Layout>
+    <Helmet title={`Anne-Lynn Design`} meta={meta}>
+      <html lang="en" />
+    </Helmet>
+    <>
+      <Header />
+      <PortfolioMosaic data={data} />
+      <AboutContact />
+    </>
+  </Layout>
+)
 
 export default IndexPage
 

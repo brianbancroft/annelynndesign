@@ -97,8 +97,6 @@ const LinkedinLink = styled('div')`
   }
 `
 
-console.log('Linkedin Logo =>>', linkedinLogo)
-
 const MobileAbout = () => {
   return (
     <>

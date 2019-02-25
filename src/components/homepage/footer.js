@@ -7,8 +7,8 @@ const FooterSection = styled('section')`
   height: 100vh;
   z-index: -1;
   top: 0;
-  position: fixed;
-  display: none;
+  display: grid;
+  background: white;
 
   grid-template-columns: 50vw 50vw;
   grid-template-rows: 100vh;
