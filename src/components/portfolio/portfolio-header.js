@@ -13,7 +13,7 @@ const HeaderSection = styled('section')`
   grid-row-gap: 20px;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    height: 90vh;
+    height: 100vh;
     grid-template-columns: 5vw 90vw 5vw;
     grid-template-rows: 20vh 80px 1fr;
   }
