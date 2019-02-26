@@ -8,6 +8,8 @@ const ContactSection = styled('section')`
   margin-left: 0 auto;
   display: flex;
   flex-direction: column;
+  z-index: 2;
+
   color: ${props => props.theme.color.primary};
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
@@ -24,12 +26,11 @@ const ContactSection = styled('section')`
 const Header = styled(LowerHeader)`
   z-index: 10;
   padding-top: 30px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   width: 100%;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     width: 100%;
-    margin-bottom: 30px;
   }
 `
 

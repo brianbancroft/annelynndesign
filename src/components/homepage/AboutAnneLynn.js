@@ -8,6 +8,7 @@ const AboutSection = styled('section')`
   width: 100%;
   min-height: 100vh;
   height: auto;
+  z-index: 2;
 `
 
 const Header = styled(LowerHeader)`
@@ -21,33 +22,24 @@ const Header = styled(LowerHeader)`
   }
 `
 
-const Circle = styled('div')`
-  border-radius: 120vw;
-`
+const HeadshotCircle = styled('div')`
+  display: block;
 
-const RightDesktopCircle = styled(Circle)`
-  position: absolute;
-  z-index: -11;
-  border-radius: 120vh;
-`
-const HeadshotCircle = styled(Circle)``
-const LowerDesktopCircle = styled(Circle)`
-  /* position: relative; */
-  border: 2px solid ${props => props.theme.color.primary};
-  width: 70px;
-  height: 70px;
-
-  /* left: -400px; */
+  border: 2px solid ${props => props.theme.color.tertiary};
+  height: 14vw;
+  min-height: 200px;
+  width: 14vw;
+  min-width: 200px;
+  border-radius: 600px;
+  overflow: hidden;
+  float: left;
+  z-index: 1;
+  shape-outside: inset(1% round 50%);
+  margin: 15px;
+  background-color: white;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     display: none;
-    /* border: 1px solid ${props => props.theme.color.primary};
-    height: 1000px;
-    width: 1000px;
-    position: absolute;
-    border-radius: 1000px;
-    left: -283px;
-    top: 88vh; */
   }
 `
 
@@ -55,7 +47,7 @@ const AboutAnneLynn = () => {
   return (
     <AboutSection>
       <Header>about</Header>
-
+      <HeadshotCircle />
       <AboutCopy />
     </AboutSection>
   )

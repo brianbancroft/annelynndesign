@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-import { AboutAnneLynn, ContactForm } from '.'
+import { AboutAnneLynn, ContactForm, FooterCircles } from '.'
 
 const FooterSection = styled('section')`
   width: 100vw;
@@ -23,6 +23,7 @@ const AboutContact = () => {
     <FooterSection>
       <ContactForm />
       <AboutAnneLynn />
+      <FooterCircles />
     </FooterSection>
   )
 }
