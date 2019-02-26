@@ -50,7 +50,6 @@ const Headshot = styled('div')`
   height: 180px;
   border-radius: 150px;
   background-image: url(${headshotPhoto});
-  /* border: 2px dashed rebeccapurple; */
   background-repeat: no-repeat;
   background-size: contain;
 `
