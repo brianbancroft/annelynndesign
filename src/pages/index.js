@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import {
-  Header,
+  HomeHeader,
   PortfolioMosaic,
   AboutContact,
   ServicesSummary,
@@ -95,7 +95,7 @@ const IndexPage = ({ data } = {}) => (
       <html lang="en" />
     </Helmet>
     <>
-      <Header />
+      <HomeHeader />
       <PortfolioMosaic data={data} />
       <AboutContact />
     </>

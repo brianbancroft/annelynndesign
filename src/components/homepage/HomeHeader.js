@@ -120,7 +120,7 @@ const CircleThree = styled(Circle)`
   }
 `
 
-class Header extends React.Component {
+class HomeHeader extends React.Component {
   render() {
     return (
       <HeaderSection id="headerSection">
@@ -139,4 +139,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header
+export default HomeHeader
