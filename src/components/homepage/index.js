@@ -1,7 +1,5 @@
-export { default as About } from './about'
 export { default as ContactForm } from './ContactForm'
-export { default as Footer } from './footer'
-export { default as Header } from './header'
+export { default as Header } from './Header'
 export { default as PortfolioMosaic } from './PortfolioMosaic'
 export { default as PortfolioItem } from './PortfolioItem'
 export { default as AboutCopy } from './AboutCopy'
