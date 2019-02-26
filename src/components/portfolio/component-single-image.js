@@ -26,7 +26,6 @@ const SingleImageSection = styled('section')`
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     height: 90vh;
     grid-template-rows: 30px 1fr auto 150px 25px;
-    grid-row-gap: 10px;
 
     margin-bottom: ${props => props.theme.mobile.sectionDividerMargin};
   }
