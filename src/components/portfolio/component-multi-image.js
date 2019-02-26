@@ -10,7 +10,7 @@ const MultiImageSection = styled('section')`
 
   display: grid;
   grid-template-rows: 80px 1fr auto 20px;
-  grid-template-columns: 5vw 20vw 20vw 1fr 5vw;
+  grid-template-columns: 10px 200px 20vw 1fr 10px;
   grid-row-gap: 15px;
   grid-column-gap: 20px;
   align-items: center;
@@ -171,7 +171,6 @@ const imagesLayout = ({ images, title, handleOpen, imagePosition } = {}) =>
   )
 
 const Images = ({ title, handleOpen, images, imagePosition, color } = {}) => {
-  console.log('images - ', images)
   return (
     <>
       <MobileImagesContainer className={imagePosition} color={color}>

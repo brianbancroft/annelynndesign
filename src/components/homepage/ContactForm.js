@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { css, jsx } from '@emotion/core'
+
 import { LowerHeader } from '../styled'
 
 const ContactSection = styled('section')`
@@ -48,13 +50,30 @@ const FormInput = styled('input')`
   font-size: 15px;
   padding: 10px 20px;
   border: none;
-  background-color: ${props => props.theme.color.formBackground};
   width: 450px;
   margin: 8px 0;
   box-sizing: border-box;
   border: none;
   text-transform: uppercase;
   background-color: ${props => props.theme.color.formBackground};
+  @media (max-width: 500px) {
+    width: 325px;
+  }
+  @media (min-width: 501px) {
+    max-width: 350px;
+  }
+`
+
+const formInputCss = css`
+  font-size: 15px;
+  padding: 10px 20px;
+  border: none;
+  background-color: rgba(30, 157, 186, 0.1);
+  width: 450px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  text-transform: uppercase;
   @media (max-width: 500px) {
     width: 325px;
   }
@@ -86,6 +105,48 @@ const SubmitInput = styled('input')`
   }
 `
 
+const submitInputCss = css`
+  width: 450px;
+  color: #1e9dba;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: rgba(30, 157, 186, 0.25);
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  @media (max-width: 500px) {
+    width: 325px;
+  }
+  @media (min-width: 501px) {
+    max-width: 350px;
+  }
+
+  &:hover {
+    transition: 0.6s ease-out;
+    background-color: #19d2c5;
+  }
+`
+
+const textAreaCss = css`
+  width: 450px;
+  height: 160px;
+  margin-top: 8px;
+  color: #1e9dba;
+  resize: none;
+  font-size: 15px;
+  padding: 10px 20px;
+  border: none;
+  background-color: rgba(30, 157, 186, 0.1);
+
+  @media (max-width: 500px) {
+    width: 325px;
+  }
+  @media (min-width: 501px) {
+    max-width: 350px;
+  }
+`
+
 const TextInput = styled('textarea')`
   width: 450px;
   height: 160px;
@@ -110,24 +171,31 @@ const ContactForm = () => (
     <Header>Contact</Header>
     <FormContainer>
       <form
-        name="contact-form"
-        action=""
+        name="contactAnneLynn"
+        method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
       >
+        <input type="hidden" name="form-name" value="contactAnneLynn" />
         <label>name</label>
-        <FormInput type="text" name="name" />
+        <FormInput
+          type="text"
+          name="name"
+        />
         <label>email</label>
-        <FormInput type="text" name="email" />
+        <FormInput
+=         type="text"
+          name="email"
+=        />
         <label>message</label>
 
-        <TextInput
+        <textarea
+          css={textAreaCss}
           name="comment"
-          form="usrform"
           defaultValue="Hi there, I just saw your site and I'd like to talk more!"
         />
 
-        <SubmitInput className="form-field__submit" type="SUBMIT" />
+        <input css={submitInputCss} type="submit" />
       </form>
     </FormContainer>
   </ContactSection>
