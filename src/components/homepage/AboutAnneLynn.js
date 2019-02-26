@@ -17,6 +17,7 @@ const Header = styled(LowerHeader)`
   padding-top: 30px;
   margin-bottom: 30px;
   width: 100%;
+  background: white;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     width: 100%;
