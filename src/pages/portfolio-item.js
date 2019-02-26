@@ -209,7 +209,7 @@ export const pageQuery = graphql`
       original: file {
         src: url
       }
-      slider: fixed(width: 300, height: 380, resizingBehavior: PAD) {
+      slider: fixed(width: 600, height: 720, resizingBehavior: PAD) {
         src
       }
       fluid(maxWidth: 600) {
@@ -231,7 +231,7 @@ export const pageQuery = graphql`
     images {
       id
       title
-      slider: fixed(width: 300, height: 340, resizingBehavior: PAD) {
+      slider: fixed(width: 600, height: 720, resizingBehavior: PAD) {
         src
       }
       original: file {
@@ -255,7 +255,7 @@ export const pageQuery = graphql`
     images {
       id
       title
-      slider: fixed(width: 300, height: 380, resizingBehavior: PAD) {
+      slider: fixed(width: 600, height: 720, resizingBehavior: PAD) {
         src
       }
       original: file {
