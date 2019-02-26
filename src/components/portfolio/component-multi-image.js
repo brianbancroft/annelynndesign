@@ -11,8 +11,8 @@ const MultiImageSection = styled('section')`
   display: grid;
   grid-template-rows: 80px 1fr auto 20px;
   grid-template-columns: 5vw 20vw 20vw 1fr 5vw;
-  grid-row-gap: 25px;
-  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+  grid-column-gap: 20px;
   align-items: center;
 
   background: white;
@@ -93,7 +93,6 @@ const Title = styled('div')`
   grid-column: 2 / 4;
   grid-row: 3 / 4;
 
-  padding-right: 20px;
   text-align: right;
   justify-self: end;
   max-width: 80%;
