@@ -16,16 +16,17 @@ const RightDesktopCircle = styled(Circle)`
 `
 const LowerDesktopCircle = styled(Circle)`
   border: 0.5px solid ${props => props.theme.color.primary};
-  width: 130vw;
-  height: 130vw;
+  width: 170vw;
+  height: 170vw;
 
   position: relative;
-  left: -14vw;
+  left: -35vw;
 `
 
 const CircleContainer = styled('div')`
   position: absolute;
   overflow: hidden;
+  outline-style: dashed;
 `
 
 const MobileCircleContainer = styled(CircleContainer)`
@@ -38,7 +39,8 @@ const MobileCircleContainer = styled(CircleContainer)`
 const LowerDesktopCircleContainer = styled(MobileCircleContainer)`
   height: 24.5vh;
   width: 100vw;
-  top: 331vh;
+  top: 325vh;
+  outline-color: blue;
 `
 
 const RightDesktopCircleContainer = styled(MobileCircleContainer)`
