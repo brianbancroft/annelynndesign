@@ -44,6 +44,10 @@ const ImageContainer = styled('div')`
   justify-self: center;
   align-self: end;
 
+  &.no-copy {
+    grid-row: 2 / 5;
+  }
+
   &.single-image-left {
     grid-column: 2 / 4;
   }
