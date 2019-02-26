@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
+import headshotPhoto from '../../images/biopic.jpg'
 import { LowerHeader } from '../styled'
 import { AboutCopy } from '.'
 
@@ -36,6 +37,7 @@ const HeadshotCircle = styled('div')`
   z-index: 1;
   shape-outside: inset(1% round 50%);
   margin: 15px;
+  padding: 8px 0 0 8px;
   background-color: white;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
@@ -43,11 +45,23 @@ const HeadshotCircle = styled('div')`
   }
 `
 
+const Headshot = styled('div')`
+  width: 180px;
+  height: 180px;
+  border-radius: 150px;
+  background-image: url(${headshotPhoto});
+  /* border: 2px dashed rebeccapurple; */
+  background-repeat: no-repeat;
+  background-size: contain;
+`
+
 const AboutAnneLynn = () => {
   return (
     <AboutSection>
       <Header>about</Header>
-      <HeadshotCircle />
+      <HeadshotCircle>
+        <Headshot />
+      </HeadshotCircle>
       <AboutCopy />
     </AboutSection>
   )
