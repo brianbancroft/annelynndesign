@@ -178,15 +178,9 @@ const ContactForm = () => (
       >
         <input type="hidden" name="form-name" value="contactAnneLynn" />
         <label>name</label>
-        <FormInput
-          type="text"
-          name="name"
-        />
+        <FormInput type="text" name="name" />
         <label>email</label>
-        <FormInput
-=         type="text"
-          name="email"
-=        />
+        <FormInput type="text" name="email" />
         <label>message</label>
 
         <textarea
