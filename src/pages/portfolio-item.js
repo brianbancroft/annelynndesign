@@ -27,11 +27,11 @@ class PortfolioItem extends Component {
     }
     const handleClose = () => this.setState({ showModal: false })
 
-    const {
+    let {
       contentfulPortfolioItem: {
         color,
         slug,
-        copy: { copy },
+        copy,
         headerSectionTextColor,
         headline,
         title,
@@ -43,6 +43,8 @@ class PortfolioItem extends Component {
         ogPreviewImage,
       },
     } = this.props.data
+
+    copy = copy ? copy.copy : null
 
     const multiImageSections = [
       conceptAndIdeasPane,
