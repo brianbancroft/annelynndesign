@@ -10,6 +10,13 @@ const moduleExports = {
       'Portfolio site for graphic design. Uses gatsby, netlify and contentful',
   },
   plugins: [
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.SPACE_ID,
+        accessToken: process.env.DELIVERY_TOKEN,
+      },
+    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
@@ -26,13 +33,6 @@ const moduleExports = {
       },
     },
     'gatsby-plugin-offline',
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: process.env.SPACE_ID,
-        accessToken: process.env.DELIVERY_TOKEN,
-      },
-    },
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-emotion`,
@@ -70,6 +70,10 @@ const moduleExports = {
       },
     },
   ],
+}
+
+if (process.env.PREVIEW_MODE === 'true') {
+  moduleExports.plugins[0].options['host'] = 'preview.contentful.com'
 }
 
 module.exports = moduleExports
