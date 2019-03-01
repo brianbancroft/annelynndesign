@@ -55,7 +55,8 @@ const LowerDesktopCircleContainer = styled(MobileCircleContainer)`
     height: 10.5vh;
     top: 340vh;
   }
-  /* outline-color: blue; */
+  outline-style: dashed;
+  outline-color: blue;
 `
 
 const LowerDesktopCircle = styled(Circle)`
@@ -75,9 +76,9 @@ const LowerDesktopCircle = styled(Circle)`
 
 const FooterCircles = () => (
   <>
-    <LowerDesktopCircleContainer>
+    {/* <LowerDesktopCircleContainer>
       <LowerDesktopCircle />
-    </LowerDesktopCircleContainer>
+    </LowerDesktopCircleContainer> */}
     <RightDesktopCircleContainer>
       <RightDesktopCircle />
     </RightDesktopCircleContainer>
