@@ -58,9 +58,13 @@ class PortfolioItem extends Component {
       handleOpen,
     })
 
-    const socialMediaPreview = ogPreviewImage
-      ? ogPreviewImage.file.url
-      : previewImage.file.url
+    let socialMediaPreview
+
+    if (ogPreviewImage) {
+      socialMediaPreview = ogPreviewImage.file.url
+    } else if (previewImage) {
+      socialMediaPreview = previewImage.file.url
+    }
 
     return (
       <Layout>

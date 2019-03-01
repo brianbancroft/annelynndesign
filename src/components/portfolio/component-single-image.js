@@ -167,19 +167,26 @@ const ComponentSingleImage = ({
   copy,
   color,
   handleOpen,
-} = {}) => (
-  <SingleImageSection color={color} className={imagePosition}>
-    <ImageContainer
-      className={imagePosition}
-      src={image.fluid.src}
-      onClick={handleOpen({
-        modalImage: image.original.src,
-        title: title,
-      })}
-    />
-    <Title className={imagePosition}>{title}</Title>
-    <Copy copy={copy} cssClass={imagePosition} />
-  </SingleImageSection>
-)
+} = {}) => {
+  const imageSrc = image ? image.fluid.src : 'https://placehold.it/400/400'
+  const modalImageSrc = image
+    ? image.original.src
+    : 'https://placehold.it/400/400'
+
+  return (
+    <SingleImageSection color={color} className={imagePosition}>
+      <ImageContainer
+        className={imagePosition}
+        src={imageSrc}
+        onClick={handleOpen({
+          modalImage: modalImageSrc,
+          title: title,
+        })}
+      />
+      <Title className={imagePosition}>{title}</Title>
+      <Copy copy={copy} cssClass={imagePosition} />
+    </SingleImageSection>
+  )
+}
 
 export default ComponentSingleImage
