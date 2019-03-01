@@ -183,13 +183,12 @@ const ContactForm = () => (
         <FormInput type="text" name="email" />
         <label>message</label>
 
-        <textarea
-          css={textAreaCss}
+        <TextInput
           name="comment"
           defaultValue="Hi there, I just saw your site and I'd like to talk more!"
         />
 
-        <input css={submitInputCss} type="submit" />
+        <SubmitInput type="submit" />
       </form>
     </FormContainer>
   </ContactSection>
