@@ -47,28 +47,28 @@ const meta = [
   {
     property: 'og:image',
     name: 'og:image',
-    content: `https://staging.annelynn.com/${logo}`,
+    content: `https://annelynn.com/${logo}`,
   },
   {
     property: 'og:image:secure_url',
     name: 'og:image:secure_url',
-    content: `https://staging.annelynn.com/${logo}`,
+    content: `https://annelynn.com/${logo}`,
   },
   {
     property: 'og:url',
     name: 'og:url',
-    content: `https://staging.annelynn.com`,
+    content: `https://annelynn.com`,
   },
 
   {
     property: 'twitter:url',
     name: 'twitter:url',
-    content: 'https://staging.annelynn.com',
+    content: 'https://annelynn.com',
   },
   {
     name: 'twitter:image:src',
     property: 'twitter:image:src',
-    content: `https://staging.annelynn.com/${logo}`,
+    content: `https://annelynn.com/${logo}`,
   },
   {
     name: 'twitter:card',
@@ -85,7 +85,7 @@ const meta = [
   },
   {
     name: 'twitter:image',
-    content: `https://staging.annelynn.com/${logo}`,
+    content: `https://annelynn.com/${logo}`,
   },
 ]
 
