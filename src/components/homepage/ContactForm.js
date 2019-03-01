@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { css, jsx } from '@emotion/core'
 
 import { LowerHeader } from '../styled'
 
@@ -64,24 +63,6 @@ const FormInput = styled('input')`
   }
 `
 
-const formInputCss = css`
-  font-size: 15px;
-  padding: 10px 20px;
-  border: none;
-  background-color: rgba(30, 157, 186, 0.1);
-  width: 450px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: none;
-  text-transform: uppercase;
-  @media (max-width: 500px) {
-    width: 325px;
-  }
-  @media (min-width: 501px) {
-    max-width: 350px;
-  }
-`
-
 const SubmitInput = styled('input')`
   width: 450px;
   color: ${props => props.theme.color.primary};
@@ -102,48 +83,6 @@ const SubmitInput = styled('input')`
   &:hover {
     transition: 0.6s ease-out;
     background-color: ${props => props.theme.color.tertiary};
-  }
-`
-
-const submitInputCss = css`
-  width: 450px;
-  color: #1e9dba;
-  text-transform: uppercase;
-  font-weight: 600;
-  background-color: rgba(30, 157, 186, 0.25);
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  @media (max-width: 500px) {
-    width: 325px;
-  }
-  @media (min-width: 501px) {
-    max-width: 350px;
-  }
-
-  &:hover {
-    transition: 0.6s ease-out;
-    background-color: #19d2c5;
-  }
-`
-
-const textAreaCss = css`
-  width: 450px;
-  height: 160px;
-  margin-top: 8px;
-  color: #1e9dba;
-  resize: none;
-  font-size: 15px;
-  padding: 10px 20px;
-  border: none;
-  background-color: rgba(30, 157, 186, 0.1);
-
-  @media (max-width: 500px) {
-    width: 325px;
-  }
-  @media (min-width: 501px) {
-    max-width: 350px;
   }
 `
 
