@@ -171,7 +171,6 @@ const imagesLayout = ({ images, title, handleOpen, imagePosition } = {}) =>
   )
 
 const Images = ({ title, handleOpen, images, imagePosition, color } = {}) => {
-  console.log('images - ', images)
   return (
     <>
       <MobileImagesContainer className={imagePosition} color={color}>

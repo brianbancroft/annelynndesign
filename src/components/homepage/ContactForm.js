@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+
 import { LowerHeader } from '../styled'
 
 const ContactSection = styled('section')`
@@ -48,7 +49,6 @@ const FormInput = styled('input')`
   font-size: 15px;
   padding: 10px 20px;
   border: none;
-  background-color: ${props => props.theme.color.formBackground};
   width: 450px;
   margin: 8px 0;
   box-sizing: border-box;
@@ -110,11 +110,12 @@ const ContactForm = () => (
     <Header>Contact</Header>
     <FormContainer>
       <form
-        name="contact-form"
-        action=""
+        name="contactAnneLynn"
+        method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
       >
+        <input type="hidden" name="form-name" value="contactAnneLynn" />
         <label>name</label>
         <FormInput type="text" name="name" />
         <label>email</label>
@@ -123,11 +124,10 @@ const ContactForm = () => (
 
         <TextInput
           name="comment"
-          form="usrform"
           defaultValue="Hi there, I just saw your site and I'd like to talk more!"
         />
 
-        <SubmitInput className="form-field__submit" type="SUBMIT" />
+        <SubmitInput type="submit" />
       </form>
     </FormContainer>
   </ContactSection>
