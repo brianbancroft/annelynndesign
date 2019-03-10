@@ -13,6 +13,7 @@ export default {
   mobile: {
     sectionDividerMargin: '30px',
   },
+  fontFamily: `'Raleway', sans-serif`,
   h1: {
     fontFamily: `'Raleway', sans-serif`,
     textTransform: 'uppercase',
@@ -58,6 +59,7 @@ export default {
     },
   },
   copy: {
+    fontFamily: `'Raleway', sans-serif`,
     fontWeight: '200',
     fontSize: '16px',
     lineHeight: '22px',
