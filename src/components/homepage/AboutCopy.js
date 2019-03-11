@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 const Copy = styled('div')`
   font-weight: 400;
-  margin: 0 auto;
+  margin: 40px auto 0 auto;
   width: 75%;
   max-width: 450px;
 

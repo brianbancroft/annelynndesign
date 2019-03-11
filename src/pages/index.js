@@ -5,7 +5,6 @@ import {
   PortfolioMosaic,
   AboutContact,
   ServicesSummary,
-  // FontShowcase,
 } from '../components/homepage'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
@@ -97,7 +96,6 @@ const IndexPage = ({ data } = {}) => (
     </Helmet>
     <>
       <HomeHeader />
-      {/* <FontShowcase /> */}
       <PortfolioMosaic data={data} />
       <AboutContact />
     </>

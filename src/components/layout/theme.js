@@ -60,7 +60,7 @@ export default {
   },
   copy: {
     fontFamily: `'Raleway', sans-serif`,
-    fontWeight: '200',
+    fontWeight: '400',
     fontSize: '16px',
     lineHeight: '22px',
     color: '#222',
