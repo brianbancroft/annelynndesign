@@ -71,6 +71,9 @@ const LeftCircle = styled('div')`
   border-radius: 10000px;
   border: 2px solid ${props => props.theme.color.primary};
   left: 30px;
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    left: 40px;
+  }
 `
 const RightCircle1 = styled('div')`
   position: relative;
@@ -105,19 +108,24 @@ const ListItem = styled('li')`
 `
 
 const LinkedinLink = styled('div')`
-  position: absolute;
-  top: 500px;
-  left: 260px;
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
+  padding-top: 6px;
   border: 2px solid ${props => props.theme.color.secondary};
-  border-radius: 46px;
-  padding: 7px 0 0 8px;
+  border-radius: 54px;
+  margin-bottom: 320px;
+  display: flex;
+  justify-content: center;
 
   a {
     font-size: 31px;
     font-weight: 700 !important;
     color: ${props => props.theme.color.primary} !important;
+  }
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    position: relative;
+    right: 230px;
   }
 `
 
@@ -149,13 +157,12 @@ const ServicesSummary = () => {
         </SpecializationsCircle>
         <RightCircle1 />
         <RightCircle2 />
+        <LinkedinLink>
+          <a href="https://www.linkedin.com/in/annelynnhanna/" target="_blank">
+            <img src={linkedinLogo} width="26px" />
+          </a>
+        </LinkedinLink>
       </div>
-
-      {/* <LinkedinLink>
-        <a href="https://www.linkedin.com/in/annelynnhanna/" target="_blank">
-          <img src={linkedinLogo} width="26px" />
-        </a>
-      </LinkedinLink> */}
     </SumamrySection>
   )
 }
