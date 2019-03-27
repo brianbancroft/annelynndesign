@@ -16,6 +16,10 @@ const Copy = styled('div')`
     font-size: ${props => props.theme.copy.mobile.fontSize};
     width: 85vw;
   }
+
+  @media (min-width: 1550px) {
+    padding-top: 50px;
+  }
 `
 const AboutCopy = () => (
   <Copy>
