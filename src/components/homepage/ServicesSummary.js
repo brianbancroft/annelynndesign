@@ -59,8 +59,8 @@ const SpecializationsCircle = styled('div')`
   h4 {
     margin-bottom: 2px;
   }
-  .push:before {
-    margin-left: 2px;
+  .push {
+    margin-left: 16px;
   }
 `
 
@@ -125,7 +125,7 @@ const LinkedinLink = styled('div')`
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     position: relative;
-    right: 230px;
+    right: 260px;
   }
 `
 
