@@ -97,6 +97,7 @@ const IndexPage = ({ data } = {}) => (
     <>
       <HomeHeader />
       <PortfolioMosaic data={data} />
+      <ServicesSummary />
       <AboutContact />
     </>
   </Layout>

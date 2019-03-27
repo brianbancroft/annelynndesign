@@ -5,33 +5,24 @@ import linkedinLogo from './linkedin-logo.svg'
 
 const SumamrySection = styled('div')`
   width: 100vw;
-  height: 100vh;
-  display: none;
+  height: 600px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
 
-  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    display: block;
+  .content {
+    width: 800px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+      margin-left: 30px;
+    }
   }
-`
-
-const HeadshotCircle = styled('div')`
-  top: 20px;
-  left: 55px;
-  z-index: 2;
-  width: 166px;
-  height: 166px;
-  border-radius: 166px;
-  padding: 6px;
-
-  border: 2px solid ${props => props.theme.color.secondary};
-`
-
-const Headshot = styled('div')`
-  width: 150px;
-  height: 150px;
-  border-radius: 150px;
-  background-image: url(${headshotPhoto});
-  background-repeat: no-repeat;
-  background-size: contain;
 `
 
 const SpacerCircle = styled('div')`
@@ -49,8 +40,8 @@ const SpecializationsCircle = styled('div')`
   top: 220px;
   left: 30px;
   padding: 40px 0 0 60px;
-  width: 259px;
-  height: 259px;
+  width: 280px;
+  height: 280px;
   border: 2px solid ${props => props.theme.color.secondary};
   border-radius: 259px;
 
@@ -71,6 +62,33 @@ const SpecializationsCircle = styled('div')`
   .push:before {
     margin-left: 2px;
   }
+`
+
+const LeftCircle = styled('div')`
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 10000px;
+  border: 2px solid ${props => props.theme.color.primary};
+  left: 30px;
+`
+const RightCircle1 = styled('div')`
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 10000px;
+  border: 2px solid ${props => props.theme.color.green};
+  right: 40px;
+  bottom: 45px;
+`
+const RightCircle2 = styled('div')`
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border-radius: 10000px;
+  border: 2px solid ${props => props.theme.color.primary};
+  right: 90px;
+  top: 30px;
 `
 
 const ListItem = styled('li')`
@@ -106,31 +124,32 @@ const LinkedinLink = styled('div')`
 const ServicesSummary = () => {
   return (
     <SumamrySection>
-      {/* <HeadshotCircle> */}
-      {/* <Headshot /> */}
-      {/* </HeadshotCircle> */}
-      {/* <SpacerCircle /> */}
-      <SpecializationsCircle>
-        <h4>Specializing</h4>
-        <ul>
-          <ListItem>
-            <span>retail design</span>
-          </ListItem>
-          <ListItem>
-            <span>packaging</span>
-          </ListItem>
-          <ListItem>
-            <span>branding</span>
-          </ListItem>
-          <ListItem>
-            <span>signage</span>
-          </ListItem>
-          <ListItem>
-            <span>flyer design</span>
-          </ListItem>
-        </ul>
-        <span className="push">& more</span>
-      </SpecializationsCircle>
+      <div className="content">
+        <LeftCircle />
+        <SpecializationsCircle>
+          <h4>Specializing</h4>
+          <ul>
+            <ListItem>
+              <span>retail design</span>
+            </ListItem>
+            <ListItem>
+              <span>packaging</span>
+            </ListItem>
+            <ListItem>
+              <span>branding</span>
+            </ListItem>
+            <ListItem>
+              <span>signage</span>
+            </ListItem>
+            <ListItem>
+              <span>flyer design</span>
+            </ListItem>
+          </ul>
+          <span className="push">& more</span>
+        </SpecializationsCircle>
+        <RightCircle1 />
+        <RightCircle2 />
+      </div>
 
       {/* <LinkedinLink>
         <a href="https://www.linkedin.com/in/annelynnhanna/" target="_blank">

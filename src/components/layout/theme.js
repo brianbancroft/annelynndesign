@@ -65,7 +65,7 @@ export default {
     lineHeight: '22px',
     color: '#222',
     mobile: {
-      fontWeight: '500',
+      fontWeight: '400',
       fontSize: '20px',
     },
     portfolioHeader: {

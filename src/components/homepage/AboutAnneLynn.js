@@ -10,6 +10,9 @@ const AboutSection = styled('section')`
   min-height: 100vh;
   height: auto;
   z-index: 2;
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    margin-bottom: 40px;
+  }
 `
 
 const Header = styled(LowerHeader)`
@@ -38,8 +41,10 @@ const HeadshotCircle = styled('div')`
   z-index: 1;
   shape-outside: inset(1% round 50%);
   margin: 15px;
-  padding: 8px 0 0 8px;
   background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     display: none;
