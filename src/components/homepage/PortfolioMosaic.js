@@ -5,11 +5,8 @@ import { PortfolioItem } from '.'
 const MiddleSection = styled('section')`
   width: 100vw;
   min-height: 100vh;
-  margin: 105vh 0 0 0;
   background: #f5f4f4;
 
-  border-top: 2px solid #0c9a9a;
-  border-bottom: 2px solid #0c9a9a;
   background: white;
 
   @supports (display: grid) {

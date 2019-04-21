@@ -5,7 +5,6 @@ import Layout from '../components/layout'
 
 import {
   PortfolioHeader,
-  Footer,
   sectionSingleImage,
   sectionMultiImage,
   ImageModal,
@@ -66,85 +65,84 @@ class PortfolioItem extends Component {
       socialMediaPreview = previewImage.file.url
     }
 
+    const meta = [
+      {
+        name: 'description',
+        property: 'description',
+        content: copy,
+      },
+      {
+        name: 'keywords',
+        property: 'keywords',
+        content: `anne-lynn hanna, annelynn design, anne-lynn design, ${title}`,
+      },
+      {
+        name: 'theme-color',
+        property: 'theme-color',
+        content: color,
+      },
+      {
+        property: 'og:title',
+        content: headline,
+      },
+      {
+        property: 'og:description',
+        content: copy,
+      },
+
+      {
+        property: 'og:url',
+        name: 'og:url',
+        content: `${slug}`,
+      },
+      {
+        property: 'twitter:url',
+        name: 'twitter:url',
+        content: `${slug}`,
+      },
+      {
+        property: 'og:type',
+        name: 'og:type',
+        content: 'portfolio',
+      },
+
+      {
+        property: 'og:image:secure_url',
+        name: 'og:image:secure_url',
+        content: `https:${socialMediaPreview}`,
+      },
+
+      {
+        property: 'og:image',
+        name: 'og:image:secure_url',
+        content: `http:${socialMediaPreview}`,
+      },
+      {
+        name: 'twitter:image:src',
+        property: 'twitter:image:src',
+        content: `https:${socialMediaPreview}`,
+      },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        name: 'twitter:title',
+        content: headline,
+      },
+      {
+        name: 'twitter:description',
+        content: copy,
+      },
+      {
+        name: 'twitter:image',
+        content: `https:${socialMediaPreview}`,
+      },
+    ]
+
     return (
       <Layout>
-        <Helmet
-          title={`${title} - Anne-Lynn Design`}
-          meta={[
-            {
-              name: 'description',
-              property: 'description',
-              content: copy,
-            },
-            {
-              name: 'keywords',
-              property: 'keywords',
-              content: `anne-lynn hanna, annelynn design, anne-lynn design, ${title}`,
-            },
-            {
-              name: 'theme-color',
-              property: 'theme-color',
-              content: color,
-            },
-            {
-              property: 'og:title',
-              content: headline,
-            },
-            {
-              property: 'og:description',
-              content: copy,
-            },
-
-            {
-              property: 'og:url',
-              name: 'og:url',
-              content: `${slug}`,
-            },
-            {
-              property: 'twitter:url',
-              name: 'twitter:url',
-              content: `${slug}`,
-            },
-            {
-              property: 'og:type',
-              name: 'og:type',
-              content: 'portfolio',
-            },
-
-            {
-              property: 'og:image:secure_url',
-              name: 'og:image:secure_url',
-              content: `https:${socialMediaPreview}`,
-            },
-
-            {
-              property: 'og:image',
-              name: 'og:image:secure_url',
-              content: `http:${socialMediaPreview}`,
-            },
-            {
-              name: 'twitter:image:src',
-              property: 'twitter:image:src',
-              content: `https:${socialMediaPreview}`,
-            },
-            {
-              name: 'twitter:card',
-              content: 'summary_large_image',
-            },
-            {
-              name: 'twitter:title',
-              content: headline,
-            },
-            {
-              name: 'twitter:description',
-              content: copy,
-            },
-            {
-              name: 'twitter:image',
-              content: `https:${socialMediaPreview}`,
-            },
-          ]}
-        >
+        <Helmet title={`${title} | Anne-Lynn Design`} meta={meta}>
           <link
             rel="stylesheet"
             href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.1/dist/semantic.min.css"
@@ -171,7 +169,6 @@ class PortfolioItem extends Component {
           {singleImageSections}
           {multiImageSections}
         </div>
-        <Footer color={color} />
       </Layout>
     )
   }

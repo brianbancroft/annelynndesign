@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
-import { BackIcon } from '.'
 
 const FooterSection = styled('section')`
   position: fixed;
@@ -29,9 +28,7 @@ const Footer = ({ color } = {}) => (
           margin: '0 auto',
           maxWidth: 960,
         }}
-      >
-        <BackIcon />
-      </div>
+      />
     </Link>
   </FooterSection>
 )

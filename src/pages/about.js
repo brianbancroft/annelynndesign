@@ -1,8 +1,6 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-import { PortfolioMosaic } from '../components/homepage'
+import AboutCopy from '../components/homepage/AboutCopy'
 import Helmet from 'react-helmet'
-import Layout from '../components/layout'
 import logo from '../images/logo.png'
 
 const meta = [
@@ -84,41 +82,15 @@ const meta = [
   },
 ]
 
-const IndexPage = ({ data } = {}) => (
-  <Layout>
-    <Helmet title={`Portfolio | Anne-Lynn Design`} meta={meta}>
-      <html lang="en" />
-    </Helmet>
-    <>
-      <PortfolioMosaic data={data} />
-    </>
-  </Layout>
-)
+const about = () => {
+  return (
+    <div>
+      <Helmet title={`Portfolio | Anne-Lynn Design`} meta={meta}>
+        <html lang="en" />
+      </Helmet>
+      <AboutCopy />
+    </div>
+  )
+}
 
-export default IndexPage
-
-export const pageQuery = graphql`
-  query HomeQuery {
-    allContentfulPortfolioItem {
-      edges {
-        node {
-          id
-          title
-          slug
-          createdAt(formatString: "MMM Do, YYYY")
-          previewImage {
-            fixed(width: 700, height: 600, resizingBehavior: THUMB) {
-              url: src
-            }
-            id
-            description
-            file {
-              url
-              contentType
-            }
-          }
-        }
-      }
-    }
-  }
-`
+export default about
