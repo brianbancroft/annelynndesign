@@ -5,7 +5,7 @@ const ProfileCircle = styled('div')`
   height: 180px;
   border-radius: 180px;
   border: 1px solid #aaa;
-
+  background: white;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -48,6 +48,12 @@ const DesktopView = styled('main')`
     margin-top: 30px;
     margin-left: 60px;
   }
+
+  @media (min-width: 1230px) {
+    .about-copy {
+      margin-top: 2vw;
+    }
+  }
 `
 
 const HeadShot = styled(ProfileCircle)`
@@ -59,17 +65,21 @@ const HeadShot = styled(ProfileCircle)`
   .image {
     background-image: ${props => props.imageSrc};
   }
+
+  @media (min-width: 1230px) {
+    margin-left: calc(60px + (4%));
+  }
 `
 
 const DecorativeCircle = styled('div')`
   z-index: -1;
   bottom: 15px;
-  right: -130px;
-  width: 720px;
-  height: 720px;
-  border-radius: 700px;
+  left: 48vw;
+  width: 900px;
+  height: 900px;
+  border-radius: 900px;
   border: 1px solid ${props => props.theme.color.primary};
-  position: absolute;
+  position: fixed;
 `
 
 const SocialMediaIcons = styled('section')`
@@ -88,6 +98,29 @@ const SocialMediaIcons = styled('section')`
   }
 `
 
+const DesktopCopy = styled('section')`
+  font-weight: 400;
+  margin: 50px auto 0 auto;
+  width: 75%;
+  max-width: 450px;
+
+  line-height: ${props => props.theme.copy.lineHeight};
+  font-weight: ${props => props.theme.copy.fontWeight};
+  font-size: 13px;
+  color: ${props => props.theme.color.primary};
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    font-weight: ${props => props.theme.copy.mobile.fontWeight};
+    font-size: ${props => props.theme.copy.mobile.fontSize};
+    width: 85vw;
+  }
+`
+
+const CopyContainer = styled('section')`
+  max-width: 600px;
+  margin: 0 auto;
+`
+
 const About = () => {
   return (
     <>
@@ -98,17 +131,21 @@ const About = () => {
       <DesktopView>
         <HobbyBlurb />
         <section>
-          <h2>About</h2>
-          <HeadShot>
-            <div className="image" />
-          </HeadShot>
-          <AboutCopy full={true} />
+          <CopyContainer>
+            <h2>About</h2>
+            <HeadShot>
+              <div className="image" />
+            </HeadShot>
+            <DesktopCopy>
+              <AboutCopy full={true} />
+            </DesktopCopy>
+          </CopyContainer>
           <SocialMediaIcons>
             <div className="icon" />
             <div className="icon" />
             <div className="icon" />
           </SocialMediaIcons>
-          {/* <DecorativeCircle /> */}
+          <DecorativeCircle />
         </section>
       </DesktopView>
     </>

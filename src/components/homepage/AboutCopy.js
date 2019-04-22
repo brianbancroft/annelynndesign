@@ -23,7 +23,7 @@ const Copy = styled('div')`
 `
 const AboutCopy = ({ full = false } = {}) =>
   full ? (
-    <Copy>
+    <>
       <p>
         I am from the Ottawa River Valley and have been a designer since 2008. I
         have experience with in-house teams, agencies, and contracting roles for
@@ -46,7 +46,7 @@ const AboutCopy = ({ full = false } = {}) =>
         making things with my hands. And while I'm a long ways away from Regina,
         I will always be a Roughriders fan.
       </p>
-    </Copy>
+    </>
   ) : (
     <Copy>
       <p>
