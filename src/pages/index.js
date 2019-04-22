@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { PortfolioMosaic } from '../components/homepage'
 import Helmet from 'react-helmet'
-import Layout from '../components/layout'
 import logo from '../images/logo.png'
 
 const meta = [
@@ -85,14 +84,14 @@ const meta = [
 ]
 
 const IndexPage = ({ data } = {}) => (
-  <Layout>
+  <>
     <Helmet title={`Portfolio | Anne-Lynn Design`} meta={meta}>
       <html lang="en" />
     </Helmet>
     <>
       <PortfolioMosaic data={data} />
     </>
-  </Layout>
+  </>
 )
 
 export default IndexPage

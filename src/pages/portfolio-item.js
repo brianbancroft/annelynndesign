@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-import Layout from '../components/layout'
+import styled from '@emotion/styled'
 
 import {
   PortfolioHeader,
@@ -141,7 +141,7 @@ class PortfolioItem extends Component {
     ]
 
     return (
-      <Layout>
+      <>
         <Helmet title={`${title} | Anne-Lynn Design`} meta={meta}>
           <link
             rel="stylesheet"
@@ -169,7 +169,8 @@ class PortfolioItem extends Component {
           {singleImageSections}
           {multiImageSections}
         </div>
-      </Layout>
+        {/* <AlternateFooterBg backgroundColor={color} /> */}
+      </>
     )
   }
 }
