@@ -1,7 +1,6 @@
 import React from 'react'
 import Transition from './transition'
 import { ThemeProvider } from 'emotion-theming'
-import styled from '@emotion/styled'
 import theme from './theme'
 import Helmet from 'react-helmet'
 import './layout.css'

@@ -1,4 +1,12 @@
-module.exports = ({ copy, title, headline, slug, ogImage }) => [
+module.exports = ({
+  copy,
+  title,
+  headline,
+  slug,
+  ogImage,
+  keywords = null,
+  color = '#ffffff',
+}) => [
   {
     name: 'description',
     property: 'description',
@@ -7,7 +15,11 @@ module.exports = ({ copy, title, headline, slug, ogImage }) => [
   {
     name: 'keywords',
     property: 'keywords',
-    content: `anne-lynn hanna, annelynn design, anne-lynn design, ${title}`,
+    content: keywords
+      ? `anne-lynn hanna, annelynn design, anne-lynn design, ${keywords.join(
+          ', '
+        )}`
+      : `anne-lynn hanna, annelynn design, anne-lynn design`,
   },
   {
     name: 'theme-color',
@@ -38,17 +50,15 @@ module.exports = ({ copy, title, headline, slug, ogImage }) => [
     name: 'og:type',
     content: 'portfolio',
   },
-
   {
     property: 'og:image:secure_url',
     name: 'og:image:secure_url',
     content: ogImage,
   },
-
   {
     property: 'og:image',
     name: 'og:image:secure_url',
-    content ogImage,
+    content: ogImage,
   },
   {
     name: 'twitter:image:src',

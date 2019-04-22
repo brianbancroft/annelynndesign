@@ -3,7 +3,7 @@ import favicon16 from '../../images/favicon-16x16.png'
 import favicon32 from '../../images/favicon-32x32.png'
 import appleTouchIcon from '../../images/apple-touch-icon.png'
 
-const meta = [
+export const meta = [
   {
     name: 'author',
     content: 'Anne Lynn',
@@ -35,7 +35,7 @@ const meta = [
   },
 ]
 
-const helmetLink = [
+export const helmetLink = [
   { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` },
   {
     rel: 'icon',
@@ -56,5 +56,3 @@ const helmetLink = [
     href: `${appleTouchIcon}`,
   },
 ]
-
-export default { meta, helmetLink }
