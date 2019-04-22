@@ -72,6 +72,22 @@ const DecorativeCircle = styled('div')`
   position: absolute;
 `
 
+const SocialMediaIcons = styled('section')`
+  width: 320px;
+  height: 100px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-around;
+  cursor: pointer;
+
+  .icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    background: #444;
+  }
+`
+
 const About = () => {
   return (
     <>
@@ -87,7 +103,12 @@ const About = () => {
             <div className="image" />
           </HeadShot>
           <AboutCopy full={true} />
-          <DecorativeCircle />
+          <SocialMediaIcons>
+            <div className="icon" />
+            <div className="icon" />
+            <div className="icon" />
+          </SocialMediaIcons>
+          {/* <DecorativeCircle /> */}
         </section>
       </DesktopView>
     </>
