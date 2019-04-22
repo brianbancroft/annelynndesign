@@ -4,14 +4,14 @@ import { Link } from 'gatsby'
 
 import {
   aboutBaseIcon,
-  aboutHoverIcon,
-  aboutWhiteIcon,
+  // aboutHoverIcon,
+  // aboutWhiteIcon,
   homeBaseIcon,
-  homeHoverIcon,
-  homeWhiteIcon,
+  // homeHoverIcon,
+  // homeWhiteIcon,
   contactBaseIcon,
-  contactHoverIcon,
-  contactWhiteIcon,
+  // contactHoverIcon,
+  // contactWhiteIcon,
 } from '../images/footerIcons'
 
 const FooterBg = styled('footer')`
