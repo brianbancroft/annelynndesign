@@ -18,7 +18,7 @@ const FooterBg = styled('footer')`
   position: fixed;
   bottom: 0;
   z-index: 4;
-  height: 120px;
+  height: ${props => props.theme.footer.height};
   width: 100vw;
   background-color: white;
 `
@@ -26,7 +26,7 @@ const FooterElement = styled('footer')`
   position: fixed;
   bottom: 0;
   z-index: 8;
-  height: 120px;
+  height: ${props => props.theme.footer.height};
   width: 100vw;
 
   display: grid;

@@ -6,12 +6,16 @@ export default {
     secondary: '#006a77',
     tertiary: '#19D2C5',
     green: '#8EC73F',
+    light: '#EBFAFE',
     copy: '#222',
     formBackground: 'rgba(30, 157, 186, 0.1)',
     formSubmitBackground: 'rgba(30, 157, 186, 0.25)',
   },
   mobile: {
     sectionDividerMargin: '30px',
+  },
+  footer: {
+    height: '120px',
   },
   fontFamily: `'Raleway', sans-serif`,
   h1: {
