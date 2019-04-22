@@ -3,7 +3,7 @@ import { About } from '../components/homepage/'
 // import Helmet from 'react-helmet'
 // import logo from '../images/logo.png'
 
-const about = () => {
+const AboutPage = () => {
   return (
     <div>
       <About />
@@ -11,4 +11,4 @@ const about = () => {
   )
 }
 
-export default about
+export default AboutPage
