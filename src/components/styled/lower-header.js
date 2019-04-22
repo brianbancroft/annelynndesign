@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 
 // Header used on frontpage's contact and about
-const Header = styled('div')`
+const LowerHeader = styled('div')`
   text-transform: ${props => props.theme.h2.textTransform};
   font-weight: ${props => props.theme.h2.fontWeight};
   font-size: ${props => props.theme.h2.fontSize};
@@ -12,4 +12,4 @@ const Header = styled('div')`
   color: ${props => props.theme.color.primary};
 `
 
-export default Header
+export default LowerHeader

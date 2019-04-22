@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
+// import { Paragraph  from './'
+
 const Copy = styled('article')`
   line-height: ${props => props.theme.copy.lineHeight};
   font-weight: ${props => props.theme.copy.fontWeight};

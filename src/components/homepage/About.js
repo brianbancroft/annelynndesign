@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { AboutCopy, HobbyBlurb } from '.'
+import { AboutCopy, HobbyBlurb, SocialIcons } from '.'
 import ProfileCircle from './styled/ProfileCircle'
 
 const MobileView = styled('main')`
@@ -83,22 +83,6 @@ const DecorativeCircle = styled('div')`
   position: fixed;
 `
 
-const SocialMediaIcons = styled('section')`
-  width: 320px;
-  height: 100px;
-  display: flex;
-  margin: 0 auto;
-  justify-content: space-around;
-  cursor: pointer;
-
-  .icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 100px;
-    background: #444;
-  }
-`
-
 const CopyContainer = styled('section')`
   max-width: 600px;
   margin: 0 auto;
@@ -121,11 +105,7 @@ const About = () => {
             </HeadShot>
             <AboutCopy full={true} />
           </CopyContainer>
-          <SocialMediaIcons>
-            <div className="icon" />
-            <div className="icon" />
-            <div className="icon" />
-          </SocialMediaIcons>
+          <SocialIcons />
           <DecorativeCircle />
         </section>
       </DesktopView>

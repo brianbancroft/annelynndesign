@@ -1,16 +1,17 @@
-// Application defaults
-export default {
+const color = {
+  primary: '#1e9dba',
+  secondary: '#006a77',
+  tertiary: '#19D2C5',
+  green: '#8EC73F',
+  light: '#EBFAFE',
+  default: '#222',
+  formBackground: 'rgba(30, 157, 186, 0.1)',
+  formSubmitBackground: 'rgba(30, 157, 186, 0.25)',
+}
+
+const theme = {
+  color: { ...color },
   mobileBreakpoint: '620px',
-  color: {
-    primary: '#1e9dba',
-    secondary: '#006a77',
-    tertiary: '#19D2C5',
-    green: '#8EC73F',
-    light: '#EBFAFE',
-    copy: '#222',
-    formBackground: 'rgba(30, 157, 186, 0.1)',
-    formSubmitBackground: 'rgba(30, 157, 186, 0.25)',
-  },
   mobile: {
     sectionDividerMargin: '30px',
   },
@@ -31,6 +32,16 @@ export default {
       letterSpacing: '-0.39px',
       textShadow: '0 0 0.2em #fff',
     },
+    color: {
+      primary: color.primary,
+      secondary: color.secondary,
+      tertiary: color.tertiary,
+      green: color.green,
+      light: color.light,
+      default: color.default,
+      formBackground: color.formBackground,
+      formSubmitBackground: color.formSubmitBackground,
+    },
   },
   h2: {
     fontFamily: `'Raleway', sans-serif`,
@@ -41,6 +52,16 @@ export default {
     lineHeight: '49px',
     textShadow: '0 0 0.2em #fff',
     textAlign: 'center',
+    color: {
+      primary: color.primary,
+      secondary: color.secondary,
+      tertiary: color.tertiary,
+      green: color.green,
+      light: color.light,
+      default: color.default,
+      formBackground: color.formBackground,
+      formSubmitBackground: color.formSubmitBackground,
+    },
   },
   h3: {
     fontFamily: `'Raleway', sans-serif`,
@@ -52,6 +73,16 @@ export default {
       fontWeight: '600',
       lineHeight: '2rem',
     },
+    color: {
+      primary: color.primary,
+      secondary: color.secondary,
+      tertiary: color.tertiary,
+      green: color.green,
+      light: color.light,
+      default: color.default,
+      formBackground: color.formBackground,
+      formSubmitBackground: color.formSubmitBackground,
+    },
   },
   h4: {
     fontFamily: `'Raleway', sans-serif`,
@@ -61,13 +92,23 @@ export default {
     mobile: {
       lineHeight: '22px',
     },
+    color: {
+      primary: color.primary,
+      secondary: color.secondary,
+      tertiary: color.tertiary,
+      green: color.green,
+      light: color.light,
+      default: color.default,
+      formBackground: color.formBackground,
+      formSubmitBackground: color.formSubmitBackground,
+    },
   },
   copy: {
     fontFamily: `'Raleway', sans-serif`,
     fontWeight: '400',
     fontSize: '16px',
     lineHeight: '22px',
-    color: '#222',
+    color: {},
     mobile: {
       fontWeight: '400',
       fontSize: '20px',
@@ -82,6 +123,18 @@ export default {
       fontWeight: '400',
       lineHeight: '21px',
     },
+    color: {
+      primary: color.primary,
+      secondary: color.secondary,
+      tertiary: color.tertiary,
+      green: color.green,
+      light: color.light,
+      default: color.default,
+      formBackground: color.formBackground,
+      formSubmitBackground: color.formSubmitBackground,
+    },
   },
   label: {},
 }
+
+export default theme
