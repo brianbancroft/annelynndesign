@@ -58,6 +58,7 @@ const DesktopView = styled('main')`
 
 const HeadShot = styled(ProfileCircle)`
   margin-left: 60px;
+  margin-bottom: 10px;
   float: left;
   margin-right: 25px;
   shape-outside: inset(1% round 50%);
@@ -98,24 +99,6 @@ const SocialMediaIcons = styled('section')`
   }
 `
 
-const DesktopCopy = styled('section')`
-  font-weight: 400;
-  margin: 50px auto 0 auto;
-  width: 75%;
-  max-width: 450px;
-
-  line-height: ${props => props.theme.copy.lineHeight};
-  font-weight: ${props => props.theme.copy.fontWeight};
-  font-size: 13px;
-  color: ${props => props.theme.color.primary};
-
-  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    font-weight: ${props => props.theme.copy.mobile.fontWeight};
-    font-size: ${props => props.theme.copy.mobile.fontSize};
-    width: 85vw;
-  }
-`
-
 const CopyContainer = styled('section')`
   max-width: 600px;
   margin: 0 auto;
@@ -136,9 +119,7 @@ const About = () => {
             <HeadShot>
               <div className="image" />
             </HeadShot>
-            <DesktopCopy>
-              <AboutCopy full={true} />
-            </DesktopCopy>
+            <AboutCopy full={true} />
           </CopyContainer>
           <SocialMediaIcons>
             <div className="icon" />

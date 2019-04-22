@@ -1,15 +1,17 @@
 import React from 'react'
 import styled from '@emotion/styled'
-const Copy = styled('div')`
-  font-weight: 400;
-  margin: 40px auto 0 auto;
-  width: 75%;
-  max-width: 450px;
 
+const Copy = styled('article')`
   line-height: ${props => props.theme.copy.lineHeight};
   font-weight: ${props => props.theme.copy.fontWeight};
   font-size: 13px;
   color: ${props => props.theme.color.primary};
+  max-width: 450px;
+  width: 75%;
+`
+
+const MobileCopy = styled(Copy)`
+  margin: 40px auto 0 auto;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     font-weight: ${props => props.theme.copy.mobile.fontWeight};
@@ -21,9 +23,19 @@ const Copy = styled('div')`
     padding-top: 50px;
   }
 `
+
+const DesktopCopy = styled(Copy)`
+  margin: 50px auto 0 auto;
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    font-weight: ${props => props.theme.copy.fontWeight};
+    font-size: ${props => props.theme.copy.fontSize};
+    width: 85vw;
+  }
+`
 const AboutCopy = ({ full = false } = {}) =>
   full ? (
-    <>
+    <DesktopCopy>
       <p>
         I am from the Ottawa River Valley and have been a designer since 2008. I
         have experience with in-house teams, agencies, and contracting roles for
@@ -46,9 +58,9 @@ const AboutCopy = ({ full = false } = {}) =>
         making things with my hands. And while I'm a long ways away from Regina,
         I will always be a Roughriders fan.
       </p>
-    </>
+    </DesktopCopy>
   ) : (
-    <Copy>
+    <MobileCopy>
       <p>
         I am from the Ottawa River Valley and have been a designer since 2008. I
         have experience with in-house teams, agencies, and contracting roles for
@@ -61,7 +73,7 @@ const AboutCopy = ({ full = false } = {}) =>
         making things with my hands. And while I'm a long ways away from Regina,
         I will always be a Roughriders fan.
       </p>
-    </Copy>
+    </MobileCopy>
   )
 
 export default AboutCopy
