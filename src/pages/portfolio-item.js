@@ -75,7 +75,7 @@ class PortfolioItem extends Component {
     // })
 
     return (
-      <Layout>
+      <Layout portfolioHeaderColor={color}>
         <Helmet title={`${title} | Anne-Lynn Design`}>
           <link
             rel="stylesheet"

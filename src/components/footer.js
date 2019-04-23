@@ -20,7 +20,7 @@ const FooterBg = styled('footer')`
   z-index: 4;
   height: ${props => props.theme.footer.height};
   width: 100vw;
-  background-color: white;
+  background-color: ${props => props.portfolioHeaderColor || 'white'};
 `
 const FooterElement = styled('footer')`
   position: fixed;
@@ -54,7 +54,7 @@ const Location = styled('div')`
   text-align: center;
 `
 
-const Footer = () => {
+const Footer = ({ portfolioHeaderColor } = {}) => {
   return (
     <>
       <FooterElement id="siteFooter">
@@ -71,7 +71,7 @@ const Footer = () => {
           <Location>Contact</Location>
         </FooterLink>
       </FooterElement>
-      <FooterBg />
+      <FooterBg portfolioHeaderColor={portfolioHeaderColor} />
     </>
   )
 }
