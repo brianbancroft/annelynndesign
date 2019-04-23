@@ -1,5 +1,4 @@
 import React from 'react'
-import Transition from './transition'
 import { ThemeProvider } from 'emotion-theming'
 import Helmet from 'react-helmet'
 import './layout.css'
@@ -13,7 +12,7 @@ const Layout = ({ children, location = '/' } = {}) => (
     <Helmet link={helmetLink} meta={meta}>
       <html lang="en" />
     </Helmet>
-    <Transition location={location}>{children}</Transition>
+    {children}
     <Footer />
   </ThemeProvider>
 )
