@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { AboutCopy, HobbyBlurb, SocialIcons } from '.'
-import ProfileCircle from './styled/ProfileCircle'
+import { ProfileCircle } from '../styled/'
 
 const MobileView = styled('main')`
   display: none;
