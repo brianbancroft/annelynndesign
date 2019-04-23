@@ -1,13 +1,12 @@
 import React from 'react'
 import { About } from '../components/homepage/'
-// import Helmet from 'react-helmet'
-// import logo from '../images/logo.png'
+import { Layout } from '../components'
 
 const AboutPage = () => {
   return (
-    <div>
+    <Layout>
       <About />
-    </div>
+    </Layout>
   )
 }
 
