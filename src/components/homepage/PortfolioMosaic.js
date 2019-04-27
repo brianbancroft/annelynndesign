@@ -17,11 +17,13 @@ const MiddleSection = styled('section')`
 const Grid = styled('div')`
   display: grid;
   grid-gap: 0;
+  padding: 0 10px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-row-gap: 10px;
   grid-column-gap: 10px;
   grid-auto-rows: 300px;
   grid-auto-flow: row dense;
+  margin-bottom: calc(${props => props.theme.footer.height} + 20px);
 `
 const PortfolioMosaic = props => {
   const portfolioItems = props.data.allContentfulPortfolioItem.edges.map(
