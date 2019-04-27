@@ -26,7 +26,7 @@ const Grid = styled('div')`
   margin-bottom: calc(${props => props.theme.footer.height} + 20px);
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    grid-template-columns: 1fr 1fr;
     grid-auto-rows: 190px;
   }
 `
