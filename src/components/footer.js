@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { Location } from '@reach/router'
+
 import { Link } from 'gatsby'
 
 import {
@@ -35,7 +37,7 @@ const FooterElement = styled('footer')`
 `
 
 const FooterLink = styled(Link)`
-  border-top: 2px solid ${props => props.theme.color.primary};
+  /* border-top: 2px solid ${props => props.theme.color.primary}; */
   display: flex;
   padding-top: ${props => props.theme.footer.paddingTop};
   flex-direction: column;
@@ -47,29 +49,59 @@ const FooterLink = styled(Link)`
     height: 75px;
     padding: 0;
     margin-bottom: 0;
+
+  }
+  &:before {
+    background: ${props =>
+      props.currentLocation ? 'rgba(141, 212, 231, 0.4)' : 'none'};
+  display: block;
+  content: '';
+  position: relative;
+  width: 100%;
+
+  height: 2px;
+  animation: pulse-loader ease-out 0.2s;
+}
+@keyframes pulse-loader {
+  0% {
+    opacity: 0;
+    transform: scale(0.5)
+  }
+  60% {
+    opacity: 1
   }
 `
 
-const Location = styled('div')`
-  text-align: center;
-`
+// const Location = styled('div')`
+//   text-align: center;
+// `
 
 const Footer = ({ portfolioHeaderColor } = {}) => {
   return (
-    <>
-      <FooterElement id="siteFooter">
-        <FooterLink to="/">
-          <img src={homeBaseIcon} alt="Home" />
-        </FooterLink>
-        <FooterLink to="/about">
-          <img src={aboutBaseIcon} alt="About Me" />
-        </FooterLink>
-        <FooterLink to="/contact">
-          <img src={contactBaseIcon} alt="" />
-        </FooterLink>
-      </FooterElement>
-      <FooterBg portfolioHeaderColor={portfolioHeaderColor} />
-    </>
+    <Location>
+      {({ location }) => (
+        <>
+          <FooterElement id="siteFooter">
+            <FooterLink to="/" currentLocation={location.pathname === '/'}>
+              <img src={homeBaseIcon} alt="Home" />
+            </FooterLink>
+            <FooterLink
+              to="/about"
+              currentLocation={location.pathname === '/about'}
+            >
+              <img src={aboutBaseIcon} alt="About Me" />
+            </FooterLink>
+            <FooterLink
+              to="/contact"
+              currentLocation={location.pathname === '/contact'}
+            >
+              <img src={contactBaseIcon} alt="" />
+            </FooterLink>
+          </FooterElement>
+          <FooterBg portfolioHeaderColor={portfolioHeaderColor} />
+        </>
+      )}
+    </Location>
   )
 }
 
