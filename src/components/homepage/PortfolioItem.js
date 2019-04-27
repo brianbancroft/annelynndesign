@@ -80,8 +80,8 @@ const Item = styled('div')`
     opacity: 0;
 
     @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-      opacity: 1;
-      transition: opacity 0.3s ease-in-out;
+      display: none;
+
     }
   }
 `
