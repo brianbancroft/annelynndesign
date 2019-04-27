@@ -22,8 +22,19 @@ const ContactFormContainer = styled('section')`
 
 const ContactCopyContainer = styled('section')`
   display: block;
+  padding: 140px 90px 0 30px;
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     display: none;
+  }
+`
+
+const AboutParagraph = styled(Paragraph)`
+  font-weight: 200;
+  font-size: 28px;
+  line-height: 40px;
+
+  strong {
+    font-weight: 500;
   }
 `
 
@@ -35,12 +46,14 @@ const Contact = () => {
       </ContactFormContainer>
       <ContactCopyContainer>
         <section>
-          <Paragraph color="primary">
-            Hey, I’m a graphic designer specializing in visual communication.
-            Anything from posters to signage, packaging design, creating a
-            visual experience print or web based, or just helping something make
-            sense visually, I can help!
-          </Paragraph>
+          <AboutParagraph color="primary">
+            Hi, I’m a graphic designer specializing in{' '}
+            <strong>visual communication</strong>. Anything from{' '}
+            <strong>posters</strong> to <strong>signage</strong>,{' '}
+            <strong>packaging</strong> design, creating a{' '}
+            <strong>visual experience</strong> print or web based, or just
+            helping something make sense visually, I can help!
+          </AboutParagraph>
         </section>
         <SocialIcons />
       </ContactCopyContainer>
