@@ -28,6 +28,18 @@ const SingleImageSection = styled('section')`
 
     margin-bottom: ${props => props.theme.mobile.sectionDividerMargin};
   }
+
+  &:before {
+    background: ${props =>
+      props.color ? props.color : props.theme.color.primary};
+    display: block;
+    content: '';
+    position: relative;
+    width: 86vw;
+    left: 7vw;
+    margin-top: 10px;
+    height: 1px;
+  }
 `
 
 const ImageContainer = styled('div')`

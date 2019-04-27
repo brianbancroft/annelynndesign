@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import meta from '../helpers/meta'
 import { Layout } from '../components'
+import { PortfolioItem } from '../components/portfolio'
 
 import {
   PortfolioHeader,
@@ -11,7 +12,7 @@ import {
   ImageModal,
 } from '../components/portfolio'
 
-class PortfolioItem extends Component {
+class PortfolioItemPage extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -83,33 +84,24 @@ class PortfolioItem extends Component {
           />
           <html lang="en" />
         </Helmet>
-        <ImageModal
-          id="imageModal"
-          display={this.state.showModal}
+        <PortfolioItem
+          multiImageSections={multiImageSections}
+          singleImageSections={singleImageSections}
+          handleClose={handleClose}
+          showModal={this.state.showModal}
           modalTitle={this.state.title}
           modalImage={this.state.modalImage}
-          handleClose={handleClose}
+          headline={headline}
+          copy={copy}
+          color={color}
+          headerSectionTextColor={headerSectionTextColor}
         />
-        <div
-          className="porfolio-item__content"
-          style={{ zIndex: 5, background: 'white', marginBottom: '85px' }}
-        >
-          <PortfolioHeader
-            headline={headline}
-            copy={copy}
-            backgroundColor={color}
-            headerSectionTextColor={headerSectionTextColor}
-          />
-          {singleImageSections}
-          {multiImageSections}
-        </div>
-        {/* <AlternateFooterBg backgroundColor={color} /> */}
       </Layout>
     )
   }
 }
 
-export default PortfolioItem
+export default PortfolioItemPage
 
 export const pageQuery = graphql`
   fragment requirementsAndProducts on ContentfulARequirementsAndProductPane {
