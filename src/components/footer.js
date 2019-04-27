@@ -72,10 +72,6 @@ const FooterLink = styled(Link)`
   }
 `
 
-// const Location = styled('div')`
-//   text-align: center;
-// `
-
 const Footer = ({ portfolioHeaderColor } = {}) => {
   return (
     <Location>
