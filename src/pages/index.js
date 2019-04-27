@@ -5,21 +5,82 @@ import Helmet from 'react-helmet'
 import logo from '../images/logo.png'
 import { Layout } from '../components'
 
-import meta from '../helpers/meta'
+const meta = [
+  {
+    name: 'description',
+    property: 'description',
+    content: `The Portfolio and Contact Information Anne Lynn Bancroft, a Graphic Designer specializing in packaging and print`,
+  },
+  {
+    name: 'keywords',
+    property: 'keywords',
+    content: `anne-lynn hanna, annelynn design, anne-lynn design`,
+  },
+  {
+    name: 'theme-color',
+    property: 'theme-color',
+    content: '#1e9dba',
+  },
+  {
+    property: 'og:title',
+    content: 'Portfolio | Anne-Lynn Design',
+  },
+  {
+    property: 'og:description',
+    content: `The Portfolio and Contact Information Anne Lynn Bancroft, a Graphic Designer specializing in packaging and print`,
+  },
 
-// const indexMeta = meta({
-//   description: `The Portfolio and Contact Information Anne Lynn Bancroft, a Graphic Designer specializing in packaging and print`,
-//   color: '#ffffff',
-//   headline: 'Anne-Lynn Design',
-//   copy:
-//     'The Portfolio of Anne-Lynn Bancroft, a Graphic Designer specializing in packaging and print',
-//   ogImage: `https://annelynn.com/${logo}`,
-//   slug: 'https://annelynn.com',
-// })
+  {
+    property: 'og:url',
+    name: 'og:url',
+    content: 'https://annelynn.com/contact',
+  },
+  {
+    property: 'twitter:url',
+    name: 'twitter:url',
+    content: 'https://annelynn.com/contact',
+  },
+  {
+    property: 'og:type',
+    name: 'og:type',
+    content: 'portfolio',
+  },
+  {
+    property: 'og:image:secure_url',
+    name: 'og:image:secure_url',
+    content: `https://annelynn.com/${logo}`,
+  },
+  {
+    property: 'og:image',
+    name: 'og:image:secure_url',
+    content: `https://annelynn.com/${logo}`,
+  },
+  {
+    name: 'twitter:image:src',
+    property: 'twitter:image:src',
+    content: `https://annelynn.com/${logo}`,
+  },
+  {
+    name: 'twitter:card',
+    content: 'summary_large_image',
+  },
+  {
+    name: 'twitter:title',
+    content: 'Portfolio | Anne-Lynn Design',
+  },
+  {
+    name: 'twitter:description',
+    content: `The Portfolio and Contact Information Anne Lynn Bancroft, a Graphic Designer specializing in packaging and print`,
+  },
+  {
+    name: 'twitter:image',
+    content: `https://annelynn.com/${logo}`,
+  },
+]
 
 const IndexPage = ({ data } = {}) => (
   <Layout>
-    <Helmet title={`Portfolio | Anne-Lynn Design`} />
+    <Helmet title={`Portfolio | Anne-Lynn Design`} meta={meta} />
     <PortfolioMosaic data={data} />
   </Layout>
 )
