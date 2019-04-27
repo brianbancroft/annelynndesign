@@ -16,7 +16,8 @@ const theme = {
     sectionDividerMargin: '30px',
   },
   footer: {
-    height: '120px',
+    paddingTop: '5px',
+    height: '100px',
   },
   fontFamily: `'Raleway', sans-serif`,
   h1: {

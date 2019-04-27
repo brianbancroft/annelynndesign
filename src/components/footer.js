@@ -35,10 +35,10 @@ const FooterElement = styled('footer')`
 `
 
 const FooterLink = styled(Link)`
-  border: 1px solid #555;
+  border-top: 2px solid ${props => props.theme.color.primary};
   display: flex;
+  padding-top: ${props => props.theme.footer.paddingTop};
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
   z-index: 100;
 
@@ -60,15 +60,12 @@ const Footer = ({ portfolioHeaderColor } = {}) => {
       <FooterElement id="siteFooter">
         <FooterLink to="/">
           <img src={homeBaseIcon} alt="Home" />
-          <Location>Home</Location>
         </FooterLink>
         <FooterLink to="/about">
           <img src={aboutBaseIcon} alt="About Me" />
-          <Location>About</Location>
         </FooterLink>
         <FooterLink to="/contact">
           <img src={contactBaseIcon} alt="" />
-          <Location>Contact</Location>
         </FooterLink>
       </FooterElement>
       <FooterBg portfolioHeaderColor={portfolioHeaderColor} />
