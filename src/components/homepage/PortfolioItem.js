@@ -33,10 +33,11 @@ const Item = styled('div')`
   background: url('${props => (props.img ? props.img : '')}');
   background-size: cover;
   background-position: center;
-  box-shadow: -0.2px 0.2px 2px 0px rgba(68,68,68,0.4);
+  /* box-shadow: 2px 1px 1px rgba(68,68,68,0.4); */
   transition: transform 0.3s ease-in-out;
   counter-increment: item-counter;
-  border: 2px solid #0c9a9a;
+  border: 1px solid #eee;
+
 
   &:after {
     content: '';

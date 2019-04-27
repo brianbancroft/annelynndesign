@@ -6,7 +6,7 @@ import { MobileImageSlider, ComponentSingleImage } from '.'
 const MultiImageSection = styled('section')`
   z-index: 10;
   width: 100vw;
-  height: calc(100vh - 30px);
+  max-height: calc(100vh - ${props => props.theme.footer.height});
 
   display: grid;
   grid-template-rows: 80px 1fr auto 20px;

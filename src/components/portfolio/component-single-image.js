@@ -4,14 +4,13 @@ import styled from '@emotion/styled'
 const SingleImageSection = styled('section')`
   z-index: 10;
   width: 100vw;
-  height: calc(100vh - 30px);
+  max-height: calc(100vh - ${props => props.theme.footer.height});
 
   display: grid;
   grid-template-rows: 80px 1fr 170px 50px 25px;
   grid-template-columns: 10px 200px 20vw 1fr 10px;
   grid-row-gap: 15px;
   grid-column-gap: 20px;
-  margin-bottom: 135px;
 
   color: ${props => (props.color ? props.color : 'inherit')};
 
