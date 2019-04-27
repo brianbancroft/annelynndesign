@@ -2,6 +2,38 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { ProfileCircle } from '../styled/'
 
+const aboutAssets = [
+  {
+    photos: {
+      top: 'http://lorempixel.com/output/cats-q-c-300-300-1.jpg',
+      middle: 'http://lorempixel.com/output/cats-q-c-300-300-2.jpg',
+      bottom: 'http://lorempixel.com/output/cats-q-c-300-300-3.jpg',
+    },
+    copy: (
+      <>
+        In my spare time you’ll find me tending to my <strong>plants</strong>{' '}
+        making <strong>flower arrangements</strong> or{' '}
+        <strong>making stuff with my hands</strong>. I love learning new things
+        and helping others experience it as well is part of the fun!
+      </>
+    ),
+  },
+  {
+    photos: {
+      top: 'http://lorempixel.com/output/city-q-c-300-300-1.jpg',
+      middle: 'http://lorempixel.com/output/city-q-c-300-300-2.jpg',
+      bottom: 'http://lorempixel.com/output/city-q-c-300-300-3.jpg',
+    },
+    copy: (
+      <>
+        In my spare time you’ll find me tending to my cars tuning my carborators
+        or making things with my hands. I love learning new things and helping
+        others experience it as well is part of the fun!
+      </>
+    ),
+  },
+]
+
 const HobbySection = styled('section')`
   display: grid;
   max-width: 600px;
@@ -35,22 +67,24 @@ const HobbySection = styled('section')`
 `
 
 const HobbyBlurb = () => {
+  // debugger
+
+  const {
+    photos: { top, middle, bottom },
+    copy,
+  } = aboutAssets[Math.floor(Math.random() * Math.floor(aboutAssets.length))]
+
   return (
     <HobbySection>
-      <div className="hobby-copy">
-        In my spare time you’ll find me tending to my <strong>plants</strong>{' '}
-        making <strong>flower arrangements</strong> or{' '}
-        <strong>making stuff with my hands</strong>. I love learning new things
-        and helping others experience it as well is part of the fun!
-      </div>
+      <div className="hobby-copy">{copy}</div>
       <ProfileCircle className="hobby-image">
-        <div className="image" />
+        <img src={top} className="image" />
       </ProfileCircle>
       <ProfileCircle className="hobby-image">
-        <div className="image" />
+        <img src={middle} className="image" />
       </ProfileCircle>
       <ProfileCircle className="hobby-image">
-        <div className="image" />
+        <img src={bottom} className="image" />
       </ProfileCircle>
     </HobbySection>
   )
