@@ -17,7 +17,7 @@ const MiddleSection = styled('section')`
 const Grid = styled('div')`
   display: grid;
   grid-gap: 0;
-  padding: 0 10px;
+  padding: 10px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-row-gap: 10px;
   grid-column-gap: 10px;
