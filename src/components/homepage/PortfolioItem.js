@@ -9,13 +9,18 @@ const ItemLabel = styled('div')`
   align-self: end;
   height: 40px;
   width: 100%;
-  background: rgba(12, 12, 12, 0.4);
+  background: rgba(12, 12, 12, 0.65);
 
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
   font-weight: 500;
   color: #eee;
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    height: 70px;
+    padding-top: 10px;
+  }
 `
 
 const Item = styled('div')`
@@ -37,6 +42,11 @@ const Item = styled('div')`
   transition: transform 0.3s ease-in-out;
   counter-increment: item-counter;
   border: 1px solid #eee;
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    min-height: 190px;
+    height: 190px;
+  }
 
 
   &:after {

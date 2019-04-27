@@ -24,6 +24,11 @@ const Grid = styled('div')`
   grid-auto-rows: 300px;
   grid-auto-flow: row dense;
   margin-bottom: calc(${props => props.theme.footer.height} + 20px);
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    grid-auto-rows: 190px;
+  }
 `
 const PortfolioMosaic = props => {
   const portfolioItems = props.data.allContentfulPortfolioItem.edges.map(
