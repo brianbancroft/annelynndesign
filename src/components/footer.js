@@ -7,13 +7,13 @@ import { Link } from 'gatsby'
 import {
   aboutBaseIcon,
   // aboutHoverIcon,
-  // aboutWhiteIcon,
+  aboutWhiteIcon,
   homeBaseIcon,
   // homeHoverIcon,
-  // homeWhiteIcon,
+  homeWhiteIcon,
   contactBaseIcon,
   // contactHoverIcon,
-  // contactWhiteIcon,
+  contactWhiteIcon,
 } from '../images/footerIcons'
 
 const FooterBg = styled('footer')`
@@ -81,6 +81,10 @@ const FooterLink = styled(Link)`
 `
 
 const Footer = ({ portfolioHeaderColor } = {}) => {
+  const homeIcon = portfolioHeaderColor ? homeWhiteIcon : homeBaseIcon
+  const aboutIcon = portfolioHeaderColor ? aboutWhiteIcon : aboutBaseIcon
+  const contactIcon = portfolioHeaderColor ? contactWhiteIcon : contactBaseIcon
+
   return (
     <Location>
       {({ location }) => {
@@ -92,13 +96,13 @@ const Footer = ({ portfolioHeaderColor } = {}) => {
           <>
             <FooterElement id="siteFooter">
               <FooterLink to="/" islocation={isHome}>
-                <img src={homeBaseIcon} alt="Home" />
+                <img src={homeIcon} alt="Home" />
               </FooterLink>
               <FooterLink to="/about" islocation={isAbout}>
-                <img src={aboutBaseIcon} alt="About Me" />
+                <img src={aboutIcon} alt="About Me" />
               </FooterLink>
               <FooterLink to="/contact" islocation={isContact}>
-                <img src={contactBaseIcon} alt="" />
+                <img src={contactIcon} alt="" />
               </FooterLink>
             </FooterElement>
             <FooterBg portfolioHeaderColor={portfolioHeaderColor} />
