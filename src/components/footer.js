@@ -23,6 +23,10 @@ const FooterBg = styled('footer')`
   height: ${props => props.theme.footer.height};
   width: 100vw;
   background-color: ${props => props.portfolioHeaderColor || 'white'};
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    height: ${props => props.theme.footer.mobile.height};
+  }
 `
 const FooterElement = styled('footer')`
   position: fixed;
@@ -34,6 +38,10 @@ const FooterElement = styled('footer')`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-evenly;
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    height: ${props => props.theme.footer.mobile.height};
+  }
 `
 
 const FooterLink = styled(Link)`
@@ -53,7 +61,7 @@ const FooterLink = styled(Link)`
   }
   &:before {
     background: ${props =>
-      props.currentLocation ? 'rgba(141, 212, 231, 0.4)' : 'none'};
+      props.islocation === 'true' ? 'rgba(141, 212, 231, 0.4)' : 'none'};
   display: block;
   content: '';
   position: relative;
@@ -75,28 +83,28 @@ const FooterLink = styled(Link)`
 const Footer = ({ portfolioHeaderColor } = {}) => {
   return (
     <Location>
-      {({ location }) => (
-        <>
-          <FooterElement id="siteFooter">
-            <FooterLink to="/" currentLocation={location.pathname === '/'}>
-              <img src={homeBaseIcon} alt="Home" />
-            </FooterLink>
-            <FooterLink
-              to="/about"
-              currentLocation={location.pathname === '/about'}
-            >
-              <img src={aboutBaseIcon} alt="About Me" />
-            </FooterLink>
-            <FooterLink
-              to="/contact"
-              currentLocation={location.pathname === '/contact'}
-            >
-              <img src={contactBaseIcon} alt="" />
-            </FooterLink>
-          </FooterElement>
-          <FooterBg portfolioHeaderColor={portfolioHeaderColor} />
-        </>
-      )}
+      {({ location }) => {
+        const isHome = (location.pathname === '/').toString()
+        const isAbout = (location.pathname === '/about').toString()
+        const isContact = (location.pathname === '/contact').toString()
+
+        return (
+          <>
+            <FooterElement id="siteFooter">
+              <FooterLink to="/" islocation={isHome}>
+                <img src={homeBaseIcon} alt="Home" />
+              </FooterLink>
+              <FooterLink to="/about" islocation={isAbout}>
+                <img src={aboutBaseIcon} alt="About Me" />
+              </FooterLink>
+              <FooterLink to="/contact" islocation={isContact}>
+                <img src={contactBaseIcon} alt="" />
+              </FooterLink>
+            </FooterElement>
+            <FooterBg portfolioHeaderColor={portfolioHeaderColor} />
+          </>
+        )
+      }}
     </Location>
   )
 }

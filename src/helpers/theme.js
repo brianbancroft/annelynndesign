@@ -18,6 +18,9 @@ const theme = {
   footer: {
     paddingTop: '5px',
     height: '100px',
+    mobile: {
+      height: '90px',
+    },
   },
   fontFamily: `'Raleway', sans-serif`,
   h1: {

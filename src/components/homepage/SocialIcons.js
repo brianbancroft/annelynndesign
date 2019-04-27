@@ -1,6 +1,10 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
+import linkedinIcon from '../../images/linkedin.svg'
+import twitterIcon from '../../images/twitter.svg'
+import instagramIcon from '../../images/instagram.svg'
+
 const SocialMediaIcons = styled('section')`
   width: 320px;
   height: 100px;
@@ -13,15 +17,16 @@ const SocialMediaIcons = styled('section')`
     width: 60px;
     height: 60px;
     border-radius: 100px;
-    background: #444;
+
+    background: ${props => props.icon};
   }
 `
 
 const SocialIcons = () => (
   <SocialMediaIcons>
-    <div className="icon" />
-    <div className="icon" />
-    <div className="icon" />
+    <img className="icon" src={instagramIcon} />
+    <img className="icon" src={twitterIcon} />
+    <img className="icon" src={linkedinIcon} />
   </SocialMediaIcons>
 )
 
