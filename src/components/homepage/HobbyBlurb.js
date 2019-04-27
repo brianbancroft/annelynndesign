@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { ProfileCircle } from '../styled/'
+import { ProfileCircle, Paragraph } from '../styled/'
 
 const aboutAssets = [
   {
@@ -55,14 +55,17 @@ const HobbySection = styled('section')`
     padding: 20px 25px;
 
     /* transform: scale(1, 1.2); */
-    font-weight: 100;
-    line-height: 24px;
-    font-size: 22px;
-    color: ${props => props.theme.color.primary};
+  }
+`
 
-    strong {
-      font-weight: 500;
-    }
+const HobbyCopy = styled(Paragraph)`
+  font-weight: 100;
+  font-size: 28px;
+  line-height: 40px;
+  color: ${props => props.theme.color.primary};
+
+  strong {
+    font-weight: 500;
   }
 `
 
@@ -76,7 +79,9 @@ const HobbyBlurb = () => {
 
   return (
     <HobbySection>
-      <div className="hobby-copy">{copy}</div>
+      <div className="hobby-copy">
+        <HobbyCopy>{copy}</HobbyCopy>
+      </div>
       <ProfileCircle className="hobby-image">
         <img src={top} className="image" />
       </ProfileCircle>
