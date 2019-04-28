@@ -22,7 +22,7 @@ const ContactFormContainer = styled('section')`
 
 const ContactCopyContainer = styled('section')`
   display: block;
-  padding: 140px 90px 0 30px;
+  padding: 150px 120px 0 60px;
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     display: none;
   }

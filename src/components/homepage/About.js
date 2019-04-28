@@ -3,6 +3,8 @@ import styled from '@emotion/styled'
 import { AboutCopy, HobbyBlurb, SocialIcons } from '.'
 import { ProfileCircle, LowerHeader } from '../styled/'
 
+import profilePhoto from '../../images/profile-photo.jpg'
+
 const Header = styled(LowerHeader)`
   z-index: 10;
   padding-top: 50px;
@@ -71,7 +73,8 @@ const HeadShot = styled(ProfileCircle)`
   margin-left: 60px;
   margin-bottom: 10px;
   float: left;
-  margin-right: 25px;
+  margin-left: -5px;
+  margin-right: 10px;
   shape-outside: inset(1% round 50%);
 
   .image {
@@ -84,14 +87,17 @@ const HeadShot = styled(ProfileCircle)`
 `
 
 const DecorativeCircle = styled('div')`
+  position: fixed;
   z-index: -1;
-  bottom: 15px;
+  top: -15px;
   left: 48vw;
   width: 900px;
   height: 900px;
   border-radius: 900px;
   border: 1px solid ${props => props.theme.color.primary};
-  position: fixed;
+
+  @media (max-width: 1290px) {
+  }
 `
 
 const CopyContainer = styled('section')`
@@ -110,9 +116,9 @@ const About = () => {
         <HobbyBlurb />
         <section>
           <CopyContainer>
-            <h2>About</h2>
+            <Header>About</Header>
             <HeadShot>
-              <div className="image" />
+              <img src={profilePhoto} className="image" />
             </HeadShot>
             <AboutCopy full={true} />
           </CopyContainer>

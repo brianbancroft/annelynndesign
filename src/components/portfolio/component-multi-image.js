@@ -7,6 +7,7 @@ const MultiImageSection = styled('section')`
   z-index: 10;
   width: 100vw;
   display: grid;
+  min-height: 80vh;
   grid-template-rows: 80px 1fr auto 20px;
   grid-template-columns: 10px 200px 20vw 1fr 10px;
   grid-row-gap: 15px;
