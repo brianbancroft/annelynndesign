@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-import meta from '../helpers/meta'
+import { portfolioMeta } from '../helpers/meta'
 import { Layout } from '../components'
 import { PortfolioItem } from '../components/portfolio'
 
@@ -66,18 +66,18 @@ class PortfolioItemPage extends Component {
       socialMediaPreview = `https:${previewImage.file.url}`
     }
 
-    // const portfolioMeta = meta({
-    //   copy,
-    //   title,
-    //   headline,
-    //   slug,
-    //   color,
-    //   ogImage: socialMediaPreview,
-    // })
+    const meta = portfolioMeta({
+      copy,
+      title,
+      headline,
+      slug,
+      color,
+      ogImage: socialMediaPreview,
+    })
 
     return (
       <Layout portfolioHeaderColor={color}>
-        <Helmet title={`${title} | Anne-Lynn Design`}>
+        <Helmet title={`${title} | Anne-Lynn Design`} meta={meta}>
           <link
             rel="stylesheet"
             href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.1/dist/semantic.min.css"
