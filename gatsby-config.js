@@ -89,6 +89,7 @@ const moduleExports = {
         cookieDomain: 'annelynn.com',
       },
     },
+    `gatsby-plugin-netlify`, // ! Ensure this is the last line of the config array
   ],
 }
 
