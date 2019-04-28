@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-import { LowerHeader, Paragraph } from '../styled'
+import { Paragraph } from '../styled'
 import { SocialIcons, ContactForm } from '.'
 
 const ContactView = styled('div')`
@@ -18,6 +18,10 @@ const ContactView = styled('div')`
 
 const ContactFormContainer = styled('section')`
   padding-top: 20px;
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    margin-bottom: calc(2 * ${props => props.theme.footer.mobile.height});
+  }
 `
 
 const ContactCopyContainer = styled('section')`
