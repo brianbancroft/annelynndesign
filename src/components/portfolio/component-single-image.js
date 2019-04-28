@@ -4,6 +4,8 @@ import styled from '@emotion/styled'
 const SingleImageSection = styled('section')`
   z-index: 10;
   width: 100vw;
+  min-height: 80vh;
+  margin-bottom: 50px;
   display: grid;
   grid-template-rows: 80px 1fr 170px 50px 25px;
   grid-template-columns: 10px 200px 20vw 1fr 10px;
@@ -21,10 +23,9 @@ const SingleImageSection = styled('section')`
   }
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    height: 90vh;
+    min-height: 700px;
     grid-template-rows: 30px 1fr auto 150px 25px;
-
-    margin-bottom: ${props => props.theme.mobile.sectionDividerMargin};
+    margin-bottom: 100px;
   }
 
   &:before {
