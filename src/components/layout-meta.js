@@ -13,7 +13,6 @@ export const meta = [
     content: 'follow',
   },
   {
-    name: 'og:site_name',
     property: 'og:site_name',
     content: 'Anne Lynn Design',
   },

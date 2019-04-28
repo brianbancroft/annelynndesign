@@ -85,7 +85,6 @@ class PortfolioItemPage extends Component {
       },
 
       {
-        property: 'og:url',
         name: 'og:url',
         content: `https://annelynn.com/${slug}`,
       },
@@ -95,19 +94,24 @@ class PortfolioItemPage extends Component {
         content: `https://annelynn.com/${slug}`,
       },
       {
-        property: 'og:type',
         name: 'og:type',
-        content: 'portfolio',
+        content: 'article',
       },
       {
         property: 'og:image:secure_url',
-        name: 'og:image:secure_url',
         content: socialMediaPreview,
       },
       {
         property: 'og:image',
-        name: 'og:image:secure_url',
         content: socialMediaPreview,
+      },
+      {
+        property: 'og:image:height',
+        content: 630,
+      },
+      {
+        property: 'og:image:width',
+        content: 1200,
       },
       {
         name: 'twitter:image:src',
