@@ -77,7 +77,7 @@ class PortfolioItemPage extends Component {
       },
       {
         property: 'og:title',
-        content: headline,
+        content: title,
       },
       {
         property: 'og:description',
@@ -87,12 +87,12 @@ class PortfolioItemPage extends Component {
       {
         property: 'og:url',
         name: 'og:url',
-        content: slug,
+        content: `https://annelynn.com/${slug}`,
       },
       {
         property: 'twitter:url',
         name: 'twitter:url',
-        content: slug,
+        content: `https://annelynn.com/${slug}`,
       },
       {
         property: 'og:type',
