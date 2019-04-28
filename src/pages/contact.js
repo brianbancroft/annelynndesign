@@ -31,7 +31,6 @@ const meta = [
 
   {
     property: 'og:url',
-    name: 'og:url',
     content: 'https://annelynn.com/contact',
   },
   {
@@ -41,23 +40,28 @@ const meta = [
   },
   {
     property: 'og:type',
-    name: 'og:type',
     content: 'portfolio',
   },
   {
     property: 'og:image:secure_url',
-    name: 'og:image:secure_url',
     content: `https://annelynn.com/${logo}`,
   },
   {
     property: 'og:image',
-    name: 'og:image:secure_url',
     content: `https://annelynn.com/${logo}`,
   },
   {
     name: 'twitter:image:src',
     property: 'twitter:image:src',
     content: `https://annelynn.com/${logo}`,
+  },
+  {
+    property: 'og:image:height',
+    content: 630,
+  },
+  {
+    property: 'og:image:width',
+    content: 1200,
   },
   {
     name: 'twitter:card',

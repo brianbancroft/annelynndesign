@@ -61,6 +61,14 @@ const meta = [
     content: `https://annelynn.com/${logo}`,
   },
   {
+    property: 'og:image:height',
+    content: 630,
+  },
+  {
+    property: 'og:image:width',
+    content: 1200,
+  },
+  {
     name: 'twitter:card',
     content: 'summary_large_image',
   },
