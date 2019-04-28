@@ -24,13 +24,25 @@ const SocialMediaIcons = styled('section')`
 
 const SocialIcons = () => (
   <SocialMediaIcons>
-    <a href="https://www.instagram.com/lynn_hanna/">
+    <a
+      href="https://www.instagram.com/annelynndesign/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <img className="icon" src={instagramIcon} />
     </a>
-    <a href="https://twitter.com/annelynndesign" target="_blank">
+    <a
+      href="https://twitter.com/annelynndesign"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <img className="icon" src={twitterIcon} />
     </a>
-    <a href="https://www.linkedin.com/in/annelynndesign/" target="_blank">
+    <a
+      href="https://www.linkedin.com/in/annelynndesign/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <img className="icon" src={linkedinIcon} />
     </a>
   </SocialMediaIcons>
