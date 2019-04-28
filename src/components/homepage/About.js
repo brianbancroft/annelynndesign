@@ -1,7 +1,18 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { AboutCopy, HobbyBlurb, SocialIcons } from '.'
-import { ProfileCircle } from '../styled/'
+import { ProfileCircle, LowerHeader } from '../styled/'
+
+const Header = styled(LowerHeader)`
+  z-index: 10;
+  padding-top: 50px;
+  margin-bottom: 30px;
+  width: 100%;
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    width: 100%;
+  }
+`
 
 const MobileView = styled('main')`
   display: none;
@@ -92,7 +103,7 @@ const About = () => {
   return (
     <>
       <MobileView>
-        <h2>About</h2>
+        <Header>About</Header>
         <AboutCopy />
       </MobileView>
       <DesktopView>
