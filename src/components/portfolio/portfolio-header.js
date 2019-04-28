@@ -12,6 +12,19 @@ const HeaderSection = styled('section')`
   grid-template-rows: 1fr 50px 1fr;
   grid-row-gap: 20px;
 
+  animation-duration: 2s;
+  animation-name: fadein;
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     height: 100vh;
     grid-template-columns: 5vw 90vw 5vw;

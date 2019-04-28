@@ -29,21 +29,25 @@ const SocialIcons = () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img className="icon" src={instagramIcon} />
+      <img className="icon" src={instagramIcon} alt="follow me on instagram" />
     </a>
     <a
       href="https://twitter.com/annelynndesign"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img className="icon" src={twitterIcon} />
+      <img className="icon" src={twitterIcon} alt="follow me on twitter" />
     </a>
     <a
       href="https://www.linkedin.com/in/annelynndesign/"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img className="icon" src={linkedinIcon} />
+      <img
+        className="icon"
+        src={linkedinIcon}
+        alt="connect with me on linkedin"
+      />
     </a>
   </SocialMediaIcons>
 )

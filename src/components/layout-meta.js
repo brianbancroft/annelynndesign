@@ -6,19 +6,15 @@ import appleTouchIcon from '../images/apple-touch-icon.png'
 export const meta = [
   {
     name: 'author',
-    content: 'Anne Lynn',
+    content: 'Anne-Lynn Bancroft',
   },
   {
     name: 'robots',
     content: 'follow',
   },
   {
-    name: 'generator',
-    content: 'gatsby',
-  },
-  {
     name: 'og:site_name',
-    property: 'theme-color',
+    property: 'og:site_name',
     content: 'Anne Lynn Design',
   },
   {

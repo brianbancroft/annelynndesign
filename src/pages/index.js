@@ -33,12 +33,12 @@ const meta = [
   {
     property: 'og:url',
     name: 'og:url',
-    content: 'https://annelynn.com/contact',
+    content: 'https://annelynn.com',
   },
   {
     property: 'twitter:url',
     name: 'twitter:url',
-    content: 'https://annelynn.com/contact',
+    content: 'https://annelynn.com',
   },
   {
     property: 'og:type',

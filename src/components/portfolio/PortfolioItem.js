@@ -1,12 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-import {
-  PortfolioHeader,
-  sectionSingleImage,
-  sectionMultiImage,
-  ImageModal,
-} from '.'
+import { PortfolioHeader, ImageModal } from '.'
 
 const ItemContainer = styled('article')`
   margin-bottom: 200px;

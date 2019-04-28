@@ -112,7 +112,6 @@ const theme = {
     fontWeight: '400',
     fontSize: '16px',
     lineHeight: '22px',
-    color: {},
     mobile: {
       fontWeight: '400',
       fontSize: '20px',

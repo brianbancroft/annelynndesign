@@ -119,7 +119,7 @@ const About = () => {
           <CopyContainer>
             <Header>About</Header>
             <HeadShot>
-              <img src={profilePhoto} className="image" />
+              <img src={profilePhoto} className="image" alt="Me in the snow" />
             </HeadShot>
             <AboutCopy full={true} />
           </CopyContainer>

@@ -51,7 +51,7 @@ const ImageModal = ({ title, modalImage, display, handleClose }) => {
     <Modal onClick={handleClose}>
       <h1 className="title">{title}</h1>
       <div className="image-container">
-        <img src={modalImage} />
+        <img src={modalImage} alt={title} />
       </div>
     </Modal>
   ) : (

@@ -45,16 +45,16 @@ const moduleExports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: 'Anne-Lynn Design',
-        short_name: 'Anne-Lynn Bancroft',
-        start_url: '/',
-        // display: '',
-        // icon: '', // This path is relative to the root of the site.
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: 'Anne-Lynn Design',
+    //     short_name: 'Anne-Lynn Bancroft',
+    //     start_url: '/',
+    //     // display: '',
+    //     // icon: '', // This path is relative to the root of the site.
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {

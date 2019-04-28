@@ -129,13 +129,25 @@ const HobbyBlurb = () => {
         <HobbyCopy>{copy}</HobbyCopy>
       </div>
       <ProfileCircle className="hobby-image">
-        <img src={top} className="image" />
+        <img
+          src={top}
+          className="image"
+          alt="This is the first thing that shows off a passion of mine"
+        />
       </ProfileCircle>
       <ProfileCircle className="hobby-image">
-        <img src={middle} className="image" />
+        <img
+          src={middle}
+          className="image"
+          alt="This is the second thing that shows off a passion of mine"
+        />
       </ProfileCircle>
       <ProfileCircle className="hobby-image">
-        <img src={bottom} className="image" />
+        <img
+          src={bottom}
+          className="image"
+          alt="This is the third thing that shows off a passion of mine"
+        />
       </ProfileCircle>
     </HobbySection>
   )
