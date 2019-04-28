@@ -37,7 +37,8 @@ const aboutAssets = [
 const HobbySection = styled('section')`
   display: grid;
   max-width: 600px;
-  height: calc(100vh - ${props => props.theme.footer.height});
+  min-height: calc(100vh - ${props => props.theme.footer.height});
+  margin-bottom: ${props => props.theme.footer.height};
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 240px 1fr;
   align-items: center;
