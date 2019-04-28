@@ -120,7 +120,7 @@ class PortfolioItemPage extends Component {
       },
       {
         name: 'twitter:title',
-        content: headline,
+        content: title,
       },
       {
         name: 'twitter:description',
