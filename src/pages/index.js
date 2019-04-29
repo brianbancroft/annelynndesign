@@ -40,11 +40,7 @@ const meta = [
     name: 'twitter:url',
     content: 'https://annelynn.com',
   },
-  {
-    property: 'og:type',
-    name: 'og:type',
-    content: 'portfolio',
-  },
+
   {
     property: 'og:image:secure_url',
     name: 'og:image:secure_url',
