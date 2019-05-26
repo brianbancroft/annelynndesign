@@ -72,17 +72,17 @@ const moduleExports = {
         // Puts tracking script in the head instead of the body
         head: false,
         // Setting this parameter is optional
-        anonymize: true,
+        // anonymize: true,
         // Setting this parameter is also optional
-        respectDNT: true,
+        // respectDNT: true,
         // Avoids sending pageview hits from custom paths. Array of paths
-        exclude: [],
+        // exclude: [],
         // Enables Google Optimize using your container Id
-        optimizeId: 'YOUR_GOOGLE_OPTIMIZE_TRACKING_ID',
+        // optimizeId: 'YOUR_GOOGLE_OPTIMIZE_TRACKING_ID',
         // Enables Google Optimize Experiment ID
-        experimentId: 'YOUR_GOOGLE_EXPERIMENT_ID',
+        // experimentId: 'YOUR_GOOGLE_EXPERIMENT_ID',
         // Set Variation ID. 0 for original 1,2,3....
-        variationId: 'YOUR_GOOGLE_OPTIMIZE_VARIATION_ID',
+        // variationId: 'YOUR_GOOGLE_OPTIMIZE_VARIATION_ID',
         // Any additional create only fields (optional)
         sampleRate: 5,
         siteSpeedSampleRate: 10,
