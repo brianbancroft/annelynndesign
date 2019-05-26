@@ -69,6 +69,8 @@ const moduleExports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-119666699-9',
+        // Puts tracking script in the head instead of the body
+        head: true,
       },
     },
     `gatsby-plugin-netlify`, // ! Ensure this is the last line of the config array
