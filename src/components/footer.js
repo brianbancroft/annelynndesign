@@ -53,10 +53,16 @@ const FooterLink = styled(Link)`
   z-index: 100;
 
   img {
-    width: 75px;
-    height: 75px;
-    padding: 0;
+    width: 70px;
+    height: 70px;
+    padding: 8px;
     margin-bottom: 0;
+    margin-top: 2px;
+    /* border-radius: 55px; */
+
+    /* border: 1px solid; */
+    /* border-color: rgba(141, 212, 231, 0); */
+    /* animation: icon-pulse ease-out 2s; */
 
   }
   &:before {
@@ -78,7 +84,78 @@ const FooterLink = styled(Link)`
   60% {
     opacity: 1
   }
+}
+
+@keyframes icon-pulse {
+  20% {
+    border-color: rgba(141, 212, 231, 0.2);
+    /* padding: 9px; */
+  }
+  25% {
+    border-color: rgba(141, 212, 231, 0.4);
+    /* padding: 10px; */
+  }
+  30% {
+    border-color: rgba(141, 212, 231, 0.3);
+    /* padding: 11px; */
+  }
+  60% {
+    border-color: rgba(141, 212, 231, 0.5);
+    /* padding: 12px; */
+  }
+  80% {
+    border-color: rgba(141, 212, 231, 0.2);
+    /* padding: 13px; */
+  }
+  90% {
+    border-color: rgba(141, 212, 231, 0);
+  }
+}
+
 `
+
+// ATTEMPT: PULSING
+
+// .pulse {
+//   margin:100px;
+//   display: block;
+//   width: 22px;
+//   height: 22px;
+//   border-radius: 50%;
+//   background: #cca92c;
+//   cursor: pointer;
+//   box-shadow: 0 0 0 rgba(204,169,44, 0.4);
+//   animation: pulse 2s infinite;
+// }
+// .pulse:hover {
+//   animation: none;
+// }
+
+// @-webkit-keyframes pulse {
+//   0% {
+//     -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+//   }
+//   70% {
+//       -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+//   }
+//   100% {
+//       -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+//   }
+// }
+// @keyframes pulse {
+//   0% {
+//     -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+//     box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+//   }
+//   70% {
+//       -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+//       box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+//   }
+//   100% {
+//       -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+//       box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+//   }
+// }
 
 const Footer = ({ portfolioHeaderColor } = {}) => {
   const homeIcon = portfolioHeaderColor ? homeWhiteIcon : homeBaseIcon
