@@ -6,6 +6,9 @@
   "dependencies": {
     "@emotion/core": "^10.0.7",
     "@emotion/styled": "^10.0.7",
+    "@fortawesome/fontawesome-svg-core": "^1.2.18",
+    "@fortawesome/free-regular-svg-icons": "^5.8.2",
+    "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "babel-eslint": "^10.0.1",
     "dotenv": "^6.2.0",
     "emotion": "^10.0.7",
@@ -49,6 +52,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-pro": "^5.8.2",
+    "install": "^0.12.2",
+    "npm": "^6.9.0",
     "prettier": "^1.16.4",
     "serve": "^10.1.1"
   },
