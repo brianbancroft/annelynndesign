@@ -5,16 +5,13 @@ import { Location } from '@reach/router'
 import { Link } from 'gatsby'
 
 import {
-  aboutBaseIcon,
-  // aboutHoverIcon,
-  aboutWhiteIcon,
-  homeBaseIcon,
-  // homeHoverIcon,
-  homeWhiteIcon,
-  contactBaseIcon,
-  // contactHoverIcon,
-  contactWhiteIcon,
-} from '../images/footerIcons'
+  Comment,
+  CommentSolid,
+  FullBox,
+  FullBoxSolid,
+  UserCircle,
+  UserCircleSolid,
+} from './svg'
 
 const FooterBg = styled('footer')`
   position: fixed;
@@ -111,57 +108,18 @@ const FooterLink = styled(Link)`
     border-color: rgba(141, 212, 231, 0);
   }
 }
-
 `
 
-// ATTEMPT: PULSING
-
-// .pulse {
-//   margin:100px;
-//   display: block;
-//   width: 22px;
-//   height: 22px;
-//   border-radius: 50%;
-//   background: #cca92c;
-//   cursor: pointer;
-//   box-shadow: 0 0 0 rgba(204,169,44, 0.4);
-//   animation: pulse 2s infinite;
-// }
-// .pulse:hover {
-//   animation: none;
-// }
-
-// @-webkit-keyframes pulse {
-//   0% {
-//     -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
-//   }
-//   70% {
-//       -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-//   }
-//   100% {
-//       -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-//   }
-// }
-// @keyframes pulse {
-//   0% {
-//     -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
-//     box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
-//   }
-//   70% {
-//       -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-//       box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-//   }
-//   100% {
-//       -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-//       box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-//   }
-// }
+const Icon = styled('div')`
+  height: 60px;
+  width: 60px;
+  margin-top: 10px;
+  path {
+    fill: rgba(141, 212, 231, 0.5);
+  }
+`
 
 const Footer = ({ portfolioHeaderColor } = {}) => {
-  const homeIcon = portfolioHeaderColor ? homeWhiteIcon : homeBaseIcon
-  const aboutIcon = portfolioHeaderColor ? aboutWhiteIcon : aboutBaseIcon
-  const contactIcon = portfolioHeaderColor ? contactWhiteIcon : contactBaseIcon
-
   return (
     <Location>
       {({ location }) => {
@@ -173,13 +131,27 @@ const Footer = ({ portfolioHeaderColor } = {}) => {
           <>
             <FooterElement id="siteFooter">
               <FooterLink to="/" islocation={isHome}>
-                <img src={homeIcon} alt="Home" />
+                <Icon>
+                  {location.pathname === '/' ? <FullBoxSolid /> : <FullBox />}
+                </Icon>
               </FooterLink>
               <FooterLink to="/about" islocation={isAbout}>
-                <img src={aboutIcon} alt="About Me" />
+                <Icon>
+                  {location.pathname === '/about' ? (
+                    <UserCircleSolid />
+                  ) : (
+                    <UserCircle />
+                  )}
+                </Icon>
               </FooterLink>
               <FooterLink to="/contact" islocation={isContact}>
-                <img src={contactIcon} alt="" />
+                <Icon>
+                  {location.pathname === '/contact' ? (
+                    <CommentSolid />
+                  ) : (
+                    <Comment />
+                  )}
+                </Icon>
               </FooterLink>
             </FooterElement>
             <FooterBg portfolioHeaderColor={portfolioHeaderColor} />

@@ -1,0 +1,6 @@
+export { default as Comment } from './Comment'
+export { default as CommentSolid } from './CommentSolid'
+export { default as FullBox } from './FullBox'
+export { default as FullBoxSolid } from './FullBoxSolid'
+export { default as UserCircle } from './UserCircle'
+export { default as UserCircleSolid } from './UserCircleSolid'
