@@ -5,7 +5,7 @@ const FullBoxSolid = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
-      class="svg-inline--fa fa-box-full fa-w-20 fa-3x  css-1yve4tb-Icon e2q9cgj3"
+      className="svg-inline--fa fa-box-full fa-w-20 fa-3x  css-1yve4tb-Icon e2q9cgj3"
       data-icon="box-full"
       data-prefix="fas"
       focusable="false"

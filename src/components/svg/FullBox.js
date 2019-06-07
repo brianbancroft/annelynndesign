@@ -7,7 +7,7 @@ const FullBox = () => {
       focusable="false"
       data-prefix="fal"
       data-icon="box-full"
-      class="svg-inline--fa fa-box-full fa-w-20 fa-3x  css-1yve4tb-Icon e2q9cgj3"
+      className="svg-inline--fa fa-box-full fa-w-20 fa-3x  css-1yve4tb-Icon e2q9cgj3"
       role="img"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 640 512"

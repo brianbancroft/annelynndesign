@@ -7,7 +7,7 @@ const CommentSolid = () => {
       focusable="false"
       data-prefix="fas"
       data-icon="comment-dots"
-      class="svg-inline--fa fa-comment-dots fa-w-16 fa-3x  css-1yve4tb-Icon e2q9cgj3"
+      className="svg-inline--fa fa-comment-dots fa-w-16 fa-3x  css-1yve4tb-Icon e2q9cgj3"
       role="img"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"

@@ -7,7 +7,7 @@ const UserCircleSolid = () => {
       focusable="false"
       data-prefix="fas"
       data-icon="user-circle"
-      class="svg-inline--fa fa-user-circle fa-w-16 fa-3x  css-1yve4tb-Icon e2q9cgj3"
+      className="svg-inline--fa fa-user-circle fa-w-16 fa-3x  css-1yve4tb-Icon e2q9cgj3"
       role="img"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 496 512"
