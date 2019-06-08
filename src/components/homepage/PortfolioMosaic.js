@@ -30,6 +30,24 @@ const Grid = styled('div')`
     grid-auto-rows: 190px;
   }
 `
+
+const Title = styled('section')`
+  font-size: 36px;
+  font-weight: 200;
+  color: ${props => props.theme.color.primary};
+  margin: 18px 0 10px 10px;
+  text-transform: uppercase;
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    margin: 8px 0 0 8px;
+    font-size: 24px;
+  }
+`
+
+const Line = styled('hr')`
+  border-top: 1px solid ${props => props.theme.color.primary};
+`
+
 const PortfolioMosaic = props => {
   const portfolioItems = props.data.allContentfulPortfolioItem.edges.map(
     (i, key) => <PortfolioItem i={i} key={key} />
@@ -37,6 +55,8 @@ const PortfolioMosaic = props => {
 
   return (
     <>
+      <Title>Anne-Lynn Design</Title>
+      {/* <Line /> */}
       <MiddleSection>
         <Grid>{portfolioItems}</Grid>
       </MiddleSection>

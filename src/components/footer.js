@@ -119,7 +119,7 @@ const Icon = styled('div')`
     fill: ${props =>
       /\/portfolio\//.test(props.location)
         ? props.theme.color[props.iconAltColor]
-        : 'rgba(141, 212, 231, 0.5)'};
+        : props.theme.color.primary};
   }
 `
 
