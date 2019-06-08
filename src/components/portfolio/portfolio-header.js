@@ -3,7 +3,8 @@ import styled from '@emotion/styled'
 
 const HeaderSection = styled('section')`
   background: ${props => props.backgroundColor || '#1402ba'};
-  color: ${props => props.headerSectionTextColor || '#efefef'};
+  color: ${props =>
+    props.theme.color[props.headerSectionTextColor] || '#efefef'};
   width: 100vw;
   height: calc(100vh - ${props => props.theme.footer.height});
 

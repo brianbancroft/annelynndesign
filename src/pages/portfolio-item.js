@@ -26,7 +26,6 @@ class PortfolioItemPage extends Component {
         color,
         slug,
         copy,
-        headerSectionTextColor,
         headline,
         title,
         colorAndTypographyPane,
@@ -155,7 +154,6 @@ class PortfolioItemPage extends Component {
           headline={headline}
           copy={copy}
           color={color}
-          headerSectionTextColor={headerSectionTextColor}
         />
       </Layout>
     )
@@ -267,7 +265,6 @@ export const pageQuery = graphql`
       title
       slug
       color
-      headerSectionTextColor
       createdAt
       headline
       copy {

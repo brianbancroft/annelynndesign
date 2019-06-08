@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { compose } from 'ramda'
 
 import { PortfolioHeader, ImageModal } from '.'
+import { convertCSSToRGB, getValueFromRGB, lightOrDark } from '../../helpers'
 
 const ItemContainer = styled('article')`
   margin-bottom: 200px;
@@ -15,10 +17,17 @@ const PortfolioItem = ({
   headline,
   copy,
   color,
-  headerSectionTextColor,
   singleImageSections,
   multiImageSections,
 } = {}) => {
+  const headerSectionTextColor =
+    color &&
+    compose(
+      lightOrDark,
+      getValueFromRGB,
+      convertCSSToRGB
+    )({ color })
+
   return (
     <ItemContainer>
       <ImageModal

@@ -11,7 +11,6 @@ import { compose } from 'ramda'
 import { convertCSSToRGB, getValueFromRGB, lightOrDark } from '../helpers'
 
 const Layout = ({ children, portfolioHeaderColor } = {}) => {
-  console.log('Portfolio Header Color -> ', portfolioHeaderColor)
   const iconAltColor =
     portfolioHeaderColor &&
     compose(
