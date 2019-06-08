@@ -63,8 +63,9 @@ const FooterLink = styled(Link)`
 
   }
   &:before {
-    background: ${props =>
-      props.islocation === 'true' ? 'rgba(141, 212, 231, 0.4)' : 'none'};
+    background: ${props => {
+      return props.islocation === 'true' ? 'rgba(141, 212, 231, 0.4)' : 'none'
+    }};
   display: block;
   content: '';
   position: relative;
@@ -115,11 +116,14 @@ const Icon = styled('div')`
   width: 60px;
   margin-top: 10px;
   path {
-    fill: rgba(141, 212, 231, 0.5);
+    fill: ${props =>
+      /\/portfolio\//.test(props.location)
+        ? props.theme.color[props.iconAltColor]
+        : 'rgba(141, 212, 231, 0.5)'};
   }
 `
 
-const Footer = ({ portfolioHeaderColor } = {}) => {
+const Footer = ({ portfolioHeaderColor, iconAltColor } = {}) => {
   return (
     <Location>
       {({ location }) => {
@@ -131,12 +135,12 @@ const Footer = ({ portfolioHeaderColor } = {}) => {
           <>
             <FooterElement id="siteFooter">
               <FooterLink to="/" islocation={isHome}>
-                <Icon>
+                <Icon location={location.pathname} iconAltColor={iconAltColor}>
                   {location.pathname === '/' ? <FullBoxSolid /> : <FullBox />}
                 </Icon>
               </FooterLink>
               <FooterLink to="/about" islocation={isAbout}>
-                <Icon>
+                <Icon location={location.pathname} iconAltColor={iconAltColor}>
                   {location.pathname === '/about' ? (
                     <UserCircleSolid />
                   ) : (
@@ -145,7 +149,7 @@ const Footer = ({ portfolioHeaderColor } = {}) => {
                 </Icon>
               </FooterLink>
               <FooterLink to="/contact" islocation={isContact}>
-                <Icon>
+                <Icon location={location.pathname} iconAltColor={iconAltColor}>
                   {location.pathname === '/contact' ? (
                     <CommentSolid />
                   ) : (

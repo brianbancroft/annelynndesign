@@ -4,6 +4,7 @@ const color = {
   tertiary: '#19D2C5',
   green: '#8EC73F',
   light: '#EBFAFE',
+  dark: '#444',
   default: '#222',
   formBackground: 'rgba(30, 157, 186, 0.1)',
   formSubmitBackground: 'rgba(30, 157, 186, 0.25)',
