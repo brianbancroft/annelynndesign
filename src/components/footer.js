@@ -123,6 +123,10 @@ const Icon = styled('div')`
   }
 `
 
+const PackageIcon = styled(Icon)`
+  margin-top: 15px;
+`
+
 const Footer = ({ portfolioHeaderColor, iconAltColor } = {}) => {
   return (
     <Location>
@@ -135,9 +139,12 @@ const Footer = ({ portfolioHeaderColor, iconAltColor } = {}) => {
           <>
             <FooterElement id="siteFooter">
               <FooterLink to="/" islocation={isHome}>
-                <Icon location={location.pathname} iconAltColor={iconAltColor}>
+                <PackageIcon
+                  location={location.pathname}
+                  iconAltColor={iconAltColor}
+                >
                   {location.pathname === '/' ? <FullBoxSolid /> : <FullBox />}
-                </Icon>
+                </PackageIcon>
               </FooterLink>
               <FooterLink to="/about" islocation={isAbout}>
                 <Icon location={location.pathname} iconAltColor={iconAltColor}>
