@@ -25,6 +25,7 @@
     "gatsby-source-filesystem": "^2.0.32",
     "gatsby-transformer-sharp": "^2.1.13",
     "pure-react-carousel": "^1.17.0",
+    "ramda": "^0.26.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-helmet": "^5.2.0",
