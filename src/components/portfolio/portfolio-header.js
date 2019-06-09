@@ -27,9 +27,9 @@ const HeaderSection = styled('section')`
   }
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    height: 100vh;
+    height: calc(100vh - ${props => props.theme.footer.mobile.height});
     grid-template-columns: 5vw 90vw 5vw;
-    grid-template-rows: 20vh 80px 1fr;
+    grid-template-rows: 10vh 80px 1fr;
   }
 `
 
