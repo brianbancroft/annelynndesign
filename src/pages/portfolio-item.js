@@ -62,7 +62,7 @@ class PortfolioItemPage extends Component {
       {
         name: 'description',
         property: 'description',
-        content: copy,
+        content: headline,
       },
       {
         name: 'keywords',
@@ -80,7 +80,7 @@ class PortfolioItemPage extends Component {
       },
       {
         property: 'og:description',
-        content: copy,
+        content: headline,
       },
 
       {
@@ -127,7 +127,7 @@ class PortfolioItemPage extends Component {
       },
       {
         name: 'twitter:description',
-        content: copy,
+        content: headline,
       },
       {
         name: 'twitter:image',
