@@ -85,7 +85,8 @@ const HeadShot = styled(ProfileCircle)`
 `
 
 const DecorativeCircleContainer = styled('div')`
-  height: ${() => `${window.innerHeight - 100}px`};
+  height: ${() =>
+    typeof window === 'object' ? `${window.innerHeight - 100}px` : '770px'};
   position: absolute;
   overflow-y: hidden;
   left: 644px;

@@ -12,7 +12,8 @@ const ContactView = styled('div')`
   ${() =>
     window.innerHeight < 770 &&
     css`
-      margin-bottom: ${() => `${770 - window.innerHeight}px`};
+      margin-bottom: ${() =>
+        typeof window === 'object' ? `${770 - window.innerHeight}px` : '770px'};
     `}
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
