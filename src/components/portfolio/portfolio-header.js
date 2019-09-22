@@ -7,6 +7,7 @@ const HeaderSection = styled('section')`
     props.theme.color[props.headerSectionTextColor] || '#efefef'};
   width: 100vw;
   height: calc(100vh - ${props => props.theme.footer.height});
+  min-height: 100vh;
 
   display: grid;
   grid-template-columns: 1fr 800px 1fr;
