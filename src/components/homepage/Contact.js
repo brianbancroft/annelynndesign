@@ -10,10 +10,10 @@ const ContactView = styled('div')`
   grid-template-columns: 1fr 1fr;
 
   ${() =>
+    typeof window === 'object' &&
     window.innerHeight < 770 &&
     css`
-      margin-bottom: ${() =>
-        typeof window === 'object' ? `${770 - window.innerHeight}px` : '770px'};
+      margin-bottom: ${() => `${770 - window.innerHeight}px`};
     `}
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
