@@ -226,7 +226,7 @@ export const pageQuery = graphql`
       original: file {
         src: url
       }
-      fluid(maxWidth: 600) {
+      fluid(maxHeight: 400) {
         src
         srcSet
         sizes

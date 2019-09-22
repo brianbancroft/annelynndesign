@@ -8,11 +8,10 @@ const MultiImageSection = styled('section')`
   width: 100vw;
   display: grid;
   min-height: 80vh;
-  margin-bottom: 50px;
   grid-template-rows: 80px 1fr auto 20px;
-  grid-template-columns: 10px 200px 20vw 1fr 10px;
+  grid-template-columns: 10px 150px 20vw 1fr 10px;
   grid-row-gap: 15px;
-  grid-column-gap: 20px;
+  grid-column-gap: 30px;
   align-items: center;
 
   background: white;
@@ -22,7 +21,6 @@ const MultiImageSection = styled('section')`
     flex-direction: column;
     grid-template-rows: 20px 1fr auto 100px 20px;
     min-height: 700px;
-    margin-bottom: 100px;
   }
 
   .image.single-image-right {
@@ -31,9 +29,9 @@ const MultiImageSection = styled('section')`
 
   .desktop-images-container {
     grid-column: 2 / 5;
-    grid-row: 1 / 3;
+    grid-row: 2 / 3;
+    margin-top: 25px;
     background: white;
-    min-height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,8 +57,8 @@ const MultiImageSection = styled('section')`
     display: block;
     content: '';
     position: relative;
-    width: 86vw;
-    left: 7vw;
+    width: 90vw;
+    left: 4vw;
     margin-top: 10px;
     height: 1px;
   }
@@ -107,7 +105,7 @@ const Title = styled('div')`
   text-align: right;
   justify-self: end;
   max-width: 80%;
-  height: 100%;
+  padding-top: 10px;
 
   font-weight: ${props => props.theme.h4.fontWeight};
   font-size: ${props => props.theme.h4.fontSize};
@@ -132,9 +130,9 @@ const Title = styled('div')`
 
 const CopyElem = styled('div')`
   grid-column: 4 / 5;
-  height: 100%;
   grid-row: 3 / 4;
   max-width: 500px;
+  padding-top: 10px;
 
   font-size: ${props => props.theme.copy.fontSize};
   color: ${props => props.theme.color.copy};

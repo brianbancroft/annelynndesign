@@ -5,11 +5,10 @@ const SingleImageSection = styled('section')`
   z-index: 10;
   width: 100vw;
   min-height: 80vh;
-  margin-bottom: 50px;
   display: grid;
-  grid-template-rows: 80px 1fr 170px 50px 25px;
+  grid-template-rows: 80px 1fr 170px 50px;
   grid-template-columns: 10px 200px 20vw 1fr 10px;
-  grid-row-gap: 15px;
+  grid-row-gap: 25px;
   grid-column-gap: 20px;
 
   color: ${props => (props.color ? props.color : 'inherit')};
@@ -34,8 +33,8 @@ const SingleImageSection = styled('section')`
     display: block;
     content: '';
     position: relative;
-    width: 86vw;
-    left: 7vw;
+    width: 90vw;
+    left: 4vw;
     margin-top: 10px;
     height: 1px;
   }
@@ -45,16 +44,18 @@ const ImageContainer = styled('div')`
   grid-column: 2 / 5;
   grid-row: 2 / 3;
   background: ${props => (props.src ? `url("${props.src}")` : 'red')};
-  width: 500px;
-  height: 500px;
+  min-height: 300px;
+  min-width: 300px;
+  max-width: 500px;
+  max-height: 500px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
   justify-self: center;
   align-self: end;
-
+  cursor: pointer;
   &.no-copy {
-    grid-row: 2 / 5;
+    grid-row: 2 / 4;
   }
 
   &.single-image-left {
@@ -86,6 +87,7 @@ const CopyElem = styled('div')`
   grid-column: 4 / 5;
   grid-row: 3 / 4;
   max-width: 500px;
+  padding-top: 10px;
   align-self: flex-start;
 
   color: ${props => props.theme.color.copy};
@@ -124,6 +126,7 @@ const Title = styled('div')`
   text-align: right;
   align-self: inherit;
   max-width: 80%;
+  padding-top: 10px;
 
   font-weight: ${props => props.theme.h4.fontWeight};
   font-size: ${props => props.theme.h4.fontSize};
