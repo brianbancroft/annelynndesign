@@ -75,7 +75,7 @@ const HeadShot = styled(ProfileCircle)`
   margin-bottom: 10px;
   float: left;
   margin-left: -5px;
-  margin-right: 10px;
+  margin-right: 24px;
   shape-outside: inset(1% round 50%);
 
   .image {
