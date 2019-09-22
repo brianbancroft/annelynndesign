@@ -9,7 +9,7 @@ const meta = [
   {
     name: 'description',
     property: 'description',
-    content: `The Portfolio and Contact Information Anne Lynn Bancroft, a Graphic Designer specializing in packaging and print`,
+    content: `Graphic Design, Signage and Branding from Vancouver Island`,
   },
   {
     name: 'keywords',
@@ -27,7 +27,7 @@ const meta = [
   },
   {
     property: 'og:description',
-    content: `The Portfolio and Contact Information Anne Lynn Bancroft, a Graphic Designer specializing in packaging and print`,
+    content: `Graphic Design, Signage and Branding from Vancouver Island`,
   },
 
   {
@@ -74,7 +74,7 @@ const meta = [
   },
   {
     name: 'twitter:description',
-    content: `The Portfolio and Contact Information Anne Lynn Bancroft, a Graphic Designer specializing in packaging and print`,
+    content: `Graphic Design, Signage and Branding from Vancouver Island`,
   },
   {
     name: 'twitter:image',
