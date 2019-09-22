@@ -9,7 +9,7 @@ const meta = [
   {
     name: 'description',
     property: 'description',
-    content: `Graphic Design, Signage and Branding from Vancouver Island`,
+    content: `Compelling graphic design, signage and branding from Vancouver Island`,
   },
   {
     name: 'keywords',
@@ -27,7 +27,7 @@ const meta = [
   },
   {
     property: 'og:description',
-    content: `Graphic Design, Signage and Branding from Vancouver Island`,
+    content: `Compelling graphic design, signage and branding from Vancouver Island`,
   },
 
   {
@@ -74,7 +74,7 @@ const meta = [
   },
   {
     name: 'twitter:description',
-    content: `Graphic Design, Signage and Branding from Vancouver Island`,
+    content: `Compelling graphic design, signage and branding from Vancouver Island`,
   },
   {
     name: 'twitter:image',
