@@ -9,13 +9,14 @@ const ContactView = styled('div')`
   min-height: calc(100vh - 100px);
   grid-template-columns: 1fr 1fr;
 
-  ${() =>
-    typeof window === 'object' &&
-    window.innerHeight < 770 &&
-    css`
-      margin-bottom: ${() => `${770 - window.innerHeight}px`};
-    `}
-
+  @media (min-width: ${props => props.theme.mobileBreakpoint}) {
+    ${() =>
+      typeof window === 'object' &&
+      window.innerHeight < 770 &&
+      css`
+        margin-bottom: ${() => `${770 - window.innerHeight}px`};
+      `}
+  }
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     grid-template-columns: 1fr;
   }
