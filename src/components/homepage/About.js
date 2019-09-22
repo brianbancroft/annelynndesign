@@ -85,8 +85,7 @@ const HeadShot = styled(ProfileCircle)`
 `
 
 const DecorativeCircleContainer = styled('div')`
-  height: ${() =>
-    typeof window === 'object' ? `${window.innerHeight - 100}px` : '770px'};
+  height: calc(120vh - 100px);
   position: absolute;
   overflow-y: hidden;
   left: 644px;
@@ -110,11 +109,6 @@ const CopyContainer = styled('section')`
   background-color: rgba(255, 255, 255, 0.8);
 `
 
-const AboutSection = styled('section')`
-  max-height: 678px;
-  overflow-y: hidden;
-`
-
 const About = () => {
   return (
     <>
@@ -124,7 +118,7 @@ const About = () => {
       </MobileView>
       <DesktopView>
         <HobbyBlurb />
-        <AboutSection>
+        <section>
           <CopyContainer>
             <Header>About</Header>
             <HeadShot>
@@ -136,7 +130,7 @@ const About = () => {
           <DecorativeCircleContainer>
             <div />
           </DecorativeCircleContainer>
-        </AboutSection>
+        </section>
       </DesktopView>
     </>
   )

@@ -6,7 +6,7 @@ import { SocialIcons, ContactForm } from '.'
 
 const ContactView = styled('div')`
   display: grid;
-  max-height: 100vh;
+  min-height: calc(100vh - 100px);
   grid-template-columns: 1fr 1fr;
 
   ${() =>
