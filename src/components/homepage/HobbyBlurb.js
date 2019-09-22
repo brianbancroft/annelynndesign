@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import { ProfileCircle, Paragraph } from '../styled/'
 
 import watercolour1 from '../../images/watercolour-1.jpg'

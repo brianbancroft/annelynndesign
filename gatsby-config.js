@@ -17,6 +17,12 @@ const moduleExports = {
         accessToken: process.env.DELIVERY_TOKEN,
       },
     },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
@@ -27,16 +33,6 @@ const moduleExports = {
       },
     },
     'gatsby-plugin-react-helmet',
-    {
-      resolve: `gatsby-plugin-emotion`,
-      options: {
-        // sourceMap is on by default but source maps are dead code eliminated in production
-        sourceMap: true,
-        autoLabel: process.env.NODE_ENV !== 'production',
-        labelFormat: '[local]',
-        cssPropOptimization: true,
-      },
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

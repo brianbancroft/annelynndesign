@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 
 // Header used on frontpage's contact and about
 const LowerHeader = styled('div')`

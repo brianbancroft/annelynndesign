@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from '@emotion/styled'
+import styled, { css } from 'styled-components'
 
 import { Paragraph } from '../styled'
 import { SocialIcons, ContactForm } from '.'
@@ -7,9 +7,13 @@ import { SocialIcons, ContactForm } from '.'
 const ContactView = styled('div')`
   display: grid;
   max-height: 100vh;
-  overflow: hidden;
-
   grid-template-columns: 1fr 1fr;
+
+  ${() =>
+    window.innerHeight < 770 &&
+    css`
+      margin-bottom: ${() => `${770 - window.innerHeight}px`};
+    `}
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     grid-template-columns: 1fr;

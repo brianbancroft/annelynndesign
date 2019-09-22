@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 
 const ProfileCircle = styled('div')`
   width: 180px;

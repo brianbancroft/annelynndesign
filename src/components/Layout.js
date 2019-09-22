@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThemeProvider } from 'emotion-theming'
+import { ThemeProvider } from 'styled-components'
 import Helmet from 'react-helmet'
 import './layout.css'
 import { theme } from '../helpers'
@@ -22,14 +22,16 @@ const Layout = ({ children, portfolioHeaderColor } = {}) => {
   return (
     <main>
       <ThemeProvider theme={theme}>
-        <Helmet link={helmetLink} meta={meta}>
-          <html lang="en" />
-        </Helmet>
-        {children}
-        <Footer
-          portfolioHeaderColor={portfolioHeaderColor}
-          iconAltColor={iconAltColor}
-        />
+        <>
+          <Helmet link={helmetLink} meta={meta}>
+            <html lang="en" />
+          </Helmet>
+          {children}
+          <Footer
+            portfolioHeaderColor={portfolioHeaderColor}
+            iconAltColor={iconAltColor}
+          />
+        </>
       </ThemeProvider>
     </main>
   )

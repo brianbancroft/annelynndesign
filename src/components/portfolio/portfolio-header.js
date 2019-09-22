@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 
 const HeaderSection = styled('section')`
   background: ${props => props.backgroundColor || '#1402ba'};

@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 
 const Copy = styled('article')`
   line-height: ${props => props.theme.copy.lineHeight};
