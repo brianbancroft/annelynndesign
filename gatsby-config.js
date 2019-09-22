@@ -26,7 +26,6 @@ const moduleExports = {
         name: 'pages',
       },
     },
-    'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-emotion`,
