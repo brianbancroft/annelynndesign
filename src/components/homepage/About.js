@@ -74,22 +74,39 @@ const HeadShot = styled(ProfileCircle)`
   margin-left: 60px;
   margin-bottom: 10px;
   float: left;
-  margin-left: -5px;
+  margin-left: 24px;
   margin-right: 24px;
   shape-outside: inset(1% round 50%);
+  z-index: 25;
 
   .image {
     background-image: ${props => props.imageSrc};
   }
+`
 
-  @media (min-width: 1230px) {
-    margin-left: calc(60px + (4%));
+const DecorativeCircleContainer = styled('div')`
+  height: ${() => `${window.innerHeight - 100}px`};
+  position: absolute;
+  overflow-y: hidden;
+  left: 644px;
+  top: calc(10px - 1px);
+  z-index: -1;
+
+  div {
+    width: 900px;
+    height: 900px;
+    border-radius: 900px;
+    border: 1px solid ${props => props.theme.color.primary};
+  }
+
+  @media (max-width: 1290px) {
   }
 `
 
 const CopyContainer = styled('section')`
   max-width: 600px;
   margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.8);
 `
 
 const AboutSection = styled('section')`
@@ -115,6 +132,9 @@ const About = () => {
             <AboutCopy full={true} />
           </CopyContainer>
           <SocialIcons />
+          <DecorativeCircleContainer>
+            <div />
+          </DecorativeCircleContainer>
         </AboutSection>
       </DesktopView>
     </>

@@ -12,6 +12,7 @@ const SocialMediaIcons = styled('section')`
   margin: 0 auto;
   justify-content: space-around;
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.7);
 
   .icon {
     width: 60px;
