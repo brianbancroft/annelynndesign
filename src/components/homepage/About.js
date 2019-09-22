@@ -87,23 +87,14 @@ const HeadShot = styled(ProfileCircle)`
   }
 `
 
-const DecorativeCircle = styled('div')`
-  position: fixed;
-  z-index: -1;
-  top: -15px;
-  left: 48vw;
-  width: 900px;
-  height: 900px;
-  border-radius: 900px;
-  border: 1px solid ${props => props.theme.color.primary};
-
-  @media (max-width: 1290px) {
-  }
-`
-
 const CopyContainer = styled('section')`
   max-width: 600px;
   margin: 0 auto;
+`
+
+const AboutSection = styled('section')`
+  max-height: 678px;
+  overflow-y: hidden;
 `
 
 const About = () => {
@@ -115,7 +106,7 @@ const About = () => {
       </MobileView>
       <DesktopView>
         <HobbyBlurb />
-        <section>
+        <AboutSection>
           <CopyContainer>
             <Header>About</Header>
             <HeadShot>
@@ -124,8 +115,7 @@ const About = () => {
             <AboutCopy full={true} />
           </CopyContainer>
           <SocialIcons />
-          <DecorativeCircle />
-        </section>
+        </AboutSection>
       </DesktopView>
     </>
   )
