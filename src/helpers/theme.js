@@ -12,7 +12,7 @@ const color = {
 
 const theme = {
   color: { ...color },
-  mobileBreakpoint: '620px',
+  mobileBreakpoint: '770px',
   mobile: {
     sectionDividerMargin: '30px',
   },

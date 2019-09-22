@@ -7,18 +7,16 @@ import { SocialIcons, ContactForm } from '.'
 const ContactView = styled('div')`
   display: grid;
   min-height: calc(100vh - 100px);
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 
   @media (min-width: ${props => props.theme.mobileBreakpoint}) {
+    grid-template-columns: 1fr 1fr;
     ${() =>
       typeof window === 'object' &&
       window.innerHeight < 770 &&
       css`
         margin-bottom: ${() => `${770 - window.innerHeight}px`};
       `}
-  }
-  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    grid-template-columns: 1fr;
   }
 `
 

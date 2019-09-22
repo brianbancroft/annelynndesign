@@ -1,6 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
+import { isMobile } from 'react-device-detect'
 
 const ItemLabel = styled('div')`
   position: relative;
@@ -16,6 +17,10 @@ const ItemLabel = styled('div')`
   text-align: center;
   font-weight: 500;
   color: #eee;
+
+  p {
+    margin: 0;
+  }
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     height: 70px;
@@ -77,12 +82,19 @@ const Item = styled('div')`
   }
 
   ${ItemLabel} {
-    opacity: 0;
 
-    @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-      display: none;
-
-    }
+    ${() =>
+      isMobile
+        ? css`
+            opacity: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          `
+        : css`
+            opacity: 0;
+            display: none;
+          `}
   }
 `
 
@@ -92,11 +104,14 @@ const PortfolioItem = ({
   },
 } = {}) => {
   const img = previewImage ? previewImage.fixed.url : ''
+  console.log('Is it mobile? ', isMobile)
 
   return (
     <Link to={`/portfolio/${slug}`}>
       <Item img={img}>
-        <ItemLabel>{title}</ItemLabel>
+        <ItemLabel>
+          <p>{title}</p>
+        </ItemLabel>
       </Item>
     </Link>
   )

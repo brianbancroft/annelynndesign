@@ -23,6 +23,7 @@
     "pure-react-carousel": "^1.17.0",
     "ramda": "^0.26.1",
     "react": "^16.9.0",
+    "react-device-detect": "^1.9.9",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.0",
     "react-transition-group": "^2.4.0",
