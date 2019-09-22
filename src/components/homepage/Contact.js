@@ -56,12 +56,11 @@ const Contact = () => {
       <ContactCopyContainer>
         <section>
           <AboutParagraph color="primary">
-            Hi, I’m a graphic designer specializing in{' '}
-            <strong>visual communication</strong>. Anything from{' '}
-            <strong>posters</strong> to <strong>signage</strong>,{' '}
-            <strong>packaging</strong> design, creating a{' '}
-            <strong>visual experience</strong> print or web based, or just
-            helping something make sense visually, I can help!
+            I’m a skilled graphic designer specializing in visual communication.
+            I create company <strong>branding</strong>, <strong>signage</strong>
+            , <strong>store experience</strong>, <strong>flyers</strong>,
+            <strong>posters</strong>, <strong>packaging</strong> as well as{' '}
+            <strong>website design</strong>. I help your ideas get noticed.
           </AboutParagraph>
         </section>
         <SocialIcons />
