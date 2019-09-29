@@ -90,7 +90,8 @@ const MobileImagesContainer = styled('div')`
 const Title = styled('div')`
   grid-column: 2 / 4;
   grid-row: 3 / 4;
-
+  align-self: baseline;
+  margin-top: 2px;
   text-align: right;
   justify-self: end;
   max-width: 80%;
