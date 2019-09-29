@@ -11,7 +11,7 @@ const HeaderSection = styled('section')`
 
   display: grid;
   grid-template-columns: 1fr 800px 1fr;
-  grid-template-rows: 1fr 50px 1fr;
+  grid-template-rows: 0.7fr 50px 1fr;
   grid-row-gap: 20px;
 
   animation-duration: 2s;
@@ -30,7 +30,7 @@ const HeaderSection = styled('section')`
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     height: calc(100vh - ${props => props.theme.footer.mobile.height});
     grid-template-columns: 5vw 90vw 5vw;
-    grid-template-rows: 10vh 80px 1fr;
+    grid-template-rows: 15vh 80px 1fr;
   }
 `
 
@@ -56,7 +56,7 @@ const Title = styled('div')`
 `
 
 const Copy = styled('div')`
-  text-align: center;
+  text-align: block;
   padding: 0 160px;
   grid-column: 2 / 3;
   grid-row: 3 / 4;

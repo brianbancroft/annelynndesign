@@ -115,7 +115,7 @@ const theme = {
     lineHeight: '22px',
     mobile: {
       fontWeight: '400',
-      fontSize: '20px',
+      fontSize: '19px',
     },
     portfolioHeader: {
       fontSize: '18px',

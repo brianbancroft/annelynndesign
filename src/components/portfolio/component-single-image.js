@@ -24,19 +24,7 @@ const SingleImageSection = styled('section')`
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     min-height: 700px;
     grid-template-rows: 30px 1fr auto 150px 25px;
-    margin-bottom: 100px;
-  }
-
-  &:before {
-    background: ${props =>
-      props.color ? props.color : props.theme.color.primary};
-    display: block;
-    content: '';
-    position: relative;
-    width: 90vw;
-    left: 4vw;
-    margin-top: 10px;
-    height: 1px;
+    margin-bottom: 20px;
   }
 `
 

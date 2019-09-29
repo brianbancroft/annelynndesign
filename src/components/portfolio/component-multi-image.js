@@ -51,17 +51,6 @@ const MultiImageSection = styled('section')`
       max-height: 100%;
     }
   }
-  &:before {
-    background: ${props =>
-      props.color ? props.color : props.theme.color.primary};
-    display: block;
-    content: '';
-    position: relative;
-    width: 90vw;
-    left: 4vw;
-    margin-top: 10px;
-    height: 1px;
-  }
 
   .desktop-images-container.no-copy {
     grid-row: 1 / 4;
