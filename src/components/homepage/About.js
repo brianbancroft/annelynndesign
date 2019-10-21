@@ -3,12 +3,12 @@ import styled from 'styled-components'
 import { AboutCopy, HobbyBlurb, SocialIcons } from '.'
 import { ProfileCircle, LowerHeader } from '../styled/'
 
-import profilePhoto from '../../images/profile-photo.jpg'
+import profilePhoto from '../../images/anne-lynn-bancroft.jpg'
 
 const Header = styled(LowerHeader)`
   z-index: 10;
   padding-top: 50px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   width: 100%;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
@@ -70,18 +70,28 @@ const DesktopView = styled('main')`
   }
 `
 
-const HeadShot = styled(ProfileCircle)`
+const PhotoElem = styled(ProfileCircle)`
+  z-index: 25;
+
+  .image {
+    background-image: ${props => props.imageSrc};
+  }
+`
+
+const HeadShot = styled(PhotoElem)`
   margin-left: 60px;
   margin-bottom: 10px;
   float: left;
   margin-left: 24px;
   margin-right: 24px;
   shape-outside: inset(1% round 50%);
-  z-index: 25;
+`
 
-  .image {
-    background-image: ${props => props.imageSrc};
-  }
+const HeadshotRow = styled('div')`
+  shape-outside: none;
+  float: none;
+  display: flex;
+  justify-content: center;
 `
 
 const DecorativeCircleContainer = styled('div')`
@@ -114,6 +124,16 @@ const About = () => {
     <>
       <MobileView>
         <Header>About</Header>
+
+        <HeadshotRow>
+          <PhotoElem>
+            <img
+              src={profilePhoto}
+              className="image"
+              alt="Anne-Lynn Bancroft"
+            />
+          </PhotoElem>
+        </HeadshotRow>
         <AboutCopy />
       </MobileView>
       <DesktopView>
@@ -122,7 +142,11 @@ const About = () => {
           <CopyContainer>
             <Header>About</Header>
             <HeadShot>
-              <img src={profilePhoto} className="image" alt="Me in the snow" />
+              <img
+                src={profilePhoto}
+                className="image"
+                alt="Anne-Lynn Bancroft"
+              />
             </HeadShot>
             <AboutCopy full={true} />
           </CopyContainer>

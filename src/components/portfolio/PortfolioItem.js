@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { compose } from 'ramda'
 
 import { PortfolioHeader, ImageModal } from '.'
 import { convertCSSToRGB, getValueFromRGB, lightOrDark } from '../../helpers'
+import { compose } from 'ramda'
 
 const ItemContainer = styled('article')`
   margin-bottom: 200px;

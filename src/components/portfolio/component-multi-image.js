@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import { MobileImageSlider, ComponentSingleImage } from '.'
+import { convertCSSToRGB, getValueFromRGB } from '../../helpers'
+import { compose } from 'ramda'
 
 const MultiImageSection = styled('section')`
   z-index: 10;
@@ -195,6 +197,15 @@ const ComponentMultiImage = ({
   handleOpen,
 } = {}) => {
   imagePosition = !(title || copy) ? `no-copy` : imagePosition
+
+  color =
+    color &&
+    compose(
+      getValueFromRGB,
+      convertCSSToRGB
+    )({ color }) > 1
+      ? '#222'
+      : color
 
   if (images) {
     return images.length > 1 ? (

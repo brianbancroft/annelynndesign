@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { convertCSSToRGB, getValueFromRGB, lightOrDark } from '../../helpers'
+import { compose } from 'ramda'
 
 const SingleImageSection = styled('section')`
   z-index: 10;
@@ -173,6 +175,15 @@ const ComponentSingleImage = ({
   const modalImageSrc = image
     ? image.original.src
     : 'https://placehold.it/400/400'
+
+  color =
+    color &&
+    compose(
+      getValueFromRGB,
+      convertCSSToRGB
+    )({ color }) > 1
+      ? '#222'
+      : color
 
   return (
     <SingleImageSection color={color} className={imagePosition}>
