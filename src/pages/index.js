@@ -93,7 +93,7 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query HomeQuery {
-    allContentfulPortfolioItem {
+    allContentfulCaseStudy {
       edges {
         node {
           id

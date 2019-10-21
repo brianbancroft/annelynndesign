@@ -261,7 +261,7 @@ export const pageQuery = graphql`
   }
 
   query PortfolioItemBySlug($slug: String) {
-    contentfulPortfolioItem(slug: { eq: $slug }) {
+    contentfulCaseStudy(slug: { eq: $slug }) {
       title
       slug
       color
