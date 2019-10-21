@@ -49,7 +49,7 @@ const Line = styled('hr')`
 `
 
 const PortfolioMosaic = props => {
-  const portfolioItems = props.data.allContentfulPortfolioItem.edges.map(
+  const portfolioItems = props.data.allContentfulCaseStudy.edges.map(
     (i, key) => <PortfolioItem i={i} key={key} />
   )
 

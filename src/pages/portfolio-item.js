@@ -22,7 +22,7 @@ class PortfolioItemPage extends Component {
     const handleClose = () => this.setState({ showModal: false })
 
     let {
-      contentfulPortfolioItem: {
+      contentfulCaseStudy: {
         color,
         slug,
         copy,

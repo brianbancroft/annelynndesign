@@ -10,7 +10,7 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           {
-            allContentfulPortfolioItem {
+            allContentfulCaseStudy {
               edges {
                 node {
                   title
@@ -26,10 +26,10 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
-        const portfolioItems = result.data.allContentfulPortfolioItem.edges
+        const portfolioItems = result.data.allContentfulCaseStudy.edges
         portfolioItems.forEach(item => {
           createPage({
-            path: `/portfolio/${ item.node.slug }/`,
+            path: `/portfolio/${item.node.slug}/`,
             component: portfolioItem,
             context: {
               slug: item.node.slug,
