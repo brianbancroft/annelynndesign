@@ -23,6 +23,7 @@
     "pure-react-carousel": "^1.17.0",
     "ramda": "^0.26.1",
     "react": "^16.9.0",
+    "react-clear-cache": "^1.0.26",
     "react-device-detect": "^1.9.9",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.0",
@@ -45,7 +46,9 @@
     "start": "gatsby develop",
     "format": "prettier --write \"src/**/*.js\"",
     "serve": "serve -l 9000 ./public",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postbuild": "npm run generate-build-meta",
+    "generate-build-meta": "./node_modules/react-clear-cache/bin/cli.js"
   },
   "devDependencies": {
     "install": "^0.12.2",
