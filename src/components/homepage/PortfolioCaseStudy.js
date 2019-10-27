@@ -9,8 +9,6 @@ const PortfolioCaseStudy = item => {
     },
   } = item
 
-  console.log('Case study attempted')
-
   return (
     <>
       <Link to={`/portfolio/${slug}`}>

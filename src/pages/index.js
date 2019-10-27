@@ -107,8 +107,8 @@ export const pageQuery = graphql`
             }
           }
           previewImage {
-            fixed(width: 190, height: 190) {
-              ...GatsbyContentfulFixed_withWebp
+            fluid(maxHeight: 300) {
+              ...GatsbyContentfulFluid_withWebp
             }
           }
         }

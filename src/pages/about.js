@@ -3,7 +3,6 @@ import { About } from '../components/homepage/'
 import { Layout } from '../components'
 import Helmet from 'react-helmet'
 import logo from '../images/logo.png'
-import { graphql } from 'gatsby'
 
 const meta = [
   {

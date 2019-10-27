@@ -20,6 +20,7 @@
     "gatsby-source-contentful": "^2.0.29",
     "gatsby-source-filesystem": "^2.0.32",
     "gatsby-transformer-sharp": "^2.3.0",
+    "grommet": "^2.7.11",
     "pure-react-carousel": "^1.17.0",
     "ramda": "^0.26.1",
     "react": "^16.9.0",

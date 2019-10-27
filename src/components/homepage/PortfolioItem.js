@@ -84,8 +84,6 @@ const Item = styled('div')`
 `
 
 const PortfolioItem = ({ previewImage, title }) => {
-  console.log('Portfolio item render ', previewImage, title)
-
   return (
     <Item>
       {previewImage && <Img fluid={previewImage.fluid} />}

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { convertCSSToRGB, getValueFromRGB, lightOrDark } from '../../helpers'
+import { convertCSSToRGB, getValueFromRGB } from '../../helpers'
 import { compose } from 'ramda'
 import Img from 'gatsby-image'
 
@@ -34,11 +34,10 @@ const SingleImageSection = styled('section')`
 const ImageContainer = styled('div')`
   grid-column: 2 / 5;
   grid-row: 2 / 3;
-  height: 100%;
   width: 40%;
 
   justify-self: center;
-  align-self: end;
+  align-self: center;
   cursor: pointer;
   &.no-copy {
     grid-row: 2 / 4;
@@ -66,7 +65,6 @@ const ImageContainer = styled('div')`
     grid-row: 2 / 3;
     margin-bottom: 5px;
     width: 60%;
-    height: 100%;
   }
 `
 
@@ -185,7 +183,7 @@ const ComponentSingleImage = content => {
           title: title,
         })}
       >
-        <Img fluid={image.fluid} />
+        {image && <Img fluid={image.fluid} />}
       </ImageContainer>
       <Title className={imagePosition}>{title}</Title>
       <Copy copy={copy} cssClass={imagePosition} />

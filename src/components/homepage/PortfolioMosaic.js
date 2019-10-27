@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { PortfolioCaseStudy } from '.'
+import { PortfolioCaseStudy, PortfolioSample } from '.'
 
 const MiddleSection = styled('section')`
   width: 100vw;
@@ -10,14 +10,13 @@ const MiddleSection = styled('section')`
 
 const Grid = styled('div')`
   display: grid;
-  grid-gap: 0;
   padding: 10px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-row-gap: 10px;
   grid-column-gap: 10px;
   grid-auto-rows: 300px;
   grid-auto-flow: row dense;
-  margin-bottom: calc(${props => props.theme.footer.height} + 20px);
+  margin-bottom: ${props => `calc(${props.theme.footer.height} + 20px)`};
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     grid-template-columns: 1fr 1fr;
@@ -43,16 +42,19 @@ const PortfolioMosaic = props => {
     <PortfolioCaseStudy i={i} key={key} />
   ))
 
-  const singleSamples = props.data.samples.edges
-
-  console.log('Single samples ', singleSamples)
+  const samples = props.data.samples.edges.map((i, key) => (
+    <PortfolioSample i={i} key={key} />
+  ))
 
   return (
     <>
       <Title>Anne-Lynn Design</Title>
       <MiddleSection>
         <Grid>
-          <>{caseStudies}</>
+          <>
+            {caseStudies}
+            {samples}
+          </>
         </Grid>
       </MiddleSection>
     </>

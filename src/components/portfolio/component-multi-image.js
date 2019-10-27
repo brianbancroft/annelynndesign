@@ -166,7 +166,7 @@ const imagesLayout = ({ images, title, handleOpen, imagePosition } = {}) =>
           title: title,
         })}
       >
-        <Img fluid={i.fluid} />
+        {i && <Img fluid={i.fluid} />}
       </div>
     ))
   )
