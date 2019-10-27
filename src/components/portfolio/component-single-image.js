@@ -35,7 +35,7 @@ const ImageContainer = styled('div')`
   grid-column: 2 / 5;
   grid-row: 2 / 3;
   height: 100%;
-  width: 30%;
+  width: 45%;
 
   justify-self: center;
   align-self: end;
@@ -55,7 +55,7 @@ const ImageContainer = styled('div')`
       grid-column: 2 / 5 !important;
       grid-row: 2 / 3 !important;
       margin-bottom: 5px !important;
-      width: 50% !important;
+      width: 60% !important;
       height: 100% !important;
     }
   }
@@ -64,7 +64,7 @@ const ImageContainer = styled('div')`
     grid-column: 2 / 5;
     grid-row: 2 / 3;
     margin-bottom: 5px;
-    width: 50%;
+    width: 60%;
     height: 100%;
   }
 `
