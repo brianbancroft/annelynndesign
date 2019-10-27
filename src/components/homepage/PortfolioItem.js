@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
 import { isMobile } from 'react-device-detect'
+import Img from 'gatsby-image'
 
 const ItemLabel = styled('div')`
   position: relative;
@@ -34,15 +35,13 @@ const Item = styled('div')`
   flex-direction: column;
   justify-content: flex-end;
   box-sizing: border-box;
-  min-height: 300px;
+  height: 300px;
   background-color: #0c9a9a;
   color: #fff;
   cursor: pointer;
   grid-column-start: auto;
   grid-row-start: auto;
-  background: url('${props => (props.img ? props.img : '')}');
-  background-size: cover;
-  background-position: center;
+
   /* box-shadow: 2px 1px 1px rgba(68,68,68,0.4); */
   transition: transform 0.3s ease-in-out;
   counter-increment: item-counter;
@@ -52,7 +51,6 @@ const Item = styled('div')`
     min-height: 190px;
     height: 190px;
   }
-
 
   &:after {
     content: '';
@@ -68,11 +66,9 @@ const Item = styled('div')`
   }
 
   &:hover {
-
     &:after {
       background: rgba(12, 154, 154, 0.9);
       transition: background 0.5s ease-in-out;
-
     }
 
     ${ItemLabel} {
@@ -81,8 +77,12 @@ const Item = styled('div')`
     }
   }
 
-  ${ItemLabel} {
+  ${Img} {
+    z-index: 10;
+  }
 
+  ${ItemLabel} {
+    z-index: 100;
     ${() =>
       isMobile
         ? css`
@@ -98,17 +98,17 @@ const Item = styled('div')`
   }
 `
 
-const PortfolioItem = ({
-  i: {
-    node: { previewImage, slug, title },
-  },
-} = {}) => {
-  const img = previewImage ? previewImage.fixed.url : ''
-  console.log('Is it mobile? ', isMobile)
+const PortfolioItem = item => {
+  const {
+    i: {
+      node: { previewImage, slug, title },
+    },
+  } = item
 
   return (
     <Link to={`/portfolio/${slug}`}>
-      <Item img={img}>
+      <Item>
+        {previewImage && <Img fixed={previewImage.fixed} />}
         <ItemLabel>
           <p>{title}</p>
         </ItemLabel>

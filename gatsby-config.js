@@ -7,7 +7,7 @@ const moduleExports = {
     author: 'Brian Bancroft (hello@brianbancroft.ca)',
     title: 'Anne-Lynn Design',
     description:
-      'Portfolio site for graphic design. Uses gatsby, netlify and contentful',
+      'Portfolio site for graphic design. Uses Gatsby, Netlify and Contentful',
   },
   plugins: [
     {
@@ -40,16 +40,8 @@ const moduleExports = {
         path: `${__dirname}/src/images`,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: 'Anne-Lynn Design',
-    //     short_name: 'Anne-Lynn Bancroft',
-    //     start_url: '/',
-    //     // display: '',
-    //     // icon: '', // This path is relative to the root of the site.
-    //   },
-    // },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {

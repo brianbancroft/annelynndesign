@@ -101,8 +101,12 @@ export const pageQuery = graphql`
           slug
           createdAt(formatString: "MMM Do, YYYY")
           previewImage {
-            fixed(width: 700, height: 600, resizingBehavior: THUMB) {
+            fixed(width: 305, height: 300, resizingBehavior: THUMB) {
               url: src
+              ...GatsbyContentfulFixed_withWebp
+            }
+            fluid(maxHeight: 600) {
+              ...GatsbyContentfulFluid_withWebp
             }
             id
             description
