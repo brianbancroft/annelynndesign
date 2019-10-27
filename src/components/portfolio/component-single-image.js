@@ -35,7 +35,7 @@ const ImageContainer = styled('div')`
   grid-column: 2 / 5;
   grid-row: 2 / 3;
   height: 100%;
-  width: 45%;
+  width: 40%;
 
   justify-self: center;
   align-self: end;
@@ -50,6 +50,7 @@ const ImageContainer = styled('div')`
 
   &.single-image-left,
   &.single-image-right {
+    width: 70%;
     grid-row: 2 / 5;
     @media (max-width: ${props => props.theme.mobileBreakpoint}) {
       grid-column: 2 / 5 !important;
