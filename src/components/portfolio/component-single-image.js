@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { convertCSSToRGB, getValueFromRGB, lightOrDark } from '../../helpers'
 import { compose } from 'ramda'
+import Img from 'gatsby-image'
 
 const SingleImageSection = styled('section')`
   z-index: 10;
@@ -33,14 +34,9 @@ const SingleImageSection = styled('section')`
 const ImageContainer = styled('div')`
   grid-column: 2 / 5;
   grid-row: 2 / 3;
-  background: ${props => (props.src ? `url("${props.src}")` : 'red')};
-  min-height: 300px;
-  min-width: 300px;
-  max-width: 500px;
-  max-height: 500px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
+  height: 100%;
+  width: 30%;
+
   justify-self: center;
   align-self: end;
   cursor: pointer;
@@ -59,7 +55,7 @@ const ImageContainer = styled('div')`
       grid-column: 2 / 5 !important;
       grid-row: 2 / 3 !important;
       margin-bottom: 5px !important;
-      width: 100% !important;
+      width: 50% !important;
       height: 100% !important;
     }
   }
@@ -68,7 +64,7 @@ const ImageContainer = styled('div')`
     grid-column: 2 / 5;
     grid-row: 2 / 3;
     margin-bottom: 5px;
-    width: 100%;
+    width: 50%;
     height: 100%;
   }
 `
@@ -163,15 +159,9 @@ const Copy = ({ copy, cssClass } = {}) => {
   return <CopyElem className={cssClass}>{inner}</CopyElem>
 }
 
-const ComponentSingleImage = ({
-  imagePosition,
-  image,
-  title,
-  copy,
-  color,
-  handleOpen,
-} = {}) => {
-  const imageSrc = image ? image.fluid.src : 'https://placehold.it/400/400'
+const ComponentSingleImage = content => {
+  let { imagePosition, image, title, copy, color, handleOpen } = content
+
   const modalImageSrc = image
     ? image.original.src
     : 'https://placehold.it/400/400'
@@ -189,12 +179,13 @@ const ComponentSingleImage = ({
     <SingleImageSection color={color} className={imagePosition}>
       <ImageContainer
         className={imagePosition}
-        src={imageSrc}
         onClick={handleOpen({
           modalImage: modalImageSrc,
           title: title,
         })}
-      />
+      >
+        <Img fluid={image.fluid} />
+      </ImageContainer>
       <Title className={imagePosition}>{title}</Title>
       <Copy copy={copy} cssClass={imagePosition} />
     </SingleImageSection>

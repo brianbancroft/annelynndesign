@@ -175,7 +175,9 @@ export const pageQuery = graphql`
       original: file {
         src: url
       }
-      fluid(maxWidth: 700) {
+      fluid(maxHeight: 700) {
+        ...GatsbyContentfulFluid_withWebp
+
         src
         srcSet
         sizes
@@ -199,9 +201,11 @@ export const pageQuery = graphql`
         src: url
       }
       slider: fixed(width: 600, height: 720, resizingBehavior: PAD) {
+        ...GatsbyContentfulFixed_withWebp
         src
       }
       fluid(maxWidth: 600) {
+        ...GatsbyContentfulFluid_withWebp
         src
         srcSet
         sizes
@@ -227,6 +231,7 @@ export const pageQuery = graphql`
         src: url
       }
       fluid(maxHeight: 400) {
+        ...GatsbyContentfulFluid_withWebp
         src
         srcSet
         sizes
@@ -250,7 +255,8 @@ export const pageQuery = graphql`
       original: file {
         src: url
       }
-      fluid(maxWidth: 600) {
+      fluid(maxHeight: 600) {
+        ...GatsbyContentfulFluid_withWebp
         src
         srcSet
         sizes
