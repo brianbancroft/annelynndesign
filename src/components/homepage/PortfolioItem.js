@@ -6,26 +6,28 @@ import Img from 'gatsby-image'
 
 const ItemLabel = styled('div')`
   position: relative;
-  z-index: 1;
+  z-index: 100;
   padding: 8px;
   align-self: end;
   height: 40px;
   width: 100%;
-  background: rgba(12, 12, 12, 0.65);
+  background: rgba(12, 12, 12, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   text-transform: uppercase;
-  letter-spacing: 1px;
-  text-align: center;
   font-weight: 500;
   color: #eee;
 
   p {
+    letter-spacing: 1px;
     margin: 0;
   }
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    height: 70px;
-    padding-top: 10px;
+    opacity: 0;
+    display: none;
   }
 `
 
@@ -35,12 +37,12 @@ const Item = styled('div')`
   flex-direction: column;
   justify-content: flex-end;
   box-sizing: border-box;
-  height: 300px;
   background-color: #0c9a9a;
   color: #fff;
   cursor: pointer;
   grid-column-start: auto;
   grid-row-start: auto;
+  height: 100%;
 
   /* box-shadow: 2px 1px 1px rgba(68,68,68,0.4); */
   transition: transform 0.3s ease-in-out;
@@ -48,8 +50,8 @@ const Item = styled('div')`
   border: 1px solid #eee;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    min-height: 190px;
     height: 190px;
+    width: 190px;
   }
 
   &:after {
@@ -80,22 +82,6 @@ const Item = styled('div')`
   ${Img} {
     z-index: 10;
   }
-
-  ${ItemLabel} {
-    z-index: 100;
-    ${() =>
-      isMobile
-        ? css`
-            opacity: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          `
-        : css`
-            opacity: 0;
-            display: none;
-          `}
-  }
 `
 
 const PortfolioItem = item => {
@@ -108,7 +94,7 @@ const PortfolioItem = item => {
   return (
     <Link to={`/portfolio/${slug}`}>
       <Item>
-        {previewImage && <Img fixed={previewImage.fixed} />}
+        {previewImage && <Img fluid={previewImage.fluid} />}
         <ItemLabel>
           <p>{title}</p>
         </ItemLabel>
