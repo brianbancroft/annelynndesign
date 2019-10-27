@@ -1,7 +1,6 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
-import { Link } from 'gatsby'
-import { isMobile } from 'react-device-detect'
+import styled from 'styled-components'
+
 import Img from 'gatsby-image'
 
 const ItemLabel = styled('div')`
@@ -84,22 +83,16 @@ const Item = styled('div')`
   }
 `
 
-const PortfolioItem = item => {
-  const {
-    i: {
-      node: { previewImage, slug, title },
-    },
-  } = item
+const PortfolioItem = ({ previewImage, title }) => {
+  console.log('Portfolio item render ', previewImage, title)
 
   return (
-    <Link to={`/portfolio/${slug}`}>
-      <Item>
-        {previewImage && <Img fluid={previewImage.fluid} />}
-        <ItemLabel>
-          <p>{title}</p>
-        </ItemLabel>
-      </Item>
-    </Link>
+    <Item>
+      {previewImage && <Img fluid={previewImage.fluid} />}
+      <ItemLabel>
+        <p>{title}</p>
+      </ItemLabel>
+    </Item>
   )
 }
 

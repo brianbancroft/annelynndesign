@@ -93,7 +93,28 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query HomeQuery {
-    allContentfulCaseStudy {
+    samples: allContentfulPortfolioSample {
+      edges {
+        node {
+          title
+          id
+          copy {
+            copy
+          }
+          mainImagevideo {
+            fixed(width: 300, height: 600) {
+              ...GatsbyContentfulFixed_withWebp
+            }
+          }
+          previewImage {
+            fixed(width: 190, height: 190) {
+              ...GatsbyContentfulFixed_withWebp
+            }
+          }
+        }
+      }
+    }
+    caseStudies: allContentfulCaseStudy {
       edges {
         node {
           id

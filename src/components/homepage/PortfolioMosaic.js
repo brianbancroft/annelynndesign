@@ -1,17 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { PortfolioItem } from '.'
+import { PortfolioCaseStudy } from '.'
 
 const MiddleSection = styled('section')`
   width: 100vw;
   min-height: 100vh;
   background: #f5f4f4;
-
-  background: white;
-
-  @supports (display: grid) {
-    display: block;
-  }
 `
 
 const Grid = styled('div')`
@@ -44,21 +38,22 @@ const Title = styled('section')`
   }
 `
 
-const Line = styled('hr')`
-  border-top: 1px solid ${props => props.theme.color.primary};
-`
-
 const PortfolioMosaic = props => {
-  const portfolioItems = props.data.allContentfulCaseStudy.edges.map(
-    (i, key) => <PortfolioItem i={i} key={key} />
-  )
+  const caseStudies = props.data.caseStudies.edges.map((i, key) => (
+    <PortfolioCaseStudy i={i} key={key} />
+  ))
+
+  const singleSamples = props.data.samples.edges
+
+  console.log('Single samples ', singleSamples)
 
   return (
     <>
       <Title>Anne-Lynn Design</Title>
-      {/* <Line /> */}
       <MiddleSection>
-        <Grid>{portfolioItems}</Grid>
+        <Grid>
+          <>{caseStudies}</>
+        </Grid>
       </MiddleSection>
     </>
   )
