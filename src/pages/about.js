@@ -3,6 +3,7 @@ import { About } from '../components/homepage/'
 import { Layout } from '../components'
 import Helmet from 'react-helmet'
 import logo from '../images/logo.png'
+import { graphql } from 'gatsby'
 
 const meta = [
   {
@@ -78,7 +79,8 @@ const meta = [
   },
 ]
 
-const AboutPage = () => {
+const AboutPage = ({ data }) => {
+  console.log('Data ', data)
   return (
     <Layout>
       <Helmet title={`About | Anne-Lynn Design`} meta={meta} />

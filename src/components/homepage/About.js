@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useStaticQuery, graphql } from 'gatsby'
 import { AboutCopy, HobbyBlurb, SocialIcons } from '.'
-import { ProfileCircle, LowerHeader } from '../styled/'
+import Img from 'gatsby-image'
 
-import profilePhoto from '../../images/anne-lynn-bancroft.jpg'
+import { ProfileCircle, LowerHeader } from '../styled/'
 
 const Header = styled(LowerHeader)`
   z-index: 10;
@@ -120,6 +121,20 @@ const CopyContainer = styled('section')`
 `
 
 const About = () => {
+  const data = useStaticQuery(graphql`
+    query GetSingleImage {
+      aboutImage: file(relativePath: { eq: "anne-lynn.jpg" }) {
+        childImageSharp {
+          fixed(width: 160, height: 160) {
+            ...GatsbyImageSharpFixed_withWebp_tracedSVG
+          }
+        }
+      }
+    }
+  `)
+
+  const { childImageSharp: image } = data.aboutImage
+
   return (
     <>
       <MobileView>
@@ -127,11 +142,13 @@ const About = () => {
 
         <HeadshotRow>
           <PhotoElem>
-            <img
-              src={profilePhoto}
-              className="image"
-              alt="Anne-Lynn Bancroft"
-            />
+            {image && (
+              <Img
+                fixed={image.fixed}
+                className="image"
+                alt="Anne-Lynn Bancroft"
+              />
+            )}
           </PhotoElem>
         </HeadshotRow>
         <AboutCopy />
@@ -142,11 +159,13 @@ const About = () => {
           <CopyContainer>
             <Header>About</Header>
             <HeadShot>
-              <img
-                src={profilePhoto}
-                className="image"
-                alt="Anne-Lynn Bancroft"
-              />
+              {image && (
+                <Img
+                  fixed={image.fixed}
+                  className="image"
+                  alt="Anne-Lynn Bancroft"
+                />
+              )}
             </HeadShot>
             <AboutCopy full={true} />
           </CopyContainer>

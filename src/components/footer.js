@@ -16,7 +16,7 @@ import {
 const FooterBg = styled('footer')`
   position: fixed;
   bottom: 0;
-  z-index: 4;
+  z-index: 224;
   height: ${props => props.theme.footer.height};
   width: 100vw;
   background-color: ${props => props.portfolioHeaderColor || 'white'};
@@ -28,7 +28,7 @@ const FooterBg = styled('footer')`
 const FooterElement = styled('footer')`
   position: fixed;
   bottom: 0;
-  z-index: 8;
+  z-index: 248;
   height: ${props => props.theme.footer.height};
   width: 100vw;
 
@@ -47,7 +47,7 @@ const FooterLink = styled(Link)`
   padding-top: ${props => props.theme.footer.paddingTop};
   flex-direction: column;
   align-items: center;
-  z-index: 100;
+  z-index: 300;
 
   img {
     width: 70px;
