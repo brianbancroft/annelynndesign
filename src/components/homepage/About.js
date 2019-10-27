@@ -133,7 +133,8 @@ const About = () => {
     }
   `)
 
-  const { childImageSharp: image } = data.aboutImage
+  const image = data && data.aboutImage && data.aboutImage.childImageSharp
+  console.log('Data ', data)
 
   return (
     <>
