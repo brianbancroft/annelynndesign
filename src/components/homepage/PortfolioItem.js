@@ -87,9 +87,9 @@ const PortfolioItem = ({ previewImage, title }) => {
   return (
     <Item>
       {previewImage && <Img fluid={previewImage.fluid} />}
-      <ItemLabel>
+      {/* <ItemLabel>
         <p>{title}</p>
-      </ItemLabel>
+      </ItemLabel> */}
     </Item>
   )
 }

@@ -101,9 +101,9 @@ export const pageQuery = graphql`
           copy {
             copy
           }
-          mainImagevideo {
-            fixed(width: 300, height: 600) {
-              ...GatsbyContentfulFixed_withWebp
+          sampleImage: mainImagevideo {
+            fluid(maxWidth: 500) {
+              ...GatsbyContentfulFluid_withWebp
             }
           }
           previewImage {
