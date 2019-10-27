@@ -82,19 +82,16 @@ const Item = styled('div')`
   }
 
   ${ItemLabel} {
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: ${props => props.theme.mobileBreakpoint}) {
 
-    ${() =>
-      isMobile
-        ? css`
-            opacity: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          `
-        : css`
-            opacity: 0;
-            display: none;
-          `}
+      opacity: 0;
+      display: none;
+    }
+
   }
 `
 
