@@ -1,25 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 import { ProfileCircle, Paragraph } from '../styled/'
-
-import watercolour1 from '../../images/watercolour-1.jpg'
-import watercolour2 from '../../images/watercolour-2.jpg'
-import watercolour3 from '../../images/watercolour-3.jpg'
-
-import flower1 from '../../images/flower-1.jpg'
-import flower2 from '../../images/flower-2.jpg'
-import flower3 from '../../images/flower-3.jpg'
-
-import craft1 from '../../images/craft-1.jpg'
-import craft2 from '../../images/craft-2.jpg'
-import craft3 from '../../images/craft-3.jpg'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 const aboutAssets = [
   {
     photos: {
-      top: flower1,
-      middle: flower2,
-      bottom: flower3,
+      top: 'flower1',
+      middle: 'flower2',
+      bottom: 'flower3',
     },
     copy: (
       <>
@@ -32,9 +22,9 @@ const aboutAssets = [
   },
   {
     photos: {
-      top: watercolour1,
-      middle: watercolour2,
-      bottom: watercolour3,
+      top: 'watercolor1',
+      middle: 'watercolor2',
+      bottom: 'watercolor3',
     },
     copy: (
       <>
@@ -48,9 +38,9 @@ const aboutAssets = [
   },
   {
     photos: {
-      top: craft1,
-      middle: craft2,
-      bottom: craft3,
+      top: 'craft1',
+      middle: 'craft2',
+      bottom: 'craft3',
     },
     copy: (
       <>
@@ -115,6 +105,78 @@ const HobbyCopy = styled(Paragraph)`
 `
 
 const HobbyBlurb = () => {
+  const imageData = useStaticQuery(graphql`
+    query GetHobbyImages {
+      watercolor1: file(relativePath: { eq: "watercolour-1.jpg" }) {
+        childImageSharp {
+          fixed(width: 160, height: 160) {
+            ...GatsbyImageSharpFixed_withWebp_tracedSVG
+          }
+        }
+      }
+      watercolor2: file(relativePath: { eq: "watercolour-2.jpg" }) {
+        childImageSharp {
+          fixed(width: 160, height: 160) {
+            ...GatsbyImageSharpFixed_withWebp_tracedSVG
+          }
+        }
+      }
+      watercolor3: file(relativePath: { eq: "watercolour-3.jpg" }) {
+        childImageSharp {
+          fixed(width: 160, height: 160) {
+            ...GatsbyImageSharpFixed_withWebp_tracedSVG
+          }
+        }
+      }
+
+      flower1: file(relativePath: { eq: "flower-1.jpg" }) {
+        childImageSharp {
+          fixed(width: 160, height: 160) {
+            ...GatsbyImageSharpFixed_withWebp_tracedSVG
+          }
+        }
+      }
+      flower2: file(relativePath: { eq: "flower-2.jpg" }) {
+        childImageSharp {
+          fixed(width: 160, height: 160) {
+            ...GatsbyImageSharpFixed_withWebp_tracedSVG
+          }
+        }
+      }
+      flower3: file(relativePath: { eq: "flower-3.jpg" }) {
+        childImageSharp {
+          fixed(width: 160, height: 160) {
+            ...GatsbyImageSharpFixed_withWebp_tracedSVG
+          }
+        }
+      }
+
+      craft1: file(relativePath: { eq: "craft-1.jpg" }) {
+        childImageSharp {
+          fixed(width: 160, height: 160) {
+            ...GatsbyImageSharpFixed_withWebp_tracedSVG
+          }
+        }
+      }
+      craft2: file(relativePath: { eq: "craft-2.jpg" }) {
+        childImageSharp {
+          fixed(width: 160, height: 160) {
+            ...GatsbyImageSharpFixed_withWebp_tracedSVG
+          }
+        }
+      }
+      craft3: file(relativePath: { eq: "craft-3.jpg" }) {
+        childImageSharp {
+          fixed(width: 160, height: 160) {
+            ...GatsbyImageSharpFixed_withWebp_tracedSVG
+          }
+        }
+      }
+    }
+  `)
+
+  console.log('Image data ', imageData)
+
   // debugger
 
   const {
@@ -129,25 +191,31 @@ const HobbyBlurb = () => {
         <HobbyCopy>{copy}</HobbyCopy>
       </div>
       <ProfileCircle className="hobby-image">
-        <img
-          src={top}
-          className="image"
-          alt="This is the first thing that shows off a passion of mine"
-        />
+        {imageData[top] && (
+          <Img
+            fixed={imageData[top].childImageSharp.fixed}
+            className="image"
+            alt="This is the first thing that shows off a passion of mine"
+          />
+        )}
       </ProfileCircle>
       <ProfileCircle className="hobby-image">
-        <img
-          src={middle}
-          className="image"
-          alt="This is the second thing that shows off a passion of mine"
-        />
+        {imageData[middle] && (
+          <Img
+            fixed={imageData[middle].childImageSharp.fixed}
+            className="image"
+            alt="This is the second thing that shows off a passion of mine"
+          />
+        )}
       </ProfileCircle>
       <ProfileCircle className="hobby-image">
-        <img
-          src={bottom}
-          className="image"
-          alt="This is the third thing that shows off a passion of mine"
-        />
+        {imageData[bottom] && (
+          <Img
+            fixed={imageData[bottom].childImageSharp.fixed}
+            className="image"
+            alt="This is the third thing that shows off a passion of mine"
+          />
+        )}
       </ProfileCircle>
     </HobbySection>
   )
