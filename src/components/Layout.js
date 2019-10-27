@@ -1,14 +1,14 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import Helmet from 'react-helmet'
+import { Grommet } from 'grommet'
+import styled from 'styled-components'
+import { compose } from 'ramda'
+
 import './layout.css'
 import { theme } from '../helpers'
-import styled from 'styled-components'
-
-import { meta, helmetLink } from './layout-meta'
 import { Footer } from '.'
-
-import { compose } from 'ramda'
+import { meta, helmetLink } from './layout-meta'
 import { convertCSSToRGB, getValueFromRGB, lightOrDark } from '../helpers'
 
 const MainLayout = styled('main')`
@@ -25,7 +25,7 @@ const Layout = ({ children, portfolioHeaderColor } = {}) => {
     )({ color: portfolioHeaderColor })
 
   return (
-    <>
+    <Grommet theme={theme}>
       <Helmet link={helmetLink} meta={meta}>
         <html lang="en" />
       </Helmet>
@@ -38,7 +38,7 @@ const Layout = ({ children, portfolioHeaderColor } = {}) => {
           />
         </>
       </ThemeProvider>
-    </>
+    </Grommet>
   )
 }
 
