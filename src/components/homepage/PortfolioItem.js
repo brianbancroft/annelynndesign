@@ -78,8 +78,17 @@ const Item = styled('div')`
     }
   }
 
-  ${Img} {
+  ${Img}, ${ItemLabel} {
     z-index: 10;
+
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+      opacity: 0;
+      display: none;
+    }
   }
 `
 

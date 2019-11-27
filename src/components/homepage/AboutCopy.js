@@ -37,53 +37,51 @@ const AboutCopy = ({ full = false } = {}) =>
   full ? (
     <DesktopCopy>
       <p>
-        Originally from the Ottawa River Valley, I moved to Vancouver Island in
-        May 2019, and have been a designer since 2008. I have experience with
-        in-house teams, agencies, and contracting roles for both print and
-        packaging design. I also work as an independent contractor for all types
-        of clients.
+        Anne-Lynn Bancroft has been a designer since 2008 and is originally from
+        Saskatchewan, but grew up in the Ottawa River Valley. She has experience
+        working with in-house agencies for both big and small companies and has
+        worked in contract roles for print and packaging design. She currently
+        works as an independent contractor for all types of clientele.
       </p>
 
       <p>
-        I keep constant through research, and high-tempo production, and my
-        works stands out especially because my interest and knowledge in the
-        printing process, plus my need to maintain strong relationships with the
-        printers which I work with. Not only can I build new concepts, but my
-        experience in production art helps me move fast. I keep current by
-        branching out: As this site shows, I also design for the modern web in
-        an agile environment.
+        She is the kind of designer that will not only give you a final product
+        that looks amazing, but thinks about every aspect of the project like
+        how it will function on the web, or how will it get printed or even how
+        will it be used by the public. She keeps constant through research and
+        high-tempo production, and is always striving to try out something new
+        and keep up with the industry trends.
       </p>
 
       <p>
-        Outside of design, I also enjoy gardening, floral design, as well as
-        making things with my hands. And while I'm a long ways away from Regina,
-        I will always be a Roughriders fan.
+        Outside of design you'll usually find Anne-Lynn strolling in the forest,
+        or experimenting in the garden. Creating things is what she does best
+        weather it be a new logo design or getting her orchid to blossom again.
       </p>
     </DesktopCopy>
   ) : (
     <MobileCopy>
       <p>
-        Originally from the Ottawa River Valley, I moved to Vancouver Island in
-        May 2019, and have been a designer since 2008. I have experience with
-        in-house teams, agencies, and contracting roles for both print and
-        packaging design. I also work as an independent contractor for all types
-        of clients.
+        Anne-Lynn Bancroft has been a designer since 2008 and is originally from
+        Saskatchewan, but grew up in the Ottawa River Valley. She has experience
+        working with in-house agencies for both big and small companies and has
+        worked in contract roles for print and packaging design. She currently
+        works as an independent contractor for all types of clientele.
       </p>
 
       <p>
-        I keep constant through research, and high-tempo production, and my
-        works stands out especially because my interest and knowledge in the
-        printing process, plus my need to maintain strong relationships with the
-        printers which I work with. Not only can I build new concepts, but my
-        experience in production art helps me move fast. I keep current by
-        branching out: As this site shows, I also design for the modern web in
-        an agile environment.
+        She is the kind of designer that will not only give you a final product
+        that looks amazing, but thinks about every aspect of the project like
+        how it will function on the web, or how will it get printed or even how
+        will it be used by the public. She keeps constant through research and
+        high-tempo production, and is always striving to try out something new
+        and keep up with the industry trends.
       </p>
 
       <p>
-        Outside of design, I also enjoy gardening, floral design, as well as
-        making things with my hands. And while I'm a long ways away from Regina,
-        I will always be a Roughriders fan.
+        Outside of design you'll usually find Anne-Lynn strolling in the forest,
+        or experimenting in the garden. Creating things is what she does best
+        weather it be a new logo design or getting her orchid to blossom again.
       </p>
     </MobileCopy>
   )
