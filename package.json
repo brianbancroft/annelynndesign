@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "install": "^0.12.2",
-    "npm": "^6.9.0",
+    "npm": "^6.13.4",
     "prettier": "^1.16.4",
     "serve": "^10.1.1"
   },
