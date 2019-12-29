@@ -68,7 +68,7 @@ const Item = styled('div')`
 
   &:hover {
     &:after {
-      background: rgba(12, 154, 154, 0.9);
+      background: red;
       transition: background 0.5s ease-in-out;
     }
 
@@ -79,20 +79,23 @@ const Item = styled('div')`
   }
 
   ${Img}, ${ItemLabel} {
-    z-index: 10;
+    display: flex;
+    margin: 0 auto;
+
+    /* z-index: 10;
 
     opacity: 1;
     display: flex;
-    justify-content: center;
     align-items: center;
     @media (max-width: ${props => props.theme.mobileBreakpoint}) {
       opacity: 0;
       display: none;
-    }
+    } */
   }
 `
 
 const PortfolioItem = ({ previewImage, title }) => {
+  console.log('Preview image ', previewImage)
   return (
     <Item>
       {previewImage && <Img fluid={previewImage.fluid} />}
