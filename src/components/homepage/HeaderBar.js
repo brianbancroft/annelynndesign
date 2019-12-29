@@ -9,6 +9,7 @@ const Bar = styled('div')`
   justify-content: center;
   align-items: center;
   background: #e8fbf9;
+  margin-bottom: 60px;
 `
 
 const HeaderBar = () => {

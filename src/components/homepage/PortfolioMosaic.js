@@ -25,16 +25,29 @@ const Grid = styled('div')`
 `
 
 const Title = styled('section')`
-  font-size: 36px;
-  font-weight: 200;
+  font-size: 45px;
+  font-weight: 900;
   color: ${props => props.theme.color.primary};
   margin: 18px 0 10px 10px;
   text-transform: uppercase;
+  color: #111;
+  width: 100vw;
+  text-align: center;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     margin: 8px 0 0 8px;
     font-size: 24px;
   }
+`
+
+const Tagline = styled('section')`
+  color: #111;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 400;
+  width: 100vw;
+  text-align: center;
+  margin-bottom: 20px;
 `
 
 const PortfolioMosaic = props => {
@@ -50,6 +63,9 @@ const PortfolioMosaic = props => {
     <>
       <HeaderBar />
       <Title>Anne-Lynn Design</Title>
+      <Tagline>
+        I create brands that speak to both you and your customers
+      </Tagline>
       <MiddleSection>
         <Grid>
           <>
