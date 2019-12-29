@@ -60,31 +60,16 @@ const HobbySection = styled('section')`
   max-width: 600px;
   min-height: calc(100vh - ${props => props.theme.footer.height});
   margin-bottom: ${props => props.theme.footer.height};
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
   grid-template-columns: 240px 1fr;
   align-items: center;
   background: ${props => props.theme.color.light};
 
   .hobby-image {
-    grid-column: 1 / 2;
     justify-self: center;
   }
 
-  .open-quote {
-    color: ${props => props.theme.color.primary};
-
-    font-size: 230px;
-    font-size: 140px;
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
-    padding-left: 20px;
-    padding-top: 200px;
-    font-weight: 600;
-    font-family: auto;
-  }
-
   .hobby-copy {
-    grid-row: 2 / 4;
     grid-column: 2 / 3;
     align-self: flex-start;
     padding: 20px 25px;
@@ -93,7 +78,18 @@ const HobbySection = styled('section')`
   }
 `
 
+const HobbyImageContainer = styled('div')`
+  grid-column: 1 / 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+`
+
 const HobbyCopy = styled(Paragraph)`
+  padding-top: 50px;
   font-weight: 100;
   font-size: 28px;
   line-height: 40px;
@@ -175,10 +171,6 @@ const HobbyBlurb = () => {
     }
   `)
 
-  console.log('Image data ', imageData)
-
-  // debugger
-
   const {
     photos: { top, middle, bottom },
     copy,
@@ -186,37 +178,38 @@ const HobbyBlurb = () => {
 
   return (
     <HobbySection>
-      <div className="open-quote">“</div>
       <div className="hobby-copy">
         <HobbyCopy>{copy}</HobbyCopy>
       </div>
-      <ProfileCircle className="hobby-image">
-        {imageData[top] && (
-          <Img
-            fixed={imageData[top].childImageSharp.fixed}
-            className="image"
-            alt="This is the first thing that shows off a passion of mine"
-          />
-        )}
-      </ProfileCircle>
-      <ProfileCircle className="hobby-image">
-        {imageData[middle] && (
-          <Img
-            fixed={imageData[middle].childImageSharp.fixed}
-            className="image"
-            alt="This is the second thing that shows off a passion of mine"
-          />
-        )}
-      </ProfileCircle>
-      <ProfileCircle className="hobby-image">
-        {imageData[bottom] && (
-          <Img
-            fixed={imageData[bottom].childImageSharp.fixed}
-            className="image"
-            alt="This is the third thing that shows off a passion of mine"
-          />
-        )}
-      </ProfileCircle>
+      <HobbyImageContainer>
+        <ProfileCircle className="hobby-image">
+          {imageData[top] && (
+            <Img
+              fixed={imageData[top].childImageSharp.fixed}
+              className="image"
+              alt="This is the first thing that shows off a passion of mine"
+            />
+          )}
+        </ProfileCircle>
+        <ProfileCircle className="hobby-image">
+          {imageData[middle] && (
+            <Img
+              fixed={imageData[middle].childImageSharp.fixed}
+              className="image"
+              alt="This is the second thing that shows off a passion of mine"
+            />
+          )}
+        </ProfileCircle>
+        <ProfileCircle className="hobby-image">
+          {imageData[bottom] && (
+            <Img
+              fixed={imageData[bottom].childImageSharp.fixed}
+              className="image"
+              alt="This is the third thing that shows off a passion of mine"
+            />
+          )}
+        </ProfileCircle>
+      </HobbyImageContainer>
     </HobbySection>
   )
 }

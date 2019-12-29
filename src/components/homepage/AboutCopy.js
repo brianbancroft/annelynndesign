@@ -8,6 +8,11 @@ const Copy = styled('article')`
   color: ${props => props.theme.color.primary};
   max-width: 450px;
   width: 75%;
+  margin-bottom: 100px;
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    margin-bottom: 0;
+  }
 `
 
 const MobileCopy = styled(Copy)`
