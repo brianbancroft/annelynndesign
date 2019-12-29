@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { PortfolioCaseStudy, PortfolioSample } from '.'
+import { PortfolioCaseStudy, PortfolioSample, HeaderBar } from '.'
 
 const MiddleSection = styled('section')`
   width: 100vw;
@@ -48,6 +48,7 @@ const PortfolioMosaic = props => {
 
   return (
     <>
+      <HeaderBar />
       <Title>Anne-Lynn Design</Title>
       <MiddleSection>
         <Grid>
