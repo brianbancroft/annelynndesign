@@ -28,14 +28,14 @@ const Title = styled('section')`
   font-size: 45px;
   font-weight: 900;
   color: ${props => props.theme.color.primary};
-  margin: 18px 0 10px 10px;
+  margin: 18px 0 30px 10px;
   text-transform: uppercase;
   color: #111;
   width: 100vw;
   text-align: center;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    margin: 8px 0 0 8px;
+    margin: 8px 0 10px 8px;
     font-size: 24px;
   }
 `
@@ -45,37 +45,37 @@ const Tagline = styled('section')`
   font-size: 18px;
   text-transform: uppercase;
   font-weight: 400;
-  width: 100vw;
+  width: 90vw;
+  margin: 0 auto;
   text-align: center;
   margin-bottom: 20px;
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    margin: 8px auto 10px auto;
+    font-size: 14px;
+  }
 `
 
-const PortfolioMosaic = props => {
-  const caseStudies = props.data.caseStudies.edges.map((i, key) => (
-    <PortfolioCaseStudy i={i} key={key} />
-  ))
+const CaseStudies = ({ caseStudies }) =>
+  caseStudies.edges.map((i, key) => <PortfolioCaseStudy i={i} key={key} />)
 
-  const samples = props.data.samples.edges.map((i, key) => (
-    <PortfolioSample i={i} key={key} />
-  ))
+const Samples = ({ samples }) =>
+  samples.edges.map((i, key) => <PortfolioSample i={i} key={key} />)
 
-  return (
-    <>
-      <HeaderBar />
-      <Title>Anne-Lynn Design</Title>
-      <Tagline>
-        I create brands that speak to both you and your customers
-      </Tagline>
-      <MiddleSection>
-        <Grid>
-          <>
-            {caseStudies}
-            {samples}
-          </>
-        </Grid>
-      </MiddleSection>
-    </>
-  )
-}
+const PortfolioMosaic = props => (
+  <>
+    <HeaderBar />
+    <Title>Anne-Lynn Design</Title>
+    <Tagline>I create brands that speak to both you and your customers</Tagline>
+    <MiddleSection>
+      <Grid>
+        <>
+          <CaseStudies caseStudies={props.data.caseStudies} />
+          <Samples samples={props.data.samples} />
+        </>
+      </Grid>
+    </MiddleSection>
+  </>
+)
 
 export default PortfolioMosaic
