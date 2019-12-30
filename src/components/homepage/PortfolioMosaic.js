@@ -35,7 +35,7 @@ const Title = styled('section')`
   text-align: center;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    margin: 8px 0 10px 8px;
+    margin: 0 0 10px 8px;
     font-size: 24px;
   }
 `
@@ -51,7 +51,7 @@ const Tagline = styled('section')`
   margin-bottom: 20px;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    margin: 8px auto 10px auto;
+    margin: 0px auto 20px auto;
     font-size: 14px;
   }
 `

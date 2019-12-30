@@ -9,7 +9,11 @@ const Bar = styled('div')`
   justify-content: center;
   align-items: center;
   background: #e8fbf9;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    margin-bottom: 25px;
+  }
 `
 
 const HeaderBar = () => {
