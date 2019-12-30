@@ -11,6 +11,9 @@ import {
   FullBoxSolid,
   UserCircle,
   UserCircleSolid,
+  IconAbout,
+  IconContact,
+  IconPortfolio,
 } from './svg'
 
 const FooterBg = styled('footer')`
