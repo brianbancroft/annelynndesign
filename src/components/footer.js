@@ -7,13 +7,10 @@ import { Link } from 'gatsby'
 import {
   Comment,
   CommentSolid,
-  FullBox,
-  FullBoxSolid,
+  Portfolio,
+  PortfolioSolid,
   UserCircle,
   UserCircleSolid,
-  IconAbout,
-  IconContact,
-  IconPortfolio,
 } from './svg'
 
 const FooterBg = styled('footer')`
@@ -146,7 +143,11 @@ const Footer = ({ portfolioHeaderColor, iconAltColor } = {}) => {
                   location={location.pathname}
                   iconAltColor={iconAltColor}
                 >
-                  {location.pathname === '/' ? <FullBoxSolid /> : <FullBox />}
+                  {location.pathname === '/' ? (
+                    <PortfolioSolid />
+                  ) : (
+                    <Portfolio />
+                  )}
                 </PackageIcon>
               </FooterLink>
               <FooterLink to="/about" islocation={isAbout}>
