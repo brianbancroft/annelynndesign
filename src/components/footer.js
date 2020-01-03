@@ -115,12 +115,6 @@ const Icon = styled('div')`
   height: 60px;
   width: 60px;
   margin-top: 10px;
-  path {
-    fill: ${props =>
-      /\/portfolio\//.test(props.location)
-        ? props.theme.color[props.iconAltColor]
-        : props.theme.color.primary};
-  }
 `
 
 const PackageIcon = styled(Icon)`
