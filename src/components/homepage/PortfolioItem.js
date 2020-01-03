@@ -68,7 +68,7 @@ const Item = styled('div')`
 
   &:hover {
     &:after {
-      background: red;
+      background: ${props => props.theme.color.primary};
       transition: background 0.5s ease-in-out;
     }
 
