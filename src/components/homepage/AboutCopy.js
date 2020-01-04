@@ -5,7 +5,7 @@ const Copy = styled('article')`
   line-height: ${props => props.theme.copy.lineHeight};
   font-weight: ${props => props.theme.copy.fontWeight};
   font-size: 13px;
-  color: ${props => props.theme.color.primary};
+  color: ${props => props.theme.color.copy};
   max-width: 450px;
   width: 75%;
   margin-bottom: 100px;

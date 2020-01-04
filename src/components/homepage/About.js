@@ -9,7 +9,7 @@ import { ProfileCircle, LowerHeader } from '../styled/'
 const Header = styled(LowerHeader)`
   z-index: 10;
   padding-top: 50px;
-  margin-bottom: 0px;
+  margin-left: 60px;
   width: 100%;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
@@ -26,7 +26,7 @@ const MobileView = styled('main')`
   }
 
   h2 {
-    color: ${props => props.theme.color.primary};
+    color: ${props => props.theme.color.copy};
     font-family: ${props => props.theme.h2.fontFamily};
     letter-spacing: ${props => props.theme.h2.letterSpacing};
     transform: ${props => props.theme.h2.transform};
@@ -51,7 +51,7 @@ const DesktopView = styled('main')`
   }
 
   h2 {
-    color: ${props => props.theme.color.primary};
+    color: ${props => props.theme.color.copy};
     font-family: ${props => props.theme.h2.fontFamily};
     letter-spacing: ${props => props.theme.h2.letterSpacing};
     transform: ${props => props.theme.h2.transform};
@@ -115,7 +115,6 @@ const About = () => {
   `)
 
   const image = data && data.aboutImage && data.aboutImage.childImageSharp
-  console.log('Data ', data)
 
   return (
     <>

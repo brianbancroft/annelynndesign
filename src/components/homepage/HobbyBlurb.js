@@ -93,7 +93,7 @@ const HobbyCopy = styled(Paragraph)`
   font-weight: 100;
   font-size: 28px;
   line-height: 40px;
-  color: ${props => props.theme.color.primary};
+  color: ${props => props.theme.color.copy};
 
   strong {
     font-weight: 500;

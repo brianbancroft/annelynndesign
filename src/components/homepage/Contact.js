@@ -37,12 +37,12 @@ const ContactCopyContainer = styled('section')`
 `
 
 const AboutParagraph = styled(Paragraph)`
-  font-weight: 200;
+  font-weight: 400;
   font-size: 28px;
   line-height: 40px;
 
   strong {
-    font-weight: 500;
+    font-weight: 700;
   }
 `
 
@@ -53,16 +53,16 @@ const Contact = () => {
         <ContactForm />
       </ContactFormContainer>
       <ContactCopyContainer>
+        <SocialIcons />
         <section>
-          <AboutParagraph color="primary">
-            I’m a skilled graphic designer specializing in visual communication.
-            I create company <strong>branding</strong>, <strong>signage</strong>
-            , <strong>store experience</strong>, <strong>flyers</strong>,
-            <strong>posters</strong>, <strong>packaging</strong> as well as{' '}
+          <AboutParagraph>
+            I specialize in visual communication. I create company{' '}
+            <strong>branding</strong>, <strong>signage</strong>,{' '}
+            <strong>store experience</strong>, <strong>flyers</strong>,
+            <strong> posters</strong>, <strong>packaging</strong> as well as{' '}
             <strong>website design</strong>. I help your ideas get noticed.
           </AboutParagraph>
         </section>
-        <SocialIcons />
       </ContactCopyContainer>
     </ContactView>
   )

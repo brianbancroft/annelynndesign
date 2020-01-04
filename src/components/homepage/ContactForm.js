@@ -10,8 +10,7 @@ const ContactSection = styled('section')`
   display: flex;
   flex-direction: column;
   z-index: 2;
-
-  color: ${props => props.theme.color.primary};
+  color: ${props => props.theme.color.copy};
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     margin-left: 0;
@@ -20,6 +19,8 @@ const ContactSection = styled('section')`
 
   label {
     line-height: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
     text-transform: uppercase;
   }
 `
@@ -27,7 +28,7 @@ const ContactSection = styled('section')`
 const Header = styled(LowerHeader)`
   z-index: 10;
   padding-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   width: 100%;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
@@ -50,7 +51,7 @@ const FormInput = styled('input')`
   padding: 10px 20px;
   border: none;
   width: 450px;
-  margin: 8px 0;
+  margin: 0 0 8px 0;
   box-sizing: border-box;
   border: none;
   text-transform: uppercase;
@@ -65,10 +66,11 @@ const FormInput = styled('input')`
 
 const SubmitInput = styled('input')`
   width: 450px;
-  color: ${props => props.theme.color.primary};
+  color: ${props => props.theme.color.light};
   text-transform: uppercase;
-  font-weight: 600;
-  background-color: ${props => props.theme.color.formSubmitBackground};
+  font-weight: 900;
+  font-size: 1.3rem;
+  background-color: ${props => props.theme.color.tertiary};
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
@@ -107,7 +109,6 @@ const TextInput = styled('textarea')`
 
 const ContactForm = () => (
   <ContactSection>
-    <Header>Contact</Header>
     <FormContainer>
       <form
         name="contactAnneLynn"
@@ -115,6 +116,7 @@ const ContactForm = () => (
         data-netlify="true"
         data-netlify-honeypot="bot-field"
       >
+        <Header>Contact</Header>
         <input type="hidden" name="form-name" value="contactAnneLynn" />
         <label>name</label>
         <FormInput type="text" name="name" />
@@ -122,10 +124,7 @@ const ContactForm = () => (
         <FormInput type="text" name="email" />
         <label>message</label>
 
-        <TextInput
-          name="comment"
-          defaultValue="Hi there, I just saw your site and I'd like to talk more!"
-        />
+        <TextInput name="comment" defaultValue="" />
 
         <SubmitInput type="submit" />
       </form>

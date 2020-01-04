@@ -8,6 +8,7 @@ const color = {
   default: '#222',
   formBackground: 'rgba(30, 157, 186, 0.1)',
   formSubmitBackground: 'rgba(30, 157, 186, 0.25)',
+  copy: '#151515',
 }
 
 const theme = {
