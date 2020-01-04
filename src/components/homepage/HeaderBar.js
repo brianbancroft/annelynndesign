@@ -13,6 +13,11 @@ const Bar = styled('div')`
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     margin-bottom: 25px;
+    height: 90px;
+
+    img {
+      width: 50px;
+    }
   }
 `
 
