@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 
 import { Paragraph } from '../styled'
-import { SocialIcons, ContactForm } from '.'
+import { SocialIcons, ContactForm, HeaderBar } from '.'
 
 const ContactView = styled('div')`
   display: grid;
@@ -48,23 +48,26 @@ const AboutParagraph = styled(Paragraph)`
 
 const Contact = () => {
   return (
-    <ContactView>
-      <ContactFormContainer>
-        <ContactForm />
-      </ContactFormContainer>
-      <ContactCopyContainer>
-        <SocialIcons />
-        <section>
-          <AboutParagraph>
-            I specialize in visual communication. I create company{' '}
-            <strong>branding</strong>, <strong>signage</strong>,{' '}
-            <strong>store experience</strong>, <strong>flyers</strong>,
-            <strong> posters</strong>, <strong>packaging</strong> as well as{' '}
-            <strong>website design</strong>. I help your ideas get noticed.
-          </AboutParagraph>
-        </section>
-      </ContactCopyContainer>
-    </ContactView>
+    <>
+      <HeaderBar />
+      <ContactView>
+        <ContactFormContainer>
+          <ContactForm />
+        </ContactFormContainer>
+        <ContactCopyContainer>
+          <SocialIcons />
+          <section>
+            <AboutParagraph>
+              I specialize in visual communication. I create company{' '}
+              <strong>branding</strong>, <strong>signage</strong>,{' '}
+              <strong>store experience</strong>, <strong>flyers</strong>,
+              <strong> posters</strong>, <strong>packaging</strong> as well as{' '}
+              <strong>website design</strong>. I help your ideas get noticed.
+            </AboutParagraph>
+          </section>
+        </ContactCopyContainer>
+      </ContactView>
+    </>
   )
 }
 
