@@ -1,26 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import linkedinIcon from '../../images/linkedin.svg'
-import twitterIcon from '../../images/twitter.svg'
-import instagramIcon from '../../images/instagram.svg'
+import { LinkedinLogo, TwitterLogo, InstagramLogo } from '../svg'
 
 const SocialMediaIcons = styled('section')`
   width: 320px;
   height: 100px;
   display: flex;
-  margin: 0 auto;
-  justify-content: space-around;
+  justify-content: space-between;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.7);
-
-  .icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 100px;
-
-    background: ${props => props.icon};
-  }
 `
 
 const SocialIcons = () => (
@@ -30,25 +19,21 @@ const SocialIcons = () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img className="icon" src={instagramIcon} alt="follow me on instagram" />
+      <InstagramLogo width="80px" />
     </a>
     <a
       href="https://twitter.com/annelynndesign"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img className="icon" src={twitterIcon} alt="follow me on twitter" />
+      <TwitterLogo width="80px" />
     </a>
     <a
       href="https://www.linkedin.com/in/annelynndesign/"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img
-        className="icon"
-        src={linkedinIcon}
-        alt="connect with me on linkedin"
-      />
+      <LinkedinLogo width="80px" />
     </a>
   </SocialMediaIcons>
 )

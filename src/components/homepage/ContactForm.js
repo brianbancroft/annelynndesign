@@ -5,7 +5,6 @@ import { LowerHeader } from '../styled'
 
 const ContactSection = styled('section')`
   width: 100%;
-  height: 100vh;
   margin-left: 0 auto;
   display: flex;
   flex-direction: column;

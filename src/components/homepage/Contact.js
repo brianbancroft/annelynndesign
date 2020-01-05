@@ -6,7 +6,6 @@ import { SocialIcons, ContactForm, HeaderBar } from '.'
 
 const ContactView = styled('div')`
   display: grid;
-  min-height: calc(100vh - 100px);
   grid-template-columns: 1fr;
 
   @media (min-width: ${props => props.theme.mobileBreakpoint}) {
@@ -30,7 +29,7 @@ const ContactFormContainer = styled('section')`
 
 const ContactCopyContainer = styled('section')`
   display: block;
-  padding: 150px 120px 0 60px;
+  padding: 40px 120px 0 60px;
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     display: none;
   }
@@ -41,6 +40,7 @@ const AboutParagraph = styled(Paragraph)`
   font-size: 28px;
   line-height: 40px;
 
+  margin: 20px 0 0 8px;
   strong {
     font-weight: 700;
   }
