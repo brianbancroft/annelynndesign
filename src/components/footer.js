@@ -117,12 +117,12 @@ const Icon = styled('div')`
   margin-top: 10px;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
 
     svg {
-      width: 30px !important;
-      height: 30px !important;
+      width: 40px !important;
+      height: 40px !important;
     }
   }
 `
