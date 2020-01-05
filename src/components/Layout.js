@@ -13,6 +13,8 @@ import { convertCSSToRGB, getValueFromRGB, lightOrDark } from '../helpers'
 
 const MainLayout = styled('main')`
   height: ${props => `calc(100vh - ${props.theme.footer.height})`};
+  overflow-y: scroll;
+  overflow-x: hidden;
 `
 
 const Layout = ({ children, portfolioHeaderColor } = {}) => {
