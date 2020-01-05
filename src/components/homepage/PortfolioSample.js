@@ -7,10 +7,10 @@ import { PortfolioItem } from '.'
 
 const ModalContainer = styled('section')`
   width: 100vw;
-  padding: 0 10px;
+  padding: 10px;
 
-  height: ${props => `calc(100vh - ${props.theme.footer.mobile.height})`};
-  margin-bottom: ${props => props.theme.footer.mobile.height};
+  height: ${props => `calc(100vh - ${props.theme.footer.height})`};
+  margin-bottom: ${props => props.theme.footer.height};
 
   z-index: 800;
   background: ${props => props.theme.color.dark};
@@ -18,8 +18,10 @@ const ModalContainer = styled('section')`
 
   display: grid;
 
-  grid-template-rows: 30px 1fr 20px 40px 120px 0.25fr;
-  grid-template-columns: 1fr 20px 0.25fr 0.25fr 0.25fr 0.25fr;
+  grid-template-rows: 30px 0.4fr 2.5rem 1fr;
+  grid-template-columns: 1fr 0.75fr 0.25fr;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     height: ${props => `calc(100vh - ${props.theme.footer.mobile.height})`};
@@ -29,12 +31,14 @@ const ModalContainer = styled('section')`
 
 const ExitInstruction = styled('div')`
   grid-row: 1 / 2;
-  grid-column: 6 / 7;
+  grid-column: 3 /4;
+  justify-self: end;
   color: white;
 
   transition: color 0.35s ease-in-out;
   user-select: none;
   cursor: pointer;
+  font-size: 40px;
 
   &:hover {
     color: ${props => props.theme.color.tertiary};
@@ -42,13 +46,14 @@ const ExitInstruction = styled('div')`
 `
 
 const ImageContainer = styled('div')`
-  width: 100%;
-  height: 100%;
-  grid-row: 2 / 5;
+  grid-row: 1 / 5;
   grid-column: 1 / 2;
+  padding: 10px;
+  align-self: center;
 `
+
 const TitleContainer = styled('div')`
-  grid-column: 3 / 7;
+  grid-column: 2 / 4;
   grid-row: 3 / 4;
 
   font-weight: 200;
@@ -56,8 +61,8 @@ const TitleContainer = styled('div')`
 `
 
 const CopyContainer = styled('div')`
-  grid-column: 3 / 7;
-  grid-row: 5 / 6;
+  grid-column: 2 / 4;
+  grid-row: 4 / 5;
 
   font-weight: 500;
 `
@@ -87,7 +92,7 @@ const PortfolioSample = item => {
           {' '}
           <ModalContainer>
             <ExitInstruction onClick={() => setOverlay(false)}>
-              Click to exit
+              X
             </ExitInstruction>
             <ImageContainer>
               {sampleImage && <Img fluid={sampleImage.fluid} />}
