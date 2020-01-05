@@ -54,7 +54,7 @@ const FormInput = styled('input')`
   box-sizing: border-box;
   border: none;
   text-transform: uppercase;
-  background-color: ${props => props.theme.color.formBackground};
+  background-color: ${props => props.theme.color.accent4};
   @media (max-width: 500px) {
     width: 325px;
   }
@@ -91,12 +91,12 @@ const TextInput = styled('textarea')`
   width: 450px;
   height: 160px;
   margin-top: 8px;
-  color: #1e9dba;
+  color: ${props => props.theme.color.copy};
   resize: none;
   font-size: 15px;
   padding: 10px 20px;
   border: none;
-  background-color: ${props => props.theme.color.formBackground};
+  background-color: ${props => props.theme.color.accent4};
 
   @media (max-width: 500px) {
     width: 325px;
