@@ -65,8 +65,6 @@ const CopyContainer = styled('div')`
 const PortfolioSample = item => {
   const [overlay, setOverlay] = useState(false)
 
-  console.log('Item ', item)
-
   const {
     i: {
       node: {

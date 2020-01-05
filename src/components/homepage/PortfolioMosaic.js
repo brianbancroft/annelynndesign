@@ -58,10 +58,11 @@ const Tagline = styled('section')`
 `
 
 const CaseStudies = ({ caseStudies }) =>
+  caseStudies &&
   caseStudies.edges.map((i, key) => <PortfolioCaseStudy i={i} key={key} />)
 
 const Samples = ({ samples }) =>
-  samples.edges.map((i, key) => <PortfolioSample i={i} key={key} />)
+  samples && samples.edges.map((i, key) => <PortfolioSample i={i} key={key} />)
 
 const PortfolioMosaic = props => (
   <>
