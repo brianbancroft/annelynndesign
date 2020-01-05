@@ -26,6 +26,9 @@ const ModalContainer = styled('section')`
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     height: ${props => `calc(100vh - ${props.theme.footer.mobile.height})`};
     margin-bottom: ${props => props.theme.footer.mobile.height};
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px 0.5fr 2rem 1fr;
   }
 `
 
@@ -43,6 +46,11 @@ const ExitInstruction = styled('div')`
   &:hover {
     color: ${props => props.theme.color.tertiary};
   }
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    font-size: 30px;
+    grid-row: 1 / 2;
+  }
 `
 
 const ImageContainer = styled('div')`
@@ -50,6 +58,13 @@ const ImageContainer = styled('div')`
   grid-column: 1 / 2;
   padding: 10px;
   align-self: center;
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    max-width: 70vw;
+    margin-left: 15vw;
+  }
 `
 
 const TitleContainer = styled('div')`
@@ -58,6 +73,11 @@ const TitleContainer = styled('div')`
 
   font-weight: 200;
   font-size: 2.5rem;
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+  }
 `
 
 const CopyContainer = styled('div')`
@@ -65,6 +85,11 @@ const CopyContainer = styled('div')`
   grid-row: 4 / 5;
 
   font-weight: 500;
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    grid-row: 4 / 5;
+    grid-column: 1 / 2;
+  }
 `
 
 const PortfolioSample = item => {
