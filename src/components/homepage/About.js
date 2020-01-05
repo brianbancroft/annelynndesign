@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
-import { AboutCopy, HobbyBlurb, SocialIcons, HeaderBar } from '.'
+import { AboutCopy, HobbyBlurb, HeaderBar } from '.'
 import Img from 'gatsby-image'
 
 import { ProfileCircle, LowerHeader } from '../styled/'
@@ -151,7 +151,6 @@ const About = () => {
             </HeadShot>
             <AboutCopy full={true} />
           </CopyContainer>
-          <SocialIcons />
         </section>
       </DesktopView>
     </>
