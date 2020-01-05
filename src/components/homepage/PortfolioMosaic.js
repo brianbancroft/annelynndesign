@@ -16,12 +16,12 @@ const Grid = styled('div')`
   grid-column-gap: 10px;
   grid-auto-rows: 300px;
   grid-auto-flow: row dense;
-  margin-bottom: ${props => `calc(${props.theme.footer.height} + 20px)`};
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 190px;
     padding: 0px;
+    margin-bottom: calc(1.2 * ${props => props.theme.footer.mobile.height});
   }
 `
 

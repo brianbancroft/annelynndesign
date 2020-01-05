@@ -13,8 +13,17 @@ import { convertCSSToRGB, getValueFromRGB, lightOrDark } from '../helpers'
 
 const MainLayout = styled('main')`
   height: ${props => `calc(100vh - ${props.theme.footer.height})`};
-  overflow-y: scroll;
+  -webkit-font-smoothing: auto;
   overflow-x: hidden;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    height: ${props => `calc(100vh - ${props.theme.footer.mobile.height})`};
+  }
 `
 
 const Layout = ({ children, portfolioHeaderColor } = {}) => {

@@ -23,7 +23,7 @@ const ContactFormContainer = styled('section')`
   padding-top: 20px;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    margin-bottom: calc(2 * ${props => props.theme.footer.mobile.height});
+    margin-bottom: calc(1.2 * ${props => props.theme.footer.mobile.height});
   }
 `
 

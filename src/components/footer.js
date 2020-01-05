@@ -115,6 +115,16 @@ const Icon = styled('div')`
   height: 60px;
   width: 60px;
   margin-top: 10px;
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    width: 30px;
+    height: 30px;
+
+    svg {
+      width: 30px !important;
+      height: 30px !important;
+    }
+  }
 `
 
 const PackageIcon = styled(Icon)`

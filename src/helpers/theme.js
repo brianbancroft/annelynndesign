@@ -22,7 +22,7 @@ const theme = {
     paddingTop: '5px',
     height: '100px',
     mobile: {
-      height: '140px',
+      height: '80px',
     },
   },
   fontFamily: `'Raleway', sans-serif`,

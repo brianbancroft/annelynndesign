@@ -19,7 +19,7 @@ const Header = styled(LowerHeader)`
 
 const MobileView = styled('main')`
   display: none;
-  margin-bottom: calc(2 * ${props => props.theme.footer.mobile.height});
+  margin-bottom: calc(1.2 * ${props => props.theme.footer.mobile.height});
   @media (max-width: 900px) {
     display: block;
     width: 100vw;
