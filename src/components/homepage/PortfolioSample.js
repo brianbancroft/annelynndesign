@@ -12,7 +12,6 @@ const ModalContainer = styled('section')`
   height: ${props => `calc(100vh - ${props.theme.footer.height})`};
   margin-bottom: ${props => props.theme.footer.height};
 
-  z-index: 800;
   background: ${props => props.theme.color.dark};
   color: white;
 
@@ -20,15 +19,14 @@ const ModalContainer = styled('section')`
 
   grid-template-rows: 30px 0.4fr 2.5rem 1fr;
   grid-template-columns: 1fr 0.75fr 0.25fr;
-  grid-row-gap: 20px;
   grid-column-gap: 20px;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     height: ${props => `calc(100vh - ${props.theme.footer.mobile.height})`};
-    margin-bottom: ${props => props.theme.footer.mobile.height};
+    grid-row-gap: 5px;
 
     grid-template-columns: 1fr;
-    grid-template-rows: 30px 0.5fr 2rem 1fr;
+    grid-template-rows: 30px 47vh 2.5rem 1fr;
   }
 `
 
@@ -60,10 +58,11 @@ const ImageContainer = styled('div')`
   align-self: center;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    grid-row: 2 / 3;
+    grid-row: 1 / 3;
     grid-column: 1 / 2;
     max-width: 70vw;
     margin-left: 15vw;
+    margin-top: 20px;
   }
 `
 
@@ -75,8 +74,14 @@ const TitleContainer = styled('div')`
   font-size: 2.5rem;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    border-top: 1px solid white;
+    padding-top: 8px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding-left: 5px;
     grid-row: 3 / 4;
     grid-column: 1 / 2;
+    font-size: 2rem;
   }
 `
 
@@ -89,6 +94,7 @@ const CopyContainer = styled('div')`
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     grid-row: 4 / 5;
     grid-column: 1 / 2;
+    padding-left: 5px;
   }
 `
 
