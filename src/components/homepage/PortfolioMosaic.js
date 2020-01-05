@@ -21,6 +21,7 @@ const Grid = styled('div')`
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 190px;
+    padding: 0px;
   }
 `
 

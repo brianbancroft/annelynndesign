@@ -49,8 +49,9 @@ const Item = styled('div')`
   border: 1px solid #eee;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    height: 190px;
-    width: 190px;
+    /* height: 190px; */
+    width: 45vw;
+    height: 45vw;
   }
 
   &:after {
