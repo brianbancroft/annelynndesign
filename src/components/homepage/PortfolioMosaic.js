@@ -6,10 +6,12 @@ const MiddleSection = styled('section')`
   width: 100vw;
   min-height: 100vh;
   background: #f5f4f4;
+  padding: 40px 0;
 
   hr {
     border-top: 4px solid #c4c4c4;
     width: 95%;
+    margin-bottom: 15px;
   }
 `
 
@@ -35,7 +37,6 @@ const Grid = styled('div')`
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 190px;
     padding: 0px;
-    margin-bottom: calc(1.2 * ${props => props.theme.footer.mobile.height});
   }
 `
 
