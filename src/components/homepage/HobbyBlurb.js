@@ -82,10 +82,13 @@ const HobbyImageContainer = styled('div')`
   grid-column: 1 / 2;
   grid-row: 1;
   display: flex;
+  align-self: start;
+  margin-top: 60px;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   height: 100%;
+  max-height: 680px;
 `
 
 const HobbyCopy = styled(Paragraph)`
