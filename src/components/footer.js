@@ -142,8 +142,6 @@ const Footer = ({ portfolioHeaderColor, iconAltColor } = {}) => {
         const iconColor =
           isHome || isAbout || isContact ? '#19D3C5' : iconAltColor
 
-        console.log('icon color ', iconColor)
-
         return (
           <>
             <FooterElement id="siteFooter">

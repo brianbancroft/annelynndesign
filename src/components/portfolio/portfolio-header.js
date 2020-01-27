@@ -3,8 +3,7 @@ import styled from 'styled-components'
 
 const HeaderSection = styled('section')`
   background: ${props => props.backgroundColor || '#1402ba'};
-  color: ${props =>
-    props.theme.color[props.headerSectionTextColor] || '#efefef'};
+  color: ${props => props.headerSectionTextColor || '#efefef'};
   width: 100vw;
   height: calc(100vh - ${props => props.theme.footer.height});
   min-height: 100vh;
