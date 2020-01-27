@@ -135,40 +135,42 @@ const Footer = ({ portfolioHeaderColor, iconAltColor } = {}) => {
   return (
     <Location>
       {({ location }) => {
-        const isHome = (location.pathname === '/').toString()
-        const isAbout = (location.pathname === '/about').toString()
-        const isContact = (location.pathname === '/contact').toString()
+        const isHome = location.pathname === '/'
+        const isAbout = location.pathname === '/about'
+        const isContact = location.pathname === '/contact'
+
+        const iconColor =
+          isHome || isAbout || isContact ? '#19D3C5' : iconAltColor
+
+        console.log('icon color ', iconColor)
 
         return (
           <>
             <FooterElement id="siteFooter">
-              <FooterLink to="/" islocation={isHome}>
-                <PackageIcon
-                  location={location.pathname}
-                  iconAltColor={iconAltColor}
-                >
+              <FooterLink to="/">
+                <PackageIcon>
                   {location.pathname === '/' ? (
-                    <PortfolioSolid />
+                    <PortfolioSolid fill={iconColor} />
                   ) : (
-                    <Portfolio />
+                    <Portfolio fill={iconColor} />
                   )}
                 </PackageIcon>
               </FooterLink>
-              <FooterLink to="/about" islocation={isAbout}>
+              <FooterLink to="/about">
                 <Icon location={location.pathname} iconAltColor={iconAltColor}>
                   {location.pathname === '/about' ? (
-                    <UserCircleSolid />
+                    <UserCircleSolid fill={iconColor} />
                   ) : (
-                    <UserCircle />
+                    <UserCircle fill={iconColor} />
                   )}
                 </Icon>
               </FooterLink>
-              <FooterLink to="/contact" islocation={isContact}>
+              <FooterLink to="/contact">
                 <Icon location={location.pathname} iconAltColor={iconAltColor}>
                   {location.pathname === '/contact' ? (
-                    <CommentSolid />
+                    <CommentSolid fill={iconColor} />
                   ) : (
-                    <Comment />
+                    <Comment fill={iconColor} />
                   )}
                 </Icon>
               </FooterLink>
