@@ -1,11 +1,16 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { PortfolioCaseStudy, PortfolioSample, HeaderBar } from '.'
 
 const MiddleSection = styled('section')`
   width: 100vw;
   min-height: 100vh;
   background: #f5f4f4;
+
+  hr {
+    border-top: 4px solid #c4c4c4;
+    width: 95%;
+  }
 `
 
 const Grid = styled('div')`
@@ -16,6 +21,15 @@ const Grid = styled('div')`
   grid-column-gap: 10px;
   grid-auto-rows: 300px;
   grid-auto-flow: row dense;
+
+
+  ${props =>
+    props.samples &&
+    css`
+      justify-items: center;
+      align-items: center;
+      grid-auto-rows: 250px;
+    `}
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     grid-template-columns: 1fr 1fr;
@@ -71,10 +85,11 @@ const PortfolioMosaic = props => (
     <Tagline>I create brands that speak to both you and your customers</Tagline>
     <MiddleSection>
       <Grid>
-        <>
-          <CaseStudies caseStudies={props.data.caseStudies} />
-          <Samples samples={props.data.samples} />
-        </>
+        <CaseStudies caseStudies={props.data.caseStudies} />
+      </Grid>
+      <hr />
+      <Grid samples>
+        <Samples samples={props.data.samples} />
       </Grid>
     </MiddleSection>
   </>

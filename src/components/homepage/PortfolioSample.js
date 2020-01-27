@@ -138,7 +138,7 @@ const PortfolioSample = item => {
           setOverlay(true)
         }}
       >
-        <PortfolioItem previewImage={previewImage} title={title} />
+        <PortfolioItem previewImage={previewImage} title={title} sample />
       </div>
     </>
   )

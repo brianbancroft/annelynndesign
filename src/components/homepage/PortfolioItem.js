@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import Img from 'gatsby-image'
 
@@ -42,6 +42,15 @@ const Item = styled('div')`
   grid-column-start: auto;
   grid-row-start: auto;
   height: 100%;
+
+  ${props =>
+    props.sample &&
+    css`
+      width: 250px;
+      height: 250px;
+      border-radius: 150px;
+      overflow: hidden;
+    `}
 
   /* box-shadow: 2px 1px 1px rgba(68,68,68,0.4); */
   transition: transform 0.3s ease-in-out;
@@ -95,9 +104,9 @@ const Item = styled('div')`
   }
 `
 
-const PortfolioItem = ({ previewImage, title }) => {
+const PortfolioItem = ({ previewImage, title, sample }) => {
   return (
-    <Item>
+    <Item sample={sample}>
       {previewImage && <Img fluid={previewImage.fluid} />}
       {/* <ItemLabel>
         <p>{title}</p>
