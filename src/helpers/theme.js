@@ -5,6 +5,7 @@ const color = {
   accent4: '#e8fbf9',
   green: '#8EC73F',
   light: '#fff',
+  'dark-2': '#c4c4c4',
   dark: '#444',
   default: '#222',
   formBackground: 'rgba(30, 157, 186, 0.1)',

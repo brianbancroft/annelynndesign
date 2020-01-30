@@ -5,11 +5,10 @@ import { PortfolioCaseStudy, PortfolioSample, HeaderBar } from '.'
 const MiddleSection = styled('section')`
   width: 100vw;
   min-height: 100vh;
-  background: #f5f4f4;
-  padding: 40px 0;
+  padding: 0 0 40px 0;
 
   hr {
-    border-top: 4px solid #c4c4c4;
+    border-top: 1px solid #e5f1f1;
     width: 95%;
     margin-bottom: 15px;
   }
@@ -21,7 +20,6 @@ const Grid = styled('div')`
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-row-gap: 10px;
   grid-column-gap: 10px;
-  grid-auto-rows: 300px;
   grid-auto-flow: row dense;
 
 
@@ -30,13 +28,31 @@ const Grid = styled('div')`
     css`
       justify-items: center;
       align-items: center;
-      grid-auto-rows: 250px;
     `}
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 190px;
+    grid-row-gap: 18px;
+    grid-column-gap: 0;
     padding: 0px;
+    margin-bottom: 40px;
+  }
+`
+
+const ServicesSummary = styled('section')`
+  grid-row: 2 / 3;
+  grid-column: 1 / -1;
+
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+  text-transform: uppercase;
+  color: ${props => props.theme.color['dark-2']};
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 0 10px;
   }
 `
 
@@ -44,7 +60,7 @@ const Title = styled('section')`
   font-size: 45px;
   font-weight: 900;
   color: ${props => props.theme.color.primary};
-  margin: 18px 0 30px 10px;
+  margin: 18px 0 20px 10px;
   text-transform: uppercase;
   color: #111;
   width: 100vw;
@@ -52,7 +68,7 @@ const Title = styled('section')`
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     margin: 0 0 10px 8px;
-    font-size: 24px;
+    font-size: 30px;
   }
 `
 
@@ -69,6 +85,7 @@ const Tagline = styled('section')`
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     margin: 0px auto 20px auto;
     font-size: 14px;
+    line-height: 20px;
   }
 `
 
@@ -87,6 +104,10 @@ const PortfolioMosaic = props => (
     <MiddleSection>
       <Grid>
         <CaseStudies caseStudies={props.data.caseStudies} />
+        <ServicesSummary>
+          Branding • Custom logos • Packaging • Signage • Flyers • Photo
+          Retouching • Mobile-friendly Websites
+        </ServicesSummary>
       </Grid>
       <hr />
       <Grid samples>

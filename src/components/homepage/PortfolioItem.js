@@ -42,6 +42,8 @@ const Item = styled('div')`
   grid-column-start: auto;
   grid-row-start: auto;
   height: 100%;
+  max-height: 300px;
+
 
   ${props =>
     props.sample &&
@@ -61,6 +63,7 @@ const Item = styled('div')`
     /* height: 190px; */
     width: 45vw;
     height: 45vw;
+    max-height: 190px;
   }
 
   &:after {
