@@ -27,7 +27,7 @@ const ModalContainer = styled('section')`
     grid-row-gap: 10px;
 
     grid-template-columns: 1fr;
-    grid-template-rows: 45px 42vh 2.5rem 1fr;
+    grid-template-rows: 40px 42vh 2.5rem 1fr;
   }
 `
 
@@ -37,9 +37,9 @@ const ExitInstruction = styled('div')`
   justify-self: start;
   color: ${props => props.theme.color.tertiary};
   border: 2px solid ${props => props.theme.color.tertiary};
-  padding: 5px 10px;
+  padding: 3px 10px;
   border-radius: 5px;
-  line-height: 35px;
+  line-height: 38px;
 
   transition: color 0.25s ease-in-out, border 0.25s ease-in-out;
 
@@ -54,9 +54,11 @@ const ExitInstruction = styled('div')`
   }
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    font-size: 30px;
+    font-size: 15px;
     grid-row: 1 / 2;
-
+    height: 30px;
+    padding: 0 10px;
+    line-height: 26px;
     color: ${props => props.theme.color.tertiary};
     border: 2px solid ${props => props.theme.color.tertiary};
   }
@@ -72,10 +74,11 @@ const ImageContainer = styled('div')`
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     grid-row: 1 / 3;
     grid-column: 1 / 2;
-    margin-top: 20px;
+
     padding: 0;
-    max-width: 100vw;
-    margin-left: 0;
+    max-width: 90vw;
+    margin-top: 20px;
+    /* margin: 20px auto 0 auto; */
   }
 `
 
