@@ -27,7 +27,7 @@ const ModalContainer = styled('section')`
     grid-row-gap: 10px;
 
     grid-template-columns: 1fr;
-    grid-template-rows: 50px 47vh 2.5rem 1fr;
+    grid-template-rows: 40px 42vh 2.5rem 1fr;
   }
 `
 
@@ -35,11 +35,11 @@ const ExitInstruction = styled('div')`
   grid-row: 1 / 2;
   grid-column: 1 /1;
   justify-self: start;
-  color: white;
-  border: 2px solid white;
-  padding: 5px 10px;
+  color: ${props => props.theme.color.tertiary};
+  border: 2px solid ${props => props.theme.color.tertiary};
+  padding: 3px 10px;
   border-radius: 5px;
-  line-height: 35px;
+  line-height: 38px;
 
   transition: color 0.25s ease-in-out, border 0.25s ease-in-out;
 
@@ -49,14 +49,16 @@ const ExitInstruction = styled('div')`
   margin-left: 5px;
 
   &:hover {
-    color: ${props => props.theme.color.tertiary};
-    border: 2px solid ${props => props.theme.color.tertiary};
+    color: white;
+    border: 2px solid white;
   }
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
-    font-size: 30px;
+    font-size: 15px;
     grid-row: 1 / 2;
-
+    height: 30px;
+    padding: 0 10px;
+    line-height: 26px;
     color: ${props => props.theme.color.tertiary};
     border: 2px solid ${props => props.theme.color.tertiary};
   }
@@ -65,15 +67,18 @@ const ExitInstruction = styled('div')`
 const ImageContainer = styled('div')`
   grid-row: 1 / 5;
   grid-column: 1 / 2;
-  padding: 10px;
   align-self: center;
+  max-width: 40vw;
+  margin-left: 30px;
 
   @media (max-width: ${props => props.theme.mobileBreakpoint}) {
     grid-row: 1 / 3;
     grid-column: 1 / 2;
-    max-width: 70vw;
-    margin-left: 15vw;
+
+    padding: 0;
+    max-width: 90vw;
     margin-top: 20px;
+    /* margin: 20px auto 0 auto; */
   }
 `
 

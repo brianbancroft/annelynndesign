@@ -21,12 +21,7 @@ const PortfolioItem = ({
   multiImageSections,
 } = {}) => {
   const headerSectionTextColor =
-    color &&
-    compose(
-      lightOrDark,
-      getValueFromRGB,
-      convertCSSToRGB
-    )({ color })
+    color && compose(lightOrDark, getValueFromRGB, convertCSSToRGB)({ color })
 
   return (
     <ItemContainer>
