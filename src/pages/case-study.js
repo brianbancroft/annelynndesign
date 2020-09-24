@@ -5,7 +5,7 @@ import { Layout } from '../components'
 import { PortfolioItem } from '../components/portfolio'
 import { sectionSingleImage, sectionMultiImage } from '../components/portfolio'
 
-class PortfolioItemPage extends Component {
+class CaseStudyPage extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -137,7 +137,6 @@ class PortfolioItemPage extends Component {
 
     return (
       <Layout portfolioHeaderColor={color}>
-        <h1>hello portfolio item</h1>
         {/* <Helmet title={`${title} | Anne-Lynn Design`} meta={meta}>
           <link
             rel="stylesheet"
@@ -156,12 +155,13 @@ class PortfolioItemPage extends Component {
           copy={copy}
           color={color}
         /> */}
+        <h1>Hello case stury</h1>
       </Layout>
     )
   }
 }
 
-export default PortfolioItemPage
+export default CaseStudyPage
 
 // export const pageQuery = graphql`
 //   fragment requirementsAndProducts on ContentfulARequirementsAndProductPane {
