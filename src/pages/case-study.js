@@ -21,48 +21,22 @@ class CaseStudyPage extends Component {
     }
     const handleClose = () => this.setState({ showModal: false })
 
-    let {
-      contentfulCaseStudy: {
-        color,
-        slug,
-        copy,
-        headline,
-        title,
-        colorAndTypographyPane,
-        conceptAndIdeasPane,
-        requirementsAndProductPane,
-        supportingConceptsPane,
-        previewImage,
-        ogPreviewImage,
-      },
-    } = this.props.data
+    const data = this.props.data.contentfulDetailedCaseStudy
 
-    copy = copy ? copy.copy : null
-
-    const multiImageSections = [
-      conceptAndIdeasPane,
-      colorAndTypographyPane,
-      supportingConceptsPane,
-    ].map(section => sectionMultiImage({ section, color, handleOpen }))
-
-    const singleImageSections = sectionSingleImage({
-      section: requirementsAndProductPane,
-      color,
-      handleOpen,
-    })
+    const copy = data.copy?.text
 
     let socialMediaPreview
-    if (ogPreviewImage) {
-      socialMediaPreview = `https:${ogPreviewImage.file.url}`
-    } else if (previewImage) {
-      socialMediaPreview = `https:${previewImage.file.url}`
+    if (data.ogPreviewImage) {
+      socialMediaPreview = `https:${data.ogPreviewImage.file.url}`
+    } else if (data.previewImage) {
+      socialMediaPreview = `https:${data.previewImage.file.url}`
     }
 
     const meta = [
       {
         name: 'description',
         property: 'description',
-        content: headline,
+        content: data?.headline,
       },
       {
         name: 'keywords',
@@ -72,25 +46,25 @@ class CaseStudyPage extends Component {
       {
         name: 'theme-color',
         property: 'theme-color',
-        content: color,
+        content: data?.color,
       },
       {
         property: 'og:title',
-        content: title,
+        content: data?.title,
       },
       {
         property: 'og:description',
-        content: headline,
+        content: data?.headline,
       },
 
       {
         name: 'og:url',
-        content: `https://annelynn.com/${slug}`,
+        content: `https://annelynn.com/${data.slug}`,
       },
       {
         property: 'twitter:url',
         name: 'twitter:url',
-        content: `https://annelynn.com/${slug}`,
+        content: `https://annelynn.com/${data.slug}`,
       },
       {
         name: 'og:type',
@@ -98,11 +72,11 @@ class CaseStudyPage extends Component {
       },
       {
         property: 'og:image:secure_url',
-        content: socialMediaPreview,
+        content: data.socialMediaPreview,
       },
       {
         property: 'og:image',
-        content: socialMediaPreview,
+        content: data.socialMediaPreview,
       },
       {
         property: 'og:image:height',
@@ -115,7 +89,7 @@ class CaseStudyPage extends Component {
       {
         name: 'twitter:image:src',
         property: 'twitter:image:src',
-        content: socialMediaPreview,
+        content: data.socialMediaPreview,
       },
       {
         name: 'twitter:card',
@@ -123,28 +97,28 @@ class CaseStudyPage extends Component {
       },
       {
         name: 'twitter:title',
-        content: title,
+        content: data.title,
       },
       {
         name: 'twitter:description',
-        content: headline,
+        content: data.headline,
       },
       {
         name: 'twitter:image',
-        content: socialMediaPreview,
+        content: data.socialMediaPreview,
       },
     ]
 
     return (
-      <Layout portfolioHeaderColor={color}>
-        {/* <Helmet title={`${title} | Anne-Lynn Design`} meta={meta}>
+      <Layout portfolioHeaderColor={data.color}>
+        <Helmet title={`${data.title} | Anne-Lynn Design`} meta={meta}>
           <link
             rel="stylesheet"
             href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.1/dist/semantic.min.css"
           />
           <html lang="en" />
         </Helmet>
-        <PortfolioItem
+        {/* <PortfolioItem
           multiImageSections={multiImageSections}
           singleImageSections={singleImageSections}
           handleClose={handleClose}
@@ -154,7 +128,7 @@ class CaseStudyPage extends Component {
           headline={headline}
           copy={copy}
           color={color}
-        /> */}
+        />  */}
         <h1>Hello case stury</h1>
       </Layout>
     )
@@ -163,142 +137,85 @@ class CaseStudyPage extends Component {
 
 export default CaseStudyPage
 
-// export const pageQuery = graphql`
-//   fragment requirementsAndProducts on ContentfulARequirementsAndProductPane {
-//     id
-//     title
-//     copy {
-//       copy
-//     }
-//     image {
-//       id
-//       title
-//       original: file {
-//         src: url
-//       }
-//       fluid(maxHeight: 700) {
-//         ...GatsbyContentfulFluid_withWebp
+export const pageQuery = graphql`
+  fragment singleImageSectionContent on ContentfulSingleImageSection {
+    __typename
+    id
+    title
+    imagePosition
+    image {
+      original: file {
+        src: url
+      }
+      fluid(maxHeight: 700) {
+        # 	...GatsbyContentfulFluid_withWebp
 
-//         src
-//         srcSet
-//         sizes
-//         aspectRatio
-//       }
-//     }
-//     imagePosition
-//   }
+        src
+        srcSet
+        sizes
+        aspectRatio
+      }
+    }
+  }
 
-//   fragment conceptAndIdeas on ContentfulBConceptsAndIdeasPane {
-//     id
-//     title
-//     imagePosition
-//     copy {
-//       copy
-//     }
-//     images {
-//       id
-//       title
-//       original: file {
-//         src: url
-//       }
-//       slider: fixed(width: 600, height: 720, resizingBehavior: PAD) {
-//         ...GatsbyContentfulFixed_withWebp
-//         src
-//       }
-//       fluid(maxWidth: 600) {
-//         ...GatsbyContentfulFluid_withWebp
-//         src
-//         srcSet
-//         sizes
-//         aspectRatio
-//       }
-//     }
-//   }
+  fragment multiImageSectionContent on ContentfulMultipleImageSection {
+    __typename
+    id
+    title
+    images {
+      id
+      title
+      original: file {
+        src: url
+      }
+      slider: fixed(width: 600, height: 720, resizingBehavior: PAD) {
+        ...GatsbyContentfulFixed_withWebp
+        src
+      }
+      fluid(maxWidth: 600) {
+        ...GatsbyContentfulFluid_withWebp
+        src
+        srcSet
+        sizes
+        aspectRatio
+      }
+    }
+  }
 
-//   fragment colorAndTypography on ContentfulCColorAndTypographyPane {
-//     id
-//     title
-//     imagePosition
-//     copy {
-//       copy
-//     }
-//     images {
-//       id
-//       title
-//       slider: fixed(width: 600, height: 720, resizingBehavior: PAD) {
-//         src
-//       }
-//       original: file {
-//         src: url
-//       }
-//       fluid(maxHeight: 400) {
-//         ...GatsbyContentfulFluid_withWebp
-//         src
-//         srcSet
-//         sizes
-//         aspectRatio
-//       }
-//     }
-//   }
-
-//   fragment supportingConcepts on ContentfulDSupportingContentPane {
-//     id
-//     title
-//     copy {
-//       copy
-//     }
-//     images {
-//       id
-//       title
-//       slider: fixed(width: 600, height: 720, resizingBehavior: PAD) {
-//         src
-//       }
-//       original: file {
-//         src: url
-//       }
-//       fluid(maxHeight: 600) {
-//         ...GatsbyContentfulFluid_withWebp
-//         src
-//         srcSet
-//         sizes
-//         aspectRatio
-//       }
-//     }
-//     imagePosition
-//   }
-
-//   query PortfolioItemBySlug($slug: String) {
-//     contentfulCaseStudy(slug: { eq: $slug }) {
-//       title
-//       slug
-//       color
-//       createdAt
-//       headline
-//       copy {
-//         copy
-//       }
-//       ogPreviewImage {
-//         file {
-//           url
-//         }
-//       }
-//       previewImage {
-//         file {
-//           url
-//         }
-//       }
-//       requirementsAndProductPane {
-//         ...requirementsAndProducts
-//       }
-//       conceptAndIdeasPane {
-//         ...conceptAndIdeas
-//       }
-//       colorAndTypographyPane {
-//         ...colorAndTypography
-//       }
-//       supportingConceptsPane {
-//         ...supportingConcepts
-//       }
-//     }
-//   }
-// `
+  query RetrieveCaseStudyBySlug($slug: String) {
+    contentfulDetailedCaseStudy(slug: { eq: $slug }) {
+      id
+      title
+      slug
+      color
+      createdAt
+      headline
+      copy {
+        copy
+      }
+      ogPreviewImage {
+        file {
+          url
+        }
+      }
+      previewImage {
+        file {
+          url
+        }
+      }
+      caseStudyExampleOf {
+        ... on ContentfulServiceTypeTag {
+          name
+        }
+      }
+      caseStudyChildContent {
+        ... on ContentfulMultipleImageSection {
+          ...multiImageSectionContent
+        }
+        ... on ContentfulSingleImageSection {
+          ...singleImageSectionContent
+        }
+      }
+    }
+  }
+`
