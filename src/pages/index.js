@@ -84,57 +84,56 @@ const meta = [
 
 const IndexPage = ({ data } = {}) => (
   <Layout>
-    <h1>hello world</h1>
-    {/* <Helmet title={`Portfolio | Anne-Lynn Design`} meta={meta} /> */}
-    {/* <PortfolioMosaic data={data} /> */}
+    <Helmet title={`Portfolio | Anne-Lynn Design`} meta={meta} />
+    <PortfolioMosaic data={data} />
   </Layout>
 )
 
 export default IndexPage
 
-// export const pageQuery = graphql`
-//   query HomeQuery {
-//     samples: allContentfulPortfolioSample {
-//       edges {
-//         node {
-//           title
-//           id
-//           copy {
-//             copy
-//           }
-//           sampleImage: mainImagevideo {
-//             fluid(maxWidth: 500) {
-//               ...GatsbyContentfulFluid_withWebp
-//             }
-//           }
-//           previewImage {
-//             fluid(maxHeight: 300) {
-//               ...GatsbyContentfulFluid_withWebp
-//             }
-//           }
-//         }
-//       }
-//     }
-//     caseStudies: allContentfulCaseStudy {
-//       edges {
-//         node {
-//           id
-//           title
-//           slug
-//           createdAt(formatString: "MMM Do, YYYY")
-//           previewImage {
-//             fluid(maxHeight: 300) {
-//               ...GatsbyContentfulFluid_withWebp
-//             }
-//             id
-//             description
-//             file {
-//               url
-//               contentType
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query HomeQuery {
+    samples: allContentfulShortPortfolioSample {
+      edges {
+        node {
+          title
+          id
+          copy {
+            copy
+          }
+          sampleImage: mainImagevideo {
+            fluid(maxWidth: 500) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+          previewImage {
+            fluid(maxHeight: 300) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+        }
+      }
+    }
+    caseStudies: allContentfulDetailedCaseStudy {
+      edges {
+        node {
+          id
+          title
+          slug
+          createdAt(formatString: "MMM Do, YYYY")
+          previewImage {
+            fluid(maxHeight: 300) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+            id
+            description
+            file {
+              url
+              contentType
+            }
+          }
+        }
+      }
+    }
+  }
+`
