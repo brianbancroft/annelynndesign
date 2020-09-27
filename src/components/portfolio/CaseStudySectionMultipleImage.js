@@ -93,7 +93,7 @@ function CaseStudySectionMultipleImage(props) {
           ))}
         </div>
       </div>
-      {(title || text) && (
+      {(title || description) && (
         <div className="copy-container">
           {title && <h3>{title}</h3>}
           {description && <p>{description?.text}</p>}
