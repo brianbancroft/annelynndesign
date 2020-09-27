@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import { convertCSSToRGB, getValueFromRGB, lightOrDark } from '../../helpers'
+import { compose } from 'ramda'
 
 const HeaderSection = styled('section')`
   background: ${props => props.backgroundColor || '#1402ba'};
-  color: ${props => props.headerSectionTextColor || '#efefef'};
+  color: ${props => props.textColor || '#efefef'};
   width: 100vw;
   height: calc(100vh - ${props => props.theme.footer.height});
   max-height: 100vh;
@@ -72,16 +74,25 @@ const CaseStudyHeaderIntroduction = ({
   headline,
   copy,
   headerSectionTextColor,
-} = {}) => (
-  <>
-    <HeaderSection
-      backgroundColor={backgroundColor}
-      headerSectionTextColor={headerSectionTextColor}
-    >
-      <Title>{headline}</Title>
-      <Copy>{copy}</Copy>
-    </HeaderSection>
-  </>
-)
+} = {}) => {
+  const textColor = compose(
+    lightOrDark,
+    getValueFromRGB,
+    convertCSSToRGB
+  )({ color: backgroundColor })
+
+  return (
+    <>
+      <HeaderSection
+        backgroundColor={backgroundColor}
+        textColor={textColor}
+        headerSectionTextColor={headerSectionTextColor}
+      >
+        <Title>{headline}</Title>
+        <Copy>{copy}</Copy>
+      </HeaderSection>
+    </>
+  )
+}
 
 export default CaseStudyHeaderIntroduction

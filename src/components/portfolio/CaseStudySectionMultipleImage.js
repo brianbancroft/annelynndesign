@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import Img from 'gatsby-image'
+import { convertCSSToRGB, getValueFromRGB, lightOrDark } from '../../helpers'
+import { compose } from 'ramda'
 
 const MockSection = styled.section`
   width: 100vw;
@@ -55,7 +57,8 @@ const ImageMosaicContainer = styled.section`
   .copy-container {
     padding-left: 130px;
 
-    color: ${({ color, evenElement }) => (evenElement ? color : 'white')};
+    color: ${({ color, altColor, evenElement }) =>
+      evenElement ? color : altColor};
 
     h3 {
       font-weight: 900;
@@ -75,9 +78,13 @@ function CaseStudySectionMultipleImage(props) {
     images,
   } = element
 
+  const altColor =
+    color && compose(lightOrDark, getValueFromRGB, convertCSSToRGB)({ color })
+
   return (
     <ImageMosaicContainer
       color={color}
+      altColor={altColor}
       evenElement={evenElement}
       numberImages={images.length}
     >
