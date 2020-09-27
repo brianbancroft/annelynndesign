@@ -72,11 +72,7 @@ const ImageMosaicContainer = styled.section`
 function CaseStudySectionMultipleImage(props) {
   const { element, color, evenElement } = props
 
-  const {
-    title,
-    description: { text },
-    images,
-  } = element
+  const { title, description, images } = element
 
   const altColor =
     color && compose(lightOrDark, getValueFromRGB, convertCSSToRGB)({ color })
@@ -100,7 +96,7 @@ function CaseStudySectionMultipleImage(props) {
       {(title || text) && (
         <div className="copy-container">
           {title && <h3>{title}</h3>}
-          {text && <p>{text}</p>}
+          {description && <p>{description?.text}</p>}
         </div>
       )}
     </ImageMosaicContainer>
