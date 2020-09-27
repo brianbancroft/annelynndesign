@@ -20,7 +20,7 @@ const ImageMosaicContainer = styled.section`
     evenElement ? 'white' : color};
 
   display: grid;
-  grid-template-rows: 1fr 180px;
+  grid-template-rows: 1fr 400px;
   grid-row-gap: 10px;
 
   .images-row-container {
@@ -35,6 +35,7 @@ const ImageMosaicContainer = styled.section`
       props.numberImages <= 3
         ? css`
             grid-template-columns: repeat(${props.numberImages}, 1fr);
+            grid-column-gap: 3px;
           `
         : css`
             grid-template-rows: repeat(
@@ -57,10 +58,12 @@ const ImageMosaicContainer = styled.section`
   .copy-container {
     padding-left: 130px;
 
-    color: ${({ color, altColor, evenElement }) =>
-      evenElement ? color : altColor};
+
+    width: 55vw;
 
     h3 {
+      color: ${({ color, altColor, evenElement }) =>
+        evenElement ? color : altColor};
       font-weight: 900;
       font-size: 1.2em;
       margin-bottom: 0.4em;
