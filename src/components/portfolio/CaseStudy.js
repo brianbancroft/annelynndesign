@@ -29,6 +29,7 @@ function CaseStudy(props) {
             element={element}
             color={color}
             key={`single-image-section-${index}`}
+            evenElement={(index - 1) % 2 === 0}
           />
         )
 
@@ -38,6 +39,7 @@ function CaseStudy(props) {
             element={element}
             color={color}
             key={`multiple-image-section-${index}`}
+            evenElement={(index - 1) % 2 === 0}
           />
         )
 

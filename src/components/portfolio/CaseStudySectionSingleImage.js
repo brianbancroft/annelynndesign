@@ -10,6 +10,9 @@ const MockSection = styled.section`
 `
 
 function CaseStudySectionSingleImage(props) {
+  const { element, color } = props
+  console.log('Content as retrieved from the element', element)
+
   return <MockSection>Single Image Section</MockSection>
 }
 

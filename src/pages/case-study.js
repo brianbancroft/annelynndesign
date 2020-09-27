@@ -103,8 +103,6 @@ function CaseStudyPage(props) {
     caseStudyChildContent: childContent,
   } = data
 
-  console.log('data ', data)
-
   return (
     <Layout portfolioHeaderColor={data.color}>
       <Helmet title={`${data.title} | Anne-Lynn Design`} meta={meta}>
@@ -134,6 +132,9 @@ export const pageQuery = graphql`
     __typename
     id
     title
+    description {
+      text: description
+    }
     imagePosition
     image {
       original: file {
@@ -154,6 +155,9 @@ export const pageQuery = graphql`
     __typename
     id
     title
+    description {
+      text: description
+    }
     images {
       id
       title
