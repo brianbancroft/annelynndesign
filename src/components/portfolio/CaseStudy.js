@@ -56,7 +56,7 @@ function CaseStudy(props) {
         headline={headline}
         copy={text}
       />
-      <CaseStudyContent />
+      {childContent && <CaseStudyContent />}
       <Spacer />
     </>
   )
