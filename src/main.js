@@ -1,5 +1,9 @@
 // Shared behaviour for every page — no framework, just the DOM.
 
+console.log(
+  "This site is vanilla HTML & CSS, built with Claude Code from my Figma designs, hosted on Cloudflare. Want off your antiquated CRM? Let's talk — hello@annelynn.com"
+);
+
 // 1. Fade-in-on-scroll for anything marked .reveal
 const revealables = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window) {
