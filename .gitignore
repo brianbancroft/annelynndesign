@@ -1,5 +1,8 @@
 node_modules
 dist
+.wrangler
 .DS_Store
 _to_delete/
 _canvas-img/
+assets/source-photos/
+.claude/
