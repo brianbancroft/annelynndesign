@@ -44,8 +44,3 @@ The form posts to `/api/contact`, a Cloudflare Pages Function. It checks the Clo
 | `public/img/` | Images from the Figma file, resized for the web (max 1600px) |
 
 To add a case study, copy one of the files in `work/` and change the text, the images and `--accent`. Then add a tile for it in `index.html`.
-
-## To-dos
-
-- The Instagram, Twitter and LinkedIn icons on the About page still need your profile URLs.
-- Two images are still missing: `public/img/shower/new-look.png` and `public/img/shower/new-designs.png` (Shower Cap page). Export them from Figma and drop them in with those names.
