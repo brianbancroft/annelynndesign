@@ -1,0 +1,120 @@
+/* Shared case-study template (Figma: Cuddle Creatures, Shower Cap, Jas Cafe, …)
+   Each page sets --accent (and optionally --tint / --hero-ink) on <body>. */
+body.case {
+  --accent: #19d3c5;
+  --tint: color-mix(in srgb, var(--accent) 15%, white);
+  --hero-ink: #fff;
+  font-family: var(--font-case);
+}
+
+/* ---------- Hero ---------- */
+.cs-hero {
+  min-height: clamp(380px, 66.8vw, 962px);
+  background: var(--accent);
+  color: var(--hero-ink);
+  display: grid; place-content: center; text-align: center;
+  padding: 64px var(--gutter);
+}
+.cs-hero h1 {
+  font: 900 clamp(28px, 3vw, 43px)/1.17 var(--font-case);
+  text-transform: uppercase;
+}
+.cs-hero p {
+  margin: 12px auto 0; max-width: 700px;
+  font: 400 clamp(16px, 1.4vw, 20px)/1.25 var(--font-case);
+}
+
+/* ---------- Sections ---------- */
+.cs-section { padding: clamp(48px, 5.5vw, 80px) var(--gutter); }
+.cs-section--tint { background: var(--tint); }
+.cs-section--flush { padding-left: 0; padding-right: 0; }
+.cs-wrap { max-width: 1052px; margin: 0 auto; }
+.cs-wrap--wide { max-width: 1264px; }
+.cs-wrap--full { max-width: var(--page-max); }
+
+/* ---------- Media ---------- */
+.cs-media {
+  display: grid; gap: clamp(12px, 1.8vw, 26px);
+  align-items: center; justify-items: center;
+}
+.cs-media img { width: 100%; }
+.cs-media--2 { grid-template-columns: repeat(2, 1fr); }
+.cs-media--3 { grid-template-columns: repeat(3, 1fr); }
+.cs-media--card { background: #fff; padding: clamp(16px, 2vw, 32px); }
+.cs-media--end { align-items: end; }
+.cs-media .span-2 { grid-column: span 2; }
+.cs-media .span-all { grid-column: 1 / -1; }
+.cs-media .narrow { max-width: 70%; }
+.cs-media .contain { max-height: 540px; width: auto; }
+.cs-media + .cs-media { margin-top: clamp(12px, 1.8vw, 26px); }
+
+/* ---------- Copy ---------- */
+.cs-copy { margin-top: clamp(28px, 3vw, 40px); max-width: 720px; }
+.cs-copy h2 {
+  font: 900 clamp(22px, 1.8vw, 26px)/1.2 var(--font-case);
+  color: var(--accent); text-transform: uppercase; margin-bottom: 10px;
+}
+.cs-copy p { font: 400 clamp(16px, 1.25vw, 18px)/1.3 var(--font-case); }
+.cs-copy p + p { margin-top: 1em; }
+
+/* Story row: copy on the left, INDUSTRY / SERVICE box on the right */
+.cs-intro {
+  display: grid; grid-template-columns: minmax(0, 1fr) 344px;
+  gap: clamp(24px, 5vw, 72px); align-items: start;
+}
+.cs-intro .cs-copy { margin-top: 0; }
+.cs-meta {
+  border: 1px solid var(--ink); background: #fff;
+  padding: 20px 36px;
+  font: 400 15px/26px var(--font-case);
+}
+.cs-meta dt { display: inline; font-weight: 700; text-transform: uppercase; }
+.cs-meta dt::after { content: ': '; }
+.cs-meta dd { display: inline; margin: 0; }
+.cs-meta dd::after { content: ''; display: block; }
+
+/* Media + copy side by side (Jas Cafe, Children's Book) */
+.cs-split {
+  display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 64px); align-items: end;
+}
+.cs-split--reverse { grid-template-columns: minmax(0, 1fr) minmax(0, 1.9fr); }
+.cs-split .cs-copy { margin-top: 0; }
+
+/* Section headings used on the Extra Projects page */
+.cs-title {
+  font: 900 clamp(30px, 3vw, 43px)/1.15 var(--font-case);
+  color: var(--accent); margin-bottom: clamp(20px, 2.4vw, 36px);
+}
+.logo-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 5.9vw, 81px);
+}
+.logo-grid figure {
+  aspect-ratio: 1; border: 1px solid var(--accent);
+  display: grid; place-items: center; padding: 12%;
+}
+.logo-grid img { max-height: 100%; width: auto; object-fit: contain; }
+.rounded img { border-radius: 8px; }
+
+/* ---------- Next project ---------- */
+.cs-next {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  max-width: 1052px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 72px) var(--gutter);
+  font: 700 15px/1.3 var(--font-case); letter-spacing: 0.06em; text-transform: uppercase;
+}
+.cs-next a { color: var(--accent); text-decoration: none; }
+.cs-next a:hover { text-decoration: underline; }
+body.case .cs-next a { color: color-mix(in srgb, var(--accent) 80%, black); }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 760px) {
+  .cs-intro, .cs-split, .cs-split--reverse { grid-template-columns: 1fr; }
+  .cs-meta { justify-self: start; }
+  .cs-media--3 { grid-template-columns: 1fr; }
+  .cs-media--2.stack-sm { grid-template-columns: 1fr; }
+  .cs-media .narrow { max-width: 100%; }
+  .logo-grid { grid-template-columns: repeat(2, 1fr); }
+  .cs-split--reverse > .cs-copy { order: 2; }
+}

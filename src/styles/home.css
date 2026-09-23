@@ -1,0 +1,101 @@
+/* Home — "Desktop Portfolio - Case Studies" (Figma 2294:2) */
+.home-hero {
+  text-align: center;
+  padding: clamp(48px, 8vw, 116px) var(--gutter) clamp(48px, 7vw, 117px);
+}
+.home-hero h1 {
+  font: 900 clamp(38px, 4.9vw, 70px)/1.1 var(--font-home);
+  color: var(--teal-ink);
+  letter-spacing: 0.005em;
+}
+.home-hero p {
+  margin-top: 0.3em;
+  font: 300 clamp(17px, 1.9vw, 27px)/1.25 var(--font-home);
+  color: var(--ink);
+}
+.home-hero p span { display: inline-block; }
+
+/* Project grid: 4 × 318px tiles, 14px gap, 64px side margins at 1440 */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(8px, 1vw, 14px);
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  list-style: none;
+}
+@media (max-width: 900px) { .work-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.tile {
+  position: relative; display: block; aspect-ratio: 1;
+  overflow: hidden; background: #c4c4c4; text-decoration: none;
+}
+.tile img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.tile__label {
+  position: absolute; inset: auto 0 0 0;
+  padding: 28px 16px 14px;
+  color: #fff; font: 700 clamp(13px, 1.2vw, 17px)/1.2 var(--font-home);
+  letter-spacing: 0.06em; text-transform: uppercase;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+  opacity: 0; transform: translateY(8px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.tile:hover img, .tile:focus-visible img { transform: scale(1.05); }
+.tile:hover .tile__label, .tile:focus-visible .tile__label { opacity: 1; transform: none; }
+@media (hover: none) { .tile__label { opacity: 1; transform: none; } }
+
+/* Text-only tiles (Jas Cafe block, "More Projects") */
+.tile--text {
+  display: grid; place-content: center; text-align: center;
+  color: var(--teal-ink);
+}
+.tile--text .tile__kicker { font: 400 clamp(18px, 2vw, 29px)/1.2 var(--font-home); }
+.tile--text .tile__big { font: 200 clamp(32px, 3.5vw, 50px)/1.1 var(--font-home); }
+.tile--coral { background: #f16354; color: #fff; }
+.tile--wash { background: var(--teal-wash); }
+.tile--text { transition: filter 0.3s; }
+.tile--text:hover { filter: brightness(0.96); }
+
+/* About band with the scalloped top edge (mask from Figma) */
+.intro {
+  margin-top: clamp(40px, 4.6vw, 53px);
+  padding: clamp(80px, 9vw, 110px) var(--gutter) clamp(40px, 4vw, 56px);
+  background: var(--teal-wash);
+  -webkit-mask-image: url('/img/home/wave-mask.svg'), linear-gradient(#000, #000);
+          mask-image: url('/img/home/wave-mask.svg'), linear-gradient(#000, #000);
+  -webkit-mask-size: 100% auto, 100% calc(100% - 80px);
+          mask-size: 100% auto, 100% calc(100% - 80px);
+  -webkit-mask-position: top center, bottom center;
+          mask-position: top center, bottom center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+.intro__inner {
+  max-width: 1312px; margin: 0 auto;
+  display: grid; grid-template-columns: minmax(200px, 394px) 1fr;
+  gap: clamp(24px, 4.2vw, 60px); align-items: center;
+}
+.portrait { position: relative; aspect-ratio: 1; width: 100%; }
+.portrait__ring, .portrait__photo { position: absolute; }
+.portrait__ring { inset: 0; width: 100%; height: 100%; }
+.portrait__photo { inset: 5.08%; width: 89.84%; height: 89.84%; border-radius: 50%; object-fit: cover; }
+
+.intro h2 {
+  font: 300 clamp(26px, 3vw, 43px)/1.1 var(--font-home);
+  color: var(--teal-ink); max-width: 810px;
+}
+.intro__body {
+  margin-top: 0.4em; max-width: 853px;
+  font: 300 clamp(17px, 2.1vw, 30px)/1.1 var(--font-home); color: var(--teal-ink);
+}
+.intro__body strong { font-weight: 700; }
+.intro__body p + p { margin-top: 0; }
+
+@media (max-width: 700px) {
+  .intro__inner { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .portrait { max-width: 240px; }
+}

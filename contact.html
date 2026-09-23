@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Anne-Lynn Design</title>
+  <meta name="description" content="Get in touch with Anne-Lynn Design for logos, packaging, print, signage and I.T. support." />
+  <link rel="icon" href="/img/home/logo-white.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles/base.css" />
+  <link rel="stylesheet" href="/src/styles/pages.css" />
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body class="soft">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="site-header__logo" href="/" aria-label="Anne-Lynn Design — home">
+      <img src="/img/home/logo-white.png" alt="" width="68" height="88" />
+    </a>
+  </header>
+
+  <main id="main" class="contact">
+    <form id="contact-form" class="contact__form" novalidate>
+      <h1 class="page-title">Contact</h1>
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" autocomplete="name" required />
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" autocomplete="email" required />
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required></textarea>
+      <button type="submit">SUBMIT</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+    <p class="contact__pitch">Hey, I’m a graphic designer specializing in <b>visual communication</b>. Anything from <b>posters</b> to <b>signage</b>, <b>packaging</b> design, creating a <b>visual experience</b> print or web based, or just helping something make sense visually, I can help!</p>
+  </main>
+
+  <nav class="icon-nav" aria-label="Site">
+    <ul>
+      <li><a href="/"><img src="/img/nav/portfolio.png" alt="" width="94" height="94" />Portfolio</a></li>
+      <li><a href="/about.html"><img src="/img/nav/about.png" alt="" width="94" height="94" />About</a></li>
+      <li><a href="/contact.html" aria-current="page"><img src="/img/nav/contact.png" alt="" width="94" height="94" />Contact</a></li>
+    </ul>
+  </nav>
+</body>
+</html>

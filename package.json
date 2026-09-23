@@ -1,0 +1,16 @@
+{
+  "name": "annelynn-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Anne-Lynn Design \u2014 personal portfolio (plain HTML/CSS/JS, bundled with Vite)",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "domain": "sudo bash scripts/setup-local-domain.sh"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0"
+  }
+}

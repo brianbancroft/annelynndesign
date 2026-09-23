@@ -1,0 +1,78 @@
+/* ---------- Design tokens (from Figma) ---------- */
+:root {
+  --teal: #19d3c5;          /* header bar, brand */
+  --teal-ink: #15b3a7;      /* home headings & copy */
+  --teal-wash: rgba(25, 211, 197, 0.11);
+  --blue-ink: #1e9dba;      /* about / contact */
+  --blue-deep: #006a77;
+  --blue-wash: #ebfafe;
+  --lime: #8cc63f;          /* portrait ring */
+  --ink: #000;
+  --paper: #fff;
+
+  --font-home: 'Roboto', system-ui, sans-serif;
+  --font-case: 'Raleway', system-ui, sans-serif;
+  --font-avenir: 'Avenir Next', 'Nunito Sans', 'Avenir', system-ui, sans-serif;
+
+  --page-max: 1440px;
+  --gutter: clamp(16px, 4.5vw, 64px);
+  --header-h: clamp(64px, 6.4vw, 92px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-home);
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+h1, h2, h3, p, figure { margin: 0; }
+
+.skip-link {
+  position: absolute; left: 8px; top: -48px; z-index: 100;
+  background: var(--paper); padding: 8px 12px; border-radius: 4px;
+}
+.skip-link:focus { top: 8px; }
+
+:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+
+/* ---------- Top bar ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  height: var(--header-h);
+  background: var(--teal);
+  display: flex; align-items: center; justify-content: center;
+}
+.site-header__logo { display: block; height: 96%; }
+.site-header__logo img { height: 100%; width: auto; }
+
+/* ---------- Bottom icon nav (Portfolio / About / Contact) ---------- */
+.icon-nav {
+  background: var(--paper);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding: clamp(20px, 2.7vw, 39px) var(--gutter);
+}
+.icon-nav ul {
+  list-style: none; margin: 0 auto; padding: 0;
+  max-width: 832px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.icon-nav a {
+  display: grid; justify-items: center; gap: 6px;
+  text-decoration: none; color: var(--blue-ink);
+  font: 500 13px/1 var(--font-avenir); letter-spacing: 0.08em; text-transform: uppercase;
+  opacity: 0.55; transition: opacity 0.2s, transform 0.2s;
+}
+.icon-nav a:hover, .icon-nav a[aria-current='page'] { opacity: 1; }
+.icon-nav a:hover { transform: translateY(-2px); }
+.icon-nav img { width: clamp(56px, 6.5vw, 94px); height: auto; }
+
+/* ---------- Scroll reveal ---------- */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
