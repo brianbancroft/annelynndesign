@@ -16,19 +16,32 @@ if ('IntersectionObserver' in window) {
   revealables.forEach((el) => el.classList.add('is-visible'));
 }
 
-// 2. Contact form → opens the visitor's mail app with the message filled in.
-//    (Swap for Formspree/Netlify Forms etc. once the site is hosted.)
+// 2. Contact form → POSTs to the /api/contact Pages Function (Turnstile + Resend).
 const form = document.querySelector('#contact-form');
 if (form) {
-  form.addEventListener('submit', (event) => {
+  const status = form.querySelector('.form-status');
+  const button = form.querySelector('button[type="submit"]');
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
     if (!form.reportValidity()) return;
     const data = new FormData(form);
-    const subject = `Portfolio enquiry from ${data.get('name')}`;
-    const body = `${data.get('message')}\n\n— ${data.get('name')} (${data.get('email')})`;
-    window.location.href =
-      `mailto:hello@annelynn.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    const status = form.querySelector('.form-status');
-    if (status) status.textContent = 'Opening your email app… thanks for reaching out!';
+    if (!data.get('cf-turnstile-response')) {
+      status.textContent = 'Please complete the spam check above.';
+      return;
+    }
+    button.disabled = true;
+    status.textContent = 'Sending…';
+    try {
+      const res = await fetch('/api/contact', { method: 'POST', body: data });
+      const result = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(result.error || 'Something went wrong. Please try again.');
+      form.reset();
+      status.textContent = 'Thanks for reaching out! I’ll be in touch soon.';
+    } catch (err) {
+      status.textContent = err.message;
+    } finally {
+      window.turnstile?.reset();
+      button.disabled = false;
+    }
   });
 }

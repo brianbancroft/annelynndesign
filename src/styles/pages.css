@@ -71,6 +71,7 @@ body.soft { font-family: var(--font-avenir); color: var(--blue-ink); }
 .contact__form input { height: 92px; }
 .contact__form textarea { height: 265px; resize: vertical; }
 .contact__form input:focus, .contact__form textarea:focus { outline: 2px solid var(--blue-ink); outline-offset: 0; }
+.contact__form .cf-turnstile { margin-top: 20px; min-height: 65px; }
 .contact__form button {
   margin-top: 20px; height: 83px; border: 0; cursor: pointer;
   background: rgba(141, 212, 231, 0.4); color: var(--blue-ink);
@@ -78,6 +79,7 @@ body.soft { font-family: var(--font-avenir); color: var(--blue-ink); }
   transition: background 0.2s;
 }
 .contact__form button:hover { background: rgba(141, 212, 231, 0.7); }
+.contact__form button:disabled { cursor: wait; opacity: 0.6; }
 .form-status { min-height: 1.5em; margin-top: 10px; font-size: 16px; }
 .contact__pitch {
   align-self: start; margin-top: clamp(20px, 9.5vw, 151px); max-width: 603px;

@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="/src/styles/base.css" />
   <link rel="stylesheet" href="/src/styles/pages.css" />
   <script type="module" src="/src/main.js"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body class="soft">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -31,6 +32,7 @@
       <input id="email" name="email" type="email" autocomplete="email" required />
       <label for="message">Message</label>
       <textarea id="message" name="message" required></textarea>
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAAFBdCAoCi_im3xW-"></div>
       <button type="submit">SUBMIT</button>
       <p class="form-status" role="status" aria-live="polite"></p>
     </form>

@@ -6,3 +6,4 @@ _to_delete/
 _canvas-img/
 assets/source-photos/
 .claude/
+.dev.vars

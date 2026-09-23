@@ -21,9 +21,17 @@ jobs:
       - run: npm ci
       - run: npm run build
 
+      # Deploys dist/ plus the Pages Functions in functions/ (the contact form API).
+      # Syncs the contact-form secrets to the Pages project first so the function can read them.
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          TURNSTILE_SECRET_KEY: ${{ secrets.TURNSTILE_SECRET_KEY }}
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          preCommands: |
+            printf %s "$RESEND_API_KEY" | npx wrangler pages secret put RESEND_API_KEY --project-name=annelynn-bancroft-io
+            printf %s "$TURNSTILE_SECRET_KEY" | npx wrangler pages secret put TURNSTILE_SECRET_KEY --project-name=annelynn-bancroft-io
           command: pages deploy dist --project-name=annelynn-bancroft-io --branch=main
