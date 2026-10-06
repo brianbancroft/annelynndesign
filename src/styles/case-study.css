@@ -10,7 +10,7 @@ body.case {
 /* ---------- Hero ---------- */
 .cs-hero {
   min-height: clamp(380px, 66.8vw, 962px);
-  background: var(--accent);
+  background: var(--hero-bg, var(--accent));
   color: var(--hero-ink);
   display: grid; place-content: center; text-align: center;
   padding: 64px var(--gutter);
@@ -644,9 +644,9 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
   :is(.page-ahh, .page-cuddle, .page-shower) .cs-section img { object-fit: cover; }
 
   .page-ahh .ah-story .cs-media img { height: calc(496 * var(--u)); object-view-box: inset(22.38% 27.12% 20.5% 26.92%); }
-  .page-ahh .ah-cards .cs-media img { height: calc(380 * var(--u)); object-view-box: inset(27.43% 4.18% 26.89% 4.17%); }
+  .page-ahh .ah-cards .cs-media img { height: calc(380 * var(--u)); }
   .page-ahh .ah-concepts .cs-media img { height: calc(263 * var(--u)); object-view-box: inset(22.5%); }
-  .page-ahh .ah-colours .cs-media img:first-child { height: calc(494 * var(--u)); object-view-box: inset(12.55% 23.04% 9.9% 24%); }
+  .page-ahh .ah-colours .cs-media img:first-child { height: calc(494 * var(--u)); }
   .page-ahh .ah-colours .cs-media img:last-child { height: calc(564 * var(--u)); object-view-box: inset(4.22% 30.32% 4.22% 30.54%); }
   .page-ahh .ah-shirt .cs-media img { height: calc(560 * var(--u)); }
   .page-ahh .ah-colours .cs-media img:first-child { margin-top: calc(35 * var(--u)); }
@@ -735,3 +735,6 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
   .page-book .bk-orange .cs-book-bonjour img { width: calc(1180 * var(--u)); max-width: none; }
   .page-book .bk-orange .cs-copy { margin-top: calc(44 * var(--u)); }
 }
+
+/* AHH: band colours and per-band copy colour from the Figma frame (2165:2) */
+.page-ahh .ah-cards .cs-copy p { color: #279089; }
