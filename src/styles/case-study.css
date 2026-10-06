@@ -548,45 +548,18 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
 /* ---------- AHH / Cuddle Creatures / Shower Cap desktop: sizes and spacing follow their Figma frames (1440 wide) ----------
    Everything scales with --u so the 1440px layout holds at narrower desktop widths. */
 @media (min-width: 761px) {
-  .page-ahh, .page-cuddle, .page-shower { --u: calc(min(100vw, 1440px) / 1440); }
-  :is(.page-ahh, .page-cuddle, .page-shower) .cs-section { padding-inline: 0; padding-bottom: 0; }
-  .page-ahh .ah-story .cs-media img { margin-left: calc(420 * var(--u)); }
+  .page-cuddle, .page-shower { --u: calc(min(100vw, 1440px) / 1440); }
+  :is(.page-cuddle, .page-shower) .cs-section { padding-inline: 0; padding-bottom: 0; }
   .page-cuddle .cc-story .cs-media img { margin-left: calc(374 * var(--u)); }
-  :is(.page-ahh, .page-cuddle, .page-shower) .cs-wrap { width: calc(1440 * var(--u)); max-width: none; }
-  :is(.page-ahh, .page-cuddle, .page-shower) .cs-media { gap: 0; justify-items: start; }
-  :is(.page-ahh, .page-cuddle, .page-shower) .cs-media img { max-width: none; }
-  :is(.page-ahh, .page-cuddle, .page-shower) .cs-section > .cs-wrap > .cs-copy { margin-left: calc(194 * var(--u)); max-width: calc(719 * var(--u)); }
-  :is(.page-ahh, .page-cuddle) .cs-intro {
+  :is(.page-cuddle, .page-shower) .cs-wrap { width: calc(1440 * var(--u)); max-width: none; }
+  :is(.page-cuddle, .page-shower) .cs-media { gap: 0; justify-items: start; }
+  :is(.page-cuddle, .page-shower) .cs-media img { max-width: none; }
+  :is(.page-cuddle, .page-shower) .cs-section > .cs-wrap > .cs-copy { margin-left: calc(194 * var(--u)); max-width: calc(719 * var(--u)); }
+  :is(.page-cuddle) .cs-intro {
     grid-template-columns: calc(634 * var(--u)) 300px; gap: calc(92 * var(--u));
     margin: 0 0 0 calc(206 * var(--u));
   }
-  :is(.page-ahh, .page-cuddle) .cs-meta { margin-block: 0; }
-
-  /* ----- AHH ----- */
-  .page-ahh .ah-story { min-height: calc(871 * var(--u)); padding-top: calc(80 * var(--u)); }
-  .page-ahh .ah-story .cs-media img { width: calc(598 * var(--u)); }
-  .page-ahh .ah-story .cs-intro { margin-top: calc(79 * var(--u)); }
-  .page-ahh .ah-cards { min-height: calc(911 * var(--u)); padding-top: calc(189 * var(--u)); }
-  .page-ahh .ah-cards .cs-media img { width: calc(1145 * var(--u)); margin-left: calc(146 * var(--u)); }
-  .page-ahh .ah-cards .cs-copy { margin-top: calc(84 * var(--u)); }
-  .page-ahh .ah-concepts { min-height: calc(649 * var(--u)); padding-top: calc(141 * var(--u)); }
-  .page-ahh .ah-concepts .cs-media {
-    grid-template-columns: calc(393 * var(--u)) calc(394 * var(--u)) calc(393 * var(--u));
-    column-gap: calc(23 * var(--u)); margin-left: calc(117 * var(--u));
-  }
-  .page-ahh .ah-concepts .cs-media img { width: 100%; }
-  .page-ahh .ah-concepts .cs-copy { margin-top: calc(56 * var(--u)); }
-  .page-ahh .ah-colours { min-height: calc(911 * var(--u)); padding-top: calc(114 * var(--u)); }
-  .page-ahh .ah-colours .cs-media {
-    grid-template-columns: calc(506 * var(--u)) calc(362 * var(--u)); column-gap: calc(126 * var(--u));
-    margin-left: calc(224 * var(--u)); align-items: start;
-  }
-  .page-ahh .ah-colours .cs-media img { width: 100%; }
-  .page-ahh .ah-colours .cs-media img:first-child { margin-top: calc(35 * var(--u)); }
-  .page-ahh .ah-colours .cs-copy { margin-top: calc(39 * var(--u)); }
-  .page-ahh .ah-shirt { min-height: calc(911 * var(--u)); padding-top: calc(98 * var(--u)); }
-  .page-ahh .ah-shirt .cs-media img { width: calc(1074 * var(--u)); margin-left: calc(183 * var(--u)); }
-  .page-ahh .ah-shirt .cs-copy { margin-top: calc(69 * var(--u)); }
+  :is(.page-cuddle) .cs-meta { margin-block: 0; }
 
   /* ----- Cuddle Creatures ----- */
   .page-cuddle .cc-story { min-height: calc(871 * var(--u)); padding-top: calc(132 * var(--u)); }
@@ -643,15 +616,8 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
 
 /* Image boxes (Figma crops). Zoomed crops use object-view-box; browsers without it fall back to a plain cover crop. */
 @media (min-width: 761px) {
-  :is(.page-ahh, .page-cuddle, .page-shower) .cs-section img { object-fit: cover; }
+  :is(.page-cuddle, .page-shower) .cs-section img { object-fit: cover; }
 
-  .page-ahh .ah-story .cs-media img { height: calc(496 * var(--u)); object-view-box: inset(22.38% 27.12% 20.5% 26.92%); }
-  .page-ahh .ah-cards .cs-media img { height: calc(380 * var(--u)); }
-  .page-ahh .ah-concepts .cs-media img { height: calc(263 * var(--u)); object-view-box: inset(22.5%); }
-  .page-ahh .ah-colours .cs-media img:first-child { height: calc(494 * var(--u)); }
-  .page-ahh .ah-colours .cs-media img:last-child { height: calc(564 * var(--u)); object-view-box: inset(4.22% 30.32% 4.22% 30.54%); }
-  .page-ahh .ah-shirt .cs-media img { height: calc(560 * var(--u)); }
-  .page-ahh .ah-colours .cs-media img:first-child { margin-top: calc(35 * var(--u)); }
 
   .page-cuddle .cc-story .cs-media img { height: calc(430 * var(--u)); }
   .page-cuddle .cc-lineup .cs-media img { height: calc(560 * var(--u)); }
@@ -674,7 +640,7 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
 /* ---------- Desktop Industry / Service box: as wide as its text so each line stays on one line ---------- */
 @media (min-width: 761px) {
   .page-jas { --intro-copy: calc(679 * var(--u)); }
-  .page-ahh, .page-cuddle { --intro-copy: calc(634 * var(--u)); }
+  .page-cuddle { --intro-copy: calc(634 * var(--u)); }
   body.case .cs-section .cs-intro { grid-template-columns: var(--intro-copy, minmax(0, 1fr)) max-content; }
   body.case .cs-meta { width: max-content; white-space: nowrap; padding: 20px 32px; }
 }
@@ -738,9 +704,6 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
   .page-book .bk-orange .cs-copy { margin-top: calc(44 * var(--u)); }
 }
 
-/* AHH: band colours and per-band copy colour from the Figma frame (2165:2) */
-.page-ahh .ah-cards .cs-copy p { color: #279089; }
-
 /* Desktop: same rules as mobile, a line above and below each link in that project's colour */
 @media (min-width: 761px) {
   .cs-next { max-width: var(--page-max); }
@@ -750,4 +713,58 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
 /* Desktop: the bottom Portfolio / Contact icons share outer edges with the Previous / Next links above them */
 @media (min-width: 761px) {
   body.case .icon-nav ul { max-width: calc(var(--page-max) - 2 * var(--gutter)); padding-inline: 4px; }
+}
+
+/* ---------- Arrowsmith Herbal Healing (Figma desktop 2165:2, mobile 2250:73) ---------- */
+.page-ahh { --tint-copy: #279089; --ink-copy: #262626; }
+.page-ahh .cs-copy p { color: var(--ink-copy); }
+.page-ahh .cs-section--tint .cs-copy p { color: var(--tint-copy); }
+.page-ahh .cs-media picture { display: contents; }
+.page-ahh .cs-media source { display: none; }
+.page-ahh .cs-media .narrow { max-width: 598px; }
+.page-ahh .cs-media--concepts { gap: clamp(12px, 1.2vw, 17px); }
+.page-ahh .cs-media--concepts img { width: 100%; }
+/* Business cards (954px of the 1145 frame), colour variations + type specimen (933px group) */
+.page-ahh .ahh-cards .cs-media img { max-width: 954px; }
+.page-ahh .cs-media--palette {
+  grid-template-columns: 446fr 292fr; column-gap: 20.9%; align-items: center;
+  max-width: 933px; margin-inline: auto;
+}
+.page-ahh .ahh-shirt .cs-media img { max-width: 1074px; }
+
+@media (max-width: 760px) {
+  .page-ahh .cs-hero h1 { font-size: 28px; }
+  .page-ahh .cs-hero p { font-size: 15px; line-height: normal; max-width: 363px; }
+  .page-ahh .cs-section { padding-inline: 24px; }
+  .page-ahh .cs-copy { margin-top: 24px; }
+  .page-ahh .cs-copy h2 { font-size: 20px; line-height: normal; margin-bottom: 4px; }
+  .page-ahh .cs-copy p { font-size: 14px; line-height: 18px; }
+  .page-ahh .cs-section--tint .cs-copy p { color: var(--accent); font-weight: 500; }
+
+  /* Instant Relief: the AHH mark is 60% of the screen (247 of 411) */
+  .page-ahh .ahh-intro { padding-top: 39px; padding-bottom: 44px; }
+  .page-ahh .cs-media .narrow { width: 60.1vw; max-width: none; margin-inline: auto; }
+  .page-ahh .cs-intro .cs-copy { margin-top: 0; }
+  .page-ahh .cs-media + .cs-intro { margin-top: 39px; }
+  .page-ahh .cs-meta { margin-top: 12px; padding: 10px 14px; font-size: 12px; line-height: 1.6; }
+
+  /* Edge-to-edge image bands */
+  .page-ahh .ahh-cards { padding: 58px 24px 17px; }
+  .page-ahh .ahh-cards .cs-media img { width: 83.5vw; max-width: none; }
+  .page-ahh .ahh-cards .cs-copy { margin-top: 53px; }
+
+  /* Concepts: three small marks in a row */
+  .page-ahh .ahh-concepts { padding-inline: 0; padding-top: 36px; padding-bottom: 36px; }
+  .page-ahh .ahh-concepts .cs-copy { padding-inline: 24px; margin-top: 46px; }
+  .page-ahh .cs-media--concepts { grid-template-columns: 109fr 135fr 104fr; gap: 3.2vw; padding-inline: 4.6vw; align-items: center; }
+
+  /* Colour & typography: flush pair */
+  .page-ahh .ahh-colours { padding: 28px 0 24px; }
+  .page-ahh .ahh-colours .cs-copy { padding-inline: 24px; margin-top: 28px; }
+  .page-ahh .cs-media--palette { grid-template-columns: 210fr 129fr; column-gap: 9.6%; max-width: 375px; }
+
+  /* T-shirts bleed to the edges */
+  .page-ahh .ahh-shirt { padding: 0 0 40px; }
+  .page-ahh .ahh-shirt .cs-media img { max-width: none; }
+  .page-ahh .ahh-shirt .cs-copy { padding-inline: 24px; margin-top: 18px; }
 }
