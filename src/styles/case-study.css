@@ -10,7 +10,7 @@ body.case {
 /* ---------- Hero ---------- */
 .cs-hero {
   min-height: clamp(380px, 66.8vw, 962px);
-  background: var(--accent);
+  background: var(--hero-bg, var(--accent));
   color: var(--hero-ink);
   display: grid; place-content: center; text-align: center;
   padding: 64px var(--gutter);
@@ -19,6 +19,8 @@ body.case {
   font: 900 clamp(28px, 3vw, 43px)/1.17 var(--font-case);
   text-transform: uppercase;
 }
+.br-mobile { display: none; }
+@media (max-width: 760px) { .br-mobile { display: inline; } }
 .cs-hero p {
   margin: 12px auto 0; max-width: 700px;
   font: 400 clamp(16px, 1.4vw, 20px)/1.25 var(--font-case);
@@ -42,7 +44,8 @@ body.case {
 .cs-media--3 { grid-template-columns: repeat(3, 1fr); }
 .cs-media--card { background: #fff; padding: clamp(16px, 2vw, 32px); }
 /* Transparent cut-outs sit straight on the tinted band (no blend, so no colour cast) */
-.cs-media--critters { max-width: 720px; margin-inline: auto; }
+.cs-media--critters { max-width: 720px; margin-inline: auto; gap: 0; }
+.cs-media--critters img { width: 100%; aspect-ratio: 1; object-fit: contain; margin-block: -6%; }
 
 /* Flooded (tinted) sections: body copy takes the heading colour */
 .cs-section--tint .cs-copy p { color: var(--tint-copy, var(--accent)); }
@@ -64,8 +67,8 @@ body.case {
 
 /* Story row: copy on the left, INDUSTRY / SERVICE box on the right */
 .cs-intro {
-  display: grid; grid-template-columns: minmax(0, 1fr) 344px;
-  gap: clamp(24px, 5vw, 72px); align-items: start;
+  display: grid; grid-template-columns: minmax(0, 1fr) 300px;
+  gap: clamp(24px, 5vw, 72px); align-items: center;
 }
 .cs-intro .cs-copy { margin-top: 0; }
 .cs-media + .cs-intro { margin-top: clamp(32px, 4vw, 56px); }
@@ -94,7 +97,6 @@ body.case {
 /* ---------- Extra Projects ("A few favourites", Figma 2175:2) ----------
    Desktop is the 1440 × 6382 frame reproduced to scale: every item carries its
    Figma box (--x --y --w --h, in frame pixels, y measured from the end of the hero). */
-.page-extra .site-header { background: var(--accent); }
 .page-extra .cs-hero {
   --u: calc(min(100vw, 1440px) / 1440);
   min-height: calc(clamp(380px, 66.8vw, 962px) - var(--header-h));
@@ -157,6 +159,66 @@ body.case {
   }
 }
 
+/* ---------- Giant Tiger (Figma desktop 2170:2, mobile 2251:2) ----------
+   Below the hero, the page is the Figma frame reproduced to scale: every item carries its
+   frame box (--x --y --w --h desktop, --mx --my --mw --mh mobile), y measured from the end of the hero. */
+.page-gt { --u: calc(min(100vw, 1440px) / 1440); }
+.page-gt .cs-hero {
+  min-height: calc(clamp(380px, 66.8vw, 962px) - var(--header-h));
+  padding-block: 0;
+}
+.page-gt .cs-hero p { margin-top: 12px; line-height: normal; }
+
+.gt-stage {
+  --k: 14.4; --hk: 56.08;
+  position: relative; max-width: 1440px; margin: 0 auto;
+  aspect-ratio: 1440 / 5608; container-type: inline-size;
+}
+.gt {
+  position: absolute; margin: 0;
+  left: calc(var(--x) / var(--k) * 1%); top: calc(var(--y) / var(--hk) * 1%);
+  width: calc(var(--w) / var(--k) * 1%); height: calc(var(--h) / var(--hk) * 1%);
+}
+/* Tinted bands run the full width of the page, past the 1440 frame */
+.gt-tint { background: var(--tint); box-shadow: 0 0 0 100vmax var(--tint); clip-path: inset(0 -100vmax); }
+.gt-fit img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+
+.gt-txt { height: auto; }
+.gt-h {
+  font: 900 calc(26 / var(--k) * 1cqw)/normal var(--font-case);
+  color: #f2ba1b; text-transform: uppercase;
+}
+.gt-p { font: 400 calc(18 / var(--k) * 1cqw)/calc(22 / 18) var(--font-case); color: #000; }
+.gt-p--wall { font-weight: 500; color: #262626; }
+
+.gt-meta {
+  --fs: 15; --pl: 38; --pt: 15;
+  box-sizing: border-box; border: 1px solid #000;
+  padding: calc(var(--pt) / var(--k) * 1cqw) 0 0 calc(var(--pl) / var(--k) * 1cqw);
+  font: 400 calc(var(--fs) / var(--k) * 1cqw)/calc(23 / 15) var(--font-case);
+}
+.gt-meta div { margin: 0; }
+.gt-meta dt { display: inline; font-weight: 700; text-transform: uppercase; }
+.gt-meta dd { display: inline; margin: 0; }
+
+@media (max-width: 760px) {
+  .page-gt .cs-hero { min-height: calc(100vh - var(--header-h)); min-height: calc(100svh - var(--header-h)); padding: 0 24px; }
+  .page-gt .cs-hero h1 { font-size: 28px; line-height: normal; }
+  .page-gt .cs-hero p { font-size: 15px; max-width: 363px; margin-top: 8px; }
+  .gt-stage { --k: 4.11; --hk: 35.06; aspect-ratio: 411 / 3506; }
+  .gt {
+    left: calc(var(--mx) / var(--k) * 1%); top: calc(var(--my) / var(--hk) * 1%);
+    width: calc(var(--mw) / var(--k) * 1%); height: calc(var(--mh) / var(--hk) * 1%);
+  }
+  .gt-txt { height: auto; }
+  .gt-d, .gt-br { display: none; }
+  .gt-b { box-sizing: border-box; border: 0.25px solid #979797; }
+  .gt-h { font-size: calc(20 / var(--k) * 1cqw); }
+  .gt-p { font-size: calc(14 / var(--k) * 1cqw); line-height: calc(18 / 14); color: #262626; }
+  .gt-p--flyer { font-weight: 500; color: #000; }
+  .gt-meta { --fs: 12; --pl: 14; --pt: 11; background: #fff; line-height: 1.6; }
+}
+
 /* ---------- Next project ---------- */
 project-pager { display: block; }
 .cs-next {
@@ -205,12 +267,23 @@ body.case .cs-next { --pager-ink: color-mix(in srgb, var(--accent) 80%, black); 
   .cs-meta { justify-self: stretch; padding: 12px 20px; line-height: 22px; }
   .cs-media--3 { gap: 8px; }
   .cs-media--card { padding: 8px; }
+  .cs-media--dielines { grid-template-columns: 1fr; gap: 12px; }
+  .cs-media--dielines > div { display: contents; }
+  .cs-media--dielines img { width: 100%; }
+  .cs-media--dielines > img { order: 3; }
+  .cs-media--dielines > div > img:first-child { order: 2; }
+  .cs-media--dielines > div > img:last-child { order: 1; }
+  .cs-media--lineup { gap: 0; margin-inline: calc(var(--gutter) * -0.75); }
+  .cs-media--lineup img { margin-inline: -10%; width: 120%; max-width: none; }
   .cs-media .narrow { max-width: 100%; }
   .cs-split--reverse > .cs-copy { order: 2; }
+  .cs-media--menu { gap: 0; }
+  .cs-media--menu img + img { margin-top: -10%; }
   .cs-media--stack { grid-template-columns: 1fr; }
   .cs-media--stack img { max-width: 80%; }
   .cs-media--stack img:last-child { max-width: 100%; }
   .cs-pack { display: flex; flex-direction: column-reverse; }
+  .cs-section--pack { padding-bottom: 0; }
   .cs-pack__bag { width: calc(100% + var(--gutter) * 2); max-width: none; margin-inline: calc(var(--gutter) * -1); }
 }
 
@@ -226,7 +299,7 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
   display: grid; grid-template-columns: 692fr 428fr;
   gap: clamp(16px, 1.7vw, 24px); align-items: center;
 }
-.cs-book-cover img { width: 100%; object-fit: cover; }
+.cs-book-cover img { width: 100%; object-fit: contain; }
 .cs-book-cover img:first-child { aspect-ratio: 692 / 486; }
 .cs-book-cover img:last-child { aspect-ratio: 428 / 617; }
 .cs-copy--accent p { color: var(--accent); }
@@ -307,4 +380,374 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
   .cs-book-bonjour img:last-child { aspect-ratio: 411 / 254; object-fit: cover; }
   .page-book .cs-book-orange .cs-copy { margin-top: 28px; }
   .page-book .cs-book-orange .cs-copy p { font-size: 14px; }
+}
+
+/* ---------- Darcy's Dog Days (Figma desktop 2163:34, mobile 2250:50) ---------- */
+.page-darcy { --tint-copy: var(--accent); }
+.page-darcy .cs-copy p { color: #262626; }
+.page-darcy .cs-section--tint .cs-copy p { color: var(--tint-copy); }
+.page-darcy .cs-media picture { display: contents; }
+.page-darcy .cs-media source { display: none; }
+.page-darcy .cs-hero p { max-width: 650px; margin-top: 8px; }
+
+/* Story: 732px logo, copy left, INDUSTRY / SERVICES box overhanging right */
+.page-darcy .darcy-intro { padding-top: min(4.9vw, 71px); padding-bottom: min(8.5vw, 123px); }
+.page-darcy .cs-media .narrow { max-width: 732px; }
+.page-darcy .cs-media + .cs-intro { margin-top: 36px; }
+.page-darcy .cs-intro { grid-template-columns: minmax(0, 1fr) 389px; gap: 30px; }
+.page-darcy .cs-meta { padding: 20px 43px; margin-right: -45px; justify-self: end; width: 389px; box-sizing: border-box; margin-block: 0; }
+/* Copy in the full-width sections still lines up with the 1052px text column */
+.page-darcy .cs-wrap--wide .cs-copy { margin-left: max(0px, calc((100% - 1052px) / 2)); }
+
+/* Business cards float on the tint band */
+.page-darcy .darcy-cards { padding-top: min(11.6vw, 167px); padding-bottom: min(11.9vw, 171px); }
+.page-darcy .darcy-cards .cs-copy { margin-top: min(5vw, 73px); }
+
+/* Concepts: three marks, 297 / 410 / 313 wide */
+.page-darcy .darcy-concepts { padding-top: min(7.8vw, 112px); padding-bottom: min(5.5vw, 79px); }
+.page-darcy .cs-media--concepts { grid-template-columns: 297fr 410fr 313fr; gap: 2.5%; }
+.page-darcy .cs-media--concepts img { width: 100%; }
+.page-darcy .darcy-concepts .cs-copy { margin-top: min(5vw, 73px); }
+
+/* Colour variations + type specimen (1285px group) */
+.page-darcy .darcy-colours { padding-top: min(5.9vw, 85px); padding-bottom: min(7.5vw, 108px); }
+.page-darcy .cs-media--palette { grid-template-columns: 610fr 624fr; gap: 4%; max-width: 1285px; margin-inline: auto; align-items: start; }
+.page-darcy .cs-media--palette img { width: 100%; }
+.page-darcy .cs-media--palette picture:last-child img { margin-top: 2.1%; }
+.page-darcy .darcy-colours .cs-copy { margin-top: min(4vw, 58px); }
+
+.page-darcy .darcy-shirt { padding-top: min(7.4vw, 107px); padding-bottom: min(7.2vw, 103px); }
+.page-darcy .darcy-shirt .cs-media img { max-width: 1010px; }
+.page-darcy .darcy-shirt .cs-copy { margin-top: min(3.8vw, 54px); }
+
+@media (min-width: 1100px) {
+  .page-darcy .cs-media--concepts { width: calc(100% + 22px); }
+}
+@media (min-width: 1300px) {
+  .page-darcy .cs-media--palette { width: calc(100% + 21px); margin-left: 11px; margin-right: 0; }
+}
+
+@media (max-width: 760px) {
+  .page-darcy .cs-hero h1 { font-size: 28px; line-height: normal; }
+  .page-darcy .cs-hero p { font-size: 15px; line-height: normal; max-width: 303px; margin-top: 12px; }
+  .page-darcy .cs-section { padding-inline: 24px; }
+  .page-darcy .cs-copy { margin-top: 29px; }
+  .page-darcy .cs-copy h2 { font-size: 20px; line-height: normal; margin-bottom: 4px; }
+  .page-darcy .cs-copy p { font-size: 14px; line-height: 18px; }
+  .page-darcy .cs-section--tint .cs-copy p { font-weight: 500; }
+
+  .page-darcy .darcy-intro { padding-top: 39px; padding-bottom: 57px; }
+  .page-darcy .cs-media .narrow { width: 81.5vw; max-width: none; margin-inline: auto; }
+  .page-darcy .cs-media + .cs-intro { margin-top: 29px; }
+  .page-darcy .cs-intro .cs-copy { margin-top: 0; }
+  .page-darcy .cs-intro { grid-template-columns: 1fr; gap: 0; }
+  .page-darcy .cs-meta { width: auto; justify-self: stretch; margin: 17px 0 0; padding: 11px 14px; font-size: 12px; line-height: 1.6; }
+
+  /* Cards bleed edge to edge and overlap the top of the band */
+  .page-darcy .darcy-cards { display: flow-root; padding: 0 0 40px; }
+  .page-darcy .darcy-cards .cs-media { margin-top: -3.2vw; }
+  .page-darcy .darcy-cards .cs-media img { width: 100%; max-width: none; }
+  .page-darcy .darcy-cards .cs-copy { padding-inline: 24px; margin-top: -1.5vw; }
+
+  .page-darcy .darcy-concepts { padding: 28px 24px 46px; }
+  .page-darcy .darcy-concepts .cs-copy { margin-top: 30px; }
+  .page-darcy .cs-media--concepts { grid-template-columns: 107fr 121fr 94fr; gap: 3.5%; width: auto; padding-inline: 7.5vw; margin-inline: -24px; }
+
+  .page-darcy .darcy-colours { padding: 16px 24px 36px; }
+  .page-darcy .cs-media--palette { grid-template-columns: 142fr 155fr; gap: 6.3vw; padding-left: 10.5vw; padding-right: 11vw; margin-inline: -24px; max-width: none; align-items: center; }
+  .page-darcy .cs-media--palette picture:last-child img { margin-top: 0; }
+  .page-darcy .darcy-colours .cs-copy { margin-top: 19px; }
+
+  .page-darcy .darcy-shirt { padding: 51px 0 40px; }
+  .page-darcy .darcy-shirt .cs-media img { max-width: none; }
+  .page-darcy .darcy-shirt .cs-copy { padding-inline: 24px; margin-top: 41px; }
+}
+
+/* ---------- Desktop hero: header and body copy share one text-box width ----------
+   The column is sized by the h1 (its lines never re-wrap); the paragraph contributes
+   no width of its own (width:0 + min-width:100%) so it wraps to the header's width. */
+@media (min-width: 761px) {
+  body.case .cs-hero { grid-template-columns: max-content; }
+  body.case .cs-hero h1 { white-space: nowrap; min-width: 440px; }
+  body.case .cs-hero p { width: 0; min-width: 100%; max-width: none; }
+  body.case .cs-hero p span { display: inline; }
+}
+
+/* ---------- Jas Cafe desktop: image sizes and spacing follow the Figma frame (2139:2, 1440 wide) ----------
+   Everything below scales with --u so the 1440px layout holds at narrower desktop widths. */
+@media (min-width: 761px) {
+  .page-jas { --u: calc(min(100vw, 1440px) / 1440); }
+  .page-jas .cs-section { padding-inline: 0; }
+  .page-jas .cs-wrap { width: calc(1440 * var(--u)); max-width: none; }
+  .page-jas .cs-split, .page-jas .cs-split--reverse { align-items: start; gap: 0; }
+  .page-jas .cs-media { gap: 0; }
+  .page-jas .cs-media img { max-width: none; }
+
+  /* Story */
+  .page-jas .jas-story { padding-block: calc(75 * var(--u)) calc(99 * var(--u)); }
+  .page-jas .jas-story .cs-meta { margin-block: 0; }
+  .page-jas .jas-story .cs-media img { width: calc(826 * var(--u)); }
+  .page-jas .jas-story .cs-intro {
+    grid-template-columns: calc(679 * var(--u)) 300px; gap: calc(92 * var(--u));
+    margin: calc(37 * var(--u)) 0 0 calc(206 * var(--u));
+  }
+
+  /* Main menu: the two sides overlap (their cut-outs have transparent margins) */
+  .page-jas .jas-menu { padding-block: calc(16 * var(--u)) calc(14 * var(--u)); }
+  .page-jas .jas-menu .cs-split {
+    grid-template-columns: calc(698 * var(--u)) calc(357 * var(--u));
+    column-gap: calc(89 * var(--u)); padding-left: calc(196 * var(--u));
+  }
+  .page-jas .jas-menu .cs-media img { width: calc(698 * var(--u)); }
+  .page-jas .jas-menu .cs-media img + img { margin-top: calc(-49 * var(--u)); }
+  .page-jas .jas-menu .cs-copy { margin-top: calc(633 * var(--u)); }
+
+  /* Catering menu */
+  .page-jas .jas-catering { padding-block: calc(44 * var(--u)) calc(45 * var(--u)); }
+  .page-jas .jas-catering .cs-split {
+    grid-template-columns: calc(960 * var(--u)) calc(380 * var(--u)); padding-left: calc(74 * var(--u));
+  }
+  .page-jas .jas-catering .cs-media img { width: calc(860 * var(--u)); }
+  .page-jas .jas-catering .cs-copy { margin-top: calc(590 * var(--u)); }
+
+  /* Sandwich board + window signage */
+  .page-jas .jas-board { padding-block: calc(64 * var(--u)); }
+  .page-jas .jas-board .cs-split {
+    grid-template-columns: calc(934 * var(--u)) calc(377 * var(--u));
+    column-gap: calc(43 * var(--u)); padding-left: calc(57 * var(--u));
+  }
+  .page-jas .jas-board .cs-media {
+    grid-template-columns: calc(360 * var(--u)) calc(531 * var(--u));
+    column-gap: calc(43 * var(--u)); align-items: end; justify-items: start;
+  }
+  .page-jas .jas-board .cs-media img { width: 100%; }
+  .page-jas .jas-board .cs-media img:last-child { height: calc(473 * var(--u)); object-fit: cover; }
+  .page-jas .jas-board .cs-copy { margin-top: calc(264 * var(--u)); }
+
+  /* Packaging: labels left, bag + copy right */
+  .page-jas .cs-section--pack { padding-block: calc(76 * var(--u)) calc(60 * var(--u)); }
+  .page-jas .cs-section--pack .cs-split {
+    grid-template-columns: calc(379 * var(--u)) calc(538 * var(--u));
+    column-gap: calc(53 * var(--u)); padding-left: calc(293 * var(--u));
+  }
+  .page-jas .cs-section--pack .cs-media img { width: calc(379 * var(--u)); }
+  .page-jas .cs-section--pack .cs-media img:first-child { height: calc(367 * var(--u)); object-fit: cover; }
+  .page-jas .cs-pack { align-self: start; gap: calc(49 * var(--u)); margin-top: calc(53 * var(--u)); }
+  .page-jas .cs-pack__bag { width: calc(406 * var(--u)); height: auto; }
+
+  /* Signage */
+  .page-jas .jas-sign { padding-block: calc(49 * var(--u)) calc(46 * var(--u)); }
+  .page-jas .jas-sign .cs-split {
+    grid-template-columns: calc(835 * var(--u)) calc(371 * var(--u));
+    column-gap: calc(37 * var(--u)); padding-left: calc(134 * var(--u));
+  }
+  .page-jas .jas-sign .cs-media img { width: calc(835 * var(--u)); }
+  .page-jas .jas-sign .cs-copy { margin-top: calc(337 * var(--u)); }
+}
+
+/* ---------- AHH / Cuddle Creatures / Shower Cap desktop: sizes and spacing follow their Figma frames (1440 wide) ----------
+   Everything scales with --u so the 1440px layout holds at narrower desktop widths. */
+@media (min-width: 761px) {
+  .page-ahh, .page-cuddle, .page-shower { --u: calc(min(100vw, 1440px) / 1440); }
+  :is(.page-ahh, .page-cuddle, .page-shower) .cs-section { padding-inline: 0; padding-bottom: 0; }
+  .page-ahh .ah-story .cs-media img { margin-left: calc(420 * var(--u)); }
+  .page-cuddle .cc-story .cs-media img { margin-left: calc(374 * var(--u)); }
+  :is(.page-ahh, .page-cuddle, .page-shower) .cs-wrap { width: calc(1440 * var(--u)); max-width: none; }
+  :is(.page-ahh, .page-cuddle, .page-shower) .cs-media { gap: 0; justify-items: start; }
+  :is(.page-ahh, .page-cuddle, .page-shower) .cs-media img { max-width: none; }
+  :is(.page-ahh, .page-cuddle, .page-shower) .cs-section > .cs-wrap > .cs-copy { margin-left: calc(194 * var(--u)); max-width: calc(719 * var(--u)); }
+  :is(.page-ahh, .page-cuddle) .cs-intro {
+    grid-template-columns: calc(634 * var(--u)) 300px; gap: calc(92 * var(--u));
+    margin: 0 0 0 calc(206 * var(--u));
+  }
+  :is(.page-ahh, .page-cuddle) .cs-meta { margin-block: 0; }
+
+  /* ----- AHH ----- */
+  .page-ahh .ah-story { min-height: calc(871 * var(--u)); padding-top: calc(80 * var(--u)); }
+  .page-ahh .ah-story .cs-media img { width: calc(598 * var(--u)); }
+  .page-ahh .ah-story .cs-intro { margin-top: calc(79 * var(--u)); }
+  .page-ahh .ah-cards { min-height: calc(911 * var(--u)); padding-top: calc(189 * var(--u)); }
+  .page-ahh .ah-cards .cs-media img { width: calc(1145 * var(--u)); margin-left: calc(146 * var(--u)); }
+  .page-ahh .ah-cards .cs-copy { margin-top: calc(84 * var(--u)); }
+  .page-ahh .ah-concepts { min-height: calc(649 * var(--u)); padding-top: calc(141 * var(--u)); }
+  .page-ahh .ah-concepts .cs-media {
+    grid-template-columns: calc(393 * var(--u)) calc(394 * var(--u)) calc(393 * var(--u));
+    column-gap: calc(23 * var(--u)); margin-left: calc(117 * var(--u));
+  }
+  .page-ahh .ah-concepts .cs-media img { width: 100%; }
+  .page-ahh .ah-concepts .cs-copy { margin-top: calc(56 * var(--u)); }
+  .page-ahh .ah-colours { min-height: calc(911 * var(--u)); padding-top: calc(114 * var(--u)); }
+  .page-ahh .ah-colours .cs-media {
+    grid-template-columns: calc(506 * var(--u)) calc(362 * var(--u)); column-gap: calc(126 * var(--u));
+    margin-left: calc(224 * var(--u)); align-items: start;
+  }
+  .page-ahh .ah-colours .cs-media img { width: 100%; }
+  .page-ahh .ah-colours .cs-media img:first-child { margin-top: calc(35 * var(--u)); }
+  .page-ahh .ah-colours .cs-copy { margin-top: calc(39 * var(--u)); }
+  .page-ahh .ah-shirt { min-height: calc(911 * var(--u)); padding-top: calc(98 * var(--u)); }
+  .page-ahh .ah-shirt .cs-media img { width: calc(1074 * var(--u)); margin-left: calc(183 * var(--u)); }
+  .page-ahh .ah-shirt .cs-copy { margin-top: calc(69 * var(--u)); }
+
+  /* ----- Cuddle Creatures ----- */
+  .page-cuddle .cc-story { min-height: calc(871 * var(--u)); padding-top: calc(132 * var(--u)); }
+  .page-cuddle .cc-story .cs-media img { width: calc(658 * var(--u)); }
+  .page-cuddle .cc-story .cs-intro { margin-top: calc(81 * var(--u)); }
+  .page-cuddle .cc-critters { min-height: calc(905 * var(--u)); padding-top: calc(105 * var(--u)); }
+  .page-cuddle .cc-critters .cs-media--critters { max-width: calc(640 * var(--u)); }
+  .page-cuddle .cc-critters .cs-copy { margin-top: calc(47 * var(--u)); }
+  .page-cuddle .cc-lineup { min-height: calc(970 * var(--u)); padding-top: calc(124 * var(--u)); }
+  .page-cuddle .cc-lineup .cs-media img { width: calc(1119 * var(--u)); margin-left: calc(161 * var(--u)); }
+  .page-cuddle .cc-lineup .cs-copy { margin-top: calc(64 * var(--u)); margin-left: calc(193 * var(--u)); }
+  .page-cuddle .cc-pkgs { min-height: calc(748 * var(--u)); padding-top: calc(149 * var(--u)); }
+  .page-cuddle .cc-pkgs .cs-media { display: flex; align-items: flex-start; margin-left: calc(127 * var(--u)); }
+  .page-cuddle .cc-pkgs .cs-media img { width: calc(465 * var(--u)); margin-inline: 0; }
+  .page-cuddle .cc-pkgs .cs-media img + img { margin-left: calc(-87 * var(--u)); }
+  .page-cuddle .cc-pkgs .cs-media img:last-child { margin-top: calc(10 * var(--u)); margin-left: calc(-90 * var(--u)); }
+  .page-cuddle .cc-pkgs .cs-copy { margin-top: calc(52 * var(--u)); }
+  .page-cuddle .cc-final { min-height: calc(814 * var(--u)); padding-top: calc(88 * var(--u)); }
+  .page-cuddle .cc-final .cs-media--dielines {
+    grid-template-columns: calc(568 * var(--u)) calc(579 * var(--u)); column-gap: calc(42 * var(--u));
+    margin-left: calc(140 * var(--u)); align-items: start; justify-items: start;
+  }
+  .page-cuddle .cc-final .cs-media--dielines > img { width: 100%; }
+  .page-cuddle .cc-final .cs-media--dielines > .cs-media { display: block; margin-top: calc(-23 * var(--u)); }
+  .page-cuddle .cc-final .cs-media--dielines > .cs-media img { width: 100%; }
+  .page-cuddle .cc-final .cs-media--dielines > .cs-media img:first-child { margin-left: calc(16 * var(--u)); width: calc(579 * var(--u)); }
+  .page-cuddle .cc-final .cs-media--dielines > .cs-media img + img { margin-top: calc(17 * var(--u)); }
+
+  /* ----- Shower Cap ----- */
+  .page-shower .sh-look { min-height: calc(870 * var(--u)); padding-top: calc(78 * var(--u)); }
+  .page-shower .sh-look .cs-split { grid-template-columns: calc(556 * var(--u)) calc(613 * var(--u)); column-gap: calc(26 * var(--u)); padding-left: calc(141 * var(--u)); align-items: start !important; }
+  .page-shower .sh-look .cs-media img { width: 100%; }
+  .page-shower .sh-look .cs-copy { margin-top: calc(344 * var(--u)); max-width: none; }
+  .page-shower .sh-meta { margin-top: calc(92 * var(--u)) !important; }
+  .page-shower .sh-concepts { min-height: calc(912 * var(--u)); padding-top: calc(193 * var(--u)); }
+  .page-shower .sh-concepts .cs-media { display: flex; align-items: flex-end; margin-left: calc(194 * var(--u)); }
+  .page-shower .sh-concepts .cs-media img { width: calc(340 * var(--u)); }
+  .page-shower .sh-concepts .cs-media img:nth-child(2) { width: calc(355 * var(--u)); margin-left: calc(5 * var(--u)); }
+  .page-shower .sh-concepts .cs-media img:nth-child(3) { width: calc(323 * var(--u)); margin-left: calc(12 * var(--u)); }
+  .page-shower .sh-concepts .cs-copy { margin-top: calc(119 * var(--u)); max-width: calc(767 * var(--u)); }
+  .page-shower .sh-before { min-height: calc(964 * var(--u)); padding-top: calc(100 * var(--u)); }
+  .page-shower .sh-before .cs-media { display: flex; align-items: flex-start; margin-left: calc(274 * var(--u)); }
+  .page-shower .sh-before .cs-media img { width: calc(437 * var(--u)); }
+  .page-shower .sh-before .cs-media img + img { width: calc(365 * var(--u)); margin-left: calc(44 * var(--u)); margin-top: calc(18 * var(--u)); }
+  .page-shower .sh-before .cs-copy { margin-top: calc(100 * var(--u)); max-width: calc(767 * var(--u)); }
+  .page-shower .sh-line { min-height: calc(816 * var(--u)); padding-top: calc(87 * var(--u)); }
+  .page-shower .sh-line .cs-media { display: flex !important; align-items: flex-start; margin-left: calc(215 * var(--u)); }
+  .page-shower .sh-line .cs-media img { width: calc(612 * var(--u)); }
+  .page-shower .sh-line .cs-media img + img { width: calc(305 * var(--u)); margin-left: calc(35 * var(--u)); margin-top: calc(11 * var(--u)); }
+  .page-shower .sh-line .cs-copy { margin-top: calc(58 * var(--u)); }
+  .page-shower .sh-final { padding: 0; }
+  .page-shower .sh-final .cs-media img { width: calc(1012 * var(--u)); margin-left: calc(194 * var(--u)); }
+}
+
+/* Image boxes (Figma crops). Zoomed crops use object-view-box; browsers without it fall back to a plain cover crop. */
+@media (min-width: 761px) {
+  :is(.page-ahh, .page-cuddle, .page-shower) .cs-section img { object-fit: cover; }
+
+  .page-ahh .ah-story .cs-media img { height: calc(496 * var(--u)); object-view-box: inset(22.38% 27.12% 20.5% 26.92%); }
+  .page-ahh .ah-cards .cs-media img { height: calc(380 * var(--u)); }
+  .page-ahh .ah-concepts .cs-media img { height: calc(263 * var(--u)); object-view-box: inset(22.5%); }
+  .page-ahh .ah-colours .cs-media img:first-child { height: calc(494 * var(--u)); }
+  .page-ahh .ah-colours .cs-media img:last-child { height: calc(564 * var(--u)); object-view-box: inset(4.22% 30.32% 4.22% 30.54%); }
+  .page-ahh .ah-shirt .cs-media img { height: calc(560 * var(--u)); }
+  .page-ahh .ah-colours .cs-media img:first-child { margin-top: calc(35 * var(--u)); }
+
+  .page-cuddle .cc-story .cs-media img { height: calc(430 * var(--u)); }
+  .page-cuddle .cc-lineup .cs-media img { height: calc(560 * var(--u)); }
+  .page-cuddle .cc-pkgs .cs-media img { height: calc(399 * var(--u)); }
+  .page-cuddle .cc-final .cs-media--dielines > img { height: calc(637 * var(--u)); }
+  .page-cuddle .cc-final .cs-media--dielines > .cs-media img:first-child { height: calc(239 * var(--u)); }
+  .page-cuddle .cc-final .cs-media--dielines > .cs-media img + img { height: calc(421 * var(--u)); width: calc(579 * var(--u)); }
+
+  .page-shower .sh-look .cs-media img { height: calc(713 * var(--u)); }
+  .page-shower .sh-concepts .cs-media img:nth-child(1) { height: calc(425 * var(--u)); }
+  .page-shower .sh-concepts .cs-media img:nth-child(2) { height: calc(434 * var(--u)); }
+  .page-shower .sh-concepts .cs-media img:nth-child(3) { height: calc(433 * var(--u)); }
+  .page-shower .sh-before .cs-media img:nth-child(1) { height: calc(551 * var(--u)); }
+  .page-shower .sh-before .cs-media img:nth-child(2) { height: calc(514 * var(--u)); }
+  .page-shower .sh-line .cs-media img:nth-child(1) { height: calc(451 * var(--u)); }
+  .page-shower .sh-line .cs-media img:nth-child(2) { height: calc(432 * var(--u)); }
+  .page-shower .sh-final .cs-media img { height: calc(842 * var(--u)); }
+}
+
+/* ---------- Desktop Industry / Service box: as wide as its text so each line stays on one line ---------- */
+@media (min-width: 761px) {
+  .page-jas { --intro-copy: calc(679 * var(--u)); }
+  .page-ahh, .page-cuddle { --intro-copy: calc(634 * var(--u)); }
+  body.case .cs-section .cs-intro { grid-template-columns: var(--intro-copy, minmax(0, 1fr)) max-content; }
+  body.case .cs-meta { width: max-content; white-space: nowrap; padding: 20px 32px; }
+}
+
+/* ---------- Cuddle Creatures "The Critters": six cut-outs on desktop (Figma group 2391:70), four on mobile ---------- */
+.cc-group { display: none; }
+@media (min-width: 761px) {
+  .page-cuddle .cc-critters .cs-media--critters { display: none; }
+  .page-cuddle .cc-group { display: block; position: relative; width: calc(967 * var(--u)); height: calc(610 * var(--u)); margin-left: calc(219.5 * var(--u)); }
+  .page-cuddle .cc-group img { position: absolute; max-width: none; object-fit: contain; }
+  .page-cuddle .cc-g-sloth { left: calc(39.7 * var(--u)); top: 0; width: calc(269.8 * var(--u)); height: calc(357.6 * var(--u)); }
+  .page-cuddle .cc-g-llama { left: calc(324.5 * var(--u)); top: 0; width: calc(259.9 * var(--u)); height: calc(359.2 * var(--u)); }
+  .page-cuddle .cc-g-caticorn { left: calc(590.7 * var(--u)); top: 0; width: calc(376.3 * var(--u)); height: calc(348.4 * var(--u)); }
+  .page-cuddle .cc-g-wrap { left: 0; top: calc(306.6 * var(--u)); width: calc(324.8 * var(--u)); height: calc(303.4 * var(--u)); }
+  .page-cuddle .cc-g-catmask { left: calc(324.8 * var(--u)); top: calc(306.6 * var(--u)); width: calc(273.4 * var(--u)); height: calc(273.4 * var(--u)); }
+  .page-cuddle .cc-g-slothmask { left: calc(611.1 * var(--u)); top: calc(306.6 * var(--u)); width: calc(269.1 * var(--u)); height: calc(284.9 * var(--u)); transform: rotate(0.83deg); }
+  .page-cuddle .cc-critters { min-height: 0; padding-block: calc(87 * var(--u)); }
+}
+
+/* ---------- Children's Book desktop: layout follows the Figma frame 2171:2 (1440 wide), scaled with --u ---------- */
+@media (min-width: 761px) {
+  .page-book .cs-section { padding-inline: 0; padding-bottom: 0; }
+  .page-book .cs-wrap { width: calc(1440 * var(--u)); max-width: none; margin-inline: auto; }
+
+  /* Story */
+  .page-book .bk-story { min-height: calc(871 * var(--u)); padding-top: calc(117 * var(--u)); }
+  .page-book .bk-story .cs-book-story {
+    grid-template-columns: calc(660 * var(--u)) calc(498 * var(--u)); column-gap: calc(36 * var(--u));
+    padding-left: calc(118 * var(--u)); align-items: start;
+  }
+  .page-book .bk-story .cs-media img { width: calc(660 * var(--u)); height: calc(659 * var(--u)); object-fit: cover; max-width: none; }
+  .page-book .bk-story .cs-copy { margin-top: calc(305 * var(--u)); max-width: none; }
+  .page-book .bk-story .cs-book-meta { margin-top: calc(40 * var(--u)); }
+
+  /* Cover design */
+  .page-book .bk-cover { min-height: calc(904 * var(--u)); padding-top: calc(44 * var(--u)); }
+  .page-book .bk-cover .cs-book-tint__wrap { width: calc(1440 * var(--u)); max-width: none; margin: 0 auto; }
+  .page-book .bk-cover .cs-book-cover { grid-template-columns: calc(692 * var(--u)) calc(428 * var(--u)); column-gap: calc(24 * var(--u)); margin-left: calc(122 * var(--u)); gap: calc(24 * var(--u)); align-items: start; }
+  .page-book .bk-cover .cs-book-cover img:first-child { margin-top: calc(87 * var(--u)); }
+  .page-book .bk-cover .cs-copy { margin-top: calc(53 * var(--u)); padding-left: 0; margin-left: calc(193 * var(--u)); max-width: calc(515 * var(--u)); }
+
+  /* Back covers: four images across nearly the full page width, hairline gaps, small margin at both sides */
+  .page-book .bk-concept { min-height: calc(757 * var(--u)); padding-top: calc(148 * var(--u)); }
+  .page-book .bk-concept .cs-wrap { width: 100%; }
+  .page-book .bk-concept .cs-book-crop { gap: 0; padding-inline: 8px; }
+
+  /* Interior spreads + packaging */
+  .page-book .bk-interior { min-height: calc(1721 * var(--u)); padding-top: 0; }
+  .page-book .cs-section--flush .cs-copy { max-width: calc(889 * var(--u)); }
+  .page-book .bk-concept .cs-copy { margin-top: calc(71 * var(--u)); }
+  /* The full-width sections centre the same 1440 column the other sections use, so every heading shares one left edge */
+  .page-book .bk-concept .cs-copy, .page-book .bk-interior .cs-copy { padding-left: calc(max(0px, (100% - 1440 * var(--u)) / 2) + 193 * var(--u)); max-width: none; }
+  .page-book .bk-interior .cs-wrap { width: 100%; }
+  .page-book .bk-interior .cs-copy { margin-top: calc(68 * var(--u)); }
+  .page-book .bk-interior .cs-book-crop--pack { margin-top: calc(61 * var(--u)); }
+
+  /* Bonjour-Hi */
+  .page-book .bk-orange { min-height: calc(1873 * var(--u)); padding-top: calc(127 * var(--u)); }
+  .page-book .bk-orange .cs-book-bonjour { padding: 0 0 0 calc(130 * var(--u)); gap: calc(7 * var(--u)); }
+  .page-book .bk-orange .cs-book-bonjour img { width: calc(1180 * var(--u)); max-width: none; }
+  .page-book .bk-orange .cs-copy { margin-top: calc(44 * var(--u)); }
+}
+
+/* AHH: band colours and per-band copy colour from the Figma frame (2165:2) */
+.page-ahh .ah-cards .cs-copy p { color: #279089; }
+
+/* Desktop: same rules as mobile, a line above and below each link in that project's colour */
+@media (min-width: 761px) {
+  .cs-next { max-width: var(--page-max); }
+  .cs-next__link { padding: 18px 4px; border-block: 1px solid var(--pager-ink); }
+}
+
+/* Desktop: the bottom Portfolio / Contact icons share outer edges with the Previous / Next links above them */
+@media (min-width: 761px) {
+  body.case .icon-nav ul { max-width: calc(var(--page-max) - 2 * var(--gutter)); padding-inline: 4px; }
 }

@@ -26,12 +26,13 @@
 }
 .home-hero p span { display: block; }
 
-/* ---------- Project grid: 4 × 309×309 square tiles, 23px gutters, 63px / 72px margins ---------- */
+/* ---------- Project grid: 4 square tiles, 23px gutters, 63px / 72px margins at 1440 (grows with the window beyond) ---------- */
 .work-grid {
   display: grid; grid-template-columns: repeat(4, 1fr);
   gap: calc(23 * var(--u));
-  max-width: 1440px; margin: 0 auto;
-  padding: 0 calc(72 * var(--u)) 0 calc(63 * var(--u));
+  /* fills the window with a small buffer: 63/72px at 1440, a fixed ~3vw beyond that */
+  margin: 0 auto;
+  padding: 0 max(calc(72 * var(--u)), 3vw) 0 max(calc(63 * var(--u)), 3vw);
   list-style: none;
 }
 
@@ -62,12 +63,12 @@
 .tile:hover .tile__label, .tile:focus-visible .tile__label { opacity: 1; transform: none; }
 @media (hover: none) { .tile__label { opacity: 1; transform: none; } }
 
-.tile--about { background: #53afa5; transition: filter 0.3s; }
+.tile--about { background: #90d3d0; /* the L's colour in the AL logo */ transition: filter 0.3s; }
 .tile--about:hover { filter: brightness(0.96); }
 .tile--about span {
   position: absolute; inset: 0; display: grid; place-content: center;
   text-align: center; color: #fff; text-transform: uppercase;
-  font: 300 calc(38 / 309 * 100cqw)/1.17 var(--font-case);
+  font: 500 calc(38 / 309 * 100cqw)/1.17 var(--font-case);
 }
 
 /* ---------- About band: scalloped top edge is the Figma wave graphic ---------- */
@@ -78,8 +79,7 @@
   --wu: var(--u);                       /* wave scale: 1 on the 1440 frame */
   --wave-h: calc(35.4175 * var(--wu));
   margin-top: calc(134 * var(--u));
-  min-height: calc(754 * var(--u));
-  padding-top: calc(98 * var(--u));
+  padding: calc(118 * var(--u)) 0 calc(83 * var(--u)); /* 83px clear of the scallops above and below the portrait (118 - 35 wave) */
   background: #d9f5f1;
   -webkit-mask-image: url('/img/home/wave-tile.svg'), linear-gradient(#000, #000);
           mask-image: url('/img/home/wave-tile.svg'), linear-gradient(#000, #000);
@@ -94,10 +94,10 @@
   max-width: 1440px; margin: 0 auto;
   padding: 0 calc(73 * var(--u)) 0 calc(65 * var(--u));
   display: grid; grid-template-columns: calc(394 * var(--u)) 1fr;
-  column-gap: calc(55 * var(--u)); align-items: start;
+  column-gap: calc(55 * var(--u)); align-items: center;
 }
-.portrait { margin-top: calc(20 * var(--u)); }
-.portrait img { width: 100%; height: auto; }
+.portrait { margin: 0; }
+.portrait img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; }
 
 .intro h2 {
   max-width: calc(810 * var(--u));
@@ -117,7 +117,7 @@
     --m: min(1px, 100vw / 375);
     position: relative; height: calc(183 * var(--m)); background: var(--paper);
   }
-  .site-header--home .site-header__logo { position: relative; width: calc(375 * var(--m)); height: 100%; margin: 0 auto; left: calc(14 * var(--m)); } /* centred in the header; +4 offsets the mark's inner padding now the .com is gone */
+  .site-header--home .site-header__logo { position: relative; width: calc(375 * var(--m)); height: 100%; margin: 0 auto; left: calc(19.7 * var(--m)); } /* optically centred: the logo SVGs carry inner padding, so the visible ink needs this nudge */
   .site-header--home .logo-desk { display: none; }
   .brand-mobile { display: block; }
   .site-header--home .brand-mobile img { position: absolute; max-width: none; }
@@ -138,8 +138,8 @@
   }
 
   .intro { --wu: 0.6px; margin-top: 48px; min-height: 0; padding: 72px 20px 48px; }
-  .intro__inner { grid-template-columns: 1fr; justify-items: center; text-align: center; padding: 0; row-gap: 24px; }
-  .portrait { width: 240px; margin-top: 0; }
+  .intro__inner { grid-template-columns: 1fr; justify-items: stretch; text-align: left; padding: 0; row-gap: 24px; }
+  .portrait { width: 240px; margin: 0 auto; }
   .intro h2 { max-width: none; font-size: 26px; }
   .intro__body { max-width: none; margin-top: 16px; font-size: 18px; }
 
