@@ -41,6 +41,7 @@ The form posts to `/api/contact`, a Cloudflare Pages Function. It checks the Clo
 | `src/styles/pages.css` | About and Contact |
 | `src/main.js` | Scroll fade-ins and the contact form |
 | `functions/api/contact.js` | Contact form API (Cloudflare Pages Function): checks Turnstile, sends via Resend to hello@annelynn.com |
+| `public/img/og/` | Social share images (1200×630), one per page. Exported from the "OG meta" frame on each page of the Figma file; each page's `<head>` points at its own |
 | `public/img/` | Images from the Figma file, resized for the web (max 1600px) |
 
 To add a case study, copy one of the files in `work/` and change the text, the images and `--accent`. Then add a tile for it in `index.html`.

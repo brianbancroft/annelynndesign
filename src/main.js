@@ -1,6 +1,7 @@
 // Shared behaviour for every page — no framework, just the DOM.
 
 import './components/site-nav.js';
+import './components/project-pager.js';
 
 console.log(
   "This site is vanilla HTML & CSS, built with Claude Code from my Figma designs, hosted on Cloudflare. Want off your antiquated CRM? Let's talk — hello@annelynn.com"
@@ -9,6 +10,12 @@ console.log(
 // 1. Fade-in-on-scroll for anything marked .reveal
 const revealables = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window) {
+  // Anything already on screen at load stays put (no slide-up), so it doesn't fight the page cross-fade.
+  // Hidden-until-revealed styles only switch on afterwards (.reveal-ready), for below-the-fold items.
+  revealables.forEach((el) => {
+    if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('is-visible');
+  });
+  document.documentElement.classList.add('reveal-ready');
   const io = new IntersectionObserver((entries) => {
     for (const entry of entries) {
       if (entry.isIntersecting) {
@@ -17,7 +24,7 @@ if ('IntersectionObserver' in window) {
       }
     }
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
-  revealables.forEach((el) => io.observe(el));
+  revealables.forEach((el) => !el.classList.contains('is-visible') && io.observe(el));
 } else {
   revealables.forEach((el) => el.classList.add('is-visible'));
 }

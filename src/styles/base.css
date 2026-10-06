@@ -65,7 +65,7 @@ site-nav { display: block; }
 }
 .icon-nav a {
   display: grid; justify-items: center; gap: 6px;
-  text-decoration: none; color: var(--blue-ink);
+  text-decoration: none; color: var(--teal);
   font: 500 13px/1 var(--font-avenir); letter-spacing: 0.08em; text-transform: uppercase;
   opacity: 0.55; transition: opacity 0.2s, transform 0.2s;
 }
@@ -78,9 +78,9 @@ site-nav { display: block; }
 }
 
 /* ---------- Scroll reveal ---------- */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.reveal.is-visible { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+.reveal-ready .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal-ready .reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal-ready .reveal { opacity: 1; transform: none; transition: none; } }
 
 /* ---------- Page transitions: soft cross-fade; the bottom nav stays put ---------- */
 @view-transition { navigation: auto; }
