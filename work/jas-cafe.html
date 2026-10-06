@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="/src/styles/case-study.css" />
   <script type="module" src="/src/main.js"></script>
 </head>
-<body class="case" style="--accent:#f16354;">
+<body class="case" style="--accent:#f16354; --tint:color-mix(in srgb, var(--accent) 30%, white);">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
@@ -57,7 +57,7 @@
       <div class="cs-split"><div class="cs-media  reveal">
         <img src="/img/jas/menu-outside.png" alt="Main menu, outside" loading="lazy" />
         <img src="/img/jas/menu-inside.png" alt="Main menu, inside" loading="lazy" />
-      </div><div class="cs-copy reveal"><h2>Menu</h2><p>The main menu is easy to read with clear, scannable categories so new guests can order with confidence.</p></div></div>
+      </div><div class="cs-copy reveal"><h2>Main Menu</h2><p>The main menu is easy to read with clear, scannable categories so new guests can order with confidence.</p></div></div>
     </div>
   </section>
   <section class="cs-section">
@@ -69,8 +69,11 @@
   </section>
   <section class="cs-section cs-section--tint">
     <div class="cs-wrap cs-wrap--wide">
-      <div class="cs-split"><div class="cs-media cs-media--2  reveal">
-        <img src="/img/jas/sandwich-board.png" alt="Jas Cafe sandwich board" loading="lazy" />
+      <div class="cs-split"><div class="cs-media cs-media--2 cs-media--stack reveal">
+        <picture>
+          <source media="(max-width: 760px)" srcset="/img/jas/sandwich-board-mobile.png" />
+          <img src="/img/jas/sandwich-board.png" alt="Jas Cafe sandwich board" loading="lazy" />
+        </picture>
         <img src="/img/jas/front.jpg" alt="Window signage at Jas Cafe" loading="lazy" />
       </div><div class="cs-copy reveal"><h2>Sandwich Board</h2><p>The sandwich board needed to stand out on the street, using bold type and a simplified colour palette that reads clearly at a glance.</p></div></div>
     </div>
@@ -80,7 +83,10 @@
       <div class="cs-split cs-split--reverse"><div class="cs-media  reveal">
         <img src="/img/jas/wonton-front.jpg" alt="Wonton packaging label, front" loading="lazy" />
         <img src="/img/jas/wonton-back.jpg" alt="Wonton packaging label, back" loading="lazy" />
-      </div><div class="cs-copy reveal"><h2>Packaging</h2><p>Eye catching packaging design for frozen wontons in a sealable bag.</p></div></div>
+      </div><div class="cs-pack reveal">
+        <img class="cs-pack__bag" src="/img/jas/wonton-bag.jpg" alt="Frozen wonton bag with the finished label" width="406" height="497" loading="lazy" />
+        <div class="cs-copy"><h2>Packaging</h2><p>JAS Cafe wanted to take their wontons beyond the restaurant and sell them frozen at local markets. I designed bold, eye-catching labels for resealable bags, so they stand out on a crowded market table and look just as good in a home freezer.</p></div>
+      </div></div>
     </div>
   </section>
   <section class="cs-section cs-section--tint">
