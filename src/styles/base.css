@@ -75,6 +75,7 @@ site-nav { display: block; }
 
 @media (max-width: 760px) {
   .icon-nav { padding-left: 36px; padding-right: 36px; }
+  .icon-nav a { font-size: 11px; }
 }
 
 /* ---------- Scroll reveal ---------- */
