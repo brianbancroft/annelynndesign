@@ -41,6 +41,11 @@ body.case {
 .cs-media--2 { grid-template-columns: repeat(2, 1fr); }
 .cs-media--3 { grid-template-columns: repeat(3, 1fr); }
 .cs-media--card { background: #fff; padding: clamp(16px, 2vw, 32px); }
+/* Transparent cut-outs sit straight on the tinted band (no blend, so no colour cast) */
+.cs-media--critters { max-width: 720px; margin-inline: auto; }
+
+/* Flooded (tinted) sections: body copy takes the heading colour */
+.cs-section--tint .cs-copy p { color: var(--tint-copy, var(--accent)); }
 .cs-media--end { align-items: end; }
 .cs-media .span-2 { grid-column: span 2; }
 .cs-media .span-all { grid-column: 1 / -1; }
@@ -135,7 +140,7 @@ body.case {
 
 /* Mobile is the 411 × 3248 Figma frame (2252:2) reproduced to scale, same approach as desktop. */
 @media (max-width: 760px) {
-  .page-extra .cs-hero { min-height: calc(100svh - var(--header-h)); align-content: center; padding: 0 var(--gutter); }
+  .page-extra .cs-hero { align-content: center; padding: 0 var(--gutter); }
   .page-extra .cs-hero h1 { font-size: 26px; line-height: normal; max-width: 6em; margin-inline: auto; }
   .page-extra .cs-hero p { font-size: 15px; max-width: 269px; }
   .page-extra .cs-hero p span { display: inline; }
@@ -193,6 +198,8 @@ body.case .cs-next { --pager-ink: color-mix(in srgb, var(--accent) 80%, black); 
 
 /* ---------- Small screens ---------- */
 @media (max-width: 760px) {
+  /* Gallery-wall intro: the coloured hero fills at least a full screen on every case study */
+  .cs-hero, .page-extra .cs-hero { min-height: 100vh; min-height: 100svh; }
   .cs-intro, .cs-split, .cs-split--reverse { grid-template-columns: 1fr; }
   .cs-meta { justify-self: start; }
   .cs-media--3 { gap: 8px; }
@@ -250,7 +257,7 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
   .page-book { --m: calc(100vw / 411); }
   .cs-d { display: none; }
   .cs-m { display: inline; }
-  .page-book .cs-hero { min-height: calc(844 * var(--m)); padding: 64px 24px; }
+  .page-book .cs-hero { padding: 64px 24px; }
   .page-book .cs-hero h1 { font-size: 28px; line-height: 1.17; }
   .page-book .cs-hero p { font-size: 15px; line-height: 1.25; max-width: 287px; margin-top: 8px; }
 
