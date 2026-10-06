@@ -26,7 +26,7 @@ npm run preview      # check the built version locally
 
 ## Hosting and DNS
 
-Pushing to `main` deploys to the Cloudflare Pages project `annelynn-bancroft-io`. DNS for annelynn.com is in Route53. `www.annelynn.com` is a CNAME to `annelynn-bancroft-io.pages.dev` and is the canonical URL. Pages can't serve a bare domain whose DNS lives outside Cloudflare, so `annelynn.com` is an alias to a CloudFront distribution (`E34U1LTOGLCS44`). A CloudFront Function (`annelynn-apex-redirect`) on that distribution sends a 301 to www. The MX/TXT records for Google Workspace are in the same zone.
+Pushing to `main` deploys to the Cloudflare Pages project `annelynn-bancroft-io`. DNS for annelynn.com is in Route53. `www.annelynn.com` is a CNAME to `annelynn-bancroft-io.pages.dev` and is the canonical URL. Pages can't serve a bare domain whose DNS lives outside Cloudflare, so `annelynn.com` is an alias to a CloudFront distribution (`E34U1LTOGLCS44`). A CloudFront Function (`annelynn-apex-redirect`) on that distribution sends a 301 to www. The MX/TXT records for Google Workspace are in the same zone. `annelynn.bancroft.io` 301s to www with a Cloudflare Redirect Rule on the bancroft.io zone.
 
 ## Contact form
 
