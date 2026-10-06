@@ -68,6 +68,7 @@ body.case {
   gap: clamp(24px, 5vw, 72px); align-items: start;
 }
 .cs-intro .cs-copy { margin-top: 0; }
+.cs-media + .cs-intro { margin-top: clamp(32px, 4vw, 56px); }
 .cs-meta {
   border: 1px solid var(--ink); background: #fff;
   padding: 20px 36px;
@@ -201,7 +202,7 @@ body.case .cs-next { --pager-ink: color-mix(in srgb, var(--accent) 80%, black); 
   /* Gallery-wall intro: the coloured hero fills at least a full screen on every case study */
   .cs-hero, .page-extra .cs-hero { min-height: 100vh; min-height: 100svh; }
   .cs-intro, .cs-split, .cs-split--reverse { grid-template-columns: 1fr; }
-  .cs-meta { justify-self: start; }
+  .cs-meta { justify-self: stretch; padding: 12px 20px; line-height: 22px; }
   .cs-media--3 { gap: 8px; }
   .cs-media--card { padding: 8px; }
   .cs-media .narrow { max-width: 100%; }
