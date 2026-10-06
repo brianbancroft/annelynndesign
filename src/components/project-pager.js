@@ -1,15 +1,15 @@
 // <project-pager> — "Next project / Previous project" links at the bottom of each case study.
-// One ordered list drives every page; previous/next wrap around. Renders into the light DOM so the
+// One ordered list (same order as the homepage grid) drives every page; previous/next wrap around. Renders into the light DOM so the
 // .cs-next styles in case-study.css (and the page's --accent theme) apply as-is.
 
 const PROJECTS = [
-  { href: '/work/cuddle-creatures.html', title: 'Cuddle Creatures' },
-  { href: '/work/shower-cap-design.html', title: 'Shower Cap Design' },
   { href: '/work/jas-cafe.html', title: 'Jas Cafe' },
-  { href: '/work/darcys-dog-days.html', title: "Darcy's Dog Days" },
-  { href: '/work/ahh.html', title: 'Arrowsmith Herbal Healing' },
-  { href: '/work/giant-tiger.html', title: 'Giant Tiger' },
+  { href: '/work/cuddle-creatures.html', title: 'Cuddle Creatures' },
   { href: '/work/childrens-book.html', title: "Children's Book" },
+  { href: '/work/ahh.html', title: 'Arrowsmith Herbal Healing' },
+  { href: '/work/darcys-dog-days.html', title: "Darcy's Dog Days" },
+  { href: '/work/giant-tiger.html', title: 'Giant Tiger' },
+  { href: '/work/shower-cap-design.html', title: 'Shower Cap Design' },
   { href: '/work/extra-projects.html', title: 'Extra Projects' },
 ];
 
