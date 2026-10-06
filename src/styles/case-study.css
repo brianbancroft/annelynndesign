@@ -460,3 +460,13 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
   .page-darcy .darcy-shirt .cs-media img { max-width: none; }
   .page-darcy .darcy-shirt .cs-copy { padding-inline: 24px; margin-top: 41px; }
 }
+
+/* ---------- Desktop hero: header and body copy share one text-box width ----------
+   The column is sized by the h1 (its lines never re-wrap); the paragraph contributes
+   no width of its own (width:0 + min-width:100%) so it wraps to the header's width. */
+@media (min-width: 761px) {
+  body.case .cs-hero { grid-template-columns: max-content; }
+  body.case .cs-hero h1 { white-space: nowrap; min-width: 440px; }
+  body.case .cs-hero p { width: 0; min-width: 100%; max-width: none; }
+  body.case .cs-hero p span { display: inline; }
+}
