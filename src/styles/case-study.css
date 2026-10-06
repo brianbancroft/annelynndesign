@@ -277,6 +277,8 @@ body.case .cs-next { --pager-ink: color-mix(in srgb, var(--accent) 80%, black); 
   .cs-media--lineup img { margin-inline: -10%; width: 120%; max-width: none; }
   .cs-media .narrow { max-width: 100%; }
   .cs-split--reverse > .cs-copy { order: 2; }
+  .cs-media--menu { gap: 0; }
+  .cs-media--menu img + img { margin-top: -10%; }
   .cs-media--stack { grid-template-columns: 1fr; }
   .cs-media--stack img { max-width: 80%; }
   .cs-media--stack img:last-child { max-width: 100%; }
