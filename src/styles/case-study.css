@@ -97,7 +97,6 @@ body.case {
 /* ---------- Extra Projects ("A few favourites", Figma 2175:2) ----------
    Desktop is the 1440 × 6382 frame reproduced to scale: every item carries its
    Figma box (--x --y --w --h, in frame pixels, y measured from the end of the hero). */
-.page-extra .site-header { background: var(--accent); }
 .page-extra .cs-hero {
   --u: calc(min(100vw, 1440px) / 1440);
   min-height: calc(clamp(380px, 66.8vw, 962px) - var(--header-h));
