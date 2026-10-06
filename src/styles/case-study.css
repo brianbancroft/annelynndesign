@@ -160,6 +160,66 @@ body.case {
   }
 }
 
+/* ---------- Giant Tiger (Figma desktop 2170:2, mobile 2251:2) ----------
+   Below the hero, the page is the Figma frame reproduced to scale: every item carries its
+   frame box (--x --y --w --h desktop, --mx --my --mw --mh mobile), y measured from the end of the hero. */
+.page-gt { --u: calc(min(100vw, 1440px) / 1440); }
+.page-gt .site-header { background: var(--accent); }
+.page-gt .cs-hero {
+  min-height: calc(clamp(380px, 66.8vw, 962px) - var(--header-h));
+  align-content: start; padding: calc(381 * var(--u) - var(--header-h)) var(--gutter) 0;
+}
+.page-gt .cs-hero p { margin-top: calc(21 * var(--u)); line-height: normal; }
+
+.gt-stage {
+  --k: 14.4; --hk: 56.08;
+  position: relative; max-width: 1440px; margin: 0 auto;
+  aspect-ratio: 1440 / 5608; container-type: inline-size;
+}
+.gt {
+  position: absolute; margin: 0;
+  left: calc(var(--x) / var(--k) * 1%); top: calc(var(--y) / var(--hk) * 1%);
+  width: calc(var(--w) / var(--k) * 1%); height: calc(var(--h) / var(--hk) * 1%);
+}
+/* Tinted bands run the full width of the page, past the 1440 frame */
+.gt-tint { background: var(--tint); box-shadow: 0 0 0 100vmax var(--tint); clip-path: inset(0 -100vmax); }
+.gt-fit img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+
+.gt-txt { height: auto; }
+.gt-h {
+  font: 900 calc(26 / var(--k) * 1cqw)/normal var(--font-case);
+  color: #f2ba1b; text-transform: uppercase;
+}
+.gt-p { font: 400 calc(18 / var(--k) * 1cqw)/calc(22 / 18) var(--font-case); color: #000; }
+.gt-p--wall { font-weight: 500; color: #262626; }
+
+.gt-meta {
+  --fs: 15; --pl: 38; --pt: 15;
+  box-sizing: border-box; border: 1px solid #000;
+  padding: calc(var(--pt) / var(--k) * 1cqw) 0 0 calc(var(--pl) / var(--k) * 1cqw);
+  font: 400 calc(var(--fs) / var(--k) * 1cqw)/calc(23 / 15) var(--font-case);
+}
+.gt-meta div { margin: 0; }
+.gt-meta dt { display: inline; font-weight: 700; text-transform: uppercase; }
+.gt-meta dd { display: inline; margin: 0; }
+
+@media (max-width: 760px) {
+  .page-gt .cs-hero { min-height: calc(100vh - var(--header-h)); min-height: calc(100svh - var(--header-h)); padding: calc(388px - var(--header-h)) 24px 0; }
+  .page-gt .cs-hero h1 { font-size: 28px; line-height: normal; }
+  .page-gt .cs-hero p { font-size: 15px; max-width: 363px; margin-top: 5px; }
+  .gt-stage { --k: 4.11; --hk: 35.06; aspect-ratio: 411 / 3506; }
+  .gt {
+    left: calc(var(--mx) / var(--k) * 1%); top: calc(var(--my) / var(--hk) * 1%);
+    width: calc(var(--mw) / var(--k) * 1%); height: calc(var(--mh) / var(--hk) * 1%);
+  }
+  .gt-txt { height: auto; }
+  .gt-d, .gt-br { display: none; }
+  .gt-h { font-size: calc(20 / var(--k) * 1cqw); }
+  .gt-p { font-size: calc(14 / var(--k) * 1cqw); line-height: calc(18 / 14); color: #262626; }
+  .gt-p--flyer { font-weight: 500; color: #000; }
+  .gt-meta { --fs: 12; --pl: 14; --pt: 11; background: #fff; line-height: 1.6; }
+}
+
 /* ---------- Next project ---------- */
 project-pager { display: block; }
 .cs-next {
@@ -238,7 +298,7 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
   display: grid; grid-template-columns: 692fr 428fr;
   gap: clamp(16px, 1.7vw, 24px); align-items: center;
 }
-.cs-book-cover img { width: 100%; object-fit: cover; }
+.cs-book-cover img { width: 100%; object-fit: contain; }
 .cs-book-cover img:first-child { aspect-ratio: 692 / 486; }
 .cs-book-cover img:last-child { aspect-ratio: 428 / 617; }
 .cs-copy--accent p { color: var(--accent); }
@@ -319,4 +379,85 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
   .cs-book-bonjour img:last-child { aspect-ratio: 411 / 254; object-fit: cover; }
   .page-book .cs-book-orange .cs-copy { margin-top: 28px; }
   .page-book .cs-book-orange .cs-copy p { font-size: 14px; }
+}
+
+/* ---------- Darcy's Dog Days (Figma desktop 2163:34, mobile 2250:50) ---------- */
+.page-darcy { --tint-copy: var(--accent); }
+.page-darcy .cs-copy p { color: #262626; }
+.page-darcy .cs-section--tint .cs-copy p { color: var(--tint-copy); }
+.page-darcy .cs-media picture { display: contents; }
+.page-darcy .cs-media source { display: none; }
+.page-darcy .cs-hero p { max-width: 650px; margin-top: 8px; }
+
+/* Story: 732px logo, copy left, INDUSTRY / SERVICES box overhanging right */
+.page-darcy .darcy-intro { padding-top: min(4.9vw, 71px); padding-bottom: min(7.4vw, 107px); }
+.page-darcy .cs-media .narrow { max-width: 732px; }
+.page-darcy .cs-media + .cs-intro { margin-top: 36px; }
+.page-darcy .cs-intro { grid-template-columns: minmax(0, 1fr) 389px; gap: 30px; }
+.page-darcy .cs-meta { padding: 20px 43px; margin-right: -45px; justify-self: end; width: 389px; box-sizing: border-box; margin-top: 0; }
+/* Copy in the full-width sections still lines up with the 1052px text column */
+.page-darcy .cs-wrap--wide .cs-copy { margin-left: max(0px, calc((100% - 1052px) / 2)); }
+
+/* Business cards float on the tint band */
+.page-darcy .darcy-cards { padding-top: min(11.6vw, 167px); padding-bottom: min(11.9vw, 171px); }
+.page-darcy .darcy-cards .cs-copy { margin-top: min(5vw, 73px); }
+
+/* Concepts: three marks, 297 / 410 / 313 wide */
+.page-darcy .darcy-concepts { padding-top: min(7.8vw, 112px); padding-bottom: min(5.5vw, 79px); }
+.page-darcy .cs-media--concepts { grid-template-columns: 297fr 410fr 313fr; gap: 2.5%; }
+.page-darcy .cs-media--concepts img { width: 100%; }
+.page-darcy .darcy-concepts .cs-copy { margin-top: min(5vw, 73px); }
+
+/* Colour variations + type specimen (1285px group) */
+.page-darcy .darcy-colours { padding-top: min(5.9vw, 85px); padding-bottom: min(7.5vw, 108px); }
+.page-darcy .cs-media--palette { grid-template-columns: 610fr 624fr; gap: 4%; max-width: 1285px; margin-inline: auto; align-items: start; }
+.page-darcy .cs-media--palette img { width: 100%; }
+.page-darcy .cs-media--palette picture:last-child img { margin-top: 2.1%; }
+.page-darcy .darcy-colours .cs-copy { margin-top: min(4vw, 58px); }
+
+.page-darcy .darcy-shirt { padding-top: min(7.4vw, 107px); padding-bottom: min(5.6vw, 80px); }
+.page-darcy .darcy-shirt .cs-media img { max-width: 1010px; }
+.page-darcy .darcy-shirt .cs-copy { margin-top: min(3.8vw, 54px); }
+
+@media (min-width: 1100px) {
+  .page-darcy .cs-media--concepts { width: calc(100% + 22px); }
+}
+@media (min-width: 1300px) {
+  .page-darcy .cs-media--palette { width: calc(100% + 21px); margin-left: 11px; margin-right: 0; }
+}
+
+@media (max-width: 760px) {
+  .page-darcy .cs-hero h1 { font-size: 28px; line-height: normal; }
+  .page-darcy .cs-hero p { font-size: 15px; line-height: normal; max-width: 303px; margin-top: 12px; }
+  .page-darcy .cs-section { padding-inline: 24px; }
+  .page-darcy .cs-copy { margin-top: 29px; }
+  .page-darcy .cs-copy h2 { font-size: 20px; line-height: normal; margin-bottom: 4px; }
+  .page-darcy .cs-copy p { font-size: 14px; line-height: 18px; }
+  .page-darcy .cs-section--tint .cs-copy p { font-weight: 500; }
+
+  .page-darcy .darcy-intro { padding-top: 39px; padding-bottom: 57px; }
+  .page-darcy .cs-media .narrow { width: 81.5vw; max-width: none; margin-inline: auto; }
+  .page-darcy .cs-media + .cs-intro { margin-top: 29px; }
+  .page-darcy .cs-intro .cs-copy { margin-top: 0; }
+  .page-darcy .cs-intro { grid-template-columns: 1fr; gap: 0; }
+  .page-darcy .cs-meta { width: auto; justify-self: stretch; margin: 17px 0 0; padding: 11px 14px; font-size: 12px; line-height: 1.6; }
+
+  /* Cards bleed edge to edge and overlap the top of the band */
+  .page-darcy .darcy-cards { display: flow-root; padding: 0 0 40px; }
+  .page-darcy .darcy-cards .cs-media { margin-top: -3.2vw; }
+  .page-darcy .darcy-cards .cs-media img { width: 100%; max-width: none; }
+  .page-darcy .darcy-cards .cs-copy { padding-inline: 24px; margin-top: -1.5vw; }
+
+  .page-darcy .darcy-concepts { padding: 28px 24px 46px; }
+  .page-darcy .darcy-concepts .cs-copy { margin-top: 30px; }
+  .page-darcy .cs-media--concepts { grid-template-columns: 107fr 121fr 94fr; gap: 3.5%; width: auto; padding-inline: 7.5vw; margin-inline: -24px; }
+
+  .page-darcy .darcy-colours { padding: 16px 24px 36px; }
+  .page-darcy .cs-media--palette { grid-template-columns: 142fr 155fr; gap: 6.3vw; padding-left: 10.5vw; padding-right: 11vw; margin-inline: -24px; max-width: none; align-items: center; }
+  .page-darcy .cs-media--palette picture:last-child img { margin-top: 0; }
+  .page-darcy .darcy-colours .cs-copy { margin-top: 19px; }
+
+  .page-darcy .darcy-shirt { padding: 51px 0 40px; }
+  .page-darcy .darcy-shirt .cs-media img { max-width: none; }
+  .page-darcy .darcy-shirt .cs-copy { padding-inline: 24px; margin-top: 41px; }
 }
