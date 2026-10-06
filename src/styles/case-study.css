@@ -676,3 +676,18 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
   body.case .cs-section .cs-intro { grid-template-columns: var(--intro-copy, minmax(0, 1fr)) max-content; }
   body.case .cs-meta { width: max-content; white-space: nowrap; padding: 20px 32px; }
 }
+
+/* ---------- Cuddle Creatures "The Critters": six cut-outs on desktop (Figma group 2391:70), four on mobile ---------- */
+.cc-group { display: none; }
+@media (min-width: 761px) {
+  .page-cuddle .cc-critters .cs-media--critters { display: none; }
+  .page-cuddle .cc-group { display: block; position: relative; width: calc(967 * var(--u)); height: calc(610 * var(--u)); margin-left: calc(219.5 * var(--u)); }
+  .page-cuddle .cc-group img { position: absolute; max-width: none; object-fit: contain; }
+  .page-cuddle .cc-g-sloth { left: calc(39.7 * var(--u)); top: 0; width: calc(269.8 * var(--u)); height: calc(357.6 * var(--u)); }
+  .page-cuddle .cc-g-llama { left: calc(324.5 * var(--u)); top: 0; width: calc(259.9 * var(--u)); height: calc(359.2 * var(--u)); }
+  .page-cuddle .cc-g-caticorn { left: calc(590.7 * var(--u)); top: 0; width: calc(376.3 * var(--u)); height: calc(348.4 * var(--u)); }
+  .page-cuddle .cc-g-wrap { left: 0; top: calc(306.6 * var(--u)); width: calc(324.8 * var(--u)); height: calc(303.4 * var(--u)); }
+  .page-cuddle .cc-g-catmask { left: calc(324.8 * var(--u)); top: calc(306.6 * var(--u)); width: calc(273.4 * var(--u)); height: calc(273.4 * var(--u)); }
+  .page-cuddle .cc-g-slothmask { left: calc(611.1 * var(--u)); top: calc(306.6 * var(--u)); width: calc(269.1 * var(--u)); height: calc(284.9 * var(--u)); transform: rotate(0.83deg); }
+  .page-cuddle .cc-critters { padding-top: calc(87 * var(--u)); }
+}
