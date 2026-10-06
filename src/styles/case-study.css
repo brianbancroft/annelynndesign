@@ -744,3 +744,8 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
   .cs-next { max-width: var(--page-max); }
   .cs-next__link { padding: 18px 4px; border-block: 1px solid var(--pager-ink); }
 }
+
+/* Desktop: the bottom Portfolio / Contact icons share outer edges with the Previous / Next links above them */
+@media (min-width: 761px) {
+  body.case .icon-nav ul { max-width: calc(var(--page-max) - 2 * var(--gutter)); padding-inline: 4px; }
+}
