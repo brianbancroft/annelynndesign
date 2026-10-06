@@ -164,12 +164,11 @@ body.case {
    Below the hero, the page is the Figma frame reproduced to scale: every item carries its
    frame box (--x --y --w --h desktop, --mx --my --mw --mh mobile), y measured from the end of the hero. */
 .page-gt { --u: calc(min(100vw, 1440px) / 1440); }
-.page-gt .site-header { background: var(--accent); }
 .page-gt .cs-hero {
   min-height: calc(clamp(380px, 66.8vw, 962px) - var(--header-h));
-  align-content: start; padding: calc(381 * var(--u) - var(--header-h)) var(--gutter) 0;
+  padding-block: 0;
 }
-.page-gt .cs-hero p { margin-top: calc(21 * var(--u)); line-height: normal; }
+.page-gt .cs-hero p { margin-top: 12px; line-height: normal; }
 
 .gt-stage {
   --k: 14.4; --hk: 56.08;
@@ -204,9 +203,9 @@ body.case {
 .gt-meta dd { display: inline; margin: 0; }
 
 @media (max-width: 760px) {
-  .page-gt .cs-hero { min-height: calc(100vh - var(--header-h)); min-height: calc(100svh - var(--header-h)); padding: calc(388px - var(--header-h)) 24px 0; }
+  .page-gt .cs-hero { min-height: calc(100vh - var(--header-h)); min-height: calc(100svh - var(--header-h)); padding: 0 24px; }
   .page-gt .cs-hero h1 { font-size: 28px; line-height: normal; }
-  .page-gt .cs-hero p { font-size: 15px; max-width: 363px; margin-top: 5px; }
+  .page-gt .cs-hero p { font-size: 15px; max-width: 363px; margin-top: 8px; }
   .gt-stage { --k: 4.11; --hk: 35.06; aspect-ratio: 411 / 3506; }
   .gt {
     left: calc(var(--mx) / var(--k) * 1%); top: calc(var(--my) / var(--hk) * 1%);
@@ -214,6 +213,7 @@ body.case {
   }
   .gt-txt { height: auto; }
   .gt-d, .gt-br { display: none; }
+  .gt-b { box-sizing: border-box; border: 0.25px solid #979797; }
   .gt-h { font-size: calc(20 / var(--k) * 1cqw); }
   .gt-p { font-size: calc(14 / var(--k) * 1cqw); line-height: calc(18 / 14); color: #262626; }
   .gt-p--flyer { font-weight: 500; color: #000; }
