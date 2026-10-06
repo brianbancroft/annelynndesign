@@ -51,7 +51,8 @@ h1, h2, h3, p, figure { margin: 0; }
 .site-header__logo { display: block; height: 96%; }
 .site-header__logo img { height: 100%; width: auto; }
 
-/* ---------- Bottom icon nav (Portfolio / About / Contact) ---------- */
+/* ---------- Bottom icon nav (Portfolio / About / Contact) — rendered by <site-nav> ---------- */
+site-nav { display: block; }
 .icon-nav {
   background: var(--paper);
   border-top: 1px solid rgba(0, 0, 0, 0.06);
@@ -70,9 +71,25 @@ h1, h2, h3, p, figure { margin: 0; }
 }
 .icon-nav a:hover, .icon-nav a[aria-current='page'] { opacity: 1; }
 .icon-nav a:hover { transform: translateY(-2px); }
-.icon-nav img { width: clamp(56px, 6.5vw, 94px); height: auto; }
+.icon-nav img { height: clamp(40px, 4.4vw, 63px); width: auto; }
+
+@media (max-width: 760px) {
+  .icon-nav { padding-left: 36px; padding-right: 36px; }
+}
 
 /* ---------- Scroll reveal ---------- */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+/* ---------- Page transitions: soft cross-fade; the bottom nav stays put ---------- */
+@view-transition { navigation: auto; }
+site-nav { view-transition-name: site-nav; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.35s; animation-timing-function: ease-in-out; }
+/* The nav is its own layer, swapped instantly (no fade or slide) so it reads as constant. */
+::view-transition-group(site-nav) { animation: none; }
+::view-transition-old(site-nav) { display: none; }
+::view-transition-new(site-nav) { animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+}

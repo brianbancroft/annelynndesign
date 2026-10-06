@@ -8,7 +8,7 @@
   <link rel="icon" href="/img/home/logo-white.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;500;700;900&family=Nunito+Sans:wght@200;400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;500;700;900&family=Raleway:wght@300;700&family=Nunito+Sans:wght@200;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/src/styles/base.css" />
   <link rel="stylesheet" href="/src/styles/home.css" />
   <script type="module" src="/src/main.js"></script>
@@ -16,67 +16,63 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
+  <header class="site-header site-header--home">
     <a class="site-header__logo" href="/" aria-label="Anne-Lynn Design — home">
-      <img src="/img/home/logo-white.png" alt="" width="68" height="88" />
+      <img class="logo-desk" src="/img/home/logo-white.png" alt="" width="68" height="88" />
+      <span class="brand-mobile" aria-hidden="true">
+        <img class="brand-mobile__mark" src="/img/home/mobile-mark.svg" alt="" width="97.2287" height="117.118" />
+        <img class="brand-mobile__word" src="/img/home/mobile-wordmark.svg" alt="" width="176.055" height="54.4868" />
+      </span>
     </a>
   </header>
 
-  <main id="main">
+  <main id="main" class="home">
     <section class="home-hero">
       <h1>ANNE-LYNN DESIGN</h1>
-      <p><span>CUSTOM LOGOS • PRINT EXPERIENCE • PACKAGING</span> <span>• SIGNAGE • FLYERS • I.T SUPPORT</span></p>
+      <p><span>Packaging • Branding • Posters &amp; print</span> <span>Signage &amp; Wayfinding</span></p>
     </section>
 
     <ul class="work-grid" aria-label="Case studies">
+      <li><a class="tile tile--crop reveal" href="/work/jas-cafe.html">
+        <img src="/img/home/tile-jas.jpg" alt="Wonton signage and a JAS badge from the Jas Cafe project" />
+        <span class="tile__label">Jas Cafe</span></a></li>
       <li><a class="tile reveal" href="/work/cuddle-creatures.html">
         <img src="/img/home/tile-cuddle.jpg" alt="Cuddle Critters warming pack boxes" />
         <span class="tile__label">Cuddle Creatures</span></a></li>
+      <li><a class="tile reveal" href="/work/childrens-book.html">
+        <img src="/img/home/tile-childrens-book.jpg" alt="Aimer le plein air children's book cover" />
+        <span class="tile__label">Children's Book</span></a></li>
+      <li><a class="tile reveal" href="/work/ahh.html">
+        <img src="/img/home/tile-ahh.jpg" alt="Arrowsmith Herbal Healing mountain pattern" />
+        <span class="tile__label">Arrowsmith Herbal Healing</span></a></li>
       <li><a class="tile reveal" href="/work/darcys-dog-days.html">
         <img src="/img/home/tile-darcy.jpg" alt="Illustrated husky from the Darcy's Dog Days logo" />
         <span class="tile__label">Darcy's Dog Days</span></a></li>
       <li><a class="tile reveal" href="/work/giant-tiger.html">
         <img src="/img/home/tile-giant-tiger.jpg" alt="Giant Tiger weekly flyer cover" />
         <span class="tile__label">Giant Tiger</span></a></li>
-      <li><a class="tile reveal" href="/work/ahh.html">
-        <img src="/img/home/tile-ahh.jpg" alt="Arrowsmith Herbal Healing mountain pattern" />
-        <span class="tile__label">Arrowsmith Herbal Healing</span></a></li>
-      <li><a class="tile reveal" href="/work/childrens-book.html">
-        <img src="/img/home/tile-childrens-book.jpg" alt="Aimer le plein air children's book cover" />
-        <span class="tile__label">Children's Book</span></a></li>
       <li><a class="tile reveal" href="/work/shower-cap-design.html">
         <img src="/img/home/tile-shower-cap.jpg" alt="StudioDry shower cap packaging" />
         <span class="tile__label">Shower Cap Design</span></a></li>
-      <li><a class="tile tile--text tile--coral reveal" href="/work/jas-cafe.html">
-        <span class="tile__kicker">JAS</span><span class="tile__big">Cafe</span></a></li>
-      <li><a class="tile tile--text tile--wash reveal" href="/work/extra-projects.html">
-        <span class="tile__kicker">MORE</span><span class="tile__big">Projects</span></a></li>
+      <li><a class="tile tile--about reveal" href="/about.html"><span>ABOUT</span></a></li>
     </ul>
 
     <section class="intro" aria-labelledby="intro-title">
       <div class="intro__inner">
         <div class="portrait reveal">
-          <img class="portrait__ring" src="/img/home/portrait-ring.svg" alt="" width="394" height="394" />
-          <img class="portrait__photo" src="/img/home/portrait.png" alt="Anne-Lynn sitting on a hillside overlooking a lake" width="354" height="354" />
+          <img src="/img/home/portrait-circle.png" alt="Anne-Lynn sitting on a hillside overlooking a lake" width="394" height="394" />
         </div>
         <div>
-          <h2 id="intro-title">Hey! I’m Anne-Lynn, a graphic designer based in beautiful Vancouver Island.</h2>
+          <h2 id="intro-title">I’m Anne-Lynn, a graphic designer who loves turning ideas into things people can see, hold, and understand.</h2>
           <div class="intro__body">
-            <p>I specialize in visual communication and love creating <strong>posters, signage, packaging, branding</strong>, and engaging <strong>print experiences</strong> that help ideas shine and make things easier to understand.</p>
-            <p>I’m also happy to lend a hand with I.T. support or troubleshooting whenever you need it.</p>
-            <p>I’d love to collaborate — feel free to reach out!</p>
+            <p>My work centres on visual communication: <strong>posters, signage, packaging, branding, and print pieces</strong> that help people understand things at a glance. Whether it’s guiding someone through a space, explaining a big idea on a single poster, or helping a product stand out on the shelf, I care about design that’s both beautiful and useful.</p>
+            <p>I’m always excited to work with people who have something to say. If you have a project in mind, I’d love to hear about it.</p>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <nav class="icon-nav" aria-label="Site">
-    <ul>
-      <li><a href="/" aria-current="page"><img src="/img/nav/portfolio.png" alt="" width="94" height="94" />Portfolio</a></li>
-      <li><a href="/about.html"><img src="/img/nav/about.png" alt="" width="94" height="94" />About</a></li>
-      <li><a href="/contact.html"><img src="/img/nav/contact.png" alt="" width="94" height="94" />Contact</a></li>
-    </ul>
-  </nav>
+  <site-nav></site-nav>
 </body>
 </html>

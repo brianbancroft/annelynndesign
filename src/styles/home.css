@@ -1,39 +1,53 @@
-/* Home — "Desktop Portfolio - Case Studies" (Figma 2294:2) */
+/* Home — Figma "Homepage": desktop 2294:2 (1440 wide), mobile 2292:48 (375 wide).
+   On desktop every size is expressed in Figma pixels × --u, so the page scales
+   in proportion and is pixel-exact at 1440. Mobile (≤ 760px) switches to the 375 frame. */
+.home {
+  container-type: inline-size;
+  --u: calc(min(100cqw, 1440px) / 1440);
+}
+
+/* ---------- Header (desktop: teal bar + logo; mobile: logo mark + wordmark on white) ---------- */
+.site-header--home .logo-desk { margin-right: calc(8 / 1440 * min(100vw, 1440px)); } /* logo sits 4px left of centre in Figma */
+.brand-mobile { display: none; }
+
+/* ---------- Hero ---------- */
 .home-hero {
-  text-align: center;
-  padding: clamp(48px, 8vw, 116px) var(--gutter) clamp(48px, 7vw, 117px);
+  max-width: 1440px; margin: 0 auto; text-align: center;
+  padding: calc(97 * var(--u)) calc(12 * var(--u)) calc(97.5 * var(--u)) 0; /* content centre is 6px left of the frame centre */
 }
 .home-hero h1 {
-  font: 900 clamp(38px, 4.9vw, 70px)/1.1 var(--font-home);
+  font: 900 calc(70 * var(--u))/1.1 var(--font-home);
   color: var(--teal-ink);
-  letter-spacing: 0.005em;
 }
 .home-hero p {
-  margin-top: 0.3em;
-  font: 300 clamp(17px, 1.9vw, 27px)/1.25 var(--font-home);
-  color: var(--ink);
+  margin-top: calc(12 * var(--u));
+  font: 300 calc(27 * var(--u))/1.25 var(--font-home);
+  text-transform: uppercase; color: var(--ink);
 }
-.home-hero p span { display: inline-block; }
+.home-hero p span { display: block; }
 
-/* Project grid: 4 × 318px tiles, 14px gap, 64px side margins at 1440 */
+/* ---------- Project grid: 4 × 309×310 tiles, 23px gutters, 63px / 72px margins ---------- */
 .work-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: clamp(8px, 1vw, 14px);
-  max-width: var(--page-max);
-  margin: 0 auto;
-  padding: 0 var(--gutter);
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: calc(23 * var(--u));
+  max-width: 1440px; margin: 0 auto;
+  padding: 0 calc(72 * var(--u)) 0 calc(63 * var(--u));
   list-style: none;
 }
-@media (max-width: 900px) { .work-grid { grid-template-columns: repeat(2, 1fr); } }
 
 .tile {
-  position: relative; display: block; aspect-ratio: 1;
+  position: relative; display: block; aspect-ratio: 309 / 310;
   overflow: hidden; background: #c4c4c4; text-decoration: none;
+  container-type: inline-size;
 }
 .tile img {
   width: 100%; height: 100%; object-fit: cover;
   transition: transform 0.5s ease;
+}
+/* Jas Cafe photo is a crop of a wider image (Figma mask) */
+.tile--crop img {
+  position: absolute; max-width: none;
+  left: -233.3%; top: -93.2%; width: 347.5%; height: 210.7%;
 }
 .tile__label {
   position: absolute; inset: auto 0 0 0;
@@ -48,54 +62,85 @@
 .tile:hover .tile__label, .tile:focus-visible .tile__label { opacity: 1; transform: none; }
 @media (hover: none) { .tile__label { opacity: 1; transform: none; } }
 
-/* Text-only tiles (Jas Cafe block, "More Projects") */
-.tile--text {
-  display: grid; place-content: center; text-align: center;
-  color: var(--teal-ink);
+.tile--about { transition: filter 0.3s; }
+.tile--about:hover { filter: brightness(0.96); }
+.tile--about span {
+  position: absolute; left: 0; right: 0; top: 45.8%;
+  text-align: center; color: var(--teal-ink);
+  font: 200 calc(50 / 309 * 100cqw)/calc(56 / 309 * 100cqw) var(--font-home);
 }
-.tile--text .tile__kicker { font: 400 clamp(18px, 2vw, 29px)/1.2 var(--font-home); }
-.tile--text .tile__big { font: 200 clamp(32px, 3.5vw, 50px)/1.1 var(--font-home); }
-.tile--coral { background: #f16354; color: #fff; }
-.tile--wash { background: var(--teal-wash); }
-.tile--text { transition: filter 0.3s; }
-.tile--text:hover { filter: brightness(0.96); }
 
-/* About band with the scalloped top edge (mask from Figma) */
+/* ---------- About band: scalloped top edge is the Figma wave graphic ---------- */
+/* The wave (Figma 2402:88) is one 151.35 × 35.42 scallop tile repeated along the top edge, then a
+   plain fill below it. Its proportions never change with the band's height or the viewport width
+   (only the scallop count does), and the band ends exactly where the content does. */
 .intro {
-  margin-top: clamp(40px, 4.6vw, 53px);
-  padding: clamp(80px, 9vw, 110px) var(--gutter) clamp(40px, 4vw, 56px);
-  background: var(--teal-wash);
-  -webkit-mask-image: url('/img/home/wave-mask.svg'), linear-gradient(#000, #000);
-          mask-image: url('/img/home/wave-mask.svg'), linear-gradient(#000, #000);
-  -webkit-mask-size: 100% auto, 100% calc(100% - 80px);
-          mask-size: 100% auto, 100% calc(100% - 80px);
-  -webkit-mask-position: top center, bottom center;
-          mask-position: top center, bottom center;
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
+  --wu: var(--u);                       /* wave scale: 1 on the 1440 frame */
+  --wave-h: calc(35.4175 * var(--wu));
+  margin-top: calc(134 * var(--u));
+  min-height: calc(754 * var(--u));
+  padding-top: calc(98 * var(--u));
+  background: #d9f5f1;
+  -webkit-mask-image: url('/img/home/wave-tile.svg'), linear-gradient(#000, #000);
+          mask-image: url('/img/home/wave-tile.svg'), linear-gradient(#000, #000);
+  -webkit-mask-size: calc(151.35 * var(--wu)) var(--wave-h), 100% calc(100% - var(--wave-h) + 1px);
+          mask-size: calc(151.35 * var(--wu)) var(--wave-h), 100% calc(100% - var(--wave-h) + 1px);
+  -webkit-mask-position: right top, left bottom;
+          mask-position: right top, left bottom;
+  -webkit-mask-repeat: repeat-x, no-repeat;
+          mask-repeat: repeat-x, no-repeat;
 }
 .intro__inner {
-  max-width: 1312px; margin: 0 auto;
-  display: grid; grid-template-columns: minmax(200px, 394px) 1fr;
-  gap: clamp(24px, 4.2vw, 60px); align-items: center;
+  max-width: 1440px; margin: 0 auto;
+  padding: 0 calc(73 * var(--u)) 0 calc(65 * var(--u));
+  display: grid; grid-template-columns: calc(394 * var(--u)) 1fr;
+  column-gap: calc(55 * var(--u)); align-items: start;
 }
-.portrait { position: relative; aspect-ratio: 1; width: 100%; }
-.portrait__ring, .portrait__photo { position: absolute; }
-.portrait__ring { inset: 0; width: 100%; height: 100%; }
-.portrait__photo { inset: 5.08%; width: 89.84%; height: 89.84%; border-radius: 50%; object-fit: cover; }
+.portrait { margin-top: calc(20 * var(--u)); }
+.portrait img { width: 100%; height: auto; }
 
 .intro h2 {
-  font: 300 clamp(26px, 3vw, 43px)/1.1 var(--font-home);
-  color: var(--teal-ink); max-width: 810px;
+  max-width: calc(810 * var(--u));
+  font: 700 calc(43 * var(--u))/1.1 var(--font-case);
+  color: var(--teal-ink);
 }
 .intro__body {
-  margin-top: 0.4em; max-width: 853px;
-  font: 300 clamp(17px, 2.1vw, 30px)/1.1 var(--font-home); color: var(--teal-ink);
+  margin-top: calc(28 * var(--u)); max-width: calc(853 * var(--u));
+  font: 300 calc(30 * var(--u))/1.15 var(--font-case); color: var(--teal-ink);
 }
 .intro__body strong { font-weight: 700; }
-.intro__body p + p { margin-top: 0; }
+.intro__body p + p { margin-top: 1.15em; }
 
-@media (max-width: 700px) {
-  .intro__inner { grid-template-columns: 1fr; justify-items: center; text-align: center; }
-  .portrait { max-width: 240px; }
+/* ---------- Mobile: Figma 375 × 812 frame ---------- */
+@media (max-width: 760px) {
+  .site-header--home {
+    --m: min(1px, 100vw / 375);
+    position: relative; height: calc(183 * var(--m)); background: var(--paper);
+  }
+  .site-header--home .site-header__logo { position: relative; width: calc(375 * var(--m)); height: 100%; margin: 0 auto; left: calc(14 * var(--m)); } /* centred in the header; +4 offsets the mark's inner padding now the .com is gone */
+  .site-header--home .logo-desk { display: none; }
+  .brand-mobile { display: block; }
+  .site-header--home .brand-mobile img { position: absolute; max-width: none; }
+  .site-header--home .brand-mobile__mark { left: calc(41.911 * var(--m)); top: calc(38 * var(--m)); width: calc(97.2287 * var(--m)); height: calc(117.118 * var(--m)); }
+  .site-header--home .brand-mobile__word { left: calc(154.944 * var(--m)); top: calc(69.322 * var(--m)); width: calc(176.055 * var(--m)); height: calc(54.4868 * var(--m)); }
+
+  /* the wordmark replaces the title block on the phone frame; keep the text for screen readers */
+  .home-hero { padding: 0; }
+  .home-hero h1, .home-hero p {
+    position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden;
+    clip-path: inset(50%); white-space: nowrap;
+  }
+
+  .work-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; padding: 0 11px 0 12px; }
+  .tile { aspect-ratio: 172 / 171; }
+  .tile__label { /* the phone frame shows bare tiles; names stay available to screen readers */
+    inset: auto; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+  }
+
+  .intro { --wu: 0.6px; margin-top: 48px; min-height: 0; padding: 72px 20px 48px; }
+  .intro__inner { grid-template-columns: 1fr; justify-items: center; text-align: center; padding: 0; row-gap: 24px; }
+  .portrait { width: 240px; margin-top: 0; }
+  .intro h2 { max-width: none; font-size: 26px; }
+  .intro__body { max-width: none; margin-top: 16px; font-size: 18px; }
+
 }

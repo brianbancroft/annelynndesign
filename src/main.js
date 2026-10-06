@@ -1,5 +1,7 @@
 // Shared behaviour for every page — no framework, just the DOM.
 
+import './components/site-nav.js';
+
 console.log(
   "This site is vanilla HTML & CSS, built with Claude Code from my Figma designs, hosted on Cloudflare. Want off your antiquated CRM? Let's talk — hello@annelynn.com"
 );

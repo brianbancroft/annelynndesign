@@ -81,21 +81,68 @@ body.case {
 .cs-split--reverse { grid-template-columns: minmax(0, 1fr) minmax(0, 1.9fr); }
 .cs-split .cs-copy { margin-top: 0; }
 
-/* Section headings used on the Extra Projects page */
-.cs-title {
-  font: 900 clamp(30px, 3vw, 43px)/1.15 var(--font-case);
-  color: var(--accent); margin-bottom: clamp(20px, 2.4vw, 36px);
+/* ---------- Extra Projects ("A few favourites", Figma 2175:2) ----------
+   Desktop is the 1440 × 6382 frame reproduced to scale: every item carries its
+   Figma box (--x --y --w --h, in frame pixels, y measured from the end of the hero). */
+.page-extra .site-header { background: var(--accent); }
+.page-extra .cs-hero {
+  --u: calc(min(100vw, 1440px) / 1440);
+  min-height: calc(clamp(380px, 66.8vw, 962px) - var(--header-h));
+  align-content: start; padding: calc(431 * var(--u) - var(--header-h)) var(--gutter) 0;
 }
-.logo-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: clamp(16px, 5.9vw, 81px);
+.page-extra .cs-hero h1 { font-size: calc(43 * var(--u)); line-height: 1.17; }
+.page-extra .cs-hero p { margin: 0 auto; max-width: none; font-size: calc(20 * var(--u)); line-height: normal; }
+.page-extra .cs-hero p span { display: block; }
+
+.xp-stage {
+  position: relative; max-width: 1440px; margin: 0 auto;
+  aspect-ratio: 1440 / 5420; container-type: inline-size;
 }
-.logo-grid figure {
-  aspect-ratio: 1; border: 1px solid var(--accent);
-  display: grid; place-items: center; padding: 12%;
+.xp {
+  position: absolute; margin: 0;
+  left: calc(var(--x) / 14.4 * 1%); top: calc(var(--y) / 54.2 * 1%);
+  width: calc(var(--w) / 14.4 * 1%); height: calc(var(--h) / 54.2 * 1%);
 }
-.logo-grid img { max-height: 100%; width: auto; object-fit: contain; }
-.rounded img { border-radius: 8px; }
+.xp-title {
+  font-weight: 900; color: var(--accent);
+  font-size: calc(43 / 14.4 * 1cqw); line-height: calc(49 / 43);
+}
+.logo-grid { display: contents; }
+.logo::after { content: ''; position: absolute; inset: 0; border: 1px solid var(--accent); pointer-events: none; }
+.logo .li {
+  position: absolute;
+  left: calc(var(--x) / 3.44 * 1%); top: calc(var(--y) / 3.44 * 1%);
+  width: calc(var(--w) / 3.44 * 1%); height: calc(var(--h) / 3.44 * 1%);
+}
+.crop { position: absolute; inset: 0; overflow: hidden; }
+.crop img {
+  position: absolute; max-width: none;
+  left: var(--il); top: var(--it); width: var(--iw); height: var(--ih);
+}
+.fit img, .fit { object-fit: contain; }
+.fit > img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.r8 img, .r8 .crop { border-radius: 8px; }
+.group .g-satin, .group .g-pkg { position: absolute; display: block; }
+.group .g-satin { left: 0; top: 0; width: 79.04%; height: 70.14%; }
+.group .g-pkg { left: 17.415%; top: 26.087%; width: 82.585%; height: 73.91%; }
+.group img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.group .g-satin img { object-fit: cover; }
+.group .g-pkg img { object-fit: contain; }
+
+@media (max-width: 760px) {
+  .page-extra .cs-hero { align-content: center; padding: 64px var(--gutter); }
+  .page-extra .cs-hero h1 { font-size: 28px; }
+  .page-extra .cs-hero p { font-size: 16px; }
+  .xp-stage { aspect-ratio: auto; container-type: normal; padding: 40px var(--gutter) 0; }
+  .xp { position: relative; left: auto; top: auto; width: 100%; height: auto; aspect-ratio: calc(var(--w) / var(--h)); }
+  .xp-title { font-size: 30px; line-height: 1.15; aspect-ratio: auto; margin: 32px 0 16px; }
+  .xp-title:first-child { margin-top: 0; }
+  .xp + .xp:not(.xp-title) { margin-top: 16px; }
+  .logo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .logo-grid .xp { margin-top: 0 !important; }
+  .xp.tall { max-width: 62%; margin-inline: auto; }
+  .xp.bleed { margin-inline: calc(var(--gutter) * -1); width: calc(100% + var(--gutter) * 2); }
+}
 
 /* ---------- Next project ---------- */
 .cs-next {
@@ -115,6 +162,5 @@ body.case .cs-next a { color: color-mix(in srgb, var(--accent) 80%, black); }
   .cs-media--3 { grid-template-columns: 1fr; }
   .cs-media--2.stack-sm { grid-template-columns: 1fr; }
   .cs-media .narrow { max-width: 100%; }
-  .logo-grid { grid-template-columns: repeat(2, 1fr); }
   .cs-split--reverse > .cs-copy { order: 2; }
 }
