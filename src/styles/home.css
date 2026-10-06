@@ -97,7 +97,7 @@
   column-gap: calc(55 * var(--u)); align-items: start;
 }
 .portrait { margin-top: calc(20 * var(--u)); }
-.portrait img { width: 100%; height: auto; }
+.portrait img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; }
 
 .intro h2 {
   max-width: calc(810 * var(--u));
