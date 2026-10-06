@@ -691,3 +691,47 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
   .page-cuddle .cc-g-slothmask { left: calc(611.1 * var(--u)); top: calc(306.6 * var(--u)); width: calc(269.1 * var(--u)); height: calc(284.9 * var(--u)); transform: rotate(0.83deg); }
   .page-cuddle .cc-critters { min-height: 0; padding-block: calc(87 * var(--u)); }
 }
+
+/* ---------- Children's Book desktop: layout follows the Figma frame 2171:2 (1440 wide), scaled with --u ---------- */
+@media (min-width: 761px) {
+  .page-book .cs-section { padding-inline: 0; padding-bottom: 0; }
+  .page-book .cs-wrap { width: calc(1440 * var(--u)); max-width: none; margin-inline: auto; }
+
+  /* Story */
+  .page-book .bk-story { min-height: calc(871 * var(--u)); padding-top: calc(117 * var(--u)); }
+  .page-book .bk-story .cs-book-story {
+    grid-template-columns: calc(660 * var(--u)) calc(498 * var(--u)); column-gap: calc(36 * var(--u));
+    padding-left: calc(118 * var(--u)); align-items: start;
+  }
+  .page-book .bk-story .cs-media img { width: calc(660 * var(--u)); height: calc(659 * var(--u)); object-fit: cover; max-width: none; }
+  .page-book .bk-story .cs-copy { margin-top: calc(305 * var(--u)); max-width: none; }
+  .page-book .bk-story .cs-book-meta { margin-top: calc(40 * var(--u)); }
+
+  /* Cover design */
+  .page-book .bk-cover { min-height: calc(904 * var(--u)); padding-top: calc(44 * var(--u)); }
+  .page-book .bk-cover .cs-book-tint__wrap { width: calc(1440 * var(--u)); max-width: none; margin: 0 auto; }
+  .page-book .bk-cover .cs-book-cover { grid-template-columns: calc(692 * var(--u)) calc(428 * var(--u)); column-gap: calc(24 * var(--u)); margin-left: calc(122 * var(--u)); gap: calc(24 * var(--u)); align-items: start; }
+  .page-book .bk-cover .cs-book-cover img:first-child { margin-top: calc(87 * var(--u)); }
+  .page-book .bk-cover .cs-copy { margin-top: calc(53 * var(--u)); padding-left: 0; margin-left: calc(193 * var(--u)); max-width: calc(515 * var(--u)); }
+
+  /* Back covers: four images across nearly the full page width, hairline gaps, small margin at both sides */
+  .page-book .bk-concept { min-height: calc(757 * var(--u)); padding-top: calc(148 * var(--u)); }
+  .page-book .bk-concept .cs-wrap { width: 100%; }
+  .page-book .bk-concept .cs-book-crop { gap: 0; padding-inline: 8px; }
+
+  /* Interior spreads + packaging */
+  .page-book .bk-interior { min-height: calc(1721 * var(--u)); padding-top: 0; }
+  .page-book .cs-section--flush .cs-copy { max-width: calc(889 * var(--u)); }
+  .page-book .bk-concept .cs-copy { margin-top: calc(71 * var(--u)); }
+  /* The full-width sections centre the same 1440 column the other sections use, so every heading shares one left edge */
+  .page-book .bk-concept .cs-copy, .page-book .bk-interior .cs-copy { padding-left: calc(max(0px, (100% - 1440 * var(--u)) / 2) + 193 * var(--u)); max-width: none; }
+  .page-book .bk-interior .cs-wrap { width: 100%; }
+  .page-book .bk-interior .cs-copy { margin-top: calc(68 * var(--u)); }
+  .page-book .bk-interior .cs-book-crop--pack { margin-top: calc(61 * var(--u)); }
+
+  /* Bonjour-Hi */
+  .page-book .bk-orange { min-height: calc(1873 * var(--u)); padding-top: calc(127 * var(--u)); }
+  .page-book .bk-orange .cs-book-bonjour { padding: 0 0 0 calc(130 * var(--u)); gap: calc(7 * var(--u)); }
+  .page-book .bk-orange .cs-book-bonjour img { width: calc(1180 * var(--u)); max-width: none; }
+  .page-book .bk-orange .cs-copy { margin-top: calc(44 * var(--u)); }
+}
