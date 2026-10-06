@@ -10,7 +10,7 @@ body.case {
 /* ---------- Hero ---------- */
 .cs-hero {
   min-height: clamp(380px, 66.8vw, 962px);
-  background: var(--accent);
+  background: var(--hero-bg, var(--accent));
   color: var(--hero-ink);
   display: grid; place-content: center; text-align: center;
   padding: 64px var(--gutter);
@@ -307,4 +307,58 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
   .cs-book-bonjour img:last-child { aspect-ratio: 411 / 254; object-fit: cover; }
   .page-book .cs-book-orange .cs-copy { margin-top: 28px; }
   .page-book .cs-book-orange .cs-copy p { font-size: 14px; }
+}
+
+/* ---------- Arrowsmith Herbal Healing (Figma desktop 2165:2, mobile 2250:73) ---------- */
+.page-ahh { --tint-copy: #279089; --ink-copy: #262626; }
+.page-ahh .cs-copy p { color: var(--ink-copy); }
+.page-ahh .cs-section--tint .cs-copy p { color: var(--tint-copy); }
+.page-ahh .cs-media picture { display: contents; }
+.page-ahh .cs-media source { display: none; }
+.page-ahh .cs-media .narrow { max-width: 598px; }
+.page-ahh .cs-media--concepts { gap: clamp(12px, 1.2vw, 17px); }
+.page-ahh .cs-media--concepts img { width: 100%; }
+/* Business cards (954px of the 1145 frame), colour variations + type specimen (933px group) */
+.page-ahh .ahh-cards .cs-media img { max-width: 954px; }
+.page-ahh .cs-media--palette {
+  grid-template-columns: 446fr 292fr; column-gap: 20.9%; align-items: center;
+  max-width: 933px; margin-inline: auto;
+}
+.page-ahh .ahh-shirt .cs-media img { max-width: 1074px; }
+
+@media (max-width: 760px) {
+  .page-ahh .cs-hero h1 { font-size: 28px; }
+  .page-ahh .cs-hero p { font-size: 15px; line-height: normal; max-width: 363px; }
+  .page-ahh .cs-section { padding-inline: 24px; }
+  .page-ahh .cs-copy { margin-top: 24px; }
+  .page-ahh .cs-copy h2 { font-size: 20px; line-height: normal; margin-bottom: 4px; }
+  .page-ahh .cs-copy p { font-size: 14px; line-height: 18px; }
+  .page-ahh .cs-section--tint .cs-copy p { color: var(--accent); font-weight: 500; }
+
+  /* Instant Relief: the AHH mark is 60% of the screen (247 of 411) */
+  .page-ahh .ahh-intro { padding-top: 39px; padding-bottom: 44px; }
+  .page-ahh .cs-media .narrow { width: 60.1vw; max-width: none; margin-inline: auto; }
+  .page-ahh .cs-intro .cs-copy { margin-top: 0; }
+  .page-ahh .cs-media + .cs-intro { margin-top: 39px; }
+  .page-ahh .cs-meta { margin-top: 12px; padding: 10px 14px; font-size: 12px; line-height: 1.6; }
+
+  /* Edge-to-edge image bands */
+  .page-ahh .ahh-cards { padding: 58px 24px 17px; }
+  .page-ahh .ahh-cards .cs-media img { width: 83.5vw; max-width: none; }
+  .page-ahh .ahh-cards .cs-copy { margin-top: 53px; }
+
+  /* Concepts: three small marks in a row */
+  .page-ahh .ahh-concepts { padding-inline: 0; padding-top: 36px; padding-bottom: 36px; }
+  .page-ahh .ahh-concepts .cs-copy { padding-inline: 24px; margin-top: 46px; }
+  .page-ahh .cs-media--concepts { grid-template-columns: 109fr 135fr 104fr; gap: 3.2vw; padding-inline: 4.6vw; align-items: center; }
+
+  /* Colour & typography: flush pair */
+  .page-ahh .ahh-colours { padding: 28px 0 24px; }
+  .page-ahh .ahh-colours .cs-copy { padding-inline: 24px; margin-top: 28px; }
+  .page-ahh .cs-media--palette { grid-template-columns: 210fr 129fr; column-gap: 9.6%; max-width: 375px; }
+
+  /* T-shirts bleed to the edges */
+  .page-ahh .ahh-shirt { padding: 0 0 40px; }
+  .page-ahh .ahh-shirt .cs-media img { max-width: none; }
+  .page-ahh .ahh-shirt .cs-copy { padding-inline: 24px; margin-top: 18px; }
 }
