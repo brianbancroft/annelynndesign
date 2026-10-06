@@ -62,12 +62,12 @@
 .tile:hover .tile__label, .tile:focus-visible .tile__label { opacity: 1; transform: none; }
 @media (hover: none) { .tile__label { opacity: 1; transform: none; } }
 
-.tile--about { transition: filter 0.3s; }
+.tile--about { background: #53afa5; transition: filter 0.3s; }
 .tile--about:hover { filter: brightness(0.96); }
 .tile--about span {
-  position: absolute; left: 0; right: 0; top: 45.8%;
-  text-align: center; color: var(--teal-ink);
-  font: 200 calc(50 / 309 * 100cqw)/calc(56 / 309 * 100cqw) var(--font-home);
+  position: absolute; inset: 0; display: grid; place-content: center;
+  text-align: center; color: #fff; text-transform: uppercase;
+  font: 300 calc(38 / 309 * 100cqw)/1.17 var(--font-case);
 }
 
 /* ---------- About band: scalloped top edge is the Figma wave graphic ---------- */
