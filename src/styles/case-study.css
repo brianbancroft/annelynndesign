@@ -19,6 +19,8 @@ body.case {
   font: 900 clamp(28px, 3vw, 43px)/1.17 var(--font-case);
   text-transform: uppercase;
 }
+.br-mobile { display: none; }
+@media (max-width: 760px) { .br-mobile { display: inline; } }
 .cs-hero p {
   margin: 12px auto 0; max-width: 700px;
   font: 400 clamp(16px, 1.4vw, 20px)/1.25 var(--font-case);
@@ -42,7 +44,8 @@ body.case {
 .cs-media--3 { grid-template-columns: repeat(3, 1fr); }
 .cs-media--card { background: #fff; padding: clamp(16px, 2vw, 32px); }
 /* Transparent cut-outs sit straight on the tinted band (no blend, so no colour cast) */
-.cs-media--critters { max-width: 720px; margin-inline: auto; }
+.cs-media--critters { max-width: 720px; margin-inline: auto; gap: 0; }
+.cs-media--critters img { width: 100%; aspect-ratio: 1; object-fit: contain; margin-block: -6%; }
 
 /* Flooded (tinted) sections: body copy takes the heading colour */
 .cs-section--tint .cs-copy p { color: var(--tint-copy, var(--accent)); }
