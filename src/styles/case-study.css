@@ -81,6 +81,10 @@ body.case {
 .cs-split--reverse { grid-template-columns: minmax(0, 1fr) minmax(0, 1.9fr); }
 .cs-split .cs-copy { margin-top: 0; }
 
+/* Jas Cafe packaging: bag photo above the copy on desktop, below it on mobile */
+.cs-pack { display: grid; gap: clamp(20px, 2.5vw, 36px); align-self: end; }
+.cs-pack .cs-copy { margin-top: 0; }
+
 /* ---------- Extra Projects ("A few favourites", Figma 2175:2) ----------
    Desktop is the 1440 × 6382 frame reproduced to scale: every item carries its
    Figma box (--x --y --w --h, in frame pixels, y measured from the end of the hero). */
@@ -129,19 +133,22 @@ body.case {
 .group .g-satin img { object-fit: cover; }
 .group .g-pkg img { object-fit: contain; }
 
+/* Mobile is the 411 × 3248 Figma frame (2252:2) reproduced to scale, same approach as desktop. */
 @media (max-width: 760px) {
-  .page-extra .cs-hero { align-content: center; padding: 64px var(--gutter); }
-  .page-extra .cs-hero h1 { font-size: 28px; }
-  .page-extra .cs-hero p { font-size: 16px; }
-  .xp-stage { aspect-ratio: auto; container-type: normal; padding: 40px var(--gutter) 0; }
-  .xp { position: relative; left: auto; top: auto; width: 100%; height: auto; aspect-ratio: calc(var(--w) / var(--h)); }
-  .xp-title { font-size: 30px; line-height: 1.15; aspect-ratio: auto; margin: 32px 0 16px; }
-  .xp-title:first-child { margin-top: 0; }
-  .xp + .xp:not(.xp-title) { margin-top: 16px; }
-  .logo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .logo-grid .xp { margin-top: 0 !important; }
-  .xp.tall { max-width: 62%; margin-inline: auto; }
-  .xp.bleed { margin-inline: calc(var(--gutter) * -1); width: calc(100% + var(--gutter) * 2); }
+  .page-extra .cs-hero { min-height: calc(100svh - var(--header-h)); align-content: center; padding: 0 var(--gutter); }
+  .page-extra .cs-hero h1 { font-size: 26px; line-height: normal; max-width: 6em; margin-inline: auto; }
+  .page-extra .cs-hero p { font-size: 15px; max-width: 269px; }
+  .page-extra .cs-hero p span { display: inline; }
+  .xp-stage { aspect-ratio: 411 / 3248; }
+  .xp {
+    left: calc(var(--mx) / 4.11 * 1%); top: calc(var(--my) / 32.48 * 1%);
+    width: calc(var(--mw) / 4.11 * 1%); height: calc(var(--mh) / 32.48 * 1%);
+  }
+  .xp-title { font-size: calc(20 / 4.11 * 1cqw); line-height: normal; }
+  .crop img {
+    left: var(--mil, var(--il)); top: var(--mit, var(--it));
+    width: var(--miw, var(--iw)); height: var(--mih, var(--ih));
+  }
 }
 
 /* ---------- Next project ---------- */
@@ -192,4 +199,104 @@ body.case .cs-next { --pager-ink: color-mix(in srgb, var(--accent) 80%, black); 
   .cs-media--card { padding: 8px; }
   .cs-media .narrow { max-width: 100%; }
   .cs-split--reverse > .cs-copy { order: 2; }
+  .cs-media--stack { grid-template-columns: 1fr; }
+  .cs-media--stack img { max-width: 80%; }
+  .cs-media--stack img:last-child { max-width: 100%; }
+  .cs-pack { display: flex; flex-direction: column-reverse; }
+  .cs-pack__bag { width: calc(100% + var(--gutter) * 2); max-width: none; margin-inline: calc(var(--gutter) * -1); }
+}
+
+/* ---------- Children's Book (Figma desktop 2171:2, mobile 2251:37) ---------- */
+body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
+.page-book .cs-book-story { grid-template-columns: 1.3fr 1fr; align-items: center; }
+.page-book .cs-book-meta { margin-top: 32px; }
+
+.page-book .cs-book-tint { background: color-mix(in srgb, var(--accent) 10%, white); }
+.cs-book-tint__wrap { max-width: 1144px; margin-left: calc(122 * var(--u)); }
+.cs-book-tint .cs-copy { padding-left: calc(72 * var(--u)); }
+.cs-book-cover {
+  display: grid; grid-template-columns: 692fr 428fr;
+  gap: clamp(16px, 1.7vw, 24px); align-items: center;
+}
+.cs-book-cover img { width: 100%; object-fit: cover; }
+.cs-book-cover img:first-child { aspect-ratio: 692 / 486; }
+.cs-book-cover img:last-child { aspect-ratio: 428 / 617; }
+.cs-copy--accent p { color: var(--accent); }
+
+.cs-media--4 { grid-template-columns: repeat(4, 1fr); }
+.cs-book-crop { gap: 0; }
+.cs-book-crop img { object-fit: cover; }
+.cs-book-crop--concept img { aspect-ratio: 360 / 327; }
+.cs-book-crop--spread img { aspect-ratio: 720 / 548; }
+.cs-book-crop--pack img { aspect-ratio: 1440 / 956; }
+.page-book .cs-section--flush .cs-copy { padding-left: calc(193 * var(--u)); }
+.cs-book-interior .cs-book-crop--pack { margin-top: clamp(28px, 3vw, 40px); }
+
+.cs-book-orange { background: color-mix(in srgb, #f9bd87 15%, white); }
+.cs-book-orange .cs-copy h2,
+.cs-book-orange .cs-copy p { color: #fd994b; }
+.cs-book-orange .cs-copy p { font-weight: 500; }
+.cs-book-bonjour {
+  display: grid; gap: clamp(16px, 2.5vw, 33px);
+  padding: 0 clamp(16px, 4.4vw, 64px);
+}
+.cs-book-bonjour img { width: 100%; }
+
+/* The Figma desktop and mobile frames use different titles for the story section */
+.cs-m { display: none; }
+
+/* Mobile: Figma 411px frame, scaled fluidly (iPhone 15 Pro = 393px) */
+@media (max-width: 760px) {
+  .page-book { --m: calc(100vw / 411); }
+  .cs-d { display: none; }
+  .cs-m { display: inline; }
+  .page-book .cs-hero { min-height: calc(844 * var(--m)); padding: 64px 24px; }
+  .page-book .cs-hero h1 { font-size: 28px; line-height: 1.17; }
+  .page-book .cs-hero p { font-size: 15px; line-height: 1.25; max-width: 287px; margin-top: 8px; }
+
+  .page-book .cs-section { padding: 0; }
+  .page-book .cs-copy,
+  .page-book .cs-section--flush .cs-copy { margin: 0; max-width: none; padding: 0 24px; }
+  .page-book .cs-copy h2 { font-size: 20px; line-height: 1.2; margin-bottom: 5px; }
+  .page-book .cs-copy p { font-size: 14px; line-height: 18px; }
+
+  /* Story */
+  .page-book .cs-book-story { grid-template-columns: 1fr; gap: 0; padding-top: 0; }
+  .page-book .cs-book-story > .cs-media { padding: 0 16px; }
+  .page-book .cs-book-story > .cs-media img { aspect-ratio: 379 / 308; object-fit: cover; }
+  .page-book .cs-book-story .cs-copy { order: 2; }
+  .page-book .cs-book-story > div:last-child { order: 2; padding-bottom: 31px; }
+  .page-book .cs-book-meta { margin: 11px 24px 0; }
+  .page-book .cs-meta { padding: 11px 14px; font-size: 12px; line-height: 1.3; justify-self: stretch; }
+  .page-book .cs-wrap--wide { max-width: none; }
+
+  /* Cover design (tinted band) */
+  .page-book .cs-book-tint { padding: 33px 0 16px; }
+  .cs-book-tint__wrap { margin-left: 0; max-width: none; }
+  .cs-book-cover { grid-template-columns: 1fr; padding: 0 25px 13px; }
+  .cs-book-cover img:first-child { display: none; }
+  .cs-book-cover img:last-child { aspect-ratio: 361 / 447; }
+  .page-book .cs-copy--accent p { font-weight: 500; }
+
+  /* Back covers: 2 x 2, flush */
+  .cs-media--4 { grid-template-columns: repeat(2, 1fr); }
+  .cs-book-crop--concept img { aspect-ratio: 206 / 187; }
+  .page-book .cs-section--flush .cs-book-crop--concept + .cs-copy { margin-top: 14px; padding-bottom: 33px; }
+
+  /* Interior spreads: spreads, packaging, then copy; 6px between images */
+  .cs-book-interior .cs-wrap { display: flex; flex-direction: column; gap: 6px; }
+  .cs-book-crop--spread { grid-template-columns: 1fr; gap: 6px; }
+  .cs-book-crop--spread img:first-child { aspect-ratio: 411 / 385; }
+  .cs-book-crop--spread img:last-child { aspect-ratio: 411 / 365; }
+  .cs-book-interior .cs-book-crop--pack { order: 2; margin-top: 0; }
+  .cs-book-crop--pack img { aspect-ratio: 411 / 273; }
+  .page-book .cs-section--flush.cs-book-interior .cs-copy { order: 3; margin-top: 18px; padding-bottom: 48px; }
+
+  /* Bonjour-Hi (orange band) */
+  .page-book .cs-book-orange { padding-top: 51px; padding-bottom: 38px; }
+  .cs-book-bonjour { padding: 0; gap: 2px; }
+  .cs-book-bonjour img:first-child { aspect-ratio: 411 / 245; object-fit: cover; }
+  .cs-book-bonjour img:last-child { aspect-ratio: 411 / 254; object-fit: cover; }
+  .page-book .cs-book-orange .cs-copy { margin-top: 28px; }
+  .page-book .cs-book-orange .cs-copy p { font-size: 14px; }
 }
