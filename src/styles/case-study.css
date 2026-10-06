@@ -67,8 +67,8 @@ body.case {
 
 /* Story row: copy on the left, INDUSTRY / SERVICE box on the right */
 .cs-intro {
-  display: grid; grid-template-columns: minmax(0, 1fr) 344px;
-  gap: clamp(24px, 5vw, 72px); align-items: start;
+  display: grid; grid-template-columns: minmax(0, 1fr) 300px;
+  gap: clamp(24px, 5vw, 72px); align-items: center;
 }
 .cs-intro .cs-copy { margin-top: 0; }
 .cs-media + .cs-intro { margin-top: clamp(32px, 4vw, 56px); }
@@ -393,7 +393,7 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
 .page-darcy .cs-media .narrow { max-width: 732px; }
 .page-darcy .cs-media + .cs-intro { margin-top: 36px; }
 .page-darcy .cs-intro { grid-template-columns: minmax(0, 1fr) 389px; gap: 30px; }
-.page-darcy .cs-meta { padding: 20px 43px; margin-right: -45px; justify-self: end; width: 389px; box-sizing: border-box; margin-top: 0; }
+.page-darcy .cs-meta { padding: 20px 43px; margin-right: -45px; justify-self: end; width: 389px; box-sizing: border-box; margin-block: 0; }
 /* Copy in the full-width sections still lines up with the 1052px text column */
 .page-darcy .cs-wrap--wide .cs-copy { margin-left: max(0px, calc((100% - 1052px) / 2)); }
 
@@ -469,4 +469,76 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
   body.case .cs-hero h1 { white-space: nowrap; min-width: 440px; }
   body.case .cs-hero p { width: 0; min-width: 100%; max-width: none; }
   body.case .cs-hero p span { display: inline; }
+}
+
+/* ---------- Jas Cafe desktop: image sizes and spacing follow the Figma frame (2139:2, 1440 wide) ----------
+   Everything below scales with --u so the 1440px layout holds at narrower desktop widths. */
+@media (min-width: 761px) {
+  .page-jas { --u: calc(min(100vw, 1440px) / 1440); }
+  .page-jas .cs-section { padding-inline: 0; }
+  .page-jas .cs-wrap { width: calc(1440 * var(--u)); max-width: none; }
+  .page-jas .cs-split, .page-jas .cs-split--reverse { align-items: start; gap: 0; }
+  .page-jas .cs-media { gap: 0; }
+  .page-jas .cs-media img { max-width: none; }
+
+  /* Story */
+  .page-jas .jas-story { padding-block: calc(75 * var(--u)) calc(99 * var(--u)); }
+  .page-jas .jas-story .cs-meta { margin-block: 0; }
+  .page-jas .jas-story .cs-media img { width: calc(826 * var(--u)); }
+  .page-jas .jas-story .cs-intro {
+    grid-template-columns: calc(679 * var(--u)) 300px; gap: calc(92 * var(--u));
+    margin: calc(37 * var(--u)) 0 0 calc(206 * var(--u));
+  }
+
+  /* Main menu: the two sides overlap (their cut-outs have transparent margins) */
+  .page-jas .jas-menu { padding-block: calc(16 * var(--u)) calc(14 * var(--u)); }
+  .page-jas .jas-menu .cs-split {
+    grid-template-columns: calc(698 * var(--u)) calc(357 * var(--u));
+    column-gap: calc(89 * var(--u)); padding-left: calc(196 * var(--u));
+  }
+  .page-jas .jas-menu .cs-media img { width: calc(698 * var(--u)); }
+  .page-jas .jas-menu .cs-media img + img { margin-top: calc(-49 * var(--u)); }
+  .page-jas .jas-menu .cs-copy { margin-top: calc(633 * var(--u)); }
+
+  /* Catering menu */
+  .page-jas .jas-catering { padding-block: calc(44 * var(--u)) calc(45 * var(--u)); }
+  .page-jas .jas-catering .cs-split {
+    grid-template-columns: calc(960 * var(--u)) calc(380 * var(--u)); padding-left: calc(74 * var(--u));
+  }
+  .page-jas .jas-catering .cs-media img { width: calc(860 * var(--u)); }
+  .page-jas .jas-catering .cs-copy { margin-top: calc(590 * var(--u)); }
+
+  /* Sandwich board + window signage */
+  .page-jas .jas-board { padding-block: calc(64 * var(--u)); }
+  .page-jas .jas-board .cs-split {
+    grid-template-columns: calc(934 * var(--u)) calc(377 * var(--u));
+    column-gap: calc(43 * var(--u)); padding-left: calc(57 * var(--u));
+  }
+  .page-jas .jas-board .cs-media {
+    grid-template-columns: calc(360 * var(--u)) calc(531 * var(--u));
+    column-gap: calc(43 * var(--u)); align-items: end; justify-items: start;
+  }
+  .page-jas .jas-board .cs-media img { width: 100%; }
+  .page-jas .jas-board .cs-media img:last-child { height: calc(473 * var(--u)); object-fit: cover; }
+  .page-jas .jas-board .cs-copy { margin-top: calc(264 * var(--u)); }
+
+  /* Packaging: labels left, bag + copy right */
+  .page-jas .cs-section--pack { padding-block: calc(76 * var(--u)) calc(60 * var(--u)); }
+  .page-jas .cs-section--pack .cs-split {
+    grid-template-columns: calc(379 * var(--u)) calc(538 * var(--u));
+    column-gap: calc(53 * var(--u)); padding-left: calc(293 * var(--u));
+  }
+  .page-jas .cs-section--pack .cs-media img { width: calc(379 * var(--u)); }
+  .page-jas .cs-section--pack .cs-media img:first-child { height: calc(367 * var(--u)); object-fit: cover; }
+  .page-jas .cs-pack { align-self: start; gap: calc(49 * var(--u)); margin-top: calc(53 * var(--u)); }
+  .page-jas .cs-pack__bag { width: calc(406 * var(--u)); height: auto; }
+
+  /* Signage */
+  .page-jas .jas-sign { padding-block: calc(49 * var(--u)) calc(46 * var(--u)); }
+  .page-jas .jas-sign .cs-split {
+    grid-template-columns: calc(835 * var(--u)) calc(371 * var(--u));
+    column-gap: calc(37 * var(--u)); padding-left: calc(134 * var(--u));
+  }
+  .page-jas .jas-sign .cs-media img { width: calc(835 * var(--u)); }
+  .page-jas .jas-sign .cs-copy { margin-top: calc(337 * var(--u)); }
 }
