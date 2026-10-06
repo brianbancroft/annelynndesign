@@ -738,3 +738,9 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
 
 /* AHH: band colours and per-band copy colour from the Figma frame (2165:2) */
 .page-ahh .ah-cards .cs-copy p { color: #279089; }
+
+/* Desktop: same rules as mobile, a line above and below each link in that project's colour */
+@media (min-width: 761px) {
+  .cs-next { max-width: var(--page-max); }
+  .cs-next__link { padding: 18px 4px; border-block: 1px solid var(--pager-ink); }
+}
