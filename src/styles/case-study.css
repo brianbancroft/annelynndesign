@@ -389,7 +389,7 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
 .page-darcy .cs-hero p { max-width: 650px; margin-top: 8px; }
 
 /* Story: 732px logo, copy left, INDUSTRY / SERVICES box overhanging right */
-.page-darcy .darcy-intro { padding-top: min(4.9vw, 71px); padding-bottom: min(7.4vw, 107px); }
+.page-darcy .darcy-intro { padding-top: min(4.9vw, 71px); padding-bottom: min(8.5vw, 123px); }
 .page-darcy .cs-media .narrow { max-width: 732px; }
 .page-darcy .cs-media + .cs-intro { margin-top: 36px; }
 .page-darcy .cs-intro { grid-template-columns: minmax(0, 1fr) 389px; gap: 30px; }
@@ -414,7 +414,7 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
 .page-darcy .cs-media--palette picture:last-child img { margin-top: 2.1%; }
 .page-darcy .darcy-colours .cs-copy { margin-top: min(4vw, 58px); }
 
-.page-darcy .darcy-shirt { padding-top: min(7.4vw, 107px); padding-bottom: min(5.6vw, 80px); }
+.page-darcy .darcy-shirt { padding-top: min(7.4vw, 107px); padding-bottom: min(7.2vw, 103px); }
 .page-darcy .darcy-shirt .cs-media img { max-width: 1010px; }
 .page-darcy .darcy-shirt .cs-copy { margin-top: min(3.8vw, 54px); }
 
@@ -541,4 +541,138 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
   }
   .page-jas .jas-sign .cs-media img { width: calc(835 * var(--u)); }
   .page-jas .jas-sign .cs-copy { margin-top: calc(337 * var(--u)); }
+}
+
+/* ---------- AHH / Cuddle Creatures / Shower Cap desktop: sizes and spacing follow their Figma frames (1440 wide) ----------
+   Everything scales with --u so the 1440px layout holds at narrower desktop widths. */
+@media (min-width: 761px) {
+  .page-ahh, .page-cuddle, .page-shower { --u: calc(min(100vw, 1440px) / 1440); }
+  :is(.page-ahh, .page-cuddle, .page-shower) .cs-section { padding-inline: 0; padding-bottom: 0; }
+  .page-ahh .ah-story .cs-media img { margin-left: calc(420 * var(--u)); }
+  .page-cuddle .cc-story .cs-media img { margin-left: calc(374 * var(--u)); }
+  :is(.page-ahh, .page-cuddle, .page-shower) .cs-wrap { width: calc(1440 * var(--u)); max-width: none; }
+  :is(.page-ahh, .page-cuddle, .page-shower) .cs-media { gap: 0; justify-items: start; }
+  :is(.page-ahh, .page-cuddle, .page-shower) .cs-media img { max-width: none; }
+  :is(.page-ahh, .page-cuddle, .page-shower) .cs-section > .cs-wrap > .cs-copy { margin-left: calc(194 * var(--u)); max-width: calc(719 * var(--u)); }
+  :is(.page-ahh, .page-cuddle) .cs-intro {
+    grid-template-columns: calc(634 * var(--u)) 300px; gap: calc(92 * var(--u));
+    margin: 0 0 0 calc(206 * var(--u));
+  }
+  :is(.page-ahh, .page-cuddle) .cs-meta { margin-block: 0; }
+
+  /* ----- AHH ----- */
+  .page-ahh .ah-story { min-height: calc(871 * var(--u)); padding-top: calc(80 * var(--u)); }
+  .page-ahh .ah-story .cs-media img { width: calc(598 * var(--u)); }
+  .page-ahh .ah-story .cs-intro { margin-top: calc(79 * var(--u)); }
+  .page-ahh .ah-cards { min-height: calc(911 * var(--u)); padding-top: calc(189 * var(--u)); }
+  .page-ahh .ah-cards .cs-media img { width: calc(1145 * var(--u)); margin-left: calc(146 * var(--u)); }
+  .page-ahh .ah-cards .cs-copy { margin-top: calc(84 * var(--u)); }
+  .page-ahh .ah-concepts { min-height: calc(649 * var(--u)); padding-top: calc(141 * var(--u)); }
+  .page-ahh .ah-concepts .cs-media {
+    grid-template-columns: calc(393 * var(--u)) calc(394 * var(--u)) calc(393 * var(--u));
+    column-gap: calc(23 * var(--u)); margin-left: calc(117 * var(--u));
+  }
+  .page-ahh .ah-concepts .cs-media img { width: 100%; }
+  .page-ahh .ah-concepts .cs-copy { margin-top: calc(56 * var(--u)); }
+  .page-ahh .ah-colours { min-height: calc(911 * var(--u)); padding-top: calc(114 * var(--u)); }
+  .page-ahh .ah-colours .cs-media {
+    grid-template-columns: calc(506 * var(--u)) calc(362 * var(--u)); column-gap: calc(126 * var(--u));
+    margin-left: calc(224 * var(--u)); align-items: start;
+  }
+  .page-ahh .ah-colours .cs-media img { width: 100%; }
+  .page-ahh .ah-colours .cs-media img:first-child { margin-top: calc(35 * var(--u)); }
+  .page-ahh .ah-colours .cs-copy { margin-top: calc(39 * var(--u)); }
+  .page-ahh .ah-shirt { min-height: calc(911 * var(--u)); padding-top: calc(98 * var(--u)); }
+  .page-ahh .ah-shirt .cs-media img { width: calc(1074 * var(--u)); margin-left: calc(183 * var(--u)); }
+  .page-ahh .ah-shirt .cs-copy { margin-top: calc(69 * var(--u)); }
+
+  /* ----- Cuddle Creatures ----- */
+  .page-cuddle .cc-story { min-height: calc(871 * var(--u)); padding-top: calc(132 * var(--u)); }
+  .page-cuddle .cc-story .cs-media img { width: calc(658 * var(--u)); }
+  .page-cuddle .cc-story .cs-intro { margin-top: calc(81 * var(--u)); }
+  .page-cuddle .cc-critters { min-height: calc(905 * var(--u)); padding-top: calc(105 * var(--u)); }
+  .page-cuddle .cc-critters .cs-media--critters { max-width: calc(640 * var(--u)); }
+  .page-cuddle .cc-critters .cs-copy { margin-top: calc(47 * var(--u)); }
+  .page-cuddle .cc-lineup { min-height: calc(970 * var(--u)); padding-top: calc(124 * var(--u)); }
+  .page-cuddle .cc-lineup .cs-media img { width: calc(1119 * var(--u)); margin-left: calc(161 * var(--u)); }
+  .page-cuddle .cc-lineup .cs-copy { margin-top: calc(40 * var(--u)); margin-left: calc(193 * var(--u)); }
+  .page-cuddle .cc-pkgs { min-height: calc(748 * var(--u)); padding-top: calc(149 * var(--u)); }
+  .page-cuddle .cc-pkgs .cs-media { display: flex; align-items: flex-start; margin-left: calc(127 * var(--u)); }
+  .page-cuddle .cc-pkgs .cs-media img { width: calc(465 * var(--u)); margin-inline: 0; }
+  .page-cuddle .cc-pkgs .cs-media img + img { margin-left: calc(-87 * var(--u)); }
+  .page-cuddle .cc-pkgs .cs-media img:last-child { margin-top: calc(10 * var(--u)); margin-left: calc(-90 * var(--u)); }
+  .page-cuddle .cc-pkgs .cs-copy { margin-top: calc(52 * var(--u)); }
+  .page-cuddle .cc-final { min-height: calc(814 * var(--u)); padding-top: calc(88 * var(--u)); }
+  .page-cuddle .cc-final .cs-media--dielines {
+    grid-template-columns: calc(568 * var(--u)) calc(579 * var(--u)); column-gap: calc(42 * var(--u));
+    margin-left: calc(140 * var(--u)); align-items: start; justify-items: start;
+  }
+  .page-cuddle .cc-final .cs-media--dielines > img { width: 100%; }
+  .page-cuddle .cc-final .cs-media--dielines > .cs-media { display: block; margin-top: calc(-23 * var(--u)); }
+  .page-cuddle .cc-final .cs-media--dielines > .cs-media img { width: 100%; }
+  .page-cuddle .cc-final .cs-media--dielines > .cs-media img:first-child { margin-left: calc(16 * var(--u)); width: calc(579 * var(--u)); }
+  .page-cuddle .cc-final .cs-media--dielines > .cs-media img + img { margin-top: calc(17 * var(--u)); }
+
+  /* ----- Shower Cap ----- */
+  .page-shower .sh-look { min-height: calc(870 * var(--u)); padding-top: calc(78 * var(--u)); }
+  .page-shower .sh-look .cs-split { grid-template-columns: calc(556 * var(--u)) calc(613 * var(--u)); column-gap: calc(26 * var(--u)); padding-left: calc(141 * var(--u)); align-items: start !important; }
+  .page-shower .sh-look .cs-media img { width: 100%; }
+  .page-shower .sh-look .cs-copy { margin-top: calc(344 * var(--u)); max-width: none; }
+  .page-shower .sh-meta { margin-top: calc(92 * var(--u)) !important; }
+  .page-shower .sh-concepts { min-height: calc(912 * var(--u)); padding-top: calc(193 * var(--u)); }
+  .page-shower .sh-concepts .cs-media { display: flex; align-items: flex-end; margin-left: calc(194 * var(--u)); }
+  .page-shower .sh-concepts .cs-media img { width: calc(340 * var(--u)); }
+  .page-shower .sh-concepts .cs-media img:nth-child(2) { width: calc(355 * var(--u)); margin-left: calc(5 * var(--u)); }
+  .page-shower .sh-concepts .cs-media img:nth-child(3) { width: calc(323 * var(--u)); margin-left: calc(12 * var(--u)); }
+  .page-shower .sh-concepts .cs-copy { margin-top: calc(119 * var(--u)); max-width: calc(767 * var(--u)); }
+  .page-shower .sh-before { min-height: calc(964 * var(--u)); padding-top: calc(100 * var(--u)); }
+  .page-shower .sh-before .cs-media { display: flex; align-items: flex-start; margin-left: calc(274 * var(--u)); }
+  .page-shower .sh-before .cs-media img { width: calc(437 * var(--u)); }
+  .page-shower .sh-before .cs-media img + img { width: calc(365 * var(--u)); margin-left: calc(44 * var(--u)); margin-top: calc(18 * var(--u)); }
+  .page-shower .sh-before .cs-copy { margin-top: calc(100 * var(--u)); max-width: calc(767 * var(--u)); }
+  .page-shower .sh-line { min-height: calc(816 * var(--u)); padding-top: calc(87 * var(--u)); }
+  .page-shower .sh-line .cs-media { display: flex !important; align-items: flex-start; margin-left: calc(215 * var(--u)); }
+  .page-shower .sh-line .cs-media img { width: calc(612 * var(--u)); }
+  .page-shower .sh-line .cs-media img + img { width: calc(305 * var(--u)); margin-left: calc(35 * var(--u)); margin-top: calc(11 * var(--u)); }
+  .page-shower .sh-line .cs-copy { margin-top: calc(58 * var(--u)); }
+  .page-shower .sh-final { padding: 0; }
+  .page-shower .sh-final .cs-media img { width: calc(1012 * var(--u)); margin-left: calc(194 * var(--u)); }
+}
+
+/* Image boxes (Figma crops). Zoomed crops use object-view-box; browsers without it fall back to a plain cover crop. */
+@media (min-width: 761px) {
+  :is(.page-ahh, .page-cuddle, .page-shower) .cs-section img { object-fit: cover; }
+
+  .page-ahh .ah-story .cs-media img { height: calc(496 * var(--u)); object-view-box: inset(22.38% 27.12% 20.5% 26.92%); }
+  .page-ahh .ah-cards .cs-media img { height: calc(380 * var(--u)); object-view-box: inset(27.43% 4.18% 26.89% 4.17%); }
+  .page-ahh .ah-concepts .cs-media img { height: calc(263 * var(--u)); object-view-box: inset(22.5%); }
+  .page-ahh .ah-colours .cs-media img:first-child { height: calc(494 * var(--u)); object-view-box: inset(12.55% 23.04% 9.9% 24%); }
+  .page-ahh .ah-colours .cs-media img:last-child { height: calc(564 * var(--u)); object-view-box: inset(4.22% 30.32% 4.22% 30.54%); }
+  .page-ahh .ah-shirt .cs-media img { height: calc(560 * var(--u)); }
+  .page-ahh .ah-colours .cs-media img:first-child { margin-top: calc(35 * var(--u)); }
+
+  .page-cuddle .cc-story .cs-media img { height: calc(430 * var(--u)); }
+  .page-cuddle .cc-lineup .cs-media img { height: calc(560 * var(--u)); }
+  .page-cuddle .cc-pkgs .cs-media img { height: calc(399 * var(--u)); }
+  .page-cuddle .cc-final .cs-media--dielines > img { height: calc(637 * var(--u)); }
+  .page-cuddle .cc-final .cs-media--dielines > .cs-media img:first-child { height: calc(239 * var(--u)); }
+  .page-cuddle .cc-final .cs-media--dielines > .cs-media img + img { height: calc(421 * var(--u)); width: calc(579 * var(--u)); }
+
+  .page-shower .sh-look .cs-media img { height: calc(713 * var(--u)); }
+  .page-shower .sh-concepts .cs-media img:nth-child(1) { height: calc(425 * var(--u)); }
+  .page-shower .sh-concepts .cs-media img:nth-child(2) { height: calc(434 * var(--u)); }
+  .page-shower .sh-concepts .cs-media img:nth-child(3) { height: calc(433 * var(--u)); }
+  .page-shower .sh-before .cs-media img:nth-child(1) { height: calc(551 * var(--u)); }
+  .page-shower .sh-before .cs-media img:nth-child(2) { height: calc(514 * var(--u)); }
+  .page-shower .sh-line .cs-media img:nth-child(1) { height: calc(451 * var(--u)); }
+  .page-shower .sh-line .cs-media img:nth-child(2) { height: calc(432 * var(--u)); }
+  .page-shower .sh-final .cs-media img { height: calc(842 * var(--u)); }
+}
+
+/* ---------- Desktop Industry / Service box: as wide as its text so each line stays on one line ---------- */
+@media (min-width: 761px) {
+  .page-jas { --intro-copy: calc(679 * var(--u)); }
+  .page-ahh, .page-cuddle { --intro-copy: calc(634 * var(--u)); }
+  body.case .cs-section .cs-intro { grid-template-columns: var(--intro-copy, minmax(0, 1fr)) max-content; }
+  body.case .cs-meta { width: max-content; white-space: nowrap; padding: 20px 32px; }
 }
