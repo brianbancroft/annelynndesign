@@ -26,7 +26,7 @@
 }
 .home-hero p span { display: block; }
 
-/* ---------- Project grid: 4 × 309×310 tiles, 23px gutters, 63px / 72px margins ---------- */
+/* ---------- Project grid: 4 × 309×309 square tiles, 23px gutters, 63px / 72px margins ---------- */
 .work-grid {
   display: grid; grid-template-columns: repeat(4, 1fr);
   gap: calc(23 * var(--u));
@@ -36,7 +36,7 @@
 }
 
 .tile {
-  position: relative; display: block; aspect-ratio: 309 / 310;
+  position: relative; display: block; aspect-ratio: 1;
   overflow: hidden; background: #c4c4c4; text-decoration: none;
   container-type: inline-size;
 }
@@ -132,7 +132,7 @@
   }
 
   .work-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; padding: 0 11px 0 12px; }
-  .tile { aspect-ratio: 172 / 171; }
+  .tile { aspect-ratio: 1; }
   .tile__label { /* the phone frame shows bare tiles; names stay available to screen readers */
     inset: auto; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap;
   }

@@ -3,7 +3,7 @@
 
 const LINKS = [
   { href: '/', label: 'Portfolio', icon: '/img/nav/portfolio.svg', w: 51, h: 63 },
-  { href: '/about.html', label: 'About', icon: '/img/nav/about.svg', w: 58, h: 59 },
+  { href: '/about.html', label: 'About', icon: '/img/nav/about.svg', w: 61, h: 59 },
   { href: '/contact.html', label: 'Contact', icon: '/img/nav/contact.svg', w: 63, h: 51 },
 ];
 
