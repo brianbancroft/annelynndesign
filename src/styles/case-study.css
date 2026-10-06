@@ -211,6 +211,7 @@ body.case .cs-next { --pager-ink: color-mix(in srgb, var(--accent) 80%, black); 
   .cs-media--stack img { max-width: 80%; }
   .cs-media--stack img:last-child { max-width: 100%; }
   .cs-pack { display: flex; flex-direction: column-reverse; }
+  .cs-section--pack { padding-bottom: 0; }
   .cs-pack__bag { width: calc(100% + var(--gutter) * 2); max-width: none; margin-inline: calc(var(--gutter) * -1); }
 }
 
