@@ -24,6 +24,10 @@ npm run build        # static site in dist/ — upload anywhere (Netlify, GitHub
 npm run preview      # check the built version locally
 ```
 
+## Hosting and DNS
+
+Pushing to `main` deploys to the Cloudflare Pages project `annelynn-bancroft-io`. DNS for annelynn.com is in Route53. `www.annelynn.com` is a CNAME to `annelynn-bancroft-io.pages.dev` and is the canonical URL. Pages can't serve a bare domain whose DNS lives outside Cloudflare, so `annelynn.com` is an alias to a CloudFront distribution (`E34U1LTOGLCS44`). A CloudFront Function (`annelynn-apex-redirect`) on that distribution sends a 301 to www. The MX/TXT records for Google Workspace are in the same zone.
+
 ## Contact form
 
 The form posts to `/api/contact`, a Cloudflare Pages Function. It checks the Cloudflare Turnstile token and sends the email with Resend. It needs two secrets, `RESEND_API_KEY` and `TURNSTILE_SECRET_KEY`. Both are stored as GitHub Actions secrets, and the deploy workflow copies them to the Pages project. `npm run dev` doesn't run the function. To test it locally, run `npm run build && npx wrangler pages dev dist` with a `.dev.vars` file that holds the two secrets.
