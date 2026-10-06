@@ -138,8 +138,8 @@
   }
 
   .intro { --wu: 0.6px; margin-top: 48px; min-height: 0; padding: 72px 20px 48px; }
-  .intro__inner { grid-template-columns: 1fr; justify-items: center; text-align: center; padding: 0; row-gap: 24px; }
-  .portrait { width: 240px; margin-top: 0; }
+  .intro__inner { grid-template-columns: 1fr; justify-items: stretch; text-align: left; padding: 0; row-gap: 24px; }
+  .portrait { width: 240px; margin: 0 auto; }
   .intro h2 { max-width: none; font-size: 26px; }
   .intro__body { max-width: none; margin-top: 16px; font-size: 18px; }
 

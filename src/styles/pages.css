@@ -62,7 +62,7 @@ body.about-page .icon-nav { margin-top: clamp(40px, 7vw, 100px); }
 .contact__pitch p + p { margin-top: 1.2em; }
 
 @media (max-width: 900px) {
-  .contact { grid-template-columns: 1fr; gap: 0; padding: 16px 19px 32px; }
+  .contact { grid-template-columns: 1fr; gap: 0; padding: 36px 19px 32px; }
   .contact__form { display: contents; } /* lets title, intro and fields be ordered as one column */
   .contact__form .page-title { order: -2; font-size: 48px; line-height: 1; margin-bottom: 12px; }
   .contact__form > :not(.page-title) { min-width: 0; width: 100%; }
