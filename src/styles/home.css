@@ -7,7 +7,6 @@
 }
 
 /* ---------- Header (desktop: teal bar + logo; mobile: logo mark + wordmark on white) ---------- */
-.site-header--home .logo-desk { margin-right: calc(8 / 1440 * min(100vw, 1440px)); } /* logo sits 4px left of centre in Figma */
 .brand-mobile { display: none; }
 
 /* ---------- Hero ---------- */
