@@ -10,6 +10,7 @@ const PROJECTS = [
   { href: '/work/darcys-dog-days.html', title: "Darcy's Dog Days", color: '#c87c30' },
   { href: '/work/giant-tiger.html', title: 'Giant Tiger', color: '#f2ba1b' },
   { href: '/work/shower-cap-design.html', title: 'Shower Cap Design', color: '#8cd1c2' },
+  { href: '/work/john-scott.html', title: 'John Scott Campaign', color: '#1f3a47' },
   { href: '/work/extra-projects.html', title: 'Extra Projects', color: '#48c1bb' },
 ];
 

@@ -768,3 +768,70 @@ body.page-book { --u: calc(min(100vw, 1440px) / 1440); }
   .page-ahh .ahh-shirt .cs-media img { max-width: none; }
   .page-ahh .ahh-shirt .cs-copy { padding-inline: 24px; margin-top: 18px; }
 }
+
+/* ---------- John Scott Campaign (Figma desktop 2474:88, mobile 2474:115) ----------
+   Below the hero, the page is the Figma frame reproduced to scale (same approach as Giant Tiger):
+   every item carries its frame box (--x --y --w --h desktop, --mx --my --mw --mh mobile), y measured from the end of the hero. */
+.page-js .cs-hero {
+  min-height: calc(clamp(380px, 66.8vw, 962px) - var(--header-h));
+  padding-block: 0;
+}
+.page-js .cs-hero p { margin-top: 12px; line-height: normal; }
+
+.js-stage {
+  --k: 14.4; --hk: 35.62;
+  position: relative; max-width: 1440px; margin: 0 auto;
+  aspect-ratio: 1440 / 3562; container-type: inline-size;
+}
+.js {
+  position: absolute; margin: 0;
+  left: calc(var(--x) / var(--k) * 1%); top: calc(var(--y) / var(--hk) * 1%);
+  width: calc(var(--w) / var(--k) * 1%); height: calc(var(--h) / var(--hk) * 1%);
+}
+/* Colour bands run the full width of the page, past the 1440 frame */
+.js-band { clip-path: inset(0 -100vmax); }
+.js-band--gold { background: #f2c231; box-shadow: 0 0 0 100vmax #f2c231; }
+.js-band--cream { background: rgba(242, 194, 49, 0.15); box-shadow: 0 0 0 100vmax rgba(242, 194, 49, 0.15); }
+.js-band--blue { background: rgba(31, 58, 71, 0.15); box-shadow: 0 0 0 100vmax rgba(31, 58, 71, 0.15); }
+.js img { display: block; width: 100%; height: 100%; }
+.js-b { box-sizing: border-box; border: 0.25px solid #000; }
+.js-b img, .js-ad img { object-fit: cover; }
+.js-ad img { object-position: bottom; }
+.js-scene img, .js-signonly img { object-fit: cover; }
+.js-signonly { pointer-events: none; }
+
+.js-txt { height: auto; }
+.js-h {
+  font: 900 calc(26 / var(--k) * 1cqw)/normal var(--font-case);
+  color: var(--accent); text-transform: uppercase;
+}
+.js-p { font: 400 calc(18 / var(--k) * 1cqw)/calc(22 / 18) var(--font-case); color: #262626; }
+.js-p--ink { color: var(--accent); }
+
+.js-meta {
+  box-sizing: border-box; border: 1px solid #000; background: #fff;
+  padding: calc(22 / var(--k) * 1cqw) 0 0 calc(61 / var(--k) * 1cqw);
+  font: 400 calc(15 / var(--k) * 1cqw)/calc(26 / 15) var(--font-case); color: #262626;
+}
+.js-meta div { margin: 0; }
+.js-meta dt { display: inline; font-weight: 700; text-transform: uppercase; }
+.js-meta dd { display: inline; margin: 0; }
+
+@media (max-width: 760px) {
+  .page-js .cs-hero { min-height: calc(100vh - var(--header-h)); min-height: calc(100svh - var(--header-h)); padding: 0 24px; }
+  .page-js .cs-hero h1 { font-size: 28px; line-height: normal; }
+  .page-js .cs-hero p { font-size: 15px; max-width: 363px; margin-top: 8px; }
+  .js-stage { --k: 4.11; --hk: 23.3; aspect-ratio: 411 / 2330; }
+  .js {
+    left: calc(var(--mx) / var(--k) * 1%); top: calc(var(--my) / var(--hk) * 1%);
+    width: calc(var(--mw) / var(--k) * 1%); height: calc(var(--mh) / var(--hk) * 1%);
+  }
+  .js-txt { height: auto; }
+  .js-band--blue { display: none; }
+  .js-h { font-size: calc(20 / var(--k) * 1cqw); }
+  .js-p { font-size: calc(14 / var(--k) * 1cqw); line-height: calc(18 / 14); }
+  .js-meta {
+    padding: calc(11 / var(--k) * 1cqw) 0 0 calc(14 / var(--k) * 1cqw);
+    font-size: calc(12 / var(--k) * 1cqw); line-height: 1.6;
+  }
+}
